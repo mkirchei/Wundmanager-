@@ -33,6 +33,10 @@ def main() -> None:
     fehlend = [p for p in vorhanden if p not in eingebunden]
     if fehlend:
         print("Hinweis: nicht in index.html eingebunden:", ", ".join(fehlend))
+    sw = (ROOT / "sw.js").read_text(encoding="utf-8")
+    ohne_offline = [p for p in eingebunden if f'"./{p}"' not in sw]
+    if ohne_offline:
+        print("Hinweis: in sw.js (DATEIEN) fehlen:", ", ".join(ohne_offline))
     html = SCRIPT_RE.sub(inline, html)
     OUT.parent.mkdir(exist_ok=True)
     OUT.write_text(html, encoding="utf-8")

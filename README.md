@@ -26,7 +26,23 @@ Der Lernstand wird im Browser gespeichert (localStorage), also getrennt pro Ger�
 
 ## Benutzen
 
-- **Einfachste Variante:** `dist/Wundmanager-Lernapp.html` herunterladen und öffnen. Diese Datei enthält alles und funktioniert offline, auch auf dem Handy.
+### Auf dem Handy installieren
+
+Die App ist eine installierbare Web-App mit Offline-Betrieb. Voraussetzung ist,
+dass GitHub Pages für dieses Repository eingeschaltet ist
+(*Settings → Pages → Build and deployment → Source: „Deploy from a branch“,
+Branch `ccr-04fb7d8b-0kgaf9`, Ordner `/ (root)` → Save*). Die Adresse der App
+steht danach auf derselben Einstellungsseite.
+
+1. Adresse auf dem Handy öffnen und einmal mit Internet laden.
+2. **iPhone (Safari):** Teilen-Symbol → „Zum Home-Bildschirm“.
+   **Android (Chrome):** Menü ⋮ → „App installieren“ bzw. „Zum Startbildschirm hinzufügen“.
+3. Die App startet danach vom Startbildschirm und funktioniert auch offline.
+   Mit Internet lädt sie automatisch die neueste Version (z. B. neue Themen).
+
+### Weitere Varianten
+
+- **Als Einzeldatei:** `dist/Wundmanager-Lernapp.html` herunterladen und öffnen. Diese Datei enthält alles und funktioniert offline, auch auf dem Handy.
 - **Entwicklungsversion:** `index.html` öffnen (lädt die Themen aus `themen/`).
 
 ## Neues Thema hinzufügen
@@ -54,7 +70,7 @@ Der Lernstand wird im Browser gespeichert (localStorage), also getrennt pro Ger�
    });
    ```
 
-2. In `index.html` im Block **THEMEN-DATEIEN** eine Zeile ergänzen:
+2. In `index.html` im Block **THEMEN-DATEIEN** eine Zeile ergänzen und den Pfad in `sw.js` unter `DATEIEN` eintragen (für den Offline-Betrieb):
    `<script src="themen/<name>.js"></script>`
 3. Einzeldatei neu erzeugen: `python3 tools/build.py`
 
