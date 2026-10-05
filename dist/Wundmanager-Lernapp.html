@@ -1,0 +1,1728 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Wundmanager Prüfungstrainer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Familjen+Grotesk:wght@500;600;700&display=swap">
+<style>
+/* Layout: eine zentrale Arbeitsspalte, oben feste Navigation; Karten als einziges "Objekt" mit Fläche. */
+:root {
+  --bg: #eef3f2;
+  --surface: #ffffff;
+  --surface-2: #f6f9f8;
+  --ink: #132523;
+  --muted: #566a66;
+  --line: #d3dedb;
+  --accent: #0e6a64;
+  --accent-ink: #ffffff;
+  --accent-soft: #d8ebe8;
+  --ok: #2b7a4b;
+  --ok-soft: #dff0e5;
+  --warn: #9a6512;
+  --warn-soft: #f6ead3;
+  --bad: #b03f35;
+  --bad-soft: #f6e0dd;
+  --hand: #6c4f9e;
+  --hand-soft: #ece6f6;
+  --box0: #c4d0cd;
+  --box1: #c9574c;
+  --box2: #d98b3a;
+  --box3: #c9b23f;
+  --box4: #6aa86f;
+  --box5: #2b7a4b;
+  --shadow: 0 1px 2px rgba(19, 37, 35, .06), 0 6px 20px rgba(19, 37, 35, .07);
+  --f-display: "Familjen Grotesk", "Segoe UI", system-ui, sans-serif;
+  --f-body: "Atkinson Hyperlegible", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --radius: 14px;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0d1615; --surface: #15211f; --surface-2: #1a2826; --ink: #e2ecea; --muted: #94a8a4; --line: #2a3a37;
+    --accent: #4fb5ab; --accent-ink: #06201d; --accent-soft: #19332f;
+    --ok: #63c38d; --ok-soft: #173326; --warn: #e2b25a; --warn-soft: #362a14; --bad: #e57f73; --bad-soft: #3a1d1a;
+    --hand: #b9a1e6; --hand-soft: #2a2238;
+    --box0: #3a4a47; --box1: #d8675b; --box2: #e09a4c; --box3: #d6c055; --box4: #7cbc81; --box5: #4fae74;
+    --shadow: 0 1px 2px rgba(0,0,0,.3), 0 6px 20px rgba(0,0,0,.25);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0d1615; --surface: #15211f; --surface-2: #1a2826; --ink: #e2ecea; --muted: #94a8a4; --line: #2a3a37;
+  --accent: #4fb5ab; --accent-ink: #06201d; --accent-soft: #19332f;
+  --ok: #63c38d; --ok-soft: #173326; --warn: #e2b25a; --warn-soft: #362a14; --bad: #e57f73; --bad-soft: #3a1d1a;
+  --hand: #b9a1e6; --hand-soft: #2a2238;
+  --box0: #3a4a47; --box1: #d8675b; --box2: #e09a4c; --box3: #d6c055; --box4: #7cbc81; --box5: #4fae74;
+  --shadow: 0 1px 2px rgba(0,0,0,.3), 0 6px 20px rgba(0,0,0,.25);
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html, body { margin: 0; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--f-body);
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-text-size-adjust: 100%;
+}
+h1, h2, h3, h4 { font-family: var(--f-display); line-height: 1.2; text-wrap: balance; margin: 0; }
+button, input, select, textarea { font: inherit; color: inherit; }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; border-radius: 6px; }
+
+/* ---------- Kopf & Navigation ---------- */
+.kopf {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 10;
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+.kopf-innen {
+  max-width: 880px; margin: 0 auto; padding: 10px 16px 0;
+  display: flex; flex-direction: column; gap: 8px;
+}
+.marke { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+.marke h1 { font-size: 1.15rem; font-weight: 700; letter-spacing: -.01em; }
+.marke span { color: var(--muted); font-size: .85rem; }
+.nav { display: flex; gap: 2px; overflow-x: auto; scrollbar-width: none; margin: 0 -4px; }
+.nav::-webkit-scrollbar { display: none; }
+.nav button {
+  border: 0; background: none; cursor: pointer; white-space: nowrap;
+  padding: 8px 12px 10px; font-family: var(--f-display); font-weight: 600; font-size: .98rem;
+  color: var(--muted); border-bottom: 3px solid transparent;
+}
+.nav button[aria-selected="true"] { color: var(--ink); border-bottom-color: var(--accent); }
+.nav button:hover { color: var(--ink); }
+
+main { max-width: 880px; margin: 0 auto; padding-inline: 16px; padding-block: 20px 64px; }
+section[role="tabpanel"] { display: flex; flex-direction: column; gap: 20px; }
+
+/* ---------- Allgemeine Bausteine ---------- */
+.eyebrow { font-size: .75rem; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); font-weight: 700; }
+.leise { color: var(--muted); }
+.klein { font-size: .875rem; }
+.zeile { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+.zeile-sb { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; justify-content: space-between; }
+.stapel { display: flex; flex-direction: column; gap: 12px; }
+
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  border: 1px solid var(--line); background: var(--surface); color: var(--ink);
+  border-radius: 10px; padding: 9px 14px; cursor: pointer; font-weight: 700; font-size: .95rem;
+  min-height: 42px; text-decoration: none;
+}
+.btn:hover { border-color: var(--accent); }
+.btn.primaer { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+.btn.primaer:hover { filter: brightness(1.07); }
+.btn.gefahr { color: var(--bad); }
+.btn.gefahr.scharf { background: var(--bad); border-color: var(--bad); color: var(--surface); }
+.btn.gross { padding: 12px 20px; font-size: 1.02rem; min-height: 50px; }
+.btn[disabled] { opacity: .45; cursor: not-allowed; }
+
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip {
+  border: 1px solid var(--line); background: var(--surface); border-radius: 999px;
+  padding: 6px 12px; cursor: pointer; font-size: .9rem; font-weight: 700; color: var(--muted);
+  display: inline-flex; gap: 6px; align-items: center;
+}
+.chip[aria-pressed="true"] { background: var(--accent-soft); border-color: var(--accent); color: var(--ink); }
+.chip .zahl { font-variant-numeric: tabular-nums; font-weight: 400; opacity: .8; }
+
+.feld { display: flex; flex-direction: column; gap: 6px; }
+.feld label { font-weight: 700; font-size: .9rem; }
+.feld input, .feld select, .feld textarea {
+  border: 1px solid var(--line); background: var(--surface); border-radius: 10px; padding: 10px 12px; width: 100%;
+}
+.feld textarea { min-height: 96px; resize: vertical; }
+textarea.code { font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; font-size: .82rem; min-height: 180px; }
+
+.panel {
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 18px; display: flex; flex-direction: column; gap: 14px; min-width: 0;
+}
+.panel h2 { font-size: 1.2rem; }
+.panel h3 { font-size: 1.05rem; }
+
+.badge {
+  display: inline-flex; align-items: center; gap: 4px; font-size: .75rem; font-weight: 700;
+  padding: 2px 8px; border-radius: 999px; background: var(--surface-2); color: var(--muted); border: 1px solid var(--line);
+  white-space: nowrap;
+}
+.badge.seite { font-variant-numeric: tabular-nums; }
+.badge.hand { background: var(--hand-soft); color: var(--hand); border-color: transparent; }
+.badge.akzent { background: var(--accent-soft); color: var(--accent); border-color: transparent; }
+
+.meldung { border-radius: 10px; padding: 10px 14px; font-size: .92rem; }
+.meldung.ok { background: var(--ok-soft); color: var(--ok); }
+.meldung.fehler { background: var(--bad-soft); color: var(--bad); }
+
+/* ---------- Übersicht ---------- */
+.held { display: flex; flex-direction: column; gap: 14px; padding-block: 6px; }
+.held h2 { font-size: clamp(1.6rem, 4.5vw, 2.2rem); letter-spacing: -.02em; }
+.held p { margin: 0; max-width: 60ch; color: var(--muted); }
+.kennzahlen { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; }
+.kennzahl { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; }
+.kennzahl b { display: block; font-family: var(--f-display); font-size: 1.6rem; font-variant-numeric: tabular-nums; line-height: 1.1; }
+.kennzahl span { color: var(--muted); font-size: .85rem; }
+
+.themaliste { display: flex; flex-direction: column; gap: 12px; }
+.themazeile { display: flex; flex-direction: column; gap: 10px; }
+.themazeile .kopfzeile { display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; align-items: baseline; }
+.themazeile h3 { font-size: 1.1rem; }
+.faecher { display: flex; height: 12px; border-radius: 6px; overflow: hidden; background: var(--box0); }
+.faecher i { display: block; height: 100%; }
+.legende { display: flex; flex-wrap: wrap; gap: 4px 12px; font-size: .78rem; color: var(--muted); }
+.legende span { display: inline-flex; align-items: center; gap: 5px; font-variant-numeric: tabular-nums; }
+.legende span::before { content: ""; width: 9px; height: 9px; border-radius: 2px; background: var(--c); }
+
+/* ---------- Lernkarten ---------- */
+.lernbereich { display: flex; flex-direction: column; gap: 14px; }
+.fortschritt { height: 6px; background: var(--line); border-radius: 3px; overflow: hidden; }
+.fortschritt i { display: block; height: 100%; background: var(--accent); transition: width .25s; }
+.karte {
+  background: var(--surface); border: 1px solid var(--line); border-radius: 18px; box-shadow: var(--shadow);
+  padding: 22px 22px 18px; min-height: 300px; display: flex; flex-direction: column; gap: 16px;
+  cursor: pointer; position: relative;
+}
+.karte .meta { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+.karte .frage { font-family: var(--f-display); font-size: clamp(1.25rem, 3.6vw, 1.55rem); font-weight: 600; line-height: 1.3; text-wrap: balance; }
+.karte .antwort { white-space: pre-line; font-size: 1.05rem; border-top: 1px dashed var(--line); padding-top: 14px; }
+.karte .tipp { margin-top: auto; color: var(--muted); font-size: .85rem; }
+.bewertung { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.bewertung .btn { flex-direction: column; gap: 0; min-height: 58px; }
+.bewertung .btn small { font-weight: 400; font-size: .75rem; color: var(--muted); }
+.bewertung .nein { border-color: var(--bad); color: var(--bad); }
+.bewertung .halb { border-color: var(--warn); color: var(--warn); }
+.bewertung .ja { border-color: var(--ok); color: var(--ok); }
+.tasten { font-size: .78rem; color: var(--muted); }
+kbd { font-family: inherit; border: 1px solid var(--line); border-bottom-width: 2px; border-radius: 4px; padding: 0 5px; background: var(--surface-2); }
+
+/* ---------- Quiz ---------- */
+.optionen { display: flex; flex-direction: column; gap: 10px; }
+.option {
+  text-align: left; border: 1.5px solid var(--line); background: var(--surface); border-radius: 12px;
+  padding: 12px 14px; cursor: pointer; display: flex; gap: 12px; align-items: flex-start; font-size: 1rem;
+}
+.option:hover:not([disabled]) { border-color: var(--accent); }
+.option .bst {
+  flex: none; width: 28px; height: 28px; border-radius: 50%; display: grid; place-items: center;
+  background: var(--surface-2); border: 1px solid var(--line); font-weight: 700; font-size: .85rem;
+}
+.option[disabled] { cursor: default; }
+.option.richtig { border-color: var(--ok); background: var(--ok-soft); }
+.option.richtig .bst { background: var(--ok); color: var(--surface); border-color: var(--ok); }
+.option.falsch { border-color: var(--bad); background: var(--bad-soft); }
+.option.falsch .bst { background: var(--bad); color: var(--surface); border-color: var(--bad); }
+.erklaerung { background: var(--surface-2); border-radius: 12px; padding: 12px 14px; border: 1px solid var(--line); }
+.ergebnis-zahl { font-family: var(--f-display); font-size: 3rem; font-weight: 700; font-variant-numeric: tabular-nums; line-height: 1; }
+
+/* ---------- Skript ---------- */
+.skript { font-size: 1rem; }
+.skript h3 { font-size: 1.15rem; margin-top: 26px; margin-bottom: 8px; display: flex; flex-wrap: wrap; gap: 8px; align-items: baseline; scroll-margin-top: 120px; }
+.skript h3:first-child { margin-top: 0; }
+.skript h4 { font-size: 1rem; margin-top: 16px; margin-bottom: 4px; }
+.skript ul { margin: 6px 0; padding-left: 1.2em; }
+.skript li { margin: 4px 0; max-width: 72ch; }
+.skript p { margin: 8px 0; max-width: 72ch; }
+.skript .seite { font-family: var(--f-body); font-size: .78rem; font-weight: 700; color: var(--muted); background: var(--surface-2); border: 1px solid var(--line); border-radius: 999px; padding: 1px 8px; font-variant-numeric: tabular-nums; }
+.skript .stern { color: var(--warn); }
+.skript .warnung { background: var(--warn-soft); border-radius: 10px; padding: 10px 14px; }
+.skript .warnung::before { content: "Achtung · "; font-weight: 700; color: var(--warn); }
+.skript .hand { background: var(--hand-soft); border-radius: 10px; padding: 10px 14px; }
+.skript .hand::before { content: "Handschriftlich · "; font-weight: 700; color: var(--hand); }
+.skript .hand-inline { background: var(--hand-soft); border-radius: 4px; padding: 0 4px; }
+.skript .merke { background: var(--accent-soft); border-radius: 10px; padding: 10px 14px; }
+.tabelle { overflow-x: auto; margin: 10px 0; border: 1px solid var(--line); border-radius: 10px; }
+.tabelle table { border-collapse: collapse; width: 100%; font-size: .92rem; }
+.tabelle caption { text-align: left; font-weight: 700; padding: 10px 12px 6px; font-family: var(--f-display); }
+.tabelle th, .tabelle td { text-align: left; padding: 8px 12px; border-top: 1px solid var(--line); vertical-align: top; }
+.tabelle th { background: var(--surface-2); font-size: .82rem; letter-spacing: .02em; }
+.tabelle td:first-child { font-weight: 700; white-space: nowrap; }
+.inhalt { display: flex; flex-wrap: wrap; gap: 6px; }
+.inhalt a { font-size: .85rem; color: var(--accent); text-decoration: none; border: 1px solid var(--line); border-radius: 999px; padding: 3px 10px; background: var(--surface); }
+.treffer { display: flex; flex-direction: column; gap: 10px; }
+.treffer .panel { gap: 6px; padding: 14px; }
+.treffer .a { white-space: pre-line; }
+mark { background: var(--warn-soft); color: inherit; border-radius: 3px; padding: 0 2px; }
+
+/* ---------- Themen ---------- */
+.themen-tabelle { display: flex; flex-direction: column; gap: 10px; }
+.themen-tabelle .panel { gap: 10px; }
+details.panel > summary { cursor: pointer; font-family: var(--f-display); font-weight: 700; font-size: 1.05rem; }
+details.panel[open] > summary { margin-bottom: 4px; }
+pre.vorlage { overflow-x: auto; background: var(--surface-2); border: 1px solid var(--line); border-radius: 10px; padding: 12px; font-size: .8rem; margin: 0; }
+
+.leer { text-align: center; padding: 30px 16px; color: var(--muted); display: flex; flex-direction: column; gap: 12px; align-items: center; }
+
+@media (max-width: 520px) {
+  .karte { padding: 18px 16px 14px; min-height: 260px; }
+  .panel { padding: 14px; }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+</style>
+</head>
+<body>
+
+<header class="kopf">
+  <div class="kopf-innen">
+    <div class="marke">
+      <h1>Wundmanager Prüfungstrainer</h1>
+      <span id="kopf-info"></span>
+    </div>
+    <nav class="nav" role="tablist" aria-label="Bereiche">
+      <button role="tab" id="tab-start" aria-controls="p-start" data-tab="start">Start</button>
+      <button role="tab" id="tab-karten" aria-controls="p-karten" data-tab="karten">Karten</button>
+      <button role="tab" id="tab-quiz" aria-controls="p-quiz" data-tab="quiz">Quiz</button>
+      <button role="tab" id="tab-skript" aria-controls="p-skript" data-tab="skript">Skript</button>
+      <button role="tab" id="tab-themen" aria-controls="p-themen" data-tab="themen">Themen</button>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section role="tabpanel" id="p-start" aria-labelledby="tab-start"></section>
+  <section role="tabpanel" id="p-karten" aria-labelledby="tab-karten" hidden></section>
+  <section role="tabpanel" id="p-quiz" aria-labelledby="tab-quiz" hidden></section>
+  <section role="tabpanel" id="p-skript" aria-labelledby="tab-skript" hidden></section>
+  <section role="tabpanel" id="p-themen" aria-labelledby="tab-themen" hidden></section>
+</main>
+
+<script>
+/* Register für Themen. Jede Datei in themen/ ruft Lernapp.thema({...}) auf. */
+window.Lernapp = {
+  eingebaut: [],
+  thema: function (t) { t.eingebaut = true; this.eingebaut.push(t); }
+};
+</script>
+
+<!-- ============================================================
+     THEMEN-DATEIEN
+     Neues Thema: Datei in themen/ anlegen und hier eine Zeile ergänzen.
+     ============================================================ -->
+<script>/* themen/gefaesse.js */
+/*
+ * Thema: Gefäßsysteme & Gefäßerkrankungen
+ * Quelle: murimed-Lernheft (Seitenangaben beziehen sich auf das Heft).
+ * Inhalte übernommen aus "Zusammenfassung_Gefaesserkrankungen.pdf" und
+ * "Lernkarten_Gefaesserkrankungen.pdf".
+ *
+ * Quiz-Format: bei "o" (Optionen) steht die RICHTIGE Antwort immer an erster
+ * Stelle; die App mischt die Reihenfolge beim Anzeigen.
+ * "h: true" = Inhalt stammt nur aus handschriftlichen Notizen im Heft.
+ */
+Lernapp.thema({
+  id: "gefaesse",
+  titel: "Gefäßsysteme & Gefäßerkrankungen",
+  kurz: "Gefäße",
+  quelle: "murimed-Lernheft",
+  hinweis:
+    "Quelle ist ausschließlich das Lernheft; Seitenzahlen in Klammern. Die im Heft zitierten Primärquellen wurden nicht separat geprüft.",
+
+  karten: [
+    { k: "Grundlagen", f: "Wie viel Prozent der chronischen Wunden haben eine Gefäßursache – und was folgt daraus?",
+      a: "Über 70 % (v. a. pAVK, CVI).\nJede chronische Wunde muss auf eine Gefäßerkrankung abgeklärt werden. Ohne Kausaltherapie keine Abheilung (DGG 2022).", s: "S. 2, 33" },
+    { k: "Grundlagen", f: "Welche drei Kreisläufe gibt es und was ist das Besondere am Pfortaderkreislauf?",
+      a: "Lungenkreislauf, Körperkreislauf, Pfortaderkreislauf.\nPfortader: Blut durchströmt zwei Kapillargebiete (Bauchorgane, dann Leber); Venenblut enthält resorbierte Nährstoffe.", s: "S. 3–4" },
+    { k: "Grundlagen", f: "Was ist die Windkesselfunktion?",
+      a: "Arterien des elastischen Typs (herznah) wandeln die stoßweise Blutströmung am Aortenanfang in eine annähernd kontinuierliche Strömung um.", s: "S. 6" },
+    { k: "Grundlagen", f: "Was sind Endarterien und wo kommen sie vor?",
+      a: "Arterien ohne Anastomosen – bei Verschluss keine Umgehung möglich → Absterben des Gewebes.\nVorkommen: Herz, Lunge, Niere, Leber, Gehirn.", s: "S. 6" },
+    { k: "Grundlagen", f: "Welche drei Wandschichten haben Blutgefäße? Wie sind Kapillaren aufgebaut?",
+      a: "Externa (außen), Media (Mitte), Intima (innen).\nKapillaren: 4–30 µm, nur Intima (einschichtig) → Stoffaustausch.", s: "S. 5–6" },
+    { k: "Grundlagen", f: "Flüssigkeitsbilanz der Kapillaren pro Tag?",
+      a: "Ca. 20 l filtriert, ca. 18 l reabsorbiert; die restlichen 2 l gelangen als Lymphe über das Lymphgefäßsystem zurück.", s: "S. 7" },
+    { k: "Grundlagen", f: "Was sind Anastomosen? (Übung II)",
+      a: "Natürliche Verbindungen zwischen zwei Blut- oder Lymphgefäßen (z. B. arteriovenöse Anastomose) oder operativ angelegte Verbindungen von Hohlorganen bzw. Gefäßen (z. B. Shunt zur Hämodialyse).", s: "S. 34" },
+    { k: "Grundlagen", f: "Wie ist das Lymphgefäßsystem aufgebaut und wohin mündet es?",
+      a: "Halboffenes System ohne Pumporgan; Transport durch Gefäßmuskulatur, Pulsdruck, Atem- und Körperbewegung; Klappen.\nDuctus thoracicus → linke V. subclavia.", s: "S. 7–8" },
+
+    { k: "Arteriell", f: "Beschreibe die Entstehung der Arteriosklerose.",
+      a: "Wandverletzung (z. B. Hypertonie) → Monozyten → Makrophagen → Cholesterin → Schaumzellen → Plaques → Plaqueriss → Thrombozytenaggregation → Thrombus → ggf. Embolus.", s: "S. 8–9" },
+    { k: "Arteriell", f: "Definition und Hauptursache der pAVK?",
+      a: "Einschränkung der Durchblutung der Extremitätenarterien (seltener Aorta), graduell (Stenose) oder komplett (Okklusion).\nUrsache: Atherosklerose in ca. 95 %.", s: "S. 9" },
+    { k: "Arteriell", f: "Nenne die Fontaine-Stadien der pAVK.",
+      a: "I asymptomatisch\nIIa Gehstrecke > 200 m\nIIb Gehstrecke < 200 m\nIII ischämischer Ruheschmerz\nIV Ulcus, Gangrän", s: "S. 10" },
+    { k: "Arteriell", f: "Warum heißt die pAVK „Schaufensterkrankheit“?",
+      a: "Betroffene müssen wegen Schmerzen beim Gehen (Claudicatio intermittens) nach kurzen Strecken stehen bleiben.", s: "S. 10" },
+    { k: "Arteriell", f: "Risikofaktoren der pAVK?",
+      a: "Nikotinkonsum, Diabetes mellitus, Hypertonie, hohe Blutfettwerte, Übergewicht, Bewegungsmangel.", s: "S. 11" },
+    { k: "Arteriell", f: "Welche Anzeichen deuten auf eine pAVK hin?",
+      a: "Kühle, bleiche, marmorierte, trockene Haut; Gehschmerz (Wade, Oberschenkel, Gesäß); starke Verhornung der Fußsohlen; langsames Nagelwachstum; Verlust der Beinbehaarung; Erektionsstörungen; schlechte Wundheilung.", s: "S. 11" },
+    { k: "Arteriell", f: "Wie wird der ABI bestimmt und ab wann liegt eine pAVK vor?",
+      a: "Dopplerdruckmessung: ABI = syst. Blutdruck Knöchel ÷ syst. Blutdruck Arm.\nGesund ca. 1,0; ≤ 0,9 = pAVK.", s: "S. 12" },
+    { k: "Arteriell", f: "Therapieoptionen bei pAVK?",
+      a: "Risikofaktoren reduzieren; Gehtraining; ASS/Clopidogrel (alle Stadien); Cilostazol/Naftidrofuryl (Stad. II, < 200 m, wenn kein Gehtraining); Stent-Angioplastie, Thrombolyse; Thrombendarteriektomie, Bypass, Amputation (Ultima Ratio).", s: "S. 13" },
+    { k: "Arteriell", f: "Prävalenz und Prognose der pAVK?",
+      a: "3–10 % der < 70-Jährigen, 15–20 % der > 70-Jährigen.\nLebenserwartung ca. 10 Jahre kürzer, Sterblichkeit doppelt so hoch.", s: "S. 10–11" },
+
+    { k: "Venös", f: "Welche Mechanismen sichern den venösen Rückfluss?",
+      a: "Muskelpumpe (Fuß- und Beinmuskulatur) und Venenklappen (verhindern Rückfluss). Venen transportieren ca. 7.000 l Blut täglich.", s: "S. 14" },
+    { k: "Venös", f: "Was ist die CVI und welche Ursachen hat sie?",
+      a: "Sammelbegriff für fortgeschrittene Störungen des venösen Rückflusses.\nUrsachen: Varikosis, Phlebothrombose, Thrombophlebitis, posttraumatische Verletzungen, Angiodysplasie.", s: "S. 14" },
+    { k: "Venös", f: "Phlebothrombose vs. Thrombophlebitis?",
+      a: "Phlebothrombose: Verschluss einer tiefen Vene; Klappen bleiben geschädigt.\nThrombophlebitis: oberflächlich, entzündlich; roter, harter, schmerzhafter Strang; kann zu TVT/Lungenembolie führen.", s: "S. 14–15" },
+    { k: "Venös", f: "Nenne die Widmer-Grade der CVI.",
+      a: "I Corona phlebectatica, Phlebödem\nII Ödem, Dermatoliposklerose, Atrophie blanche, Purpura jaune d’ocre, Stauungsekzem\nIIIa abgeheiltes Ulcus\nIIIb florides Ulcus", s: "S. 16" },
+    { k: "Venös", f: "Woran erkennt man ein Phlebödem?",
+      a: "Delle bleibt nach Daumendruck auf das Schienbein (Pitting edema); meist unsymmetrisch; Haut im Sinne einer CVI verändert.", s: "S. 16" },
+    { k: "Venös", f: "Hach-Stadien der Varikose?",
+      a: "1 nur Mündungsklappe\n2 bis Mitte Oberschenkel\n3 bis unterhalb Knie\n4 bis Sprunggelenk", s: "S. 15", h: true },
+
+    { k: "Lymphe", f: "Definition des Lymphödems?",
+      a: "Chronisch entzündliche Erkrankung des Interstitiums als Folge einer primären (anlagebedingten) oder sekundären (erworbenen) Schädigung des Lymphdrainagesystems (Wilting 2017).\nEiweißreich, frühe Verhärtung.", s: "S. 17–18" },
+    { k: "Lymphe", f: "Primäres vs. sekundäres Lymphödem?",
+      a: "Primär: genetisch; meist einseitig; beginnt distal; bis spätestens 5. Lebensjahrzehnt.\nSekundär: nach OP, Lymphknotenentfernung, Bestrahlung, Tumor, Trauma, Adipositas, CVI; beginnt meist proximal.", s: "S. 18–21" },
+    { k: "Lymphe", f: "Warum ist jedes Lymphödem krebsverdächtig?",
+      a: "Der Lymphabfluss kann durch Lymphangiosis carcinomatosa (Tumorbefall der Lymphgefäße) und Lymphknotenbefall massiv behindert werden.", s: "S. 20" },
+    { k: "Lymphe", f: "Nenne die Stadien des Lymphödems.",
+      a: "0 latent, kein sichtbares Ödem\nI weich, spontan reversibel, Hochlagern hilft\nII verhärtet, nicht reversibel, Hochlagern hilft nicht\nIII deformierend hart, Elephantiasis", s: "S. 20" },
+    { k: "Lymphe", f: "Wie wird das Stemmer-Zeichen ermittelt und wann ist es positiv?",
+      a: "Hautfalte über dem 2./3. Zehen- bzw. Fingergrundgelenk anheben.\nPositiv, wenn sie sich nicht abheben lässt.", s: "S. 34" },
+    { k: "Lymphe", f: "Was bedeutet „Stemmer nie falsch positiv“?",
+      a: "Ein positives Zeichen beweist eine lymphatische Abflussstörung (Lymphostase). Ein negatives Zeichen schließt sie nicht aus (kann falsch negativ sein).", s: "S. 21–22, 34" },
+    { k: "Lymphe", f: "Komplikationen des chronischen Lymphödems?",
+      a: "Erysipel, Mykose; Lymphzysten, -fisteln, Papillomatose, Ulcera, Ekzeme; Fibrose; Formveränderungen; orthopädische Beschwerden; Angiosarkom, Stewart-Treves-Syndrom.\n„Lymphostase = Immunostase“", s: "S. 23" },
+    { k: "Lymphe", f: "Komponenten der KPE?",
+      a: "Hautpflege · manuelle Lymphdrainage · Kompression · entstauende Bewegungstherapie · Aufklärung/Schulung zur Selbsttherapie.\n2 Phasen: Entstauung, dann Erhaltung.", s: "S. 25–26" },
+
+    { k: "Lipödem", f: "Typische Merkmale des Lipödems?",
+      a: "Fast nur Frauen; Beginn Pubertät/Schwangerschaft/Menopause; symmetrisch; Hände und Füße frei; Druckschmerz; Hämatomneigung; Ödeme nehmen tagsüber zu; Stemmer negativ.", s: "S. 30" },
+    { k: "Lipödem", f: "Stadien des Lipödems?",
+      a: "1 glatte Haut, gleichmäßig verdickte Subkutis\n2 unebene, wellige Haut, Knoten\n3 Wammenbildung, häufig X-Beinstellung", s: "S. 29" },
+    { k: "Lipödem", f: "Lipödem vs. Lymphödem – wichtigste Unterschiede?",
+      a: "Lipödem: symmetrisch, Hände/Füße frei, Druckschmerz, Hämatome, Stemmer negativ.\nLymphödem: asymmetrisch, Zehen/Finger beteiligt, schmerzlos, Stemmer positiv.", s: "S. 21–30" },
+    { k: "Lipödem", f: "Therapie des Lipödems?",
+      a: "Symptomatisch (Ursache unbekannt): Kompression, MLD, IPK/AIK, Bewegung, Liposuktion. Sport/Diät helfen nicht gegen die typischen Fettpolster; Übergewicht verschlechtert den Verlauf.", s: "S. 26–32" }
+  ],
+
+  quiz: [
+    { f: "Welcher Anteil aller chronischen Wunden hat laut Lernheft eine Gefäßursache?",
+      o: ["Über 70 %", "Etwa 30 %", "Etwa 50 %", "Unter 10 %"],
+      e: "Über 70 % aller chronischen Wunden haben eine Gefäßursache, vor allem pAVK und CVI.", s: "S. 2, 33" },
+    { f: "Was ist die häufigste Ursache der pAVK?",
+      o: ["Atherosklerose (ca. 95 %)", "Gefäßentzündungen (ca. 95 %)", "Angeborene Fehlbildungen (ca. 50 %)", "Venöse Insuffizienz"],
+      e: "Ursache in ca. 95 % Atherosklerose; ca. 5 % Gefäßentzündungen oder angeborene Fehlbildungen.", s: "S. 9" },
+    { f: "Ein Patient kann schmerzfrei nur noch etwa 150 m gehen. Welches Fontaine-Stadium liegt vor?",
+      o: ["IIb", "IIa", "III", "I"],
+      e: "IIa: Gehstrecke > 200 m · IIb: Gehstrecke < 200 m · III: ischämischer Ruheschmerz.", s: "S. 10" },
+    { f: "Welches Fontaine-Stadium beschreibt den ischämischen Ruheschmerz?",
+      o: ["III", "IIb", "IV", "IIa"],
+      e: "Stadium III: Schmerzen in Ruhe, besonders im Liegen. Stadium IV: Ulcus, Gangrän.", s: "S. 10" },
+    { f: "Wie wird der ABI (Knöchel-Arm-Index) berechnet?",
+      o: ["Syst. Blutdruck Knöchel ÷ syst. Blutdruck Arm", "Syst. Blutdruck Arm ÷ syst. Blutdruck Knöchel", "Diast. Blutdruck Knöchel ÷ diast. Blutdruck Arm", "Syst. Blutdruck Knöchel − syst. Blutdruck Arm"],
+      e: "Dopplerdruckmessung: ABI = syst. Druck Knöchel ÷ syst. Druck Arm.", s: "S. 12" },
+    { f: "Ab welchem ABI-Wert liegt laut Lernheft eine pAVK vor?",
+      o: ["≤ 0,9", "≤ 1,2", "≥ 1,0", "≤ 0,5"],
+      e: "Gesund ca. 1,0; ≤ 0,9 = pAVK.", s: "S. 12" },
+    { f: "Wann kommen Cilostazol oder Naftidrofuryl bei pAVK in Frage?",
+      o: ["Stadium II bei Gehstrecke < 200 m, wenn Gehtraining nicht möglich ist", "In allen Stadien als Basistherapie", "Nur in Stadium IV vor einer Amputation", "Nur in Stadium I als Vorbeugung"],
+      e: "ASS/Clopidogrel in allen Stadien; Cilostazol/Naftidrofuryl in Stadium II bei Gehstrecke < 200 m, wenn Gehtraining nicht möglich.", s: "S. 13" },
+    { f: "Warum heißt die pAVK „Schaufensterkrankheit“?",
+      o: ["Wegen Schmerzen beim Gehen (Claudicatio intermittens) müssen Betroffene nach kurzen Strecken stehen bleiben", "Weil die Haut an den Beinen glasig-durchscheinend wird", "Weil die Erkrankung meist zufällig bei Routineuntersuchungen auffällt", "Weil Betroffene nachts nur im Sitzen schlafen können"],
+      e: "„Schaufensterkrankheit“ = Claudicatio intermittens.", s: "S. 10" },
+    { f: "Wo kommen Endarterien vor?",
+      o: ["Herz, Lunge, Niere, Leber, Gehirn", "Haut, Muskulatur, Fettgewebe", "Nur in den Extremitäten", "Nur im Pfortaderkreislauf"],
+      e: "Endarterien haben keine Anastomosen → Verschluss führt zum Gewebstod.", s: "S. 6" },
+    { f: "Welche Arterien übernehmen die Windkesselfunktion?",
+      o: ["Herznahe Arterien vom elastischen Typ", "Periphere Arterien vom muskulären Typ", "Arteriolen", "Kapillaren"],
+      e: "Elastischer Arterientyp (herznah): stoßweiser wird kontinuierlicher Fluss. Muskulärer Typ (peripher) regelt die Organdurchblutung.", s: "S. 6" },
+    { f: "Wie viel Flüssigkeit fließt täglich als Lymphe ab?",
+      o: ["Ca. 2 l", "Ca. 18 l", "Ca. 20 l", "Ca. 7.000 l"],
+      e: "Täglich ca. 20 l filtriert, 18 l reabsorbiert, 2 l fließen als Lymphe ab.", s: "S. 7" },
+    { f: "Wohin mündet der Ductus thoracicus?",
+      o: ["In die linke V. subclavia", "In die rechte Herzkammer", "In die Pfortader", "In die V. cava inferior"],
+      e: "Ductus thoracicus → linke V. subclavia.", s: "S. 7–8" },
+    { f: "Welche Befunde gehören zum Widmer-Grad II der CVI?",
+      o: ["Ödem, Dermatoliposklerose, Atrophie blanche, Purpura jaune d’ocre, Stauungsekzem", "Corona phlebectatica und Phlebödem", "Abgeheiltes Ulcus (Ulcusnarbe)", "Florides Ulcus"],
+      e: "I: Corona phlebectatica, Phlebödem · II: Ödem, Dermatoliposklerose, Atrophie blanche, Purpura jaune d’ocre, Stauungsekzem · IIIa: abgeheiltes Ulcus · IIIb: florides Ulcus.", s: "S. 16" },
+    { f: "Ein florides Ulcus cruris venosum entspricht welchem Widmer-Grad?",
+      o: ["IIIb", "IIIa", "II", "I"],
+      e: "IIIa = abgeheiltes Ulcus, IIIb = florides Ulcus.", s: "S. 16" },
+    { f: "Was beschreibt eine Thrombophlebitis?",
+      o: ["Oberflächliche Entzündung mit rotem, hartem, schmerzhaftem Strang", "Verschluss einer tiefen Beinvene", "Knäuelartig erweiterte oberflächliche Venen ohne Entzündung", "Ödem mit bleibender Delle nach Daumendruck"],
+      e: "Thrombophlebitis (oberflächlich): roter, harter, schmerzhafter Strang; Übergang in TVT oder Lungenembolie möglich.", s: "S. 14–15" },
+    { f: "Was sichert den venösen Rückfluss zum Herzen?",
+      o: ["Muskelpumpe und Venenklappen", "Windkesselfunktion der Venen", "Der Ductus thoracicus", "Die Kontraktion der Kapillaren"],
+      e: "Venen transportieren täglich ca. 7.000 l Blut zum Herzen; Hilfe durch Muskelpumpe und Venenklappen.", s: "S. 14" },
+    { f: "Wo beginnt ein primäres Lymphödem typischerweise?",
+      o: ["Distal, breitet sich nach oben aus", "Proximal, breitet sich nach unten aus", "Immer beidseitig symmetrisch an Oberschenkeln", "Am Rumpf"],
+      e: "Primär: beginnt distal, breitet sich nach oben aus. Sekundär: beginnt meist proximal.", s: "S. 18–21" },
+    { f: "Was trifft auf das Lymphödem-Stadium II zu?",
+      o: ["Verhärtet, nicht spontan reversibel, Hochlagern hilft nicht", "Weich, spontan reversibel, Hochlagern hilft", "Latent, kein sichtbares Ödem", "Deformierend hart, Elephantiasis"],
+      e: "0 latent · I weich, reversibel · II verhärtet, nicht reversibel · III deformierend hart, Elephantiasis.", s: "S. 20" },
+    { f: "Was bedeutet ein positives Stemmer-Zeichen?",
+      o: ["Es beweist eine lymphatische Abflussstörung (Lymphostase)", "Es schließt ein Lymphödem aus", "Es beweist ein Lipödem", "Es ist häufig falsch positiv und daher wenig aussagekräftig"],
+      e: "Stemmer ist nie falsch positiv; ein negatives Zeichen schließt eine Lymphostase nicht aus (kann falsch negativ sein).", s: "S. 21–22, 34" },
+    { f: "Warum gilt jedes Lymphödem als krebsverdächtig?",
+      o: ["Wegen einer möglichen Lymphangiosis carcinomatosa", "Weil Lymphödeme immer durch Tumoren entstehen", "Weil der Stemmer-Test bei Krebs positiv wird", "Weil die KPE Tumoren auslösen kann"],
+      e: "Der Lymphabfluss kann durch Tumorbefall der Lymphgefäße (Lymphangiosis carcinomatosa) und Lymphknotenbefall massiv behindert werden.", s: "S. 20" },
+    { f: "Welche Maßnahme gehört NICHT zu den fünf Komponenten der KPE?",
+      o: ["Liposuktion", "Manuelle Lymphdrainage", "Kompression", "Hautpflege"],
+      e: "KPE: Hautpflege · manuelle Lymphdrainage · Kompression · entstauende Bewegungstherapie · Schulung zur Selbsttherapie.", s: "S. 25–26" },
+    { f: "Welche Kombination passt zum Lipödem?",
+      o: ["Symmetrisch, Hände und Füße frei, Druckschmerz, Stemmer negativ", "Asymmetrisch, Zehen beteiligt, schmerzlos, Stemmer positiv", "Einseitig, beginnt distal, Stemmer positiv", "Fast nur Männer, schmerzlos, keine Hämatomneigung"],
+      e: "Lipödem: symmetrisch, Hände/Füße frei, Druckschmerz, Hämatomneigung, Stemmer negativ.", s: "S. 30" },
+    { f: "Welche Maßnahme reduziert als einzige das krankhaft vermehrte Fettgewebe beim Lipödem?",
+      o: ["Liposuktion", "Diät", "Sport", "Manuelle Lymphdrainage"],
+      e: "Therapie rein symptomatisch; Sport/Diät helfen nicht gegen die typischen Fettpolster. Liposuktion ist die einzige Maßnahme, die das krankhaft vermehrte Fettgewebe reduziert.", s: "S. 26–32" },
+    { f: "Welches Lipödem-Stadium zeigt Wammenbildung und häufig eine X-Beinstellung?",
+      o: ["Stadium 3", "Stadium 2", "Stadium 1", "Stadium 0"],
+      e: "1 glatte Haut · 2 wellige Haut mit Knoten · 3 Wammenbildung, häufig X-Beinstellung.", s: "S. 29" },
+    { f: "Welche Prognose hat die pAVK laut Lernheft?",
+      o: ["Lebenserwartung ca. 10 Jahre kürzer, Sterblichkeit doppelt so hoch", "Normale Lebenserwartung bei Gehtraining", "Lebenserwartung ca. 2 Jahre kürzer", "Sterblichkeit zehnfach erhöht"],
+      e: "Prognose: Lebenserwartung ca. 10 Jahre kürzer, Sterblichkeit doppelt so hoch.", s: "S. 10–11" },
+    { f: "Hach-Stadium 3 der Varikose bedeutet …",
+      o: ["Insuffizienz bis unterhalb des Knies", "Nur die Mündungsklappe ist betroffen", "Insuffizienz bis Mitte Oberschenkel", "Insuffizienz bis zum Sprunggelenk"],
+      e: "1: nur Mündungsklappe · 2: bis Mitte Oberschenkel · 3: bis unterhalb des Knies · 4: bis zum Sprunggelenk.", s: "S. 15", h: true }
+  ],
+
+  zusammenfassung: `
+<h3>1. Kernaussage <span class="seite">S. 2, 33</span></h3>
+<ul>
+  <li>Über 70 % aller chronischen Wunden haben eine Gefäßursache, vor allem pAVK und CVI. Die Wunde ist nur das sichtbare Symptom.</li>
+  <li>Jede chronische Wunde muss auf eine Gefäßerkrankung abgeklärt werden – je früher, desto besser.</li>
+  <li>Ohne Kausaltherapie heilt keine chronische Wunde ab (DGG 2022).</li>
+</ul>
+
+<h3>2. Gesundes Gefäßsystem <span class="seite">S. 3–8</span></h3>
+<ul>
+  <li>Drei Kreisläufe:
+    <ul>
+      <li><b>Lungenkreislauf:</b> rechte Kammer → Lungenarterien → Gasaustausch → Lungenvenen → linker Vorhof.</li>
+      <li><b>Körperkreislauf:</b> linke Kammer → Aorta → Kapillaren → Venen → Hohlvenen → rechter Vorhof.</li>
+      <li><b>Pfortaderkreislauf:</b> Blut durchströmt zwei Kapillargebiete (Bauchorgane, dann Leber); Venenblut enthält zusätzlich resorbierte Nährstoffe.</li>
+    </ul>
+  </li>
+  <li>Arterien führen vom Herzen weg (kleinste: Arteriolen), Venen zum Herzen (kleinste: Venolen), Kapillaren (4–30 µm, nur Intima) sind der Ort des Stoffaustauschs.</li>
+  <li>Wandschichten: Externa, Media, Intima.</li>
+  <li>Elastischer Arterientyp (herznah) → Windkesselfunktion: stoßweiser wird kontinuierlicher Fluss. Muskulärer Typ (peripher) regelt die Organdurchblutung.</li>
+  <li>Endarterien haben keine Anastomosen → Verschluss führt zum Gewebstod (Herz, Lunge, Niere, Leber, Gehirn).</li>
+  <li>Venen: dünnere Media, Venenklappen.</li>
+  <li>Arteriovenöse Anastomosen umgehen die Kapillaren, z. B. zur Wärmeregulation.</li>
+  <li>Flüssigkeitsbilanz: täglich ca. 20 l filtriert, 18 l reabsorbiert, 2 l fließen als Lymphe ab.</li>
+  <li>Lymphsystem: halboffen, ohne Pumporgan; Transport über Gefäßmuskulatur, Pulsdruck, Atem- und Körperbewegung. Ductus thoracicus → linke V. subclavia. Lymphknoten bilden Lymphozyten.</li>
+</ul>
+
+<h3>3. Arteriosklerose <span class="seite">S. 8–9</span></h3>
+<ul>
+  <li>Verhärtung, Verdickung und Elastizitätsverlust der Arterien; klinisch meist synonym mit Atherosklerose.</li>
+  <li>Ablauf: Wandverletzung (z. B. Hypertonie) → Monozyten → Makrophagen → mit Cholesterin beladen zu Schaumzellen → Plaques → Plaqueruptur → Thrombozytenaggregation → Thrombus → abgelöst als Embolus → Gefäßverschluss.</li>
+  <li>Manifestationen: Herzinfarkt, Schlaganfall, pAVK.</li>
+</ul>
+
+<h3>4. pAVK <span class="stern" title="im Heft als prüfungsrelevant markiert">★</span> <span class="seite">S. 9–13</span></h3>
+<ul>
+  <li><b>Definition</b> (S3-Leitlinie): Durchblutungseinschränkung der Extremitätenarterien, seltener der Aorta; graduell (Stenose) oder komplett (Okklusion). Meist Becken- und Beinarterien.</li>
+  <li><b>Ursache:</b> in ca. 95 % Atherosklerose; ca. 5 % Gefäßentzündungen oder angeborene Fehlbildungen.</li>
+</ul>
+<div class="tabelle"><table>
+  <caption>Fontaine-Klassifikation (S. 10)</caption>
+  <thead><tr><th>Stadium</th><th>Klinik</th><th>Folgen</th></tr></thead>
+  <tbody>
+    <tr><td>I</td><td>asymptomatisch</td><td>keine Beschwerden, meist Zufallsbefund</td></tr>
+    <tr><td>IIa</td><td>Gehstrecke &gt; 200 m</td><td>leichte Claudicatio intermittens</td></tr>
+    <tr><td>IIb</td><td>Gehstrecke &lt; 200 m</td><td>mäßige Claudicatio intermittens</td></tr>
+    <tr><td>III</td><td>ischämischer Ruheschmerz</td><td>Schmerzen in Ruhe, besonders im Liegen</td></tr>
+    <tr><td>IV</td><td>Ulcus, Gangrän</td><td>Gewebeuntergang, ggf. Amputation</td></tr>
+  </tbody>
+</table></div>
+<ul>
+  <li>„Schaufensterkrankheit“ = Claudicatio intermittens.</li>
+  <li>Häufigkeit: 3–10 % der unter 70-Jährigen, 15–20 % der über 70-Jährigen.</li>
+  <li>Prognose: Lebenserwartung ca. 10 Jahre kürzer, Sterblichkeit doppelt so hoch.</li>
+  <li>Risikofaktoren: Nikotin, Diabetes mellitus, Hypertonie, hohe Blutfette, Übergewicht, Bewegungsmangel.</li>
+  <li>Anzeichen: kühle, blasse, marmorierte, trockene Haut; Gehschmerz in Wade, Oberschenkel oder Gesäß; starke Verhornung der Fußsohlen; langsames Nagelwachstum; Verlust der Beinbehaarung; Erektionsstörungen; schlechte Wundheilung.</li>
+  <li><b>Diagnostik:</b> Dopplerdruckmessung, ABI = syst. Druck Knöchel ÷ syst. Druck Arm. Gesund ca. 1,0; ≤ 0,9 = pAVK. Weitere: Ratschow-Lagerungsprobe, Ultraschall, Laufband, MRT, Angiographie, CT.</li>
+  <li><b>Therapie:</b> Reduktion der Risikofaktoren (Lebensstil); regelmäßiges, lebenslanges Gehtraining; Thrombozytenaggregationshemmer (ASS, Clopidogrel) in allen Stadien; Cilostazol/Naftidrofuryl in Stadium II bei Gehstrecke &lt; 200 m, wenn Gehtraining nicht möglich; endovaskulär: Stent-Angioplastie, lokale Thrombolyse; operativ: Thrombendarteriektomie, Bypass, Amputation als Ultima Ratio.</li>
+</ul>
+<p class="warnung">S. 13: Im Druck steht, die pAVK sei Ursache des „Ulcus cruris venosum“. Handschriftlich zu „arteriosum“ korrigiert – die Korrektur ist fachlich richtig. Rund 15 % des Diabetischen Fußsyndroms gehen auf eine pAVK zurück.</p>
+
+<h3>5. Venöse Erkrankungen <span class="stern" title="im Heft als prüfungsrelevant markiert">★</span> <span class="seite">S. 14–16</span></h3>
+<ul>
+  <li>Venen transportieren täglich ca. 7.000 l Blut zum Herzen; Hilfe durch Muskelpumpe und Venenklappen.</li>
+  <li><b>CVI</b> = Sammelbegriff für fortgeschrittene Störungen des venösen Rückflusses. Ursachen:
+    <ul>
+      <li>Varikosis: oberflächliche Venen, knäuelartig erweitert, insuffiziente Klappen.</li>
+      <li>Phlebothrombose (tiefe Beinvenenthrombose): Klappen bleiben nach Auflösung des Thrombus geschädigt.</li>
+      <li>Thrombophlebitis (oberflächlich): roter, harter, schmerzhafter Strang; Übergang in TVT oder Lungenembolie möglich.</li>
+    </ul>
+  </li>
+  <li>Folgen der CVI: Ödem, Juckreiz; später Ekzeme, Verhärtung, Braunverfärbung; unbehandelt Ulcus cruris venosum.</li>
+</ul>
+<div class="tabelle"><table>
+  <caption>Widmer-Klassifikation der CVI (S. 16)</caption>
+  <thead><tr><th>Grad</th><th>Klinik</th></tr></thead>
+  <tbody>
+    <tr><td>I</td><td>Corona phlebectatica (Fußrand), Phlebödem</td></tr>
+    <tr><td>II</td><td>Ödem, Dermatoliposklerose, Atrophie blanche, Purpura jaune d’ocre, Stauungsekzem</td></tr>
+    <tr><td>IIIa</td><td>abgeheiltes Ulcus (Ulcusnarbe)</td></tr>
+    <tr><td>IIIb</td><td>florides Ulcus</td></tr>
+  </tbody>
+</table></div>
+<ul>
+  <li>Phlebödem: Auf Daumendruck bleibt eine Delle (Pitting edema); meist unsymmetrisch, Haut im Sinne einer CVI verändert.</li>
+</ul>
+<p class="hand">Nur handschriftlich als „Prüfungsfrage“ vermerkt, nicht im Drucktext: Hach-Stadien der Varikose – 1: nur Mündungsklappe betroffen · 2: bis Mitte Oberschenkel · 3: bis unterhalb des Knies · 4: bis zum Sprunggelenk.</p>
+
+<h3>6. Lymphödem <span class="stern" title="im Heft als prüfungsrelevant markiert">★</span> <span class="seite">S. 17–26</span></h3>
+<ul>
+  <li><b>Definition</b> (Wilting 2017): chronisch entzündliche Erkrankung des Interstitiums infolge primärer oder sekundärer Schädigung des Lymphdrainagesystems. Eiweißreich, verhärtet früh.</li>
+  <li><b>Primär:</b> genetische Fehlanlage (z. B. Aplasie, Hypoplasie, Lymphknotenfibrose); meist einseitig, meist erste Lebenshälfte, spätestens bis zum 5. Lebensjahrzehnt; beginnt distal, breitet sich nach oben aus.</li>
+  <li><b>Sekundär:</b> z. B. Operation, Lymphknotenentfernung, Bestrahlung, maligne Prozesse, Trauma, Adipositas, fortgeschrittene CVI; beginnt meist proximal.</li>
+  <li>Kompensation (sekundär): Nachbar-Lymphgefäße, Kollateralen, prälymphatische Kanäle, lympho-lymphatische und lympho-venöse Anastomosen, Makrophagen.</li>
+  <li>Häufigkeit: ca. 120.000 Betroffene in Deutschland, ⅓ primär, ⅔ sekundär; in Industrieländern meist Tumor oder Krebs-OP als Ursache.</li>
+</ul>
+<p class="warnung">Jedes Lymphödem ist per se krebsverdächtig (mögliche Lymphangiosis carcinomatosa).</p>
+<div class="tabelle"><table>
+  <caption>Stadien des Lymphödems (S. 20)</caption>
+  <thead><tr><th>Stadium</th><th>Klinik</th></tr></thead>
+  <tbody>
+    <tr><td>0</td><td>latent, subklinisch, kein sichtbares Ödem</td></tr>
+    <tr><td>I</td><td>weich, spontan reversibel, Hochlagern reduziert die Schwellung</td></tr>
+    <tr><td>II</td><td>verhärtet, nicht spontan reversibel, Hochlagern hilft nicht</td></tr>
+    <tr><td>III</td><td>deformierend hart („kautschukartig“), extreme Formveränderung (Elephantiasis), Hautveränderungen</td></tr>
+  </tbody>
+</table></div>
+<ul>
+  <li><b>Stemmer-Zeichen:</b> Hautfalte über dem 2./3. Zehen- bzw. Fingergrundgelenk anheben – nicht abhebbar = positiv. Nie falsch positiv (positiv beweist Lymphostase), kann falsch negativ sein (z. B. proximaler Beginn).</li>
+  <li>Weitere Merkmale: asymmetrisch, säulenförmige Deformität, Zehen/Finger beteiligt, unauffällige Hautfarbe, benigne Lymphödeme sind schmerzlos.</li>
+  <li>Komplikationen: lokale Infekte (Erysipel, Mykose); Hautveränderungen (Lymphzysten, Fisteln, Papillomatose, Ulcera, Ekzeme); Fibrose; Entartung: Angiosarkom, Stewart-Treves-Syndrom. Merksatz: „Lymphostase = Immunostase“.</li>
+  <li><b>Therapie:</b> Komplexe Physikalische Entstauungstherapie (KPE), 2 Phasen (Entstauung, dann Erhaltung) mit 5 Komponenten: Hautpflege · manuelle Lymphdrainage · Kompression · entstauende Bewegungstherapie · Schulung zur Selbsttherapie. Oft lebenslang.</li>
+</ul>
+
+<h3>7. Lipödem <span class="stern" title="im Heft als prüfungsrelevant markiert">★</span> <span class="seite">S. 26–32</span></h3>
+<ul>
+  <li>Fettverteilungsstörung, fast ausschließlich bei Frauen; Beginn in hormonellen Umbruchphasen (Pubertät, Schwangerschaft, Menopause).</li>
+  <li>Merkmale (S. 30): symmetrisch; Hände und Füße frei, Kalibersprung; Druckschmerz, Hämatomneigung; Ödeme nehmen im Tagesverlauf zu; Stemmer negativ.</li>
+  <li>Ursachen: weitgehend unbekannt; genetische Komponente in bis zu 60 % (DGP 2015). <span class="hand-inline">Die handschriftliche Notiz „90 %“ widerspricht dem Drucktext.</span></li>
+  <li>Häufigkeit: Schätzungen 8–18 %, keine gesicherten Studiendaten.</li>
+  <li>Übergewicht ist nicht die Ursache, verschlechtert aber den Verlauf.</li>
+  <li>Stadien: 1 glatte Haut · 2 wellige Haut mit Knoten · 3 Wammenbildung, häufig X-Beinstellung.</li>
+  <li>Typen: Beine: Oberschenkel-, Unterschenkel-, Ganzbeintyp · Arme: Oberarm-, Unterarm-, Ganzarmtyp.</li>
+  <li>Komplikationen: dermatologisch (Mazeration, Infektionen), lymphatisch (Erysipel, Lipolymphödem), orthopädisch (Gangbild-, Achsenfehlstellungen).</li>
+  <li><b>Therapie:</b> rein symptomatisch; Sport/Diät helfen nicht gegen die typischen Fettpolster. Kompression, MLD, IPK/AIK, Bewegung, Liposuktion (einzige Maßnahme, die das krankhaft vermehrte Fettgewebe reduziert).</li>
+</ul>
+<div class="tabelle"><table>
+  <caption>Abgrenzung (S. 30) · + bis +++ vorhanden · (+) möglich · Ø nicht vorhanden</caption>
+  <thead><tr><th>Merkmal</th><th>Lipödem</th><th>Lipohypertrophie</th><th>Adipositas</th><th>Lymphödem</th></tr></thead>
+  <tbody>
+    <tr><td>Fettvermehrung</td><td>+++</td><td>+++</td><td>+++</td><td>(+)</td></tr>
+    <tr><td>Disproportion</td><td>+++</td><td>+++</td><td>(+)</td><td>+</td></tr>
+    <tr><td>Ödem</td><td>+++</td><td>Ø</td><td>(+)</td><td>+++</td></tr>
+    <tr><td>Druckschmerz</td><td>+++</td><td>Ø</td><td>Ø</td><td>Ø</td></tr>
+    <tr><td>Hämatomneigung</td><td>+++</td><td>(+)</td><td>Ø</td><td>Ø</td></tr>
+  </tbody>
+</table></div>
+`
+});
+
+</script>
+<script>/* themen/haut.js */
+/*
+ * Thema: Erkrankungen der Haut
+ * Quelle: murimed-Kursheft Wundexperte Modul I (Seitenangaben beziehen sich auf das Heft).
+ * Inhalte übernommen aus "Zusammenfassung_Hauterkrankungen.pdf" und
+ * "Lernkarten_Hauterkrankungen.pdf".
+ *
+ * Quiz-Format: bei "o" (Optionen) steht die RICHTIGE Antwort immer an erster
+ * Stelle; die App mischt die Reihenfolge beim Anzeigen.
+ * "h: true" = Inhalt stammt (teilweise) nur aus handschriftlichen Notizen im Heft.
+ */
+Lernapp.thema({
+  id: "haut",
+  titel: "Erkrankungen der Haut",
+  kurz: "Haut",
+  quelle: "murimed-Kursheft Wundexperte Modul I",
+  hinweis:
+    "Quelle ist ausschließlich das Kursheft; Seitenzahlen in Klammern. Die im Heft zitierten Primärquellen wurden nicht separat geprüft.",
+
+  karten: [
+    { k: "Aufbau", f: "Wie groß und schwer ist die Haut und aus welchen drei Schichten besteht sie?",
+      a: "1,5–2 m², 7–10 kg – größtes Organ.\nEpidermis (Oberhaut), Dermis/Corium (Lederhaut), Subcutis/Hypodermis (Unterhaut).\nDazu Adnexorgane: Haare, Nägel, Drüsen.", s: "S. 3" },
+    { k: "Aufbau", f: "Nenne die Schichten der Epidermis von außen nach innen – deutsch und lateinisch.",
+      a: "Hornschicht – Stratum corneum\nGlanzschicht – Stratum lucidum\nKörnerzellschicht – Stratum granulosum\nStachelzellschicht – Stratum spinosum\nBasalzellschicht – Stratum basale", s: "S. 4–5" },
+    { k: "Aufbau", f: "Wo kommt das Stratum lucidum vor?",
+      a: "Nur an Handflächen und Fußsohlen. 1–2 Lagen kernloser Keratinozyten.", s: "S. 4" },
+    { k: "Aufbau", f: "Was sind Langerhans-Zellen und wo liegen sie?",
+      a: "Aus dem Knochenmark stammende Immunzellen in der Stachelzellschicht; ca. 4,5 % der Epidermiszellen, bis 4 Monate Lebensdauer; fangen Pathogene und Antigene ab („Wachposten des Immunsystems“).", s: "S. 4" },
+    { k: "Aufbau", f: "Welche Aufgabe hat die Basalzellschicht?",
+      a: "Keimzellen teilen sich alle 200–400 h → Regeneration der Epidermis; Wundverschluss geht von hier aus. Enthält Merkelzellen (mechanische Reize).", s: "S. 5" },
+    { k: "Aufbau", f: "Wie lange dauert die Erneuerung der Epidermis?",
+      a: "27–30 Tage; bei Menschen ab 65 Jahren 5–7 Wochen.\nHandschriftlich: 28 Tage jung, 45–49 Tage alt.", s: "S. 4", h: true },
+    { k: "Aufbau", f: "Aus welchen Schichten besteht die Dermis und was enthält sie?",
+      a: "Stratum papillare (Zapfenschicht) und Stratum reticulare (Geflechtschicht).\nCa. 70 % Kollagenfasern; Retikulin- und Elastanfasern, Haare, Duft-, Schweiß-, Talgdrüsen, Nervenzellen, Nägel.", s: "S. 6" },
+    { k: "Aufbau", f: "Welche Schicht sorgt für Elastizität und Stabilität der Haut?",
+      a: "Das Stratum reticulare (Geflechtschicht) durch verflochtene Kollagenfasern; die Matrix enthält viel Hyaluron.", s: "S. 6" },
+    { k: "Aufbau", f: "Was ist der Hautturgor und wie wird er getestet?",
+      a: "Spannungszustand der Haut (abhängig von Flüssigkeitsgehalt).\nTest: Hautfalte zwischen Daumen und Zeigefinger – bleibt sie stehen, ist der Turgor vermindert → mögliche Exsikkose.", s: "S. 7" },
+    { k: "Aufbau", f: "Funktionen der Subcutis?",
+      a: "Verschiebbarkeit der Haut, Fettspeicher, Druckpolster, Wärmeisolation. Keine klare Grenze zur Dermis.", s: "S. 7" },
+    { k: "Aufbau", f: "Leistenhaut vs. Felderhaut?",
+      a: "Leistenhaut: unbehaart, Hohlhand/Fußsohle, Schweißdrüsen, keine Talgdrüsen, Fingerabdruck.\nFelderhaut: ca. 96 % der Haut, behaart, Schweiß- und Talgdrüsen, rhombische Felder.", s: "S. 8–9" },
+
+    { k: "Funktion", f: "Nenne die Funktionen der Haut.",
+      a: "Schutz (mechanisch, chemisch, thermisch, Erreger), Lichtabsorption, Temperaturregulation, Wasserhaushalt, Sinneswahrnehmung, Kommunikation, Pheromone, Wundheilung.", s: "S. 9" },
+    { k: "Funktion", f: "Was ist der Säureschutzmantel?",
+      a: "Hydrolipidfilm auf der Hornschicht, pH ca. 5,5, aus Schweiß, Fettsäuren, Cholesterin und Talg; schützt vor Bakterien und Erregern.", s: "S. 9" },
+    { k: "Funktion", f: "Wie verändert sich die Haut im Alter?",
+      a: "Atrophie (dünneres Fettgewebe und Papillarschicht), weniger Turgor, Wasserspeicher und Kollagen, mehr Pigmentierung, weniger Schweiß/Talg → trocken.\nFolge: höheres Verletzungsrisiko, langsamere Wundheilung.", s: "S. 10" },
+
+    { k: "Pflege", f: "Welche Reinigungsmittel eignen sich für gesunde Haut?",
+      a: "Hautneutrale, leicht saure, zusatzstofffreie Syndets mit Feuchthaltefaktoren (z. B. Urea). Alkalische Seifen greifen den Säureschutzmantel an.", s: "S. 12" },
+    { k: "Pflege", f: "Öl-in-Wasser vs. Wasser-in-Öl?",
+      a: "O/W: Öltröpfchen in Wasser, ca. 60 % Wasser, Feuchtigkeit verdunstet.\nW/O: Wassertröpfchen in Öl, bildet Fettfilm, luftdurchlässig → für trockene Haut und Altershaut.", s: "S. 12, 14" },
+    { k: "Pflege", f: "Faustregel für Hautpflegeprodukte?",
+      a: "Feucht auf feucht, fett auf trocken.\nFeuchte Haut → hydrophile Produkte (Lotionen); trockene Haut → hydrophobe Salben.", s: "S. 15" },
+    { k: "Pflege", f: "Welche Produkte eignen sich nicht zur täglichen Pflege – und warum keine Pasten am Wundrand?",
+      a: "Salben, Puder, Pasten nur therapeutisch.\nPasten decken ab → die Haut kann nicht mehr kontrolliert werden.", s: "S. 14" },
+    { k: "Pflege", f: "Wie schützt man den Wundrand vor Mazeration?",
+      a: "Transparente Hautschutzfilme (Applikator, Spray, Tuch, Creme); ggf. Transparentfolie, dünner Hydrokolloidverband, Hydrofaser, Stomapaste/-modellierstreifen.", s: "S. 15" },
+    { k: "Pflege", f: "Welche Maßnahmen sind ungeeignet oder schädlich?",
+      a: "Salben/Pasten in offene Wunden reiben; Zusatz-/Parfümstoffe; Alkohol (Franzbranntwein); abdichtende Pasten; Fette und Öle (Melkfett, Babyöl); Puder; Massieren gefährdeter Stellen.", s: "S. 16" },
+    { k: "Pflege", f: "Was ist bei Pergament-, Kortison- oder Altershaut zu beachten?",
+      a: "Silikonbeschichtete Wundauflagen oder unbeschichtete Hydrogelkompressen – keine Wundauflagen mit Kleberand.", s: "S. 15" },
+
+    { k: "Schleimhaut", f: "Wodurch unterscheidet sich Schleimhaut von Haut und wo kommt sie vor?",
+      a: "Keine Hornschicht, keine Haare; Schleim aus Becherzellen. Mind. zwei Schichten (Epithel, Lamina propria).\nAtemwege, Bindehaut, Mittelohr, Geschlechtsorgane, Harnwege, Verdauungskanal.", s: "S. 16" },
+    { k: "Schleimhaut", f: "Wie ist die Gefäßversorgung der Haut aufgebaut?",
+      a: "Drei arterielle und venöse Gefäßgebiete übereinander; Kapillarschlingen der Papillen versorgen die gefäßlose Epidermis; viele arteriovenöse Anastomosen (Blutdruck, Wärmeregulation).", s: "S. 17" },
+
+    { k: "Infektion", f: "Was ist ein Erysipel? (Erreger, Klinik, Komplikationen)",
+      a: "Akute bakterielle Infektion der Dermis durch β-hämolysierende Streptokokken Gruppe A; häufigste Komplikation des chronischen Lymphödems.\nKlar begrenzte, schmerzhafte, überwärmte Rötung, Fieber.\nKomplikationen: Sepsis, Lymphödem.", s: "S. 20" },
+    { k: "Infektion", f: "Erysipel vs. Phlegmone?",
+      a: "Phlegmone ist schwerer: einschmelzende Entzündung von Dermis und Subcutis, Strepto-/Staphylokokken, diffus abszedierend, Fisteln, Nekrosen, Sepsis. Ein Erysipel kann in eine Phlegmone übergehen.", s: "S. 20" },
+    { k: "Infektion", f: "Erreger und klinische Merkmale des Gasbrands?",
+      a: "Clostridien (anaerob), Inkubation 5–48 h.\nÖdem, plötzlicher Wundschmerz, gelbbraun bis blauschwarz, Knistern (Crepitatio), wenig Eiter, kaum Fieber, schneller Puls, fadsüßlicher Geruch.", s: "S. 20–21" },
+    { k: "Infektion", f: "Was ist ein Panaritium?",
+      a: "Eitrige Entzündung der Finger (selten Zehen) nach Bagatellverletzung; gerötet, pulsierend, druckschmerzhaft. Frühzeitige operative Entlastung.", s: "S. 21" },
+    { k: "Infektion", f: "Wie entsteht Herpes zoster und was ist eine Folge?",
+      a: "Reaktivierung des Varizella-zoster-Virus aus Nervenzellen; brennender Schmerz, halbseitige bandartige Bläschen im Dermatom.\nFolge: postherpetische Neuralgie.", s: "S. 22" },
+    { k: "Infektion", f: "Was ist eine Mykose und was begünstigt Onychomykose?",
+      a: "Pilzinfektion (Dermatophyten, Schimmel-, Hefepilze) von Haut, Schleimhaut, Nägeln oder systemisch.\nOnychomykose: vorgeschädigte Nägel, enge Schuhe, Durchblutungsstörungen.", s: "S. 22" },
+    { k: "Infektion", f: "Kennzeichen der Psoriasis?",
+      a: "Chronisch-entzündlich, polygen vererbt; symmetrische, scharf begrenzte rote Papeln und Plaques mit silbrig-weißer Schuppung; Beginn in 50 % vor dem 25. Lebensjahr.", s: "S. 23" },
+
+    { k: "Tumoren", f: "Neoplasie vs. Tumor? (Übung II)",
+      a: "Neoplasie: autonome Gewebeneubildung (benigne, semimaligne, maligne).\nTumor: jede örtliche Zunahme des Gewebevolumens (Schwellung) – weiter gefasst.", s: "S. 33" },
+    { k: "Tumoren", f: "Was ist eine aktinische Keratose?",
+      a: "In-situ-Karzinom, Vorstufe des Plattenepithelkarzinoms; lichtexponierte Stellen, hellhäutige Menschen, meist ab 60; raue, scharf begrenzte, rötliche Herde, später Krusten; meist kein Jucken.", s: "S. 24–25" },
+    { k: "Tumoren", f: "Kennzeichen des Basalzellkarzinoms?",
+      a: "Häufigster maligner Tumor Mitteleuropas; lokal zerstörend, metastasiert äußerst selten. Perlschnurartiger Saum mit Teleangiektasien.\nTherapie: vollständige operative Entfernung.", s: "S. 25–26" },
+    { k: "Tumoren", f: "Melanom: Bedeutung und Typen?",
+      a: "Höchste Metastasierungsrate, > 90 % der Hauttumor-Todesfälle.\nSuperfiziell spreitend ca. 60 %, nodulär ca. 20 %, Lentigo-maligna ca. 10 %, akrolentiginös ca. 5 %.", s: "S. 26" },
+    { k: "Tumoren", f: "Erkläre die ABCD-Regel.",
+      a: "A – Asymmetrie\nB – Begrenzung unscharf\nC – Color, Mehrfarbigkeit\nD – Dynamik, Veränderung\nHandschriftlich: E – Erhabenheit.", s: "S. 27", h: true },
+    { k: "Tumoren", f: "Risikofaktoren des Plattenepithelkarzinoms?",
+      a: "Hohe UV-Dosis, chronische oder infizierte Wunden, Hauterkrankungen, Verbrennungsnarben, strahlengeschädigte Haut, Dauerreizung, Immunsuppression.", s: "S. 27" },
+
+    { k: "Innere", f: "Gicht: Ursache, typische Lokalisation, Therapie?",
+      a: "Purinstoffwechselstörung mit Harnsäureablagerung; akuter Anfall nachts, meist Großzehengrundgelenk.\nRuhigstellung, kalte Umschläge, NSAR, Glukokortikoide, Colchicin, ggf. Canakinumab.", s: "S. 28" },
+    { k: "Innere", f: "Was kennzeichnet das Pyoderma gangraenosum?",
+      a: "Neutrophile Dermatose, oft mit CED oder Neoplasien; schmerzhafte Pustel nach Bagatelltrauma → rasch nekrotisches Geschwür; Rand unterminiert, livide, scharf begrenzt.", s: "S. 29" },
+
+    { k: "MARSI", f: "Was bedeutet MARSI und welche Schäden gehören dazu?",
+      a: "Medical Adhesive-Related Skin Injuries.\nEpidermales Stripping, Spannungsblasen, Skin Tears, toxisches und allergisches Kontaktekzem, Mazeration, Follikulitis.", s: "S. 30–31" },
+    { k: "MARSI", f: "Wie vermeidet man Spannungsblasen?",
+      a: "Dehnbare Produkte nicht unter Spannung anbringen; an Gelenken in Beugung anlegen; faltenfrei applizieren.", s: "S. 30" },
+    { k: "MARSI", f: "Toxisches vs. allergisches Kontaktekzem durch Verbandmittel?",
+      a: "Toxisch: klar begrenzt, deckungsgleich mit dem Verband.\nAllergisch: gerötet, juckend, nässend, Bläschen, über die Auflagefläche hinaus.", s: "S. 31" },
+    { k: "MARSI", f: "Skin-Tear-Kategorien?",
+      a: "I – kein Gewebeverlust, Lappen repositionierbar\nII – teilweiser Verlust des Hautlappens\nIII – vollständiger Hautlappenverlust", s: "S. 31" },
+    { k: "MARSI", f: "Versorgung eines Skin Tears in 4 Schritten?",
+      a: "1. Blutung mit sterilen Kompressen stillen\n2. sanft mit NaCl 0,9 % oder Wundspüllösung reinigen\n3. Hautlappen repositionieren (sterile Pinzette)\n4. mit silikonbeschichteten, nicht klebenden Verbandmitteln fixieren", s: "S. 31" },
+    { k: "MARSI", f: "Wie beugt man Follikulitis vor?",
+      a: "Haare mit elektrischer Haarschneidemaschine kürzen statt rasieren; Verbandmittel immer in Haarwuchsrichtung abziehen.", s: "S. 31" }
+  ],
+
+  quiz: [
+    { f: "Welche Reihenfolge der Epidermis-Schichten ist richtig (von außen nach innen)?",
+      o: ["Stratum corneum → lucidum → granulosum → spinosum → basale", "Stratum basale → spinosum → granulosum → lucidum → corneum", "Stratum corneum → granulosum → lucidum → basale → spinosum", "Stratum lucidum → corneum → spinosum → granulosum → basale"],
+      e: "Hornschicht – Glanzschicht – Körnerzellschicht – Stachelzellschicht – Basalzellschicht.", s: "S. 4–5" },
+    { f: "Wo kommt das Stratum lucidum vor?",
+      o: ["Nur an Handflächen und Fußsohlen", "An der gesamten Felderhaut", "Nur an der Schleimhaut", "Nur an behaarter Haut"],
+      e: "Glanzschicht: 1–2 Lagen kernloser Keratinozyten; nur an Handflächen und Fußsohlen.", s: "S. 4" },
+    { f: "In welcher Schicht liegen die Langerhans-Zellen?",
+      o: ["Stratum spinosum (Stachelzellschicht)", "Stratum corneum (Hornschicht)", "Stratum reticulare der Dermis", "Subcutis"],
+      e: "Die Stachelzellschicht enthält die Langerhans-Zellen („Wachposten des Immunsystems“).", s: "S. 4–5" },
+    { f: "Wie lange dauert die Erneuerung der Epidermis laut Drucktext bei jüngeren Menschen?",
+      o: ["27–30 Tage", "5–7 Tage", "200–400 Tage", "3–4 Monate"],
+      e: "27–30 Tage; ab 65 Jahren 5–7 Wochen. (Handschriftlich: 28 Tage jung, 45–49 Tage alt.)", s: "S. 4" },
+    { f: "Welche Schicht ist für die Regeneration der Epidermis zuständig?",
+      o: ["Stratum basale – Keimzellen teilen sich alle 200–400 h", "Stratum corneum – tägliche Abschilferung", "Stratum lucidum – kernlose Keratinozyten", "Subcutis – Fettgewebe"],
+      e: "Basalzellschicht: Keimzellen, Teilung alle 200–400 h; Wundverschluss geht von hier aus.", s: "S. 5" },
+    { f: "Wie hoch ist der Kollagenfaser-Anteil der Dermis?",
+      o: ["Ca. 70 %", "Ca. 4,5 %", "Ca. 96 %", "Ca. 30 %"],
+      e: "Dermis: Bindegewebe mit ca. 70 % Kollagenfasern.", s: "S. 6" },
+    { f: "Was zeigt eine stehenbleibende Hautfalte beim Turgor-Test an?",
+      o: ["Verminderten Turgor – mögliches Zeichen einer Exsikkose", "Ein Lymphödem (Stemmer positiv)", "Normalen, altersgerechten Turgor", "Eine Überwässerung"],
+      e: "Hautfalte zwischen Daumen und Zeigefinger; bleibt sie stehen → verminderter Turgor, mögliches Zeichen einer Exsikkose.", s: "S. 7" },
+    { f: "Welchen pH-Wert hat der Säureschutzmantel der Haut?",
+      o: ["Ca. 5,5", "Ca. 7,4", "Ca. 8,5", "Ca. 3,0"],
+      e: "Säureschutzmantel (Hydrolipidfilm): pH ca. 5,5, aus Schweiß, Fettsäuren, Cholesterin und Talg.", s: "S. 9" },
+    { f: "Welche Faustregel gilt für Hautpflegeprodukte?",
+      o: ["Feucht auf feucht, fett auf trocken", "Fett auf feucht, feucht auf trocken", "Immer Salbe, unabhängig vom Hautzustand", "Puder auf trockene Haut"],
+      e: "Feuchte Haut → hydrophile Produkte (Lotionen); trockene Haut → hydrophobe Salben.", s: "S. 15" },
+    { f: "Welche Creme eignet sich für trockene Haut und Altershaut?",
+      o: ["Wasser-in-Öl (W/O)", "Öl-in-Wasser (O/W)", "Gel", "Puder"],
+      e: "W/O: Wassertröpfchen in Öl, bildet Fettfilm, luftdurchlässig → für trockene Haut und Altershaut.", s: "S. 12, 14" },
+    { f: "Warum sind Pasten als Wundrandschutz ungeeignet?",
+      o: ["Sie decken ab – die Haut kann nicht mehr kontrolliert werden", "Sie sind zu flüssig und laufen in die Wunde", "Sie enthalten immer Alkohol", "Sie kühlen die Wunde zu stark"],
+      e: "Paste: abdeckend, aufsaugend, austrocknend; nicht als Wundrandschutz – Hautkontrolle unmöglich.", s: "S. 14" },
+    { f: "Was ist bei Pergament-, Kortison- oder Altershaut zu beachten?",
+      o: ["Keine Wundauflagen mit Kleberand", "Wundauflagen immer zusätzlich mit Pflaster fixieren", "Vor dem Verbandwechsel mit Franzbranntwein einreiben", "Nur Zinkpaste verwenden"],
+      e: "Silikonbeschichtete Wundauflagen oder unbeschichtete Hydrogelkompressen – keine Wundauflagen mit Kleberand.", s: "S. 15" },
+    { f: "Wie oft müssen Analtampons bei Stuhlinkontinenz mindestens gewechselt werden?",
+      o: ["Mindestens 2× täglich (Ileusgefahr)", "Einmal wöchentlich", "Alle 3 Tage", "Nur bei sichtbarer Verschmutzung"],
+      e: "Analtampons oder Stuhldrainage bei Stuhlinkontinenz; Tampons mind. 2× täglich wechseln – Ileusgefahr.", s: "S. 15" },
+    { f: "Welcher Erreger verursacht typischerweise ein Erysipel?",
+      o: ["β-hämolysierende Streptokokken der Gruppe A", "Clostridien", "Varizella-zoster-Virus", "Dermatophyten"],
+      e: "Erysipel: akute bakterielle Infektion der Dermis, meist durch β-hämolysierende Streptokokken der Gruppe A.", s: "S. 20" },
+    { f: "Was ist die häufigste Komplikation des chronischen Lymphödems?",
+      o: ["Erysipel", "Melanom", "Gicht", "Psoriasis"],
+      e: "Das Erysipel ist die häufigste Komplikation des chronischen Lymphödems.", s: "S. 20" },
+    { f: "Welche Merkmale passen zum Gasbrand?",
+      o: ["Knistern (Crepitatio), wenig Eiter, kaum Fieber, schneller Puls", "Viel Eiter, hohes Fieber, langsamer Puls", "Halbseitige bandartige Bläschen", "Silbrig-weiße Schuppung"],
+      e: "Gasbrand (Clostridien, anaerob): Ödem, plötzlich verstärkter Wundschmerz, Verfärbung gelbbraun bis blauschwarz, Knistern, wenig Eiter, kaum Fieber, schneller Puls, fadsüßlicher Geruch.", s: "S. 20–21" },
+    { f: "Was ist eine typische Folge des Herpes zoster?",
+      o: ["Postherpetische Neuralgie", "Atrophie blanche", "Elephantiasis", "Gichttophi"],
+      e: "Reaktivierung des Varizella-zoster-Virus; Folge: postherpetische Neuralgie über Monate bis Jahre.", s: "S. 22" },
+    { f: "Welcher ist der häufigste maligne Tumor in Mitteleuropa?",
+      o: ["Basalzellkarzinom", "Melanom", "Plattenepithelkarzinom", "Angiosarkom"],
+      e: "Basalzellkarzinom: häufigster maligner Tumor in Mitteleuropa; lokal infiltrierend, metastasiert äußerst selten.", s: "S. 25–26" },
+    { f: "Welcher Hauttumor hat die höchste Metastasierungsrate?",
+      o: ["Melanom", "Basalzellkarzinom", "Aktinische Keratose", "Psoriasis-Plaque"],
+      e: "Melanom: höchste Metastasierungsrate, > 90 % der Hauttumor-Todesfälle.", s: "S. 26" },
+    { f: "Welcher Melanom-Typ ist am häufigsten?",
+      o: ["Superfiziell spreitend (ca. 60 %)", "Nodulär (ca. 20 %)", "Lentigo-maligna (ca. 10 %)", "Akrolentiginös (ca. 5 %)"],
+      e: "Superfiziell spreitend ca. 60 %, nodulär ca. 20 %, Lentigo-maligna ca. 10 %, akrolentiginös ca. 5 %.", s: "S. 26" },
+    { f: "Wofür steht das „D“ in der ABCD-Regel?",
+      o: ["Dynamik (Veränderung im Verlauf)", "Durchmesser", "Dicke", "Druckschmerz"],
+      e: "Asymmetrie · Begrenzung unscharf · Color (Mehrfarbigkeit) · Dynamik.", s: "S. 27" },
+    { f: "Die aktinische Keratose ist eine Vorstufe welches Tumors?",
+      o: ["Plattenepithelkarzinom", "Basalzellkarzinom", "Melanom", "Angiosarkom"],
+      e: "Aktinische Keratose: in-situ-Karzinom, Vorstufe des Plattenepithelkarzinoms.", s: "S. 24–25" },
+    { f: "Wo tritt ein akuter Gichtanfall am häufigsten auf?",
+      o: ["Im Großzehengrundgelenk", "Im Kniegelenk", "Im Handgelenk", "In der Wirbelsäule"],
+      e: "Akuter Anfall meist nachts, am häufigsten Großzehengrundgelenk.", s: "S. 28" },
+    { f: "Wie sieht der Ulcusrand beim Pyoderma gangraenosum aus?",
+      o: ["Unterminiert, livide, scharf begrenzt", "Perlschnurartig mit Teleangiektasien", "Silbrig-weiß schuppend", "Wie ausgestanzt mit Kalkablagerungen"],
+      e: "Pyoderma gangraenosum: schmerzhafte Pustel → rasch nekrotisches Geschwür; Ulcusrand unterminiert, livide, scharf begrenzt.", s: "S. 29" },
+    { f: "Woran erkennt man ein toxisches Kontaktekzem durch Verbandmittel?",
+      o: ["Klar begrenzt, deckungsgleich mit dem Verband", "Juckend, nässend, über die Auflagefläche hinaus", "Bandförmig im Dermatom", "Nur an Handflächen und Fußsohlen"],
+      e: "Toxisch: klar begrenzt, deckungsgleich mit dem Verband. Allergisch: gerötet, juckend, nässend, Bläschen, über die Auflagefläche hinaus.", s: "S. 31" },
+    { f: "Ein Skin Tear mit teilweisem Verlust des Hautlappens entspricht …",
+      o: ["Kategorie II", "Kategorie I", "Kategorie III", "Kategorie IV"],
+      e: "I kein Gewebeverlust · II teilweiser Verlust des Hautlappens · III vollständiger Hautlappenverlust.", s: "S. 31" },
+    { f: "Wie beugt man einer Follikulitis durch Verbandmittel vor?",
+      o: ["Haare mit elektrischer Schneidemaschine kürzen; Verband in Haarwuchsrichtung abziehen", "Haare vor jedem Verbandwechsel nass rasieren", "Verband gegen die Haarwuchsrichtung schnell abziehen", "Haut vorher mit Babyöl einreiben"],
+      e: "Follikulitis durch Rasur oder Haarausriss → Haare mit elektrischer Schneidemaschine kürzen; Verband in Haarwuchsrichtung abziehen.", s: "S. 31" },
+    { f: "Was ist bei der Versorgung eines Skin Tears der erste Schritt?",
+      o: ["Blutung mit sterilen Kompressen stillen", "Hautlappen mit Pflasterstreifen fixieren", "Hautlappen abtragen", "Wunde mit Alkohol desinfizieren"],
+      e: "1. Blutung stillen · 2. sanft mit NaCl 0,9 % oder Wundspüllösung reinigen · 3. Hautlappen repositionieren · 4. mit nicht klebenden, silikonbeschichteten Verbandmitteln fixieren.", s: "S. 30–31" },
+    { f: "Wie entstehen die Narben der Livedo-Vaskulopathie?",
+      o: ["Als Atrophie blanche", "Als Gichttophi", "Als perlschnurartiger Saum", "Als Papillomatose"],
+      e: "Livedo-Vaskulopathie: schmerzhafte thromboembolische Verschlusskrankheit der Hautgefäße mit Ulzerationen an den Unterschenkeln, Narben als Atrophie blanche.", s: "S. 28–30" }
+  ],
+
+  zusammenfassung: `
+<h3>1. Haut – Aufbau <span class="stern" title="im Heft als prüfungsrelevant markiert">★</span> <span class="seite">S. 3–9</span></h3>
+<ul>
+  <li>Größtes Organ: 1,5–2 m², 7–10 kg. Drei Schichten: Epidermis (Oberhaut), Dermis/Corium (Lederhaut), Subcutis/Hypodermis (Unterhaut). Dazu Adnexorgane: Haare, Nägel, Schweiß-, Duft- und Talgdrüsen.</li>
+  <li>Epidermis hat keine Blutgefäße (Versorgung per Diffusion aus der oberen Dermis). Sie erneuert sich in 27–30 Tagen, ab 65 Jahren dauert es 5–7 Wochen (S. 4).</li>
+</ul>
+<div class="tabelle"><table>
+  <caption>Schichten der Epidermis – von außen nach innen (S. 4–5)</caption>
+  <thead><tr><th>Schicht</th><th>Latein</th><th>Merkmale</th></tr></thead>
+  <tbody>
+    <tr><td>Hornschicht</td><td>Stratum corneum</td><td>bis 20 Lagen abgestorbener Korneozyten, dachziegelartig; Kittmasse schützt vor Wasserverlust; tägliche Abschilferung</td></tr>
+    <tr><td>Glanzschicht</td><td>Stratum lucidum</td><td>1–2 Lagen kernloser Keratinozyten; nur an Handflächen und Fußsohlen</td></tr>
+    <tr><td>Körnerzellschicht</td><td>Stratum granulosum</td><td>Keratinozyten flachen ab und beginnen zu verhornen</td></tr>
+    <tr><td>Stachelzellschicht</td><td>Stratum spinosum</td><td>lebende Zellen, Desmosomen → mechanische Stabilität; enthält die Langerhans-Zellen</td></tr>
+    <tr><td>Basalzellschicht</td><td>Stratum basale</td><td>Keimzellen, Teilung alle 200–400 h; Merkelzellen (mechanische Reize); grenzt über die Basalmembran an die Dermis</td></tr>
+  </tbody>
+</table></div>
+<ul>
+  <li><b>Langerhans-Zellen:</b> aus dem Knochenmark, ca. 4,5 % der epidermalen Zellen, Lebensdauer bis 4 Monate; fangen mit beweglichen Dendriten Pathogene und Antigene ab – „Wachposten des Immunsystems“ (S. 4).</li>
+  <li><b>Dermis:</b> deutlich dicker als die Epidermis, Bindegewebe mit ca. 70 % Kollagenfasern. Zwei Schichten: Stratum papillare (Papillarschicht: Zapfen verankern die Oberhaut, Versorgung der Basalschicht, Transport von Immunzellen) und Stratum reticulare (Geflechtschicht: Kollagenfasern → Elastizität und Stabilität; Matrix mit viel Hyaluron). Enthält Retikulin- und Elastanfasern, Haare, Drüsen, Nervenzellen und Nägel (S. 6).</li>
+  <li>Extrazelluläre Matrix (Proteoglykan-Hyaluronat-Komplex) bindet viel Wasser → hauptverantwortlich für den Hautturgor (S. 7).</li>
+  <li><b>Hautturgor-Test:</b> Hautfalte zwischen Daumen und Zeigefinger; bleibt sie stehen → verminderter Turgor, mögliches Zeichen einer Exsikkose. Mit dem Alter nimmt der Turgor physiologisch ab (S. 7).</li>
+  <li><b>Subcutis:</b> ohne klare Grenze zur Dermis; lockeres Fettgewebe → Verschiebbarkeit, Fettspeicher, Druckpolster, Wärmeisolation (S. 7).</li>
+  <li><b>Leistenhaut:</b> unbehaart, Hohlhand und Fußsohle; Merkel-Zellen und Schweißdrüsen, keine Talgdrüsen; genetisch festgelegtes Muster (Fingerabdruck) (S. 8).</li>
+  <li><b>Felderhaut:</b> ca. 96 % der Körperoberfläche; behaart, mit Schweiß- und Talgdrüsen, rhombische Felder (S. 9).</li>
+</ul>
+<p class="hand">Handschriftlich (S. 3): Regeneration „28 Tage“ bei jungen, „45–49 Tage“ bei alten Menschen. Der Drucktext nennt 27–30 Tage bzw. 5–7 Wochen ab 65 Jahren.</p>
+
+<h3>2. Funktionen und Säureschutzmantel <span class="stern" title="im Heft als prüfungsrelevant markiert">★</span> <span class="seite">S. 9</span></h3>
+<ul>
+  <li>Funktionen: Schutz vor mechanischen, chemischen und thermischen Einflüssen; Schutz vor Krankheitserregern; Absorbierung von Sonnenlicht; Temperaturregulation; Regulation des Wasserhaushalts; Sinneswahrnehmung; Kommunikation (Erröten, Erblassen); Pheromone; Wundheilung.</li>
+  <li>Säureschutzmantel (Hydrolipidfilm): pH ca. 5,5, aus Schweiß, Fettsäuren, Cholesterin und Talg; Schutz vor Bakterien und Erregern.</li>
+  <li>Die Haut kann Substanzen resorbieren – bei Wundtherapeutika wie Jod oft unerwünscht.</li>
+</ul>
+
+<h3>3. Altershaut <span class="stern" title="im Heft als prüfungsrelevant markiert">★</span> <span class="seite">S. 10</span></h3>
+<ul>
+  <li>Haut atrophiert: Fettgewebe und Papillarschicht dünner → weniger Druck- und Zugfestigkeit, geringerer Turgor, weniger Wasserspeicherung, weniger Kollagen → Falten.</li>
+  <li>Mehr Pigmentierung (Altersflecken); weniger Schweiß- und Talgproduktion → Hydrolipidfilm geschwächt → trocken, schuppig.</li>
+  <li>Folge: erhöhtes Verletzungsrisiko und langsamere Wundheilung.</li>
+</ul>
+
+<h3>4. Hautschutz und -pflege <span class="seite">S. 10–16</span></h3>
+<ul>
+  <li>Hautschutz, -beobachtung und -pflege gehören zur Wundversorgung, nicht nur zur Prävention. Wundrand und -umgebung sind durch Exsudat und Ausscheidungen gefährdet.</li>
+  <li>Hautprobleme bei Grunderkrankungen (S. 11): Diabetes (trockene Haut, Eczéma craquelé, Pilzinfektionen bei ca. 80 %, Malum perforans, Rhagaden); CVI (Stauungsekzem, Ödeme, Dermatoliposklerose, Capillaritis alba, Hyperpigmentierung); pAVK (livide, kühle, dünne Haut, Rarefizierung der Hautanhangsgebilde, Nagelmykose); DFS (Hyperkeratosen); Wundexsudat (Mazeration, Erosion, toxisches Kontaktekzem); Alter.</li>
+  <li>Reinigung: hautneutrale bis leicht saure, zusatzstofffreie Syndets; alkalische Seifen und Zusatzstoffe greifen den Säureschutzmantel an (S. 12).</li>
+  <li>Pflege nach Hautzustand (S. 12): trockene Haut, Xerodermie und Altershaut → Wasser-in-Öl, Urea, Omega-Fettsäuren; fettige Haut → milde Syndets, wässrige Öl-in-Wasser-Produkte; empfindliche Haut → hypoallergen, ohne Farb-, Duft- und Konservierungsstoffe, keine Seifen.</li>
+</ul>
+<div class="tabelle"><table>
+  <caption>Hautpflegeprodukte ★ (S. 14)</caption>
+  <thead><tr><th>Produkt</th><th>Merkmale</th></tr></thead>
+  <tbody>
+    <tr><td>Creme – Öl-in-Wasser (O/W)</td><td>kleinste Öltröpfchen in Wasser, hoher Wasseranteil (ca. 60 %); Hautfeuchtigkeit kann verdampfen</td></tr>
+    <tr><td>Creme – Wasser-in-Öl (W/O)</td><td>kleinste Wassertröpfchen in Öl/Fett; Fettfilm auf der Haut, durch Wasseranteile luftdurchlässig</td></tr>
+    <tr><td>Lotion</td><td>flüssig, meist O/W; hoher Wassergehalt → oft Konservierungsmittel</td></tr>
+    <tr><td>Gel</td><td>fettfrei, durchsichtig, kühlend; kaum hautpflegender Effekt</td></tr>
+    <tr><td>Puder</td><td>Streupulver (z. B. Talk, Zinkoxid, Stärke)</td></tr>
+    <tr><td>Paste</td><td>abdeckend, aufsaugend, austrocknend (z. B. Mykosen); nicht als Wundrandschutz – Hautkontrolle unmöglich</td></tr>
+    <tr><td>Salbe</td><td>wasserfrei, haftet stark, verdunstet nicht</td></tr>
+  </tbody>
+</table></div>
+<p>Emulsion = Gemisch zweier nicht mischbarer Flüssigkeiten, innere Phase in äußerer verteilt. Salben, Puder und Pasten nur therapeutisch, nicht zur täglichen Pflege.</p>
+<p class="merke"><b>Faustregel (S. 15):</b> feucht auf feucht, fett auf trocken. Feuchte Haut → hydrophile Produkte (Lotionen); trockene Haut → hydrophobe Salben.</p>
+<ul>
+  <li><b>Empfohlen bei Wunden (S. 15):</b> Wundrand vor Mazeration schützen (transparente Hautschutzfilme, ggf. Transparentfolie, dünner Hydrokolloidverband, Hydrofaser, Stomapaste); Narbenpflege mit Dexpanthenol; Pflasterspray bei frisch genähten Wunden; Analtampons oder Stuhldrainage bei Stuhlinkontinenz (Tampons mind. 2× täglich wechseln – Ileusgefahr); silikon- oder Soft-Gel-beschichtete Auflagen ohne Klebefläche; bei Pergament-, Kortison- oder Altershaut keine Wundauflagen mit Kleberand; Sakralregion zusätzlich mit semipermeabler Folie fixieren.</li>
+  <li><b>Ungeeignet (S. 16):</b> Salben, Cremes, Zinkpasten in offene Wunden reiben; Produkte mit Zusatz- oder Parfümstoffen; Alkohollösungen (Franzbranntwein); abdichtende Pasten; Fette und Öle (Melkfett, Babyöl, Lebertranpaste); Puder; Massieren gefährdeter Hautstellen.</li>
+</ul>
+
+<h3>5. Schleimhaut und Gefäßversorgung <span class="stern" title="im Heft als prüfungsrelevant markiert">★</span> <span class="seite">S. 16–17</span></h3>
+<ul>
+  <li><b>Schleimhaut:</b> feucht, Schleim aus Becherzellen; keine Hornschicht, keine Haare. Vorkommen dort, wo Hohlorgane mit der Umwelt verbunden sind: Atemwege, Bindehaut, Mittelohr, Geschlechtsorgane, Harnwege, Verdauungskanal. Mindestens zwei Schichten: Epithel und Lamina propria. Schutz gegen Erreger.</li>
+  <li><b>Gefäßversorgung:</b> drei arterielle und venöse Gefäßgebiete übereinander (unter der Subcutis, an der Grenze Subcutis/Cutis, unter den Lederhautpapillen). Kapillarschlingen der Papillen versorgen die gefäßlose Epidermis. Viele arteriovenöse Anastomosen in der Dermis → Blutdruck, Organdurchblutung, Wärmeregulation.</li>
+</ul>
+
+<h3>6. Hauterkrankungen <span class="seite">S. 18–30</span></h3>
+<ul>
+  <li>Ca. 2.000–3.000 Dermatosen. Entstehung durch exogene Noxen, Einflüsse aus dem Gesamtorganismus oder Fehlanlagen der Haut selbst (S. 18).</li>
+  <li>Hautflora (S. 19): im Mittel 10<sup>6</sup> Bakterien/cm² (10<sup>2</sup> trocken bis 10<sup>8</sup> feucht); residente (Dauerbesiedlung) und transiente Flora (Anflugkeime).</li>
+</ul>
+<h4>Bakterielle Infektionen</h4>
+<ul>
+  <li><b>Erysipel</b> <span class="stern">★</span>: akute bakterielle Infektion der Dermis, meist durch β-hämolysierende Streptokokken der Gruppe A; häufigste Komplikation des chronischen Lymphödems. Klar begrenzte, schmerzhafte, sich schnell ausbreitende Rötung und Überwärmung, Krankheitsgefühl. Unbehandelt Lymphknotenschwellung und hohes Fieber; Komplikationen: Sepsis, Entstehung oder Verschlechterung eines Lymphödems (S. 20).</li>
+  <li><b>Phlegmone:</b> schwerer als Erysipel; einschmelzende Entzündung von Dermis und oft Subcutis, meist Strepto- und/oder Staphylokokken; diffus abszedierend, Fistelgänge, Nekrosen, Sepsis. Ein Erysipel kann in eine Phlegmone übergehen (S. 20).</li>
+  <li><b>Gasbrand:</b> durch Clostridien (anaerob), Inkubation 5–48 h; Ödem, plötzlich verstärkter Wundschmerz, Verfärbung gelbbraun bis blauschwarz, Knistern (Crepitatio), wenig Eiter, kaum Fieber, aber schneller Puls, fadsüßlicher Geruch. Therapie: Antitoxin, radikales Débridement, ggf. Amputation, hyperbare Sauerstofftherapie, Antibiotika (S. 20–21).</li>
+  <li><b>Panaritium:</b> eitrige Entzündung der Finger (selten Zehen) nach Bagatellverletzung; frühzeitige operative Entlastung. Formen: cutaneum, subunguale/periunguale, subcutaneum, ossale/articulare, tendinosum (Komplikation: Hohlhand- und V-Phlegmone) (S. 21).</li>
+</ul>
+<h4>Viren, Pilze, Autoimmun, erblich</h4>
+<ul>
+  <li><b>Herpes zoster:</b> Reaktivierung des Varizella-zoster-Virus aus den Nervenzellen; brennender Schmerz, dann halbseitige, bandartige Bläschen im Dermatom; Folge: postherpetische Neuralgie über Monate bis Jahre (S. 22).</li>
+  <li><b>Mykose</b> <span class="stern">★</span>: Pilzinfektion von Haut, Schleimhaut, Nägeln oder systemisch; Dermatophyten, Schimmel- und Hefepilze; begünstigt durch verminderte Abwehr (z. B. im Lymphödem). Onychomykose: ca. ¼ aller Nagelkrankheiten, oft bei vorgeschädigten Nägeln, engen Schuhen oder Durchblutungsstörungen (S. 22).</li>
+  <li><b>Bullöse Autoimmundermatosen:</b> Autoantikörper gegen Haut- und Schleimhaut-Antigene → Blasen; Pemphigusgruppe (Akantholyse), Pemphigoidgruppe (Abhebung in der Junktionszone), Epidermolysis bullosa acquisita (S. 23).</li>
+  <li><b>Psoriasis:</b> chronisch-entzündlich, polygen vererbt; symmetrische, scharf begrenzte rote Papeln und Plaques mit silbrig-weißer Schuppung; Beginn in 50 % vor dem 25. Lebensjahr (S. 23).</li>
+</ul>
+
+<h3>7. Neoplasien und Hauttumoren <span class="seite">S. 23–27</span></h3>
+<ul>
+  <li><b>Neoplasie</b> = autonome Gewebeneubildung (benigne, semimaligne, maligne). <b>Tumor</b> = jede örtliche Zunahme des Gewebevolumens (lat. Schwellung), weiter gefasst; Kardinalsymptom der Entzündung (Lösung Übung II, S. 33).</li>
+  <li><b>Aktinische Keratose:</b> in-situ-Karzinom, Vorstufe des Plattenepithelkarzinoms; hellhäutige Menschen, lichtexponierte Stellen, meist ab 60 Jahren, Männer häufiger; raue, scharf begrenzte, rötliche Herde, später dicke Krusten; meist kein Jucken (S. 24–25).</li>
+  <li><b>Basalzellkarzinom:</b> häufigster maligner Tumor in Mitteleuropa; lokal infiltrierend und zerstörend, metastasiert äußerst selten. Häufigste Form ulzero-nodulär (60–80 %). Perlschnurartiger Saum mit Teleangiektasien, ggf. zentrales Ulcus. Risiko: UV (v. a. Kindheit), heller Hauttyp, Männer. Therapie: vollständige operative Entfernung (5-Jahres-Rezidivrate 2–8 %) (S. 25–26).</li>
+  <li><b>Melanom:</b> höchste Metastasierungsrate, &gt; 90 % der Hauttumor-Todesfälle. Typen: superfiziell spreitend ca. 60 %, nodulär ca. 20 %, Lentigo-maligna ca. 10 %, akrolentiginös ca. 5 %. Risiko: Hauttyp I/II, viele Naevi, Sonnenbrände, Immunsuppression, positive Familienanamnese (S. 26).</li>
+  <li><b>Plattenepithelkarzinom</b> (veraltet Spinaliom): Kopf-Hals-Region; Risiko u. a. UV, chronische oder infizierte Wunden, Narben, Immunsuppression; hyperkeratotische Papel; Biopsie sichert die Diagnose; Therapie: vollständige Exzision (S. 27).</li>
+</ul>
+<p class="merke"><b>ABCD-Regel ★ (S. 27):</b> Asymmetrie · Begrenzung unscharf · Color (Mehrfarbigkeit) · Dynamik (Veränderung im Verlauf). <span class="hand-inline">Handschriftlich ergänzt, nicht im Druck: E = Erhabenheit.</span></p>
+
+<h3>8. Haut bei inneren Erkrankungen <span class="seite">S. 28–30</span></h3>
+<ul>
+  <li>Hautzeichen sind diagnostische Warnzeichen, z. B. Schwitzen bei Hyperthyreose, Infektneigung bei Diabetes, Zyanose bei Herz-/Lungenerkrankungen, Purpura bei Blutungsneigung.</li>
+  <li><b>Gicht</b> (Arthritis urica): Purinstoffwechselstörung mit Harnsäureablagerung; akuter Anfall meist nachts, am häufigsten Großzehengrundgelenk. Therapie: Ruhigstellung, kalte Umschläge, NSAR, Glukokortikoide, Colchicin, ggf. Canakinumab. Gichttophi = schmerzfreie Knoten unter der Haut bei lange erhöhter Harnsäure.</li>
+  <li><b>Kalziphylaxie:</b> Kalksalzablagerung in Haut und Gefäßen → ischämische Infarkte, steinharte, sehr schmerzhafte Knoten.</li>
+  <li><b>Livedo-Vaskulopathie:</b> schmerzhafte thromboembolische Verschlusskrankheit der Hautgefäße mit Ulzerationen an den Unterschenkeln, Narben als Atrophie blanche.</li>
+  <li><b>Pyoderma gangraenosum</b> (neutrophile Dermatose): oft mit chronisch-entzündlichen Darmerkrankungen oder Neoplasien; schmerzhafte Pustel, oft nach Bagatelltrauma oder OP, rasch nekrotisches Geschwür; Ulcusrand unterminiert, livide, scharf begrenzt. Therapie systemisch (Glukokortikoide, Ciclosporin u. a.).</li>
+</ul>
+
+<h3>9. Hautschäden durch Verbandmittel – MARSI <span class="stern" title="im Heft als prüfungsrelevant markiert">★</span> <span class="seite">S. 30–31</span></h3>
+<ul>
+  <li><b>MARSI</b> = Medical Adhesive-Related Skin Injuries: Schäden durch Aufbringen und Ablösen von Verbandmitteln.</li>
+  <li><b>Epidermales Stripping:</b> Abziehen von Hornschichtlagen beim Entfernen; Kleberreste immer entfernen.</li>
+  <li><b>Spannungsblasen:</b> Scherkräfte durch Hautdehnung → Produkte nicht unter Spannung, an Gelenken in Beugung, faltenfrei anlegen.</li>
+  <li><b>Toxisches Kontaktekzem:</b> klar begrenzt, deckungsgleich mit dem Verband. <b>Allergisches Kontaktekzem:</b> gerötet, juckend, nässend, Bläschen, über die Auflagefläche hinaus.</li>
+  <li><b>Mazeration:</b> Feuchtigkeit unter der Klebefläche; folienbeschichtete Verbände nicht übereinanderkleben (feuchte Kammer).</li>
+  <li><b>Follikulitis:</b> durch Rasur oder Haarausriss → Haare mit elektrischer Schneidemaschine kürzen; Verband in Haarwuchsrichtung abziehen.</li>
+</ul>
+<p><b>Skin Tears (S. 30–31)</b> – akute traumatische Hauteinrisse, v. a. bei älteren Menschen; nicht als Bagatelle behandeln, dokumentieren.</p>
+<div class="tabelle"><table>
+  <caption>Skin-Tear-Kategorien</caption>
+  <thead><tr><th>Kategorie</th><th>Befund</th></tr></thead>
+  <tbody>
+    <tr><td>I</td><td>kein Gewebeverlust; Hautlappen kann repositioniert werden</td></tr>
+    <tr><td>II</td><td>teilweiser Verlust des Hautlappens</td></tr>
+    <tr><td>III</td><td>vollständiger Hautlappenverlust</td></tr>
+  </tbody>
+</table></div>
+<p class="merke"><b>Versorgung:</b> 1. Blutung mit sterilen Kompressen stillen · 2. sanft mit NaCl 0,9 % oder Wundspüllösung reinigen · 3. Hautlappen mit steriler Pinzette repositionieren (Anfeuchten 5–10 min) · 4. mit nicht klebenden, silikonbeschichteten Verbandmitteln fixieren.</p>
+`
+});
+
+</script>
+<!-- ============================================================ -->
+
+<script>
+(function () {
+  "use strict";
+
+  /* ---------------- Speicher (mit Absicherung) ---------------- */
+  const PREFIX = "wm-lernapp.";
+  const speicher = {
+    lesen(k, standard) {
+      try { const v = localStorage.getItem(PREFIX + k); return v == null ? standard : JSON.parse(v); }
+      catch (e) { return standard; }
+    },
+    schreiben(k, v) {
+      try { localStorage.setItem(PREFIX + k, JSON.stringify(v)); return true; }
+      catch (e) { return false; }
+    }
+  };
+
+  /* ---------------- Hilfsfunktionen ---------------- */
+  const $ = (sel, root) => (root || document).querySelector(sel);
+  const esc = (s) => String(s == null ? "" : s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  const TAG = 24 * 60 * 60 * 1000;
+  function hash(str) {
+    let h = 5381;
+    for (let i = 0; i < str.length; i++) h = ((h << 5) + h + str.charCodeAt(i)) | 0;
+    return (h >>> 0).toString(36);
+  }
+  function mischen(arr) {
+    const a = arr.slice();
+    for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; }
+    return a;
+  }
+  function slug(s) {
+    return String(s).toLowerCase().replace(/ä/g, "ae").replace(/ö/g, "oe").replace(/ü/g, "ue").replace(/ß/g, "ss")
+      .replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "") || "thema";
+  }
+  function kopieren(text, knopf) {
+    const fertig = () => { const alt = knopf.textContent; knopf.textContent = "Kopiert"; setTimeout(() => (knopf.textContent = alt), 1600); };
+    try {
+      navigator.clipboard.writeText(text).then(fertig, () => auswaehlenFallback());
+    } catch (e) { auswaehlenFallback(); }
+    function auswaehlenFallback() {
+      const ta = knopf.closest(".panel").querySelector("textarea");
+      if (ta) { ta.value = text; ta.focus(); ta.select(); knopf.textContent = "Text markiert – bitte kopieren"; }
+    }
+  }
+  // Entfernt Skripte und Event-Attribute aus importiertem HTML.
+  function bereinigen(html) {
+    try {
+      const doc = new DOMParser().parseFromString("<div>" + html + "</div>", "text/html");
+      doc.querySelectorAll("script,style,iframe,object,embed,link,meta,form,input,button").forEach((n) => n.remove());
+      doc.querySelectorAll("*").forEach((n) => {
+        [...n.attributes].forEach((a) => {
+          if (/^on/i.test(a.name) || /^\s*javascript:/i.test(a.value)) n.removeAttribute(a.name);
+        });
+      });
+      return doc.body.firstChild.innerHTML;
+    } catch (e) { return esc(html); }
+  }
+
+  /* ---------------- Daten ---------------- */
+  let themen = [];
+  function themenLaden() {
+    const eigene = speicher.lesen("eigeneThemen", []);
+    const ids = new Set();
+    themen = [];
+    for (const t of Lernapp.eingebaut.concat(eigene)) {
+      if (!t || !t.id || ids.has(t.id)) continue;
+      ids.add(t.id);
+      themen.push(normalisieren(t));
+    }
+  }
+  function normalisieren(t) {
+    const karten = (t.karten || []).map((c) => ({
+      id: t.id + ":" + (c.id || hash(c.f)),
+      thema: t.id, k: c.k || "Allgemein", f: c.f, a: c.a, s: c.s || "", h: !!c.h
+    }));
+    const quiz = (t.quiz || []).map((q) => ({
+      id: t.id + ":q" + (q.id || hash(q.f)),
+      thema: t.id, f: q.f, o: q.o, e: q.e || "", s: q.s || "", h: !!q.h
+    }));
+    return {
+      id: t.id, titel: t.titel || t.id, kurz: t.kurz || t.titel || t.id, quelle: t.quelle || "", hinweis: t.hinweis || "",
+      eingebaut: !!t.eingebaut, karten, quiz,
+      zusammenfassung: t.eingebaut ? (t.zusammenfassung || "") : bereinigen(t.zusammenfassung || "")
+    };
+  }
+  const themaVon = (id) => themen.find((t) => t.id === id);
+
+  /* Fortschritt der Karten: Leitner-System mit 5 Fächern */
+  const INTERVALL = [0, 0, 1, 3, 7, 14]; // Tage bis zur nächsten Wiederholung je Fach
+  let fortschritt = speicher.lesen("fortschritt", {});
+  let quizStat = speicher.lesen("quiz", {});      // { themaId: { r, g, letzte: {r,g,datum} } }
+  let quizFehler = speicher.lesen("quizFehler", {}); // { frageId: true }
+  let auswahl = speicher.lesen("auswahl", null);   // ausgewählte Themen-IDs
+
+  function stand(kartenId) { return fortschritt[kartenId] || { b: 0, d: 0, n: 0 }; }
+  function faellig(k, jetzt) { const s = stand(k.id); return s.b === 0 || s.d <= jetzt; }
+  function bewerten(k, note) {
+    const s = Object.assign({}, stand(k.id));
+    s.n = (s.n || 0) + 1;
+    if (note === 0) s.b = 1;
+    else if (note === 1) s.b = Math.max(1, s.b);
+    else s.b = Math.min(5, Math.max(1, s.b + 1));
+    s.d = Date.now() + INTERVALL[s.b] * TAG - (note === 0 ? 0 : 60 * 60 * 1000);
+    if (note === 0) s.d = Date.now();
+    fortschritt[k.id] = s;
+    speicher.schreiben("fortschritt", fortschritt);
+  }
+  function verteilung(karten) {
+    const v = [0, 0, 0, 0, 0, 0];
+    karten.forEach((k) => v[stand(k.id).b]++);
+    return v;
+  }
+
+  function aktiveThemen() {
+    const gueltig = (auswahl || []).filter((id) => themaVon(id));
+    return gueltig.length ? gueltig : themen.map((t) => t.id);
+  }
+  function setzeAuswahl(ids) { auswahl = ids; speicher.schreiben("auswahl", ids); }
+
+  /* ---------------- Navigation ---------------- */
+  let aktuellerTab = "start";
+  function zeigeTab(tab) {
+    aktuellerTab = tab;
+    document.querySelectorAll(".nav button").forEach((b) => b.setAttribute("aria-selected", String(b.dataset.tab === tab)));
+    document.querySelectorAll("main > section").forEach((s) => (s.hidden = s.id !== "p-" + tab));
+    speicher.schreiben("tab", tab);
+    render[tab]();
+    window.scrollTo(0, 0);
+  }
+  document.querySelectorAll(".nav button").forEach((b) => b.addEventListener("click", () => zeigeTab(b.dataset.tab)));
+
+  function kopfInfo() {
+    const n = themen.reduce((s, t) => s + t.karten.length, 0);
+    $("#kopf-info").textContent = themen.length + " Themen · " + n + " Karten";
+  }
+
+  /* Themenauswahl als Chips, wiederverwendet in Karten und Quiz */
+  function themenChips(container, onChange, zaehler) {
+    const aktiv = new Set(aktiveThemen());
+    container.innerHTML = themen.map((t) =>
+      `<button class="chip" type="button" data-id="${esc(t.id)}" aria-pressed="${aktiv.has(t.id)}">${esc(t.kurz)}<span class="zahl">${zaehler(t)}</span></button>`
+    ).join("");
+    container.querySelectorAll(".chip").forEach((c) => c.addEventListener("click", () => {
+      const an = c.getAttribute("aria-pressed") !== "true";
+      const neu = new Set(aktiveThemen());
+      if (an) neu.add(c.dataset.id); else neu.delete(c.dataset.id);
+      if (neu.size === 0) return; // mindestens ein Thema
+      setzeAuswahl([...neu]);
+      onChange();
+    }));
+  }
+
+  const render = {};
+
+  /* ================= ÜBERSICHT ================= */
+  render.start = function () {
+    const p = $("#p-start");
+    const jetzt = Date.now();
+    const alle = themen.flatMap((t) => t.karten);
+    const fae = alle.filter((k) => faellig(k, jetzt)).length;
+    const sicher = alle.filter((k) => stand(k.id).b >= 4).length;
+    let qr = 0, qg = 0;
+    Object.values(quizStat).forEach((s) => { qr += s.r || 0; qg += s.g || 0; });
+    const fehler = Object.keys(quizFehler).length;
+
+    p.innerHTML = `
+      <div class="held">
+        <span class="eyebrow">Prüfungsvorbereitung Wundmanager</span>
+        <h2>${fae ? fae + " Karten warten auf dich" : "Für heute ist alles wiederholt"}</h2>
+        <p>Karten, die du sicher weißt, wandern in höhere Fächer und kommen seltener dran. Was du nicht wusstest, kommt sofort wieder.</p>
+        <div class="zeile">
+          <button class="btn primaer gross" id="los-karten">${fae ? "Fällige Karten lernen" : "Alle Karten durchgehen"}</button>
+          <button class="btn gross" id="los-quiz">Quiz starten</button>
+        </div>
+      </div>
+      <div class="kennzahlen">
+        <div class="kennzahl"><b>${alle.length}</b><span>Lernkarten gesamt</span></div>
+        <div class="kennzahl"><b>${fae}</b><span>heute fällig</span></div>
+        <div class="kennzahl"><b>${alle.length ? Math.round((sicher / alle.length) * 100) : 0} %</b><span>sicher (Fach 4–5)</span></div>
+        <div class="kennzahl"><b>${qg ? Math.round((qr / qg) * 100) + " %" : "–"}</b><span>Quiz richtig${qg ? " (" + qg + " Fragen)" : ""}</span></div>
+      </div>
+      <div class="stapel">
+        <div class="zeile-sb"><h2 style="font-size:1.2rem">Themen</h2>${fehler ? `<span class="badge">${fehler} Quizfragen zum Wiederholen</span>` : ""}</div>
+        <div class="themaliste">${themen.map((t) => themaZeile(t, jetzt)).join("")}</div>
+      </div>`;
+
+    $("#los-karten").addEventListener("click", () => { kartenOpt.modus = fae ? "faellig" : "alle"; kartenSitzung = null; zeigeTab("karten"); });
+    $("#los-quiz").addEventListener("click", () => { quizSitzung = null; zeigeTab("quiz"); });
+    p.querySelectorAll("[data-lernen]").forEach((b) => b.addEventListener("click", () => {
+      setzeAuswahl([b.dataset.lernen]); kartenOpt.kat = []; kartenOpt.modus = "faellig"; kartenSitzung = null; zeigeTab("karten");
+    }));
+    p.querySelectorAll("[data-quiz]").forEach((b) => b.addEventListener("click", () => {
+      setzeAuswahl([b.dataset.quiz]); quizSitzung = null; zeigeTab("quiz");
+    }));
+    p.querySelectorAll("[data-skript]").forEach((b) => b.addEventListener("click", () => {
+      skriptThema = b.dataset.skript; skriptSuche = ""; zeigeTab("skript");
+    }));
+  };
+  const FACHNAMEN = ["neu", "Fach 1", "Fach 2", "Fach 3", "Fach 4", "Fach 5"];
+  function themaZeile(t, jetzt) {
+    const v = verteilung(t.karten);
+    const n = t.karten.length || 1;
+    const fae = t.karten.filter((k) => faellig(k, jetzt)).length;
+    const qs = quizStat[t.id];
+    const balken = v.map((x, i) => i === 0 ? "" : `<i style="width:${(x / n) * 100}%;background:var(--box${i})"></i>`).join("");
+    return `<article class="panel themazeile">
+      <div class="kopfzeile">
+        <div><span class="eyebrow">${esc(t.quelle || (t.eingebaut ? "" : "Eigenes Thema"))}</span><h3>${esc(t.titel)}</h3></div>
+        <span class="leise klein">${t.karten.length} Karten · ${t.quiz.length} Quizfragen${qs && qs.g ? " · Quiz " + Math.round((qs.r / qs.g) * 100) + " % richtig" : ""}</span>
+      </div>
+      <div class="faecher" role="img" aria-label="Verteilung der Karten auf die Lernfächer">${balken}</div>
+      <div class="legende">${v.map((x, i) => `<span style="--c:var(--box${i})">${FACHNAMEN[i]}: ${x}</span>`).join("")}</div>
+      <div class="zeile">
+        <button class="btn ${fae ? "primaer" : ""}" data-lernen="${esc(t.id)}" ${t.karten.length ? "" : "disabled"}>${fae ? fae + " fällig – lernen" : "Karten wiederholen"}</button>
+        <button class="btn" data-quiz="${esc(t.id)}" ${t.quiz.length ? "" : "disabled"}>Quiz</button>
+        <button class="btn" data-skript="${esc(t.id)}" ${t.zusammenfassung ? "" : "disabled"}>Zusammenfassung</button>
+      </div>
+    </article>`;
+  }
+
+  /* ================= LERNKARTEN ================= */
+  const kartenOpt = { modus: "faellig", kat: [], mischen: true };
+  let kartenSitzung = null; // { stapel:[karte], i, umgedreht, gesamt, ergebnis:{0,1,2} }
+
+  function kartenPool() {
+    const jetzt = Date.now();
+    const ids = new Set(aktiveThemen());
+    let pool = themen.filter((t) => ids.has(t.id)).flatMap((t) => t.karten);
+    if (kartenOpt.kat.length) pool = pool.filter((k) => kartenOpt.kat.includes(k.thema + "|" + k.k));
+    if (kartenOpt.modus === "faellig") pool = pool.filter((k) => faellig(k, jetzt));
+    if (kartenOpt.modus === "schwach") pool = pool.filter((k) => { const s = stand(k.id); return s.n > 0 && s.b <= 2; });
+    return pool;
+  }
+
+  render.karten = function () {
+    const p = $("#p-karten");
+    if (kartenSitzung) return kartenZeigen(p);
+    const ids = new Set(aktiveThemen());
+    const jetzt = Date.now();
+    // Kategorien der aktiven Themen
+    const kats = [];
+    themen.filter((t) => ids.has(t.id)).forEach((t) => {
+      const seen = new Map();
+      t.karten.forEach((k) => seen.set(k.k, (seen.get(k.k) || 0) + 1));
+      seen.forEach((n, k) => kats.push({ key: t.id + "|" + k, label: (ids.size > 1 ? t.kurz + " · " : "") + k, n }));
+    });
+    kartenOpt.kat = kartenOpt.kat.filter((k) => kats.some((x) => x.key === k));
+    const pool = kartenPool();
+
+    p.innerHTML = `
+      <div class="held"><span class="eyebrow">Lernkarten</span><h2>Was möchtest du lernen?</h2></div>
+      <div class="panel">
+        <div class="stapel"><span class="eyebrow">Themen</span><div class="chips" id="k-themen"></div></div>
+        <div class="stapel"><span class="eyebrow">Kapitel <span style="text-transform:none;letter-spacing:0;font-weight:400">(keins gewählt = alle)</span></span>
+          <div class="chips" id="k-kat">${kats.map((k) => `<button class="chip" type="button" data-k="${esc(k.key)}" aria-pressed="${kartenOpt.kat.includes(k.key)}">${esc(k.label)}<span class="zahl">${k.n}</span></button>`).join("")}</div>
+        </div>
+        <div class="stapel"><span class="eyebrow">Auswahl</span>
+          <div class="chips" id="k-modus">
+            <button class="chip" type="button" data-m="faellig" aria-pressed="${kartenOpt.modus === "faellig"}">Fällige &amp; neue</button>
+            <button class="chip" type="button" data-m="alle" aria-pressed="${kartenOpt.modus === "alle"}">Alle Karten</button>
+            <button class="chip" type="button" data-m="schwach" aria-pressed="${kartenOpt.modus === "schwach"}">Nur schwache (Fach 1–2)</button>
+          </div>
+          <label class="zeile klein"><input type="checkbox" id="k-mischen" ${kartenOpt.mischen ? "checked" : ""}> Reihenfolge mischen</label>
+        </div>
+        <div class="zeile-sb">
+          <span class="leise">${pool.length} Karten in dieser Auswahl</span>
+          <button class="btn primaer gross" id="k-start" ${pool.length ? "" : "disabled"}>Start</button>
+        </div>
+        ${!pool.length && kartenOpt.modus === "faellig" ? `<div class="meldung ok">In dieser Auswahl ist gerade nichts fällig. Wähle „Alle Karten“, um trotzdem zu üben.</div>` : ""}
+      </div>`;
+
+    themenChips($("#k-themen"), () => render.karten(), (t) => t.karten.filter((k) => faellig(k, jetzt)).length + "/" + t.karten.length);
+    p.querySelectorAll("#k-kat .chip").forEach((c) => c.addEventListener("click", () => {
+      const k = c.dataset.k;
+      kartenOpt.kat = kartenOpt.kat.includes(k) ? kartenOpt.kat.filter((x) => x !== k) : kartenOpt.kat.concat(k);
+      render.karten();
+    }));
+    p.querySelectorAll("#k-modus .chip").forEach((c) => c.addEventListener("click", () => { kartenOpt.modus = c.dataset.m; render.karten(); }));
+    $("#k-mischen").addEventListener("change", (e) => (kartenOpt.mischen = e.target.checked));
+    $("#k-start").addEventListener("click", () => {
+      const stapel = kartenOpt.mischen ? mischen(pool) : pool.slice();
+      kartenSitzung = { stapel, i: 0, umgedreht: false, gesamt: stapel.length, ergebnis: [0, 0, 0], wiederholt: new Set() };
+      render.karten();
+    });
+  };
+
+  function kartenZeigen(p) {
+    const s = kartenSitzung;
+    if (s.i >= s.stapel.length) return kartenFertig(p);
+    const k = s.stapel[s.i];
+    const t = themaVon(k.thema);
+    const st = stand(k.id);
+    const erledigt = s.ergebnis[0] + s.ergebnis[1] + s.ergebnis[2];
+    p.innerHTML = `
+      <div class="lernbereich">
+        <div class="zeile-sb">
+          <span class="leise klein">Karte ${Math.min(s.i + 1, s.stapel.length)} von ${s.stapel.length}${s.stapel.length > s.gesamt ? " (inkl. Wiederholungen)" : ""}</span>
+          <button class="btn" id="k-ende">Beenden</button>
+        </div>
+        <div class="fortschritt"><i style="width:${(s.i / s.stapel.length) * 100}%"></i></div>
+        <article class="karte" id="karte" tabindex="0" aria-live="polite">
+          <div class="meta">
+            <span class="badge akzent">${esc(t ? t.kurz : "")} · ${esc(k.k)}</span>
+            ${k.s ? `<span class="badge seite">${esc(k.s)}</span>` : ""}
+            <span class="badge">${FACHNAMEN[st.b]}</span>
+            ${k.h ? `<span class="badge hand" title="Inhalt (teilweise) nur aus handschriftlichen Notizen im Heft">handschriftlich</span>` : ""}
+          </div>
+          <div class="frage">${esc(k.f)}</div>
+          ${s.umgedreht ? `<div class="antwort">${esc(k.a)}</div>` : `<div class="tipp">Tippen oder <kbd>Leertaste</kbd>, um die Antwort zu sehen</div>`}
+        </article>
+        ${s.umgedreht ? `
+          <div class="bewertung">
+            <button class="btn nein" data-note="0">Nicht gewusst<small>kommt gleich wieder</small></button>
+            <button class="btn halb" data-note="1">Unsicher<small>bleibt im Fach</small></button>
+            <button class="btn ja" data-note="2">Gewusst<small>ein Fach höher</small></button>
+          </div>
+          <div class="tasten">Tastatur: <kbd>1</kbd> nicht gewusst · <kbd>2</kbd> unsicher · <kbd>3</kbd> gewusst</div>`
+        : `<button class="btn primaer gross" id="k-umdrehen">Antwort zeigen</button>`}
+        <span class="leise klein">${erledigt} bewertet · ${s.ergebnis[2]} gewusst · ${s.ergebnis[1]} unsicher · ${s.ergebnis[0]} nicht gewusst</span>
+      </div>`;
+    const umdrehen = () => { if (!s.umgedreht) { s.umgedreht = true; kartenZeigen(p); } };
+    $("#karte").addEventListener("click", umdrehen);
+    const kb = $("#k-umdrehen"); if (kb) kb.addEventListener("click", umdrehen);
+    p.querySelectorAll("[data-note]").forEach((b) => b.addEventListener("click", () => noteGeben(+b.dataset.note)));
+    $("#k-ende").addEventListener("click", () => { s.stapel = s.stapel.slice(0, s.i); kartenZeigen(p); });
+  }
+  function noteGeben(note) {
+    const s = kartenSitzung;
+    const k = s.stapel[s.i];
+    bewerten(k, note);
+    s.ergebnis[note]++;
+    if (note === 0 && !s.wiederholt.has(k.id)) { s.wiederholt.add(k.id); s.stapel.push(k); }
+    s.i++; s.umgedreht = false;
+    kartenZeigen($("#p-karten"));
+  }
+  function kartenFertig(p) {
+    const s = kartenSitzung;
+    const n = s.ergebnis[0] + s.ergebnis[1] + s.ergebnis[2];
+    p.innerHTML = `
+      <div class="panel" style="align-items:flex-start">
+        <span class="eyebrow">Runde beendet</span>
+        <h2>${n ? n + " Karten bewertet" : "Keine Karte bewertet"}</h2>
+        <div class="kennzahlen" style="width:100%">
+          <div class="kennzahl"><b style="color:var(--ok)">${s.ergebnis[2]}</b><span>gewusst</span></div>
+          <div class="kennzahl"><b style="color:var(--warn)">${s.ergebnis[1]}</b><span>unsicher</span></div>
+          <div class="kennzahl"><b style="color:var(--bad)">${s.ergebnis[0]}</b><span>nicht gewusst</span></div>
+        </div>
+        <div class="zeile">
+          <button class="btn primaer" id="k-neu">Neue Runde</button>
+          <button class="btn" id="k-start-tab">Zur Übersicht</button>
+        </div>
+      </div>`;
+    $("#k-neu").addEventListener("click", () => { kartenSitzung = null; render.karten(); });
+    $("#k-start-tab").addEventListener("click", () => { kartenSitzung = null; zeigeTab("start"); });
+  }
+
+  /* ================= QUIZ ================= */
+  const quizOpt = { anzahl: 10, nurFehler: false };
+  let quizSitzung = null; // { fragen:[{q, opts:[{t,richtig}]}], i, gewaehlt, richtig, falsch:[] }
+
+  function quizPool() {
+    const ids = new Set(aktiveThemen());
+    let pool = themen.filter((t) => ids.has(t.id)).flatMap((t) => t.quiz);
+    if (quizOpt.nurFehler) pool = pool.filter((q) => quizFehler[q.id]);
+    return pool;
+  }
+
+  render.quiz = function () {
+    const p = $("#p-quiz");
+    if (quizSitzung) return quizZeigen(p);
+    const pool = quizPool();
+    const fehlerAnz = Object.keys(quizFehler).filter((id) => themen.some((t) => t.quiz.some((q) => q.id === id))).length;
+    p.innerHTML = `
+      <div class="held"><span class="eyebrow">Quiz</span><h2>Multiple Choice wie in der Prüfung</h2>
+        <p>Eine Antwort ist richtig. Nach jeder Frage siehst du die Erklärung mit Seitenangabe aus dem Heft.</p></div>
+      <div class="panel">
+        <div class="stapel"><span class="eyebrow">Themen</span><div class="chips" id="q-themen"></div></div>
+        <div class="stapel"><span class="eyebrow">Anzahl Fragen</span>
+          <div class="chips" id="q-anzahl">
+            ${[10, 20, 0].map((n) => `<button class="chip" type="button" data-n="${n}" aria-pressed="${quizOpt.anzahl === n}">${n || "Alle"}</button>`).join("")}
+          </div>
+          <label class="zeile klein"><input type="checkbox" id="q-fehler" ${quizOpt.nurFehler ? "checked" : ""} ${fehlerAnz ? "" : "disabled"}> Nur Fragen, die ich zuletzt falsch hatte (${fehlerAnz})</label>
+        </div>
+        <div class="zeile-sb">
+          <span class="leise">${pool.length} Fragen verfügbar</span>
+          <button class="btn primaer gross" id="q-start" ${pool.length ? "" : "disabled"}>Quiz starten</button>
+        </div>
+      </div>`;
+    themenChips($("#q-themen"), () => render.quiz(), (t) => t.quiz.length);
+    p.querySelectorAll("#q-anzahl .chip").forEach((c) => c.addEventListener("click", () => { quizOpt.anzahl = +c.dataset.n; render.quiz(); }));
+    $("#q-fehler").addEventListener("change", (e) => { quizOpt.nurFehler = e.target.checked; render.quiz(); });
+    $("#q-start").addEventListener("click", () => {
+      let fragen = mischen(pool);
+      if (quizOpt.anzahl) fragen = fragen.slice(0, quizOpt.anzahl);
+      quizSitzung = {
+        fragen: fragen.map((q) => ({ q, opts: mischen(q.o.map((t, i) => ({ t, richtig: i === 0 }))) })),
+        i: 0, gewaehlt: null, richtig: 0, falsch: []
+      };
+      render.quiz();
+    });
+  };
+
+  function quizZeigen(p) {
+    const s = quizSitzung;
+    if (s.i >= s.fragen.length) return quizFertig(p);
+    const { q, opts } = s.fragen[s.i];
+    const t = themaVon(q.thema);
+    const beantwortet = s.gewaehlt !== null;
+    p.innerHTML = `
+      <div class="lernbereich">
+        <div class="zeile-sb">
+          <span class="leise klein">Frage ${s.i + 1} von ${s.fragen.length} · ${s.richtig} richtig</span>
+          <button class="btn" id="q-ende">Beenden</button>
+        </div>
+        <div class="fortschritt"><i style="width:${(s.i / s.fragen.length) * 100}%"></i></div>
+        <div class="panel">
+          <div class="zeile"><span class="badge akzent">${esc(t ? t.kurz : "")}</span>${q.h ? `<span class="badge hand">handschriftlich</span>` : ""}</div>
+          <h2 style="font-size:1.25rem;font-weight:600">${esc(q.f)}</h2>
+          <div class="optionen">
+            ${opts.map((o, i) => {
+              let cls = "";
+              if (beantwortet && o.richtig) cls = "richtig";
+              else if (beantwortet && i === s.gewaehlt) cls = "falsch";
+              return `<button class="option ${cls}" data-i="${i}" ${beantwortet ? "disabled" : ""}><span class="bst">${"ABCDEF"[i]}</span><span>${esc(o.t)}</span></button>`;
+            }).join("")}
+          </div>
+          ${beantwortet ? `
+            <div class="erklaerung">
+              <b style="color:${opts[s.gewaehlt].richtig ? "var(--ok)" : "var(--bad)"}">${opts[s.gewaehlt].richtig ? "Richtig." : "Leider falsch."}</b>
+              ${esc(q.e)} ${q.s ? `<span class="badge seite">${esc(q.s)}</span>` : ""}
+            </div>
+            <div class="zeile"><button class="btn primaer gross" id="q-weiter">${s.i + 1 < s.fragen.length ? "Nächste Frage" : "Auswertung"}</button></div>` : ""}
+        </div>
+        ${!beantwortet ? `<div class="tasten">Tastatur: <kbd>A</kbd>–<kbd>D</kbd> oder <kbd>1</kbd>–<kbd>4</kbd> wählen</div>` : `<div class="tasten"><kbd>Enter</kbd> weiter</div>`}
+      </div>`;
+    p.querySelectorAll(".option").forEach((b) => b.addEventListener("click", () => quizAntwort(+b.dataset.i)));
+    const w = $("#q-weiter"); if (w) { w.addEventListener("click", quizWeiter); w.focus({ preventScroll: true }); }
+    $("#q-ende").addEventListener("click", () => { s.fragen = s.fragen.slice(0, s.i + (beantwortet ? 1 : 0)); s.i = s.fragen.length; quizZeigen(p); });
+  }
+  function quizAntwort(i) {
+    const s = quizSitzung;
+    if (s.gewaehlt !== null) return;
+    const { q, opts } = s.fragen[s.i];
+    if (i < 0 || i >= opts.length) return;
+    s.gewaehlt = i;
+    const ok = opts[i].richtig;
+    const st = quizStat[q.thema] || { r: 0, g: 0 };
+    st.g++; if (ok) st.r++;
+    quizStat[q.thema] = st;
+    if (ok) { s.richtig++; delete quizFehler[q.id]; }
+    else { s.falsch.push(s.fragen[s.i]); quizFehler[q.id] = true; }
+    speicher.schreiben("quiz", quizStat);
+    speicher.schreiben("quizFehler", quizFehler);
+    quizZeigen($("#p-quiz"));
+  }
+  function quizWeiter() { quizSitzung.i++; quizSitzung.gewaehlt = null; quizZeigen($("#p-quiz")); }
+  function quizFertig(p) {
+    const s = quizSitzung;
+    const n = s.fragen.length;
+    const pz = n ? Math.round((s.richtig / n) * 100) : 0;
+    p.innerHTML = `
+      <div class="panel">
+        <span class="eyebrow">Auswertung</span>
+        <div class="zeile" style="align-items:baseline"><span class="ergebnis-zahl">${s.richtig}/${n}</span><span class="leise">${pz} % richtig</span></div>
+        <div class="zeile">
+          <button class="btn primaer" id="q-neu">Neues Quiz</button>
+          ${s.falsch.length ? `<button class="btn" id="q-fehler-neu">Falsche wiederholen (${s.falsch.length})</button>` : ""}
+        </div>
+      </div>
+      ${s.falsch.length ? `<div class="stapel"><h2 style="font-size:1.1rem">Diese Fragen nochmal ansehen</h2>
+        ${s.falsch.map(({ q }) => `<div class="panel" style="gap:6px"><b>${esc(q.f)}</b>
+          <span><span style="color:var(--ok);font-weight:700">Richtig:</span> ${esc(q.o[0])}</span>
+          <span class="leise klein">${esc(q.e)} ${q.s ? `<span class="badge seite">${esc(q.s)}</span>` : ""}</span></div>`).join("")}</div>` : ""}`;
+    $("#q-neu").addEventListener("click", () => { quizSitzung = null; render.quiz(); });
+    const f = $("#q-fehler-neu");
+    if (f) f.addEventListener("click", () => {
+      quizSitzung = { fragen: mischen(s.falsch).map(({ q }) => ({ q, opts: mischen(q.o.map((t, i) => ({ t, richtig: i === 0 }))) })), i: 0, gewaehlt: null, richtig: 0, falsch: [] };
+      render.quiz();
+    });
+  }
+
+  /* ================= ZUSAMMENFASSUNG ================= */
+  let skriptThema = null;
+  let skriptSuche = "";
+  render.skript = function () {
+    const p = $("#p-skript");
+    if (!skriptThema || !themaVon(skriptThema)) skriptThema = (themen.find((t) => t.zusammenfassung) || themen[0] || {}).id;
+    const t = themaVon(skriptThema);
+    p.innerHTML = `
+      <div class="held"><span class="eyebrow">Zusammenfassung</span><h2>Nachlesen und suchen</h2></div>
+      <div class="panel">
+        <div class="chips" id="s-themen">${themen.map((x) => `<button class="chip" type="button" data-id="${esc(x.id)}" aria-pressed="${x.id === skriptThema}">${esc(x.kurz)}</button>`).join("")}</div>
+        <div class="feld"><label for="s-suche">In allen Lernkarten suchen</label>
+          <input id="s-suche" type="search" placeholder="z. B. Stemmer, ABI, Erysipel" value="${esc(skriptSuche)}" autocomplete="off"></div>
+      </div>
+      <div id="s-ergebnis"></div>`;
+    p.querySelectorAll("#s-themen .chip").forEach((c) => c.addEventListener("click", () => { skriptThema = c.dataset.id; skriptSuche = ""; render.skript(); }));
+    const inp = $("#s-suche");
+    inp.addEventListener("input", () => { skriptSuche = inp.value; skriptInhalt(t); });
+    skriptInhalt(t);
+  };
+  function markieren(text, q) {
+    const e = esc(text);
+    if (!q) return e;
+    const re = new RegExp("(" + esc(q).replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + ")", "gi");
+    return e.replace(re, "<mark>$1</mark>");
+  }
+  function skriptInhalt(t) {
+    const ziel = $("#s-ergebnis");
+    const q = skriptSuche.trim();
+    if (q.length >= 2) {
+      const ql = q.toLowerCase();
+      const treffer = themen.flatMap((x) => x.karten).filter((k) => (k.f + " " + k.a + " " + k.k).toLowerCase().includes(ql));
+      ziel.innerHTML = `<div class="treffer"><span class="leise">${treffer.length} Karten gefunden</span>
+        ${treffer.map((k) => `<div class="panel"><div class="zeile"><span class="badge akzent">${esc(themaVon(k.thema).kurz)} · ${esc(k.k)}</span>${k.s ? `<span class="badge seite">${esc(k.s)}</span>` : ""}</div>
+          <b>${markieren(k.f, q)}</b><div class="a">${markieren(k.a, q)}</div></div>`).join("")}</div>`;
+      return;
+    }
+    if (!t || !t.zusammenfassung) {
+      ziel.innerHTML = `<div class="panel leer">Für dieses Thema gibt es noch keine Zusammenfassung.</div>`;
+      return;
+    }
+    ziel.innerHTML = `<article class="panel">
+      <div class="stapel" style="gap:6px"><span class="eyebrow">${esc(t.quelle)}</span><h2>${esc(t.titel)}</h2>
+        ${t.hinweis ? `<p class="leise klein" style="margin:0">${esc(t.hinweis)} ★ = im Heft als prüfungsrelevant markiert.</p>` : ""}</div>
+      <nav class="inhalt" id="s-inhalt" aria-label="Inhalt"></nav>
+      <div class="skript" id="s-text">${t.zusammenfassung}</div></article>`;
+    const nav = $("#s-inhalt");
+    $("#s-text").querySelectorAll("h3").forEach((h, i) => {
+      h.id = "abschnitt-" + i;
+      const a = document.createElement("a");
+      a.href = "#" + h.id;
+      a.textContent = (h.childNodes[0] && h.childNodes[0].textContent.trim()) || h.textContent;
+      a.addEventListener("click", (e) => { e.preventDefault(); h.scrollIntoView({ behavior: "smooth", block: "start" }); });
+      nav.appendChild(a);
+    });
+  }
+
+  /* ================= THEMEN VERWALTEN ================= */
+  const VORLAGE = {
+    id: "dekubitus",
+    titel: "Dekubitus",
+    kurz: "Dekubitus",
+    quelle: "Kursheft …",
+    hinweis: "Seitenangaben beziehen sich auf das Heft.",
+    karten: [
+      { k: "Kapitel", f: "Frage?", a: "Antwort.\nZeilenumbruch mit \\n", s: "S. 1" }
+    ],
+    quiz: [
+      { f: "Frage?", o: ["richtige Antwort (immer zuerst)", "falsch", "falsch", "falsch"], e: "Erklärung", s: "S. 1" }
+    ],
+    zusammenfassung: "<h3>1. Abschnitt</h3><ul><li>Punkt</li></ul>"
+  };
+  let themenMeldung = null;
+
+  function eigeneThemen() { return speicher.lesen("eigeneThemen", []); }
+  function eigeneSpeichern(liste) {
+    const ok = speicher.schreiben("eigeneThemen", liste);
+    themenLaden(); kopfInfo();
+    return ok;
+  }
+  function pruefeThema(t) {
+    if (!t || typeof t !== "object" || Array.isArray(t)) return "Die Datei enthält kein Thema (erwartet wird ein Objekt mit { … }).";
+    if (!t.titel) return "Es fehlt der Titel (\"titel\").";
+    if (t.karten && !Array.isArray(t.karten)) return "\"karten\" muss eine Liste sein.";
+    if (t.quiz && !Array.isArray(t.quiz)) return "\"quiz\" muss eine Liste sein.";
+    for (const [i, c] of (t.karten || []).entries()) if (!c || !c.f || !c.a) return "Karte " + (i + 1) + ": \"f\" (Frage) und \"a\" (Antwort) sind Pflicht.";
+    for (const [i, q] of (t.quiz || []).entries()) if (!q || !q.f || !Array.isArray(q.o) || q.o.length < 2) return "Quizfrage " + (i + 1) + ": \"f\" und mindestens zwei Optionen in \"o\" sind Pflicht.";
+    return null;
+  }
+  function importieren(text) {
+    let daten;
+    try { daten = JSON.parse(text); }
+    catch (e) { return { fehler: "Der Text ist kein gültiges JSON. Prüfe Kommas und Anführungszeichen. (" + e.message + ")" }; }
+    const liste = Array.isArray(daten) ? daten : [daten];
+    const eigene = eigeneThemen();
+    const namen = [];
+    for (const t of liste) {
+      const f = pruefeThema(t);
+      if (f) return { fehler: f };
+      t.id = slug(t.id || t.titel);
+      const eingebaut = Lernapp.eingebaut.find((x) => x.id === t.id);
+      if (eingebaut) return { fehler: "Ein eingebautes Thema mit der Kennung „" + t.id + "“ gibt es schon. Bitte eine andere \"id\" wählen." };
+      delete t.eingebaut;
+      const i = eigene.findIndex((x) => x.id === t.id);
+      if (i >= 0) eigene[i] = t; else eigene.push(t);
+      namen.push(t.titel);
+    }
+    if (!eigeneSpeichern(eigene)) return { fehler: "Speichern im Browser nicht möglich (privates Fenster oder Speicher voll)." };
+    return { ok: "Importiert: " + namen.join(", ") };
+  }
+
+  render.themen = function () {
+    const p = $("#p-themen");
+    const eigene = eigeneThemen();
+    p.innerHTML = `
+      <div class="held"><span class="eyebrow">Themen</span><h2>Themen verwalten</h2>
+        <p>Eingebaute Themen sind fest in der App hinterlegt. Eigene Themen und Karten speichert dieser Browser. Sichere sie regelmäßig über „Sicherung“.</p></div>
+      ${themenMeldung ? `<div class="meldung ${themenMeldung.ok ? "ok" : "fehler"}">${esc(themenMeldung.ok || themenMeldung.fehler)}</div>` : ""}
+      <div class="themen-tabelle">
+        ${themen.map((t) => `<div class="panel">
+          <div class="zeile-sb"><div><span class="eyebrow">${t.eingebaut ? "eingebaut" : "eigenes Thema"}</span><h3>${esc(t.titel)}</h3></div>
+            <span class="leise klein">${t.karten.length} Karten · ${t.quiz.length} Quizfragen${t.zusammenfassung ? " · Zusammenfassung" : ""}</span></div>
+          <div class="zeile">
+            <button class="btn" data-reset="${esc(t.id)}">Lernstand zurücksetzen</button>
+            ${!t.eingebaut ? `<button class="btn gefahr" data-del="${esc(t.id)}">Thema löschen</button>` : ""}
+          </div></div>`).join("")}
+      </div>
+
+      <details class="panel" id="d-karte">
+        <summary>Eigene Karte hinzufügen</summary>
+        <form id="f-karte" class="stapel">
+          <div class="feld"><label for="ek-thema">Thema</label>
+            <select id="ek-thema">
+              ${eigene.map((t) => `<option value="${esc(t.id)}">${esc(t.titel)}</option>`).join("")}
+              <option value="__neu">+ Neues eigenes Thema …</option>
+            </select></div>
+          <div class="feld" id="ek-neu-feld" ${eigene.length ? "hidden" : ""}><label for="ek-neu">Name des neuen Themas</label><input id="ek-neu" placeholder="z. B. Dekubitus"></div>
+          <div class="feld"><label for="ek-kat">Kapitel</label><input id="ek-kat" placeholder="z. B. Prophylaxe"></div>
+          <div class="feld"><label for="ek-f">Frage</label><textarea id="ek-f" required></textarea></div>
+          <div class="feld"><label for="ek-a">Antwort</label><textarea id="ek-a" required></textarea></div>
+          <div class="feld"><label for="ek-s">Seitenangabe (optional)</label><input id="ek-s" placeholder="S. 12"></div>
+          <div><button class="btn primaer" type="submit">Karte speichern</button></div>
+        </form>
+      </details>
+
+      <details class="panel" id="d-import">
+        <summary>Thema importieren</summary>
+        <p class="leise klein" style="margin:0">Datei (.json) auswählen oder den Inhalt einfügen. Ein Thema mit gleicher Kennung („id“) wird ersetzt.</p>
+        <div class="feld"><label for="imp-datei">Datei</label><input id="imp-datei" type="file" accept=".json,application/json,text/plain"></div>
+        <div class="feld"><label for="imp-text">oder Text einfügen</label><textarea id="imp-text" class="code" placeholder='{ "titel": "…", "karten": [ … ] }'></textarea></div>
+        <div class="zeile"><button class="btn primaer" id="imp-los">Importieren</button><button class="btn" id="imp-vorlage">Vorlage einsetzen</button></div>
+        <details><summary class="klein">Aufbau einer Themen-Datei</summary>
+          <pre class="vorlage">${esc(JSON.stringify(VORLAGE, null, 2))}</pre>
+          <p class="leise klein">Bei Quizfragen steht die richtige Antwort in „o“ immer an erster Stelle – die App mischt sie. „h“: true markiert Inhalte aus handschriftlichen Notizen.</p>
+        </details>
+      </details>
+
+      <details class="panel" id="d-sicherung">
+        <summary>Sicherung &amp; Wiederherstellung</summary>
+        <p class="leise klein" style="margin:0">Enthält Lernstand, Quiz-Statistik und eigene Themen. Text kopieren und z. B. in einer Notiz ablegen; zum Wiederherstellen hier einfügen.</p>
+        <div class="feld"><label for="sich-text">Sicherungstext</label><textarea id="sich-text" class="code"></textarea></div>
+        <div class="zeile">
+          <button class="btn" id="sich-kopieren">Sicherung kopieren</button>
+          <button class="btn" id="sich-laden">Eingefügte Sicherung laden</button>
+        </div>
+      </details>`;
+
+    p.querySelectorAll("[data-reset]").forEach((b) => b.addEventListener("click", () => bestaetigen(b, "Wirklich zurücksetzen?", () => {
+      const t = themaVon(b.dataset.reset);
+      t.karten.forEach((k) => delete fortschritt[k.id]);
+      t.quiz.forEach((q) => delete quizFehler[q.id]);
+      delete quizStat[t.id];
+      speicher.schreiben("fortschritt", fortschritt); speicher.schreiben("quiz", quizStat); speicher.schreiben("quizFehler", quizFehler);
+      themenMeldung = { ok: "Lernstand für „" + t.titel + "“ zurückgesetzt." }; render.themen();
+    })));
+    p.querySelectorAll("[data-del]").forEach((b) => b.addEventListener("click", () => bestaetigen(b, "Endgültig löschen?", () => {
+      const t = themaVon(b.dataset.del);
+      eigeneSpeichern(eigeneThemen().filter((x) => x.id !== b.dataset.del));
+      themenMeldung = { ok: "Thema „" + (t ? t.titel : "") + "“ gelöscht." }; render.themen();
+    })));
+
+    // Eigene Karte
+    const sel = $("#ek-thema");
+    const neuFeld = $("#ek-neu-feld");
+    const neuWahl = () => (neuFeld.hidden = sel.value !== "__neu");
+    sel.addEventListener("change", neuWahl); neuWahl();
+    $("#f-karte").addEventListener("submit", (e) => {
+      e.preventDefault();
+      const f = $("#ek-f").value.trim(), a = $("#ek-a").value.trim();
+      if (!f || !a) return;
+      const liste = eigeneThemen();
+      let t;
+      if (sel.value === "__neu") {
+        const name = $("#ek-neu").value.trim() || "Eigene Karten";
+        let id = slug(name);
+        while (Lernapp.eingebaut.some((x) => x.id === id) || liste.some((x) => x.id === id)) id += "-2";
+        t = { id, titel: name, kurz: name, quelle: "Eigene Karten", karten: [], quiz: [], zusammenfassung: "" };
+        liste.push(t);
+      } else t = liste.find((x) => x.id === sel.value);
+      t.karten = t.karten || [];
+      t.karten.push({ id: "e" + Date.now().toString(36), k: $("#ek-kat").value.trim() || "Allgemein", f, a, s: $("#ek-s").value.trim() });
+      themenMeldung = eigeneSpeichern(liste) ? { ok: "Karte in „" + t.titel + "“ gespeichert." } : { fehler: "Speichern im Browser nicht möglich." };
+      render.themen();
+      $("#d-karte").open = true;
+      const neuSel = $("#ek-thema"); neuSel.value = t.id; neuSel.dispatchEvent(new Event("change"));
+    });
+
+    // Import
+    $("#imp-datei").addEventListener("change", (e) => {
+      const file = e.target.files[0]; if (!file) return;
+      const r = new FileReader();
+      r.onload = () => { $("#imp-text").value = r.result; };
+      r.readAsText(file, "utf-8");
+    });
+    $("#imp-vorlage").addEventListener("click", () => { $("#imp-text").value = JSON.stringify(VORLAGE, null, 2); });
+    $("#imp-los").addEventListener("click", () => {
+      const txt = $("#imp-text").value.trim();
+      themenMeldung = txt ? importieren(txt) : { fehler: "Bitte zuerst eine Datei wählen oder Text einfügen." };
+      render.themen();
+      if (themenMeldung.fehler) { $("#d-import").open = true; $("#imp-text").value = txt; }
+      window.scrollTo(0, 0);
+    });
+
+    // Sicherung
+    $("#sich-kopieren").addEventListener("click", (e) => {
+      const daten = JSON.stringify({ app: "wundmanager-lernapp", version: 1, datum: new Date().toISOString(), fortschritt, quiz: quizStat, quizFehler, eigeneThemen: eigeneThemen() });
+      $("#sich-text").value = daten;
+      kopieren(daten, e.currentTarget);
+    });
+    $("#sich-laden").addEventListener("click", () => {
+      try {
+        const d = JSON.parse($("#sich-text").value);
+        if (d.app !== "wundmanager-lernapp") throw new Error("keine Sicherung dieser App");
+        fortschritt = d.fortschritt || {}; quizStat = d.quiz || {}; quizFehler = d.quizFehler || {};
+        speicher.schreiben("fortschritt", fortschritt); speicher.schreiben("quiz", quizStat); speicher.schreiben("quizFehler", quizFehler);
+        eigeneSpeichern(d.eigeneThemen || []);
+        themenMeldung = { ok: "Sicherung vom " + new Date(d.datum).toLocaleDateString("de-DE") + " geladen." };
+      } catch (err) {
+        themenMeldung = { fehler: "Sicherung konnte nicht gelesen werden: " + err.message };
+      }
+      render.themen(); window.scrollTo(0, 0);
+    });
+  };
+  function bestaetigen(knopf, frage, aktion) {
+    if (knopf.dataset.scharf) return aktion();
+    const alt = knopf.textContent;
+    knopf.dataset.scharf = "1"; knopf.textContent = frage; knopf.classList.add("gefahr", "scharf");
+    setTimeout(() => { if (knopf.isConnected) { delete knopf.dataset.scharf; knopf.textContent = alt; knopf.classList.remove("scharf"); } }, 3500);
+  }
+
+  /* ---------------- Tastatur ---------------- */
+  document.addEventListener("keydown", (e) => {
+    if (e.target.closest("input, textarea, select") || e.metaKey || e.ctrlKey || e.altKey) return;
+    if (aktuellerTab === "karten" && kartenSitzung && kartenSitzung.i < kartenSitzung.stapel.length) {
+      if (!kartenSitzung.umgedreht && (e.key === " " || e.key === "Enter")) { e.preventDefault(); kartenSitzung.umgedreht = true; kartenZeigen($("#p-karten")); }
+      else if (kartenSitzung.umgedreht && ["1", "2", "3"].includes(e.key)) { e.preventDefault(); noteGeben(+e.key - 1); }
+    }
+    if (aktuellerTab === "quiz" && quizSitzung && quizSitzung.i < quizSitzung.fragen.length) {
+      if (quizSitzung.gewaehlt === null) {
+        const k = e.key.toLowerCase();
+        const i = "abcdef".indexOf(k) >= 0 ? "abcdef".indexOf(k) : ["1", "2", "3", "4", "5", "6"].indexOf(k);
+        if (i >= 0) { e.preventDefault(); quizAntwort(i); }
+      } else if (e.key === "Enter" && !e.target.closest("button")) { e.preventDefault(); quizWeiter(); }
+    }
+  });
+
+  /* ---------------- Start ---------------- */
+  themenLaden();
+  kopfInfo();
+  const gespeicherterTab = speicher.lesen("tab", "start");
+  zeigeTab(render[gespeicherterTab] ? gespeicherterTab : "start");
+})();
+</script>
+</body>
+</html>

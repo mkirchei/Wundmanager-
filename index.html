@@ -1,0 +1,1067 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Wundmanager Prüfungstrainer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Familjen+Grotesk:wght@500;600;700&display=swap">
+<style>
+/* Layout: eine zentrale Arbeitsspalte, oben feste Navigation; Karten als einziges "Objekt" mit Fläche. */
+:root {
+  --bg: #eef3f2;
+  --surface: #ffffff;
+  --surface-2: #f6f9f8;
+  --ink: #132523;
+  --muted: #566a66;
+  --line: #d3dedb;
+  --accent: #0e6a64;
+  --accent-ink: #ffffff;
+  --accent-soft: #d8ebe8;
+  --ok: #2b7a4b;
+  --ok-soft: #dff0e5;
+  --warn: #9a6512;
+  --warn-soft: #f6ead3;
+  --bad: #b03f35;
+  --bad-soft: #f6e0dd;
+  --hand: #6c4f9e;
+  --hand-soft: #ece6f6;
+  --box0: #c4d0cd;
+  --box1: #c9574c;
+  --box2: #d98b3a;
+  --box3: #c9b23f;
+  --box4: #6aa86f;
+  --box5: #2b7a4b;
+  --shadow: 0 1px 2px rgba(19, 37, 35, .06), 0 6px 20px rgba(19, 37, 35, .07);
+  --f-display: "Familjen Grotesk", "Segoe UI", system-ui, sans-serif;
+  --f-body: "Atkinson Hyperlegible", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --radius: 14px;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0d1615; --surface: #15211f; --surface-2: #1a2826; --ink: #e2ecea; --muted: #94a8a4; --line: #2a3a37;
+    --accent: #4fb5ab; --accent-ink: #06201d; --accent-soft: #19332f;
+    --ok: #63c38d; --ok-soft: #173326; --warn: #e2b25a; --warn-soft: #362a14; --bad: #e57f73; --bad-soft: #3a1d1a;
+    --hand: #b9a1e6; --hand-soft: #2a2238;
+    --box0: #3a4a47; --box1: #d8675b; --box2: #e09a4c; --box3: #d6c055; --box4: #7cbc81; --box5: #4fae74;
+    --shadow: 0 1px 2px rgba(0,0,0,.3), 0 6px 20px rgba(0,0,0,.25);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0d1615; --surface: #15211f; --surface-2: #1a2826; --ink: #e2ecea; --muted: #94a8a4; --line: #2a3a37;
+  --accent: #4fb5ab; --accent-ink: #06201d; --accent-soft: #19332f;
+  --ok: #63c38d; --ok-soft: #173326; --warn: #e2b25a; --warn-soft: #362a14; --bad: #e57f73; --bad-soft: #3a1d1a;
+  --hand: #b9a1e6; --hand-soft: #2a2238;
+  --box0: #3a4a47; --box1: #d8675b; --box2: #e09a4c; --box3: #d6c055; --box4: #7cbc81; --box5: #4fae74;
+  --shadow: 0 1px 2px rgba(0,0,0,.3), 0 6px 20px rgba(0,0,0,.25);
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html, body { margin: 0; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--f-body);
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-text-size-adjust: 100%;
+}
+h1, h2, h3, h4 { font-family: var(--f-display); line-height: 1.2; text-wrap: balance; margin: 0; }
+button, input, select, textarea { font: inherit; color: inherit; }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; border-radius: 6px; }
+
+/* ---------- Kopf & Navigation ---------- */
+.kopf {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 10;
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+.kopf-innen {
+  max-width: 880px; margin: 0 auto; padding: 10px 16px 0;
+  display: flex; flex-direction: column; gap: 8px;
+}
+.marke { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+.marke h1 { font-size: 1.15rem; font-weight: 700; letter-spacing: -.01em; }
+.marke span { color: var(--muted); font-size: .85rem; }
+.nav { display: flex; gap: 2px; overflow-x: auto; scrollbar-width: none; margin: 0 -4px; }
+.nav::-webkit-scrollbar { display: none; }
+.nav button {
+  border: 0; background: none; cursor: pointer; white-space: nowrap;
+  padding: 8px 12px 10px; font-family: var(--f-display); font-weight: 600; font-size: .98rem;
+  color: var(--muted); border-bottom: 3px solid transparent;
+}
+.nav button[aria-selected="true"] { color: var(--ink); border-bottom-color: var(--accent); }
+.nav button:hover { color: var(--ink); }
+
+main { max-width: 880px; margin: 0 auto; padding-inline: 16px; padding-block: 20px 64px; }
+section[role="tabpanel"] { display: flex; flex-direction: column; gap: 20px; }
+
+/* ---------- Allgemeine Bausteine ---------- */
+.eyebrow { font-size: .75rem; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); font-weight: 700; }
+.leise { color: var(--muted); }
+.klein { font-size: .875rem; }
+.zeile { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+.zeile-sb { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; justify-content: space-between; }
+.stapel { display: flex; flex-direction: column; gap: 12px; }
+
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  border: 1px solid var(--line); background: var(--surface); color: var(--ink);
+  border-radius: 10px; padding: 9px 14px; cursor: pointer; font-weight: 700; font-size: .95rem;
+  min-height: 42px; text-decoration: none;
+}
+.btn:hover { border-color: var(--accent); }
+.btn.primaer { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+.btn.primaer:hover { filter: brightness(1.07); }
+.btn.gefahr { color: var(--bad); }
+.btn.gefahr.scharf { background: var(--bad); border-color: var(--bad); color: var(--surface); }
+.btn.gross { padding: 12px 20px; font-size: 1.02rem; min-height: 50px; }
+.btn[disabled] { opacity: .45; cursor: not-allowed; }
+
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip {
+  border: 1px solid var(--line); background: var(--surface); border-radius: 999px;
+  padding: 6px 12px; cursor: pointer; font-size: .9rem; font-weight: 700; color: var(--muted);
+  display: inline-flex; gap: 6px; align-items: center;
+}
+.chip[aria-pressed="true"] { background: var(--accent-soft); border-color: var(--accent); color: var(--ink); }
+.chip .zahl { font-variant-numeric: tabular-nums; font-weight: 400; opacity: .8; }
+
+.feld { display: flex; flex-direction: column; gap: 6px; }
+.feld label { font-weight: 700; font-size: .9rem; }
+.feld input, .feld select, .feld textarea {
+  border: 1px solid var(--line); background: var(--surface); border-radius: 10px; padding: 10px 12px; width: 100%;
+}
+.feld textarea { min-height: 96px; resize: vertical; }
+textarea.code { font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; font-size: .82rem; min-height: 180px; }
+
+.panel {
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 18px; display: flex; flex-direction: column; gap: 14px; min-width: 0;
+}
+.panel h2 { font-size: 1.2rem; }
+.panel h3 { font-size: 1.05rem; }
+
+.badge {
+  display: inline-flex; align-items: center; gap: 4px; font-size: .75rem; font-weight: 700;
+  padding: 2px 8px; border-radius: 999px; background: var(--surface-2); color: var(--muted); border: 1px solid var(--line);
+  white-space: nowrap;
+}
+.badge.seite { font-variant-numeric: tabular-nums; }
+.badge.hand { background: var(--hand-soft); color: var(--hand); border-color: transparent; }
+.badge.akzent { background: var(--accent-soft); color: var(--accent); border-color: transparent; }
+
+.meldung { border-radius: 10px; padding: 10px 14px; font-size: .92rem; }
+.meldung.ok { background: var(--ok-soft); color: var(--ok); }
+.meldung.fehler { background: var(--bad-soft); color: var(--bad); }
+
+/* ---------- Übersicht ---------- */
+.held { display: flex; flex-direction: column; gap: 14px; padding-block: 6px; }
+.held h2 { font-size: clamp(1.6rem, 4.5vw, 2.2rem); letter-spacing: -.02em; }
+.held p { margin: 0; max-width: 60ch; color: var(--muted); }
+.kennzahlen { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; }
+.kennzahl { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; }
+.kennzahl b { display: block; font-family: var(--f-display); font-size: 1.6rem; font-variant-numeric: tabular-nums; line-height: 1.1; }
+.kennzahl span { color: var(--muted); font-size: .85rem; }
+
+.themaliste { display: flex; flex-direction: column; gap: 12px; }
+.themazeile { display: flex; flex-direction: column; gap: 10px; }
+.themazeile .kopfzeile { display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; align-items: baseline; }
+.themazeile h3 { font-size: 1.1rem; }
+.faecher { display: flex; height: 12px; border-radius: 6px; overflow: hidden; background: var(--box0); }
+.faecher i { display: block; height: 100%; }
+.legende { display: flex; flex-wrap: wrap; gap: 4px 12px; font-size: .78rem; color: var(--muted); }
+.legende span { display: inline-flex; align-items: center; gap: 5px; font-variant-numeric: tabular-nums; }
+.legende span::before { content: ""; width: 9px; height: 9px; border-radius: 2px; background: var(--c); }
+
+/* ---------- Lernkarten ---------- */
+.lernbereich { display: flex; flex-direction: column; gap: 14px; }
+.fortschritt { height: 6px; background: var(--line); border-radius: 3px; overflow: hidden; }
+.fortschritt i { display: block; height: 100%; background: var(--accent); transition: width .25s; }
+.karte {
+  background: var(--surface); border: 1px solid var(--line); border-radius: 18px; box-shadow: var(--shadow);
+  padding: 22px 22px 18px; min-height: 300px; display: flex; flex-direction: column; gap: 16px;
+  cursor: pointer; position: relative;
+}
+.karte .meta { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+.karte .frage { font-family: var(--f-display); font-size: clamp(1.25rem, 3.6vw, 1.55rem); font-weight: 600; line-height: 1.3; text-wrap: balance; }
+.karte .antwort { white-space: pre-line; font-size: 1.05rem; border-top: 1px dashed var(--line); padding-top: 14px; }
+.karte .tipp { margin-top: auto; color: var(--muted); font-size: .85rem; }
+.bewertung { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.bewertung .btn { flex-direction: column; gap: 0; min-height: 58px; }
+.bewertung .btn small { font-weight: 400; font-size: .75rem; color: var(--muted); }
+.bewertung .nein { border-color: var(--bad); color: var(--bad); }
+.bewertung .halb { border-color: var(--warn); color: var(--warn); }
+.bewertung .ja { border-color: var(--ok); color: var(--ok); }
+.tasten { font-size: .78rem; color: var(--muted); }
+kbd { font-family: inherit; border: 1px solid var(--line); border-bottom-width: 2px; border-radius: 4px; padding: 0 5px; background: var(--surface-2); }
+
+/* ---------- Quiz ---------- */
+.optionen { display: flex; flex-direction: column; gap: 10px; }
+.option {
+  text-align: left; border: 1.5px solid var(--line); background: var(--surface); border-radius: 12px;
+  padding: 12px 14px; cursor: pointer; display: flex; gap: 12px; align-items: flex-start; font-size: 1rem;
+}
+.option:hover:not([disabled]) { border-color: var(--accent); }
+.option .bst {
+  flex: none; width: 28px; height: 28px; border-radius: 50%; display: grid; place-items: center;
+  background: var(--surface-2); border: 1px solid var(--line); font-weight: 700; font-size: .85rem;
+}
+.option[disabled] { cursor: default; }
+.option.richtig { border-color: var(--ok); background: var(--ok-soft); }
+.option.richtig .bst { background: var(--ok); color: var(--surface); border-color: var(--ok); }
+.option.falsch { border-color: var(--bad); background: var(--bad-soft); }
+.option.falsch .bst { background: var(--bad); color: var(--surface); border-color: var(--bad); }
+.erklaerung { background: var(--surface-2); border-radius: 12px; padding: 12px 14px; border: 1px solid var(--line); }
+.ergebnis-zahl { font-family: var(--f-display); font-size: 3rem; font-weight: 700; font-variant-numeric: tabular-nums; line-height: 1; }
+
+/* ---------- Skript ---------- */
+.skript { font-size: 1rem; }
+.skript h3 { font-size: 1.15rem; margin-top: 26px; margin-bottom: 8px; display: flex; flex-wrap: wrap; gap: 8px; align-items: baseline; scroll-margin-top: 120px; }
+.skript h3:first-child { margin-top: 0; }
+.skript h4 { font-size: 1rem; margin-top: 16px; margin-bottom: 4px; }
+.skript ul { margin: 6px 0; padding-left: 1.2em; }
+.skript li { margin: 4px 0; max-width: 72ch; }
+.skript p { margin: 8px 0; max-width: 72ch; }
+.skript .seite { font-family: var(--f-body); font-size: .78rem; font-weight: 700; color: var(--muted); background: var(--surface-2); border: 1px solid var(--line); border-radius: 999px; padding: 1px 8px; font-variant-numeric: tabular-nums; }
+.skript .stern { color: var(--warn); }
+.skript .warnung { background: var(--warn-soft); border-radius: 10px; padding: 10px 14px; }
+.skript .warnung::before { content: "Achtung · "; font-weight: 700; color: var(--warn); }
+.skript .hand { background: var(--hand-soft); border-radius: 10px; padding: 10px 14px; }
+.skript .hand::before { content: "Handschriftlich · "; font-weight: 700; color: var(--hand); }
+.skript .hand-inline { background: var(--hand-soft); border-radius: 4px; padding: 0 4px; }
+.skript .merke { background: var(--accent-soft); border-radius: 10px; padding: 10px 14px; }
+.tabelle { overflow-x: auto; margin: 10px 0; border: 1px solid var(--line); border-radius: 10px; }
+.tabelle table { border-collapse: collapse; width: 100%; font-size: .92rem; }
+.tabelle caption { text-align: left; font-weight: 700; padding: 10px 12px 6px; font-family: var(--f-display); }
+.tabelle th, .tabelle td { text-align: left; padding: 8px 12px; border-top: 1px solid var(--line); vertical-align: top; }
+.tabelle th { background: var(--surface-2); font-size: .82rem; letter-spacing: .02em; }
+.tabelle td:first-child { font-weight: 700; white-space: nowrap; }
+.inhalt { display: flex; flex-wrap: wrap; gap: 6px; }
+.inhalt a { font-size: .85rem; color: var(--accent); text-decoration: none; border: 1px solid var(--line); border-radius: 999px; padding: 3px 10px; background: var(--surface); }
+.treffer { display: flex; flex-direction: column; gap: 10px; }
+.treffer .panel { gap: 6px; padding: 14px; }
+.treffer .a { white-space: pre-line; }
+mark { background: var(--warn-soft); color: inherit; border-radius: 3px; padding: 0 2px; }
+
+/* ---------- Themen ---------- */
+.themen-tabelle { display: flex; flex-direction: column; gap: 10px; }
+.themen-tabelle .panel { gap: 10px; }
+details.panel > summary { cursor: pointer; font-family: var(--f-display); font-weight: 700; font-size: 1.05rem; }
+details.panel[open] > summary { margin-bottom: 4px; }
+pre.vorlage { overflow-x: auto; background: var(--surface-2); border: 1px solid var(--line); border-radius: 10px; padding: 12px; font-size: .8rem; margin: 0; }
+
+.leer { text-align: center; padding: 30px 16px; color: var(--muted); display: flex; flex-direction: column; gap: 12px; align-items: center; }
+
+@media (max-width: 520px) {
+  .karte { padding: 18px 16px 14px; min-height: 260px; }
+  .panel { padding: 14px; }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+</style>
+</head>
+<body>
+
+<header class="kopf">
+  <div class="kopf-innen">
+    <div class="marke">
+      <h1>Wundmanager Prüfungstrainer</h1>
+      <span id="kopf-info"></span>
+    </div>
+    <nav class="nav" role="tablist" aria-label="Bereiche">
+      <button role="tab" id="tab-start" aria-controls="p-start" data-tab="start">Start</button>
+      <button role="tab" id="tab-karten" aria-controls="p-karten" data-tab="karten">Karten</button>
+      <button role="tab" id="tab-quiz" aria-controls="p-quiz" data-tab="quiz">Quiz</button>
+      <button role="tab" id="tab-skript" aria-controls="p-skript" data-tab="skript">Skript</button>
+      <button role="tab" id="tab-themen" aria-controls="p-themen" data-tab="themen">Themen</button>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section role="tabpanel" id="p-start" aria-labelledby="tab-start"></section>
+  <section role="tabpanel" id="p-karten" aria-labelledby="tab-karten" hidden></section>
+  <section role="tabpanel" id="p-quiz" aria-labelledby="tab-quiz" hidden></section>
+  <section role="tabpanel" id="p-skript" aria-labelledby="tab-skript" hidden></section>
+  <section role="tabpanel" id="p-themen" aria-labelledby="tab-themen" hidden></section>
+</main>
+
+<script>
+/* Register für Themen. Jede Datei in themen/ ruft Lernapp.thema({...}) auf. */
+window.Lernapp = {
+  eingebaut: [],
+  thema: function (t) { t.eingebaut = true; this.eingebaut.push(t); }
+};
+</script>
+
+<!-- ============================================================
+     THEMEN-DATEIEN
+     Neues Thema: Datei in themen/ anlegen und hier eine Zeile ergänzen.
+     ============================================================ -->
+<script src="themen/gefaesse.js"></script>
+<script src="themen/haut.js"></script>
+<!-- ============================================================ -->
+
+<script>
+(function () {
+  "use strict";
+
+  /* ---------------- Speicher (mit Absicherung) ---------------- */
+  const PREFIX = "wm-lernapp.";
+  const speicher = {
+    lesen(k, standard) {
+      try { const v = localStorage.getItem(PREFIX + k); return v == null ? standard : JSON.parse(v); }
+      catch (e) { return standard; }
+    },
+    schreiben(k, v) {
+      try { localStorage.setItem(PREFIX + k, JSON.stringify(v)); return true; }
+      catch (e) { return false; }
+    }
+  };
+
+  /* ---------------- Hilfsfunktionen ---------------- */
+  const $ = (sel, root) => (root || document).querySelector(sel);
+  const esc = (s) => String(s == null ? "" : s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  const TAG = 24 * 60 * 60 * 1000;
+  function hash(str) {
+    let h = 5381;
+    for (let i = 0; i < str.length; i++) h = ((h << 5) + h + str.charCodeAt(i)) | 0;
+    return (h >>> 0).toString(36);
+  }
+  function mischen(arr) {
+    const a = arr.slice();
+    for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; }
+    return a;
+  }
+  function slug(s) {
+    return String(s).toLowerCase().replace(/ä/g, "ae").replace(/ö/g, "oe").replace(/ü/g, "ue").replace(/ß/g, "ss")
+      .replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "") || "thema";
+  }
+  function kopieren(text, knopf) {
+    const fertig = () => { const alt = knopf.textContent; knopf.textContent = "Kopiert"; setTimeout(() => (knopf.textContent = alt), 1600); };
+    try {
+      navigator.clipboard.writeText(text).then(fertig, () => auswaehlenFallback());
+    } catch (e) { auswaehlenFallback(); }
+    function auswaehlenFallback() {
+      const ta = knopf.closest(".panel").querySelector("textarea");
+      if (ta) { ta.value = text; ta.focus(); ta.select(); knopf.textContent = "Text markiert – bitte kopieren"; }
+    }
+  }
+  // Entfernt Skripte und Event-Attribute aus importiertem HTML.
+  function bereinigen(html) {
+    try {
+      const doc = new DOMParser().parseFromString("<div>" + html + "</div>", "text/html");
+      doc.querySelectorAll("script,style,iframe,object,embed,link,meta,form,input,button").forEach((n) => n.remove());
+      doc.querySelectorAll("*").forEach((n) => {
+        [...n.attributes].forEach((a) => {
+          if (/^on/i.test(a.name) || /^\s*javascript:/i.test(a.value)) n.removeAttribute(a.name);
+        });
+      });
+      return doc.body.firstChild.innerHTML;
+    } catch (e) { return esc(html); }
+  }
+
+  /* ---------------- Daten ---------------- */
+  let themen = [];
+  function themenLaden() {
+    const eigene = speicher.lesen("eigeneThemen", []);
+    const ids = new Set();
+    themen = [];
+    for (const t of Lernapp.eingebaut.concat(eigene)) {
+      if (!t || !t.id || ids.has(t.id)) continue;
+      ids.add(t.id);
+      themen.push(normalisieren(t));
+    }
+  }
+  function normalisieren(t) {
+    const karten = (t.karten || []).map((c) => ({
+      id: t.id + ":" + (c.id || hash(c.f)),
+      thema: t.id, k: c.k || "Allgemein", f: c.f, a: c.a, s: c.s || "", h: !!c.h
+    }));
+    const quiz = (t.quiz || []).map((q) => ({
+      id: t.id + ":q" + (q.id || hash(q.f)),
+      thema: t.id, f: q.f, o: q.o, e: q.e || "", s: q.s || "", h: !!q.h
+    }));
+    return {
+      id: t.id, titel: t.titel || t.id, kurz: t.kurz || t.titel || t.id, quelle: t.quelle || "", hinweis: t.hinweis || "",
+      eingebaut: !!t.eingebaut, karten, quiz,
+      zusammenfassung: t.eingebaut ? (t.zusammenfassung || "") : bereinigen(t.zusammenfassung || "")
+    };
+  }
+  const themaVon = (id) => themen.find((t) => t.id === id);
+
+  /* Fortschritt der Karten: Leitner-System mit 5 Fächern */
+  const INTERVALL = [0, 0, 1, 3, 7, 14]; // Tage bis zur nächsten Wiederholung je Fach
+  let fortschritt = speicher.lesen("fortschritt", {});
+  let quizStat = speicher.lesen("quiz", {});      // { themaId: { r, g, letzte: {r,g,datum} } }
+  let quizFehler = speicher.lesen("quizFehler", {}); // { frageId: true }
+  let auswahl = speicher.lesen("auswahl", null);   // ausgewählte Themen-IDs
+
+  function stand(kartenId) { return fortschritt[kartenId] || { b: 0, d: 0, n: 0 }; }
+  function faellig(k, jetzt) { const s = stand(k.id); return s.b === 0 || s.d <= jetzt; }
+  function bewerten(k, note) {
+    const s = Object.assign({}, stand(k.id));
+    s.n = (s.n || 0) + 1;
+    if (note === 0) s.b = 1;
+    else if (note === 1) s.b = Math.max(1, s.b);
+    else s.b = Math.min(5, Math.max(1, s.b + 1));
+    s.d = Date.now() + INTERVALL[s.b] * TAG - (note === 0 ? 0 : 60 * 60 * 1000);
+    if (note === 0) s.d = Date.now();
+    fortschritt[k.id] = s;
+    speicher.schreiben("fortschritt", fortschritt);
+  }
+  function verteilung(karten) {
+    const v = [0, 0, 0, 0, 0, 0];
+    karten.forEach((k) => v[stand(k.id).b]++);
+    return v;
+  }
+
+  function aktiveThemen() {
+    const gueltig = (auswahl || []).filter((id) => themaVon(id));
+    return gueltig.length ? gueltig : themen.map((t) => t.id);
+  }
+  function setzeAuswahl(ids) { auswahl = ids; speicher.schreiben("auswahl", ids); }
+
+  /* ---------------- Navigation ---------------- */
+  let aktuellerTab = "start";
+  function zeigeTab(tab) {
+    aktuellerTab = tab;
+    document.querySelectorAll(".nav button").forEach((b) => b.setAttribute("aria-selected", String(b.dataset.tab === tab)));
+    document.querySelectorAll("main > section").forEach((s) => (s.hidden = s.id !== "p-" + tab));
+    speicher.schreiben("tab", tab);
+    render[tab]();
+    window.scrollTo(0, 0);
+  }
+  document.querySelectorAll(".nav button").forEach((b) => b.addEventListener("click", () => zeigeTab(b.dataset.tab)));
+
+  function kopfInfo() {
+    const n = themen.reduce((s, t) => s + t.karten.length, 0);
+    $("#kopf-info").textContent = themen.length + " Themen · " + n + " Karten";
+  }
+
+  /* Themenauswahl als Chips, wiederverwendet in Karten und Quiz */
+  function themenChips(container, onChange, zaehler) {
+    const aktiv = new Set(aktiveThemen());
+    container.innerHTML = themen.map((t) =>
+      `<button class="chip" type="button" data-id="${esc(t.id)}" aria-pressed="${aktiv.has(t.id)}">${esc(t.kurz)}<span class="zahl">${zaehler(t)}</span></button>`
+    ).join("");
+    container.querySelectorAll(".chip").forEach((c) => c.addEventListener("click", () => {
+      const an = c.getAttribute("aria-pressed") !== "true";
+      const neu = new Set(aktiveThemen());
+      if (an) neu.add(c.dataset.id); else neu.delete(c.dataset.id);
+      if (neu.size === 0) return; // mindestens ein Thema
+      setzeAuswahl([...neu]);
+      onChange();
+    }));
+  }
+
+  const render = {};
+
+  /* ================= ÜBERSICHT ================= */
+  render.start = function () {
+    const p = $("#p-start");
+    const jetzt = Date.now();
+    const alle = themen.flatMap((t) => t.karten);
+    const fae = alle.filter((k) => faellig(k, jetzt)).length;
+    const sicher = alle.filter((k) => stand(k.id).b >= 4).length;
+    let qr = 0, qg = 0;
+    Object.values(quizStat).forEach((s) => { qr += s.r || 0; qg += s.g || 0; });
+    const fehler = Object.keys(quizFehler).length;
+
+    p.innerHTML = `
+      <div class="held">
+        <span class="eyebrow">Prüfungsvorbereitung Wundmanager</span>
+        <h2>${fae ? fae + " Karten warten auf dich" : "Für heute ist alles wiederholt"}</h2>
+        <p>Karten, die du sicher weißt, wandern in höhere Fächer und kommen seltener dran. Was du nicht wusstest, kommt sofort wieder.</p>
+        <div class="zeile">
+          <button class="btn primaer gross" id="los-karten">${fae ? "Fällige Karten lernen" : "Alle Karten durchgehen"}</button>
+          <button class="btn gross" id="los-quiz">Quiz starten</button>
+        </div>
+      </div>
+      <div class="kennzahlen">
+        <div class="kennzahl"><b>${alle.length}</b><span>Lernkarten gesamt</span></div>
+        <div class="kennzahl"><b>${fae}</b><span>heute fällig</span></div>
+        <div class="kennzahl"><b>${alle.length ? Math.round((sicher / alle.length) * 100) : 0} %</b><span>sicher (Fach 4–5)</span></div>
+        <div class="kennzahl"><b>${qg ? Math.round((qr / qg) * 100) + " %" : "–"}</b><span>Quiz richtig${qg ? " (" + qg + " Fragen)" : ""}</span></div>
+      </div>
+      <div class="stapel">
+        <div class="zeile-sb"><h2 style="font-size:1.2rem">Themen</h2>${fehler ? `<span class="badge">${fehler} Quizfragen zum Wiederholen</span>` : ""}</div>
+        <div class="themaliste">${themen.map((t) => themaZeile(t, jetzt)).join("")}</div>
+      </div>`;
+
+    $("#los-karten").addEventListener("click", () => { kartenOpt.modus = fae ? "faellig" : "alle"; kartenSitzung = null; zeigeTab("karten"); });
+    $("#los-quiz").addEventListener("click", () => { quizSitzung = null; zeigeTab("quiz"); });
+    p.querySelectorAll("[data-lernen]").forEach((b) => b.addEventListener("click", () => {
+      setzeAuswahl([b.dataset.lernen]); kartenOpt.kat = []; kartenOpt.modus = "faellig"; kartenSitzung = null; zeigeTab("karten");
+    }));
+    p.querySelectorAll("[data-quiz]").forEach((b) => b.addEventListener("click", () => {
+      setzeAuswahl([b.dataset.quiz]); quizSitzung = null; zeigeTab("quiz");
+    }));
+    p.querySelectorAll("[data-skript]").forEach((b) => b.addEventListener("click", () => {
+      skriptThema = b.dataset.skript; skriptSuche = ""; zeigeTab("skript");
+    }));
+  };
+  const FACHNAMEN = ["neu", "Fach 1", "Fach 2", "Fach 3", "Fach 4", "Fach 5"];
+  function themaZeile(t, jetzt) {
+    const v = verteilung(t.karten);
+    const n = t.karten.length || 1;
+    const fae = t.karten.filter((k) => faellig(k, jetzt)).length;
+    const qs = quizStat[t.id];
+    const balken = v.map((x, i) => i === 0 ? "" : `<i style="width:${(x / n) * 100}%;background:var(--box${i})"></i>`).join("");
+    return `<article class="panel themazeile">
+      <div class="kopfzeile">
+        <div><span class="eyebrow">${esc(t.quelle || (t.eingebaut ? "" : "Eigenes Thema"))}</span><h3>${esc(t.titel)}</h3></div>
+        <span class="leise klein">${t.karten.length} Karten · ${t.quiz.length} Quizfragen${qs && qs.g ? " · Quiz " + Math.round((qs.r / qs.g) * 100) + " % richtig" : ""}</span>
+      </div>
+      <div class="faecher" role="img" aria-label="Verteilung der Karten auf die Lernfächer">${balken}</div>
+      <div class="legende">${v.map((x, i) => `<span style="--c:var(--box${i})">${FACHNAMEN[i]}: ${x}</span>`).join("")}</div>
+      <div class="zeile">
+        <button class="btn ${fae ? "primaer" : ""}" data-lernen="${esc(t.id)}" ${t.karten.length ? "" : "disabled"}>${fae ? fae + " fällig – lernen" : "Karten wiederholen"}</button>
+        <button class="btn" data-quiz="${esc(t.id)}" ${t.quiz.length ? "" : "disabled"}>Quiz</button>
+        <button class="btn" data-skript="${esc(t.id)}" ${t.zusammenfassung ? "" : "disabled"}>Zusammenfassung</button>
+      </div>
+    </article>`;
+  }
+
+  /* ================= LERNKARTEN ================= */
+  const kartenOpt = { modus: "faellig", kat: [], mischen: true };
+  let kartenSitzung = null; // { stapel:[karte], i, umgedreht, gesamt, ergebnis:{0,1,2} }
+
+  function kartenPool() {
+    const jetzt = Date.now();
+    const ids = new Set(aktiveThemen());
+    let pool = themen.filter((t) => ids.has(t.id)).flatMap((t) => t.karten);
+    if (kartenOpt.kat.length) pool = pool.filter((k) => kartenOpt.kat.includes(k.thema + "|" + k.k));
+    if (kartenOpt.modus === "faellig") pool = pool.filter((k) => faellig(k, jetzt));
+    if (kartenOpt.modus === "schwach") pool = pool.filter((k) => { const s = stand(k.id); return s.n > 0 && s.b <= 2; });
+    return pool;
+  }
+
+  render.karten = function () {
+    const p = $("#p-karten");
+    if (kartenSitzung) return kartenZeigen(p);
+    const ids = new Set(aktiveThemen());
+    const jetzt = Date.now();
+    // Kategorien der aktiven Themen
+    const kats = [];
+    themen.filter((t) => ids.has(t.id)).forEach((t) => {
+      const seen = new Map();
+      t.karten.forEach((k) => seen.set(k.k, (seen.get(k.k) || 0) + 1));
+      seen.forEach((n, k) => kats.push({ key: t.id + "|" + k, label: (ids.size > 1 ? t.kurz + " · " : "") + k, n }));
+    });
+    kartenOpt.kat = kartenOpt.kat.filter((k) => kats.some((x) => x.key === k));
+    const pool = kartenPool();
+
+    p.innerHTML = `
+      <div class="held"><span class="eyebrow">Lernkarten</span><h2>Was möchtest du lernen?</h2></div>
+      <div class="panel">
+        <div class="stapel"><span class="eyebrow">Themen</span><div class="chips" id="k-themen"></div></div>
+        <div class="stapel"><span class="eyebrow">Kapitel <span style="text-transform:none;letter-spacing:0;font-weight:400">(keins gewählt = alle)</span></span>
+          <div class="chips" id="k-kat">${kats.map((k) => `<button class="chip" type="button" data-k="${esc(k.key)}" aria-pressed="${kartenOpt.kat.includes(k.key)}">${esc(k.label)}<span class="zahl">${k.n}</span></button>`).join("")}</div>
+        </div>
+        <div class="stapel"><span class="eyebrow">Auswahl</span>
+          <div class="chips" id="k-modus">
+            <button class="chip" type="button" data-m="faellig" aria-pressed="${kartenOpt.modus === "faellig"}">Fällige &amp; neue</button>
+            <button class="chip" type="button" data-m="alle" aria-pressed="${kartenOpt.modus === "alle"}">Alle Karten</button>
+            <button class="chip" type="button" data-m="schwach" aria-pressed="${kartenOpt.modus === "schwach"}">Nur schwache (Fach 1–2)</button>
+          </div>
+          <label class="zeile klein"><input type="checkbox" id="k-mischen" ${kartenOpt.mischen ? "checked" : ""}> Reihenfolge mischen</label>
+        </div>
+        <div class="zeile-sb">
+          <span class="leise">${pool.length} Karten in dieser Auswahl</span>
+          <button class="btn primaer gross" id="k-start" ${pool.length ? "" : "disabled"}>Start</button>
+        </div>
+        ${!pool.length && kartenOpt.modus === "faellig" ? `<div class="meldung ok">In dieser Auswahl ist gerade nichts fällig. Wähle „Alle Karten“, um trotzdem zu üben.</div>` : ""}
+      </div>`;
+
+    themenChips($("#k-themen"), () => render.karten(), (t) => t.karten.filter((k) => faellig(k, jetzt)).length + "/" + t.karten.length);
+    p.querySelectorAll("#k-kat .chip").forEach((c) => c.addEventListener("click", () => {
+      const k = c.dataset.k;
+      kartenOpt.kat = kartenOpt.kat.includes(k) ? kartenOpt.kat.filter((x) => x !== k) : kartenOpt.kat.concat(k);
+      render.karten();
+    }));
+    p.querySelectorAll("#k-modus .chip").forEach((c) => c.addEventListener("click", () => { kartenOpt.modus = c.dataset.m; render.karten(); }));
+    $("#k-mischen").addEventListener("change", (e) => (kartenOpt.mischen = e.target.checked));
+    $("#k-start").addEventListener("click", () => {
+      const stapel = kartenOpt.mischen ? mischen(pool) : pool.slice();
+      kartenSitzung = { stapel, i: 0, umgedreht: false, gesamt: stapel.length, ergebnis: [0, 0, 0], wiederholt: new Set() };
+      render.karten();
+    });
+  };
+
+  function kartenZeigen(p) {
+    const s = kartenSitzung;
+    if (s.i >= s.stapel.length) return kartenFertig(p);
+    const k = s.stapel[s.i];
+    const t = themaVon(k.thema);
+    const st = stand(k.id);
+    const erledigt = s.ergebnis[0] + s.ergebnis[1] + s.ergebnis[2];
+    p.innerHTML = `
+      <div class="lernbereich">
+        <div class="zeile-sb">
+          <span class="leise klein">Karte ${Math.min(s.i + 1, s.stapel.length)} von ${s.stapel.length}${s.stapel.length > s.gesamt ? " (inkl. Wiederholungen)" : ""}</span>
+          <button class="btn" id="k-ende">Beenden</button>
+        </div>
+        <div class="fortschritt"><i style="width:${(s.i / s.stapel.length) * 100}%"></i></div>
+        <article class="karte" id="karte" tabindex="0" aria-live="polite">
+          <div class="meta">
+            <span class="badge akzent">${esc(t ? t.kurz : "")} · ${esc(k.k)}</span>
+            ${k.s ? `<span class="badge seite">${esc(k.s)}</span>` : ""}
+            <span class="badge">${FACHNAMEN[st.b]}</span>
+            ${k.h ? `<span class="badge hand" title="Inhalt (teilweise) nur aus handschriftlichen Notizen im Heft">handschriftlich</span>` : ""}
+          </div>
+          <div class="frage">${esc(k.f)}</div>
+          ${s.umgedreht ? `<div class="antwort">${esc(k.a)}</div>` : `<div class="tipp">Tippen oder <kbd>Leertaste</kbd>, um die Antwort zu sehen</div>`}
+        </article>
+        ${s.umgedreht ? `
+          <div class="bewertung">
+            <button class="btn nein" data-note="0">Nicht gewusst<small>kommt gleich wieder</small></button>
+            <button class="btn halb" data-note="1">Unsicher<small>bleibt im Fach</small></button>
+            <button class="btn ja" data-note="2">Gewusst<small>ein Fach höher</small></button>
+          </div>
+          <div class="tasten">Tastatur: <kbd>1</kbd> nicht gewusst · <kbd>2</kbd> unsicher · <kbd>3</kbd> gewusst</div>`
+        : `<button class="btn primaer gross" id="k-umdrehen">Antwort zeigen</button>`}
+        <span class="leise klein">${erledigt} bewertet · ${s.ergebnis[2]} gewusst · ${s.ergebnis[1]} unsicher · ${s.ergebnis[0]} nicht gewusst</span>
+      </div>`;
+    const umdrehen = () => { if (!s.umgedreht) { s.umgedreht = true; kartenZeigen(p); } };
+    $("#karte").addEventListener("click", umdrehen);
+    const kb = $("#k-umdrehen"); if (kb) kb.addEventListener("click", umdrehen);
+    p.querySelectorAll("[data-note]").forEach((b) => b.addEventListener("click", () => noteGeben(+b.dataset.note)));
+    $("#k-ende").addEventListener("click", () => { s.stapel = s.stapel.slice(0, s.i); kartenZeigen(p); });
+  }
+  function noteGeben(note) {
+    const s = kartenSitzung;
+    const k = s.stapel[s.i];
+    bewerten(k, note);
+    s.ergebnis[note]++;
+    if (note === 0 && !s.wiederholt.has(k.id)) { s.wiederholt.add(k.id); s.stapel.push(k); }
+    s.i++; s.umgedreht = false;
+    kartenZeigen($("#p-karten"));
+  }
+  function kartenFertig(p) {
+    const s = kartenSitzung;
+    const n = s.ergebnis[0] + s.ergebnis[1] + s.ergebnis[2];
+    p.innerHTML = `
+      <div class="panel" style="align-items:flex-start">
+        <span class="eyebrow">Runde beendet</span>
+        <h2>${n ? n + " Karten bewertet" : "Keine Karte bewertet"}</h2>
+        <div class="kennzahlen" style="width:100%">
+          <div class="kennzahl"><b style="color:var(--ok)">${s.ergebnis[2]}</b><span>gewusst</span></div>
+          <div class="kennzahl"><b style="color:var(--warn)">${s.ergebnis[1]}</b><span>unsicher</span></div>
+          <div class="kennzahl"><b style="color:var(--bad)">${s.ergebnis[0]}</b><span>nicht gewusst</span></div>
+        </div>
+        <div class="zeile">
+          <button class="btn primaer" id="k-neu">Neue Runde</button>
+          <button class="btn" id="k-start-tab">Zur Übersicht</button>
+        </div>
+      </div>`;
+    $("#k-neu").addEventListener("click", () => { kartenSitzung = null; render.karten(); });
+    $("#k-start-tab").addEventListener("click", () => { kartenSitzung = null; zeigeTab("start"); });
+  }
+
+  /* ================= QUIZ ================= */
+  const quizOpt = { anzahl: 10, nurFehler: false };
+  let quizSitzung = null; // { fragen:[{q, opts:[{t,richtig}]}], i, gewaehlt, richtig, falsch:[] }
+
+  function quizPool() {
+    const ids = new Set(aktiveThemen());
+    let pool = themen.filter((t) => ids.has(t.id)).flatMap((t) => t.quiz);
+    if (quizOpt.nurFehler) pool = pool.filter((q) => quizFehler[q.id]);
+    return pool;
+  }
+
+  render.quiz = function () {
+    const p = $("#p-quiz");
+    if (quizSitzung) return quizZeigen(p);
+    const pool = quizPool();
+    const fehlerAnz = Object.keys(quizFehler).filter((id) => themen.some((t) => t.quiz.some((q) => q.id === id))).length;
+    p.innerHTML = `
+      <div class="held"><span class="eyebrow">Quiz</span><h2>Multiple Choice wie in der Prüfung</h2>
+        <p>Eine Antwort ist richtig. Nach jeder Frage siehst du die Erklärung mit Seitenangabe aus dem Heft.</p></div>
+      <div class="panel">
+        <div class="stapel"><span class="eyebrow">Themen</span><div class="chips" id="q-themen"></div></div>
+        <div class="stapel"><span class="eyebrow">Anzahl Fragen</span>
+          <div class="chips" id="q-anzahl">
+            ${[10, 20, 0].map((n) => `<button class="chip" type="button" data-n="${n}" aria-pressed="${quizOpt.anzahl === n}">${n || "Alle"}</button>`).join("")}
+          </div>
+          <label class="zeile klein"><input type="checkbox" id="q-fehler" ${quizOpt.nurFehler ? "checked" : ""} ${fehlerAnz ? "" : "disabled"}> Nur Fragen, die ich zuletzt falsch hatte (${fehlerAnz})</label>
+        </div>
+        <div class="zeile-sb">
+          <span class="leise">${pool.length} Fragen verfügbar</span>
+          <button class="btn primaer gross" id="q-start" ${pool.length ? "" : "disabled"}>Quiz starten</button>
+        </div>
+      </div>`;
+    themenChips($("#q-themen"), () => render.quiz(), (t) => t.quiz.length);
+    p.querySelectorAll("#q-anzahl .chip").forEach((c) => c.addEventListener("click", () => { quizOpt.anzahl = +c.dataset.n; render.quiz(); }));
+    $("#q-fehler").addEventListener("change", (e) => { quizOpt.nurFehler = e.target.checked; render.quiz(); });
+    $("#q-start").addEventListener("click", () => {
+      let fragen = mischen(pool);
+      if (quizOpt.anzahl) fragen = fragen.slice(0, quizOpt.anzahl);
+      quizSitzung = {
+        fragen: fragen.map((q) => ({ q, opts: mischen(q.o.map((t, i) => ({ t, richtig: i === 0 }))) })),
+        i: 0, gewaehlt: null, richtig: 0, falsch: []
+      };
+      render.quiz();
+    });
+  };
+
+  function quizZeigen(p) {
+    const s = quizSitzung;
+    if (s.i >= s.fragen.length) return quizFertig(p);
+    const { q, opts } = s.fragen[s.i];
+    const t = themaVon(q.thema);
+    const beantwortet = s.gewaehlt !== null;
+    p.innerHTML = `
+      <div class="lernbereich">
+        <div class="zeile-sb">
+          <span class="leise klein">Frage ${s.i + 1} von ${s.fragen.length} · ${s.richtig} richtig</span>
+          <button class="btn" id="q-ende">Beenden</button>
+        </div>
+        <div class="fortschritt"><i style="width:${(s.i / s.fragen.length) * 100}%"></i></div>
+        <div class="panel">
+          <div class="zeile"><span class="badge akzent">${esc(t ? t.kurz : "")}</span>${q.h ? `<span class="badge hand">handschriftlich</span>` : ""}</div>
+          <h2 style="font-size:1.25rem;font-weight:600">${esc(q.f)}</h2>
+          <div class="optionen">
+            ${opts.map((o, i) => {
+              let cls = "";
+              if (beantwortet && o.richtig) cls = "richtig";
+              else if (beantwortet && i === s.gewaehlt) cls = "falsch";
+              return `<button class="option ${cls}" data-i="${i}" ${beantwortet ? "disabled" : ""}><span class="bst">${"ABCDEF"[i]}</span><span>${esc(o.t)}</span></button>`;
+            }).join("")}
+          </div>
+          ${beantwortet ? `
+            <div class="erklaerung">
+              <b style="color:${opts[s.gewaehlt].richtig ? "var(--ok)" : "var(--bad)"}">${opts[s.gewaehlt].richtig ? "Richtig." : "Leider falsch."}</b>
+              ${esc(q.e)} ${q.s ? `<span class="badge seite">${esc(q.s)}</span>` : ""}
+            </div>
+            <div class="zeile"><button class="btn primaer gross" id="q-weiter">${s.i + 1 < s.fragen.length ? "Nächste Frage" : "Auswertung"}</button></div>` : ""}
+        </div>
+        ${!beantwortet ? `<div class="tasten">Tastatur: <kbd>A</kbd>–<kbd>D</kbd> oder <kbd>1</kbd>–<kbd>4</kbd> wählen</div>` : `<div class="tasten"><kbd>Enter</kbd> weiter</div>`}
+      </div>`;
+    p.querySelectorAll(".option").forEach((b) => b.addEventListener("click", () => quizAntwort(+b.dataset.i)));
+    const w = $("#q-weiter"); if (w) { w.addEventListener("click", quizWeiter); w.focus({ preventScroll: true }); }
+    $("#q-ende").addEventListener("click", () => { s.fragen = s.fragen.slice(0, s.i + (beantwortet ? 1 : 0)); s.i = s.fragen.length; quizZeigen(p); });
+  }
+  function quizAntwort(i) {
+    const s = quizSitzung;
+    if (s.gewaehlt !== null) return;
+    const { q, opts } = s.fragen[s.i];
+    if (i < 0 || i >= opts.length) return;
+    s.gewaehlt = i;
+    const ok = opts[i].richtig;
+    const st = quizStat[q.thema] || { r: 0, g: 0 };
+    st.g++; if (ok) st.r++;
+    quizStat[q.thema] = st;
+    if (ok) { s.richtig++; delete quizFehler[q.id]; }
+    else { s.falsch.push(s.fragen[s.i]); quizFehler[q.id] = true; }
+    speicher.schreiben("quiz", quizStat);
+    speicher.schreiben("quizFehler", quizFehler);
+    quizZeigen($("#p-quiz"));
+  }
+  function quizWeiter() { quizSitzung.i++; quizSitzung.gewaehlt = null; quizZeigen($("#p-quiz")); }
+  function quizFertig(p) {
+    const s = quizSitzung;
+    const n = s.fragen.length;
+    const pz = n ? Math.round((s.richtig / n) * 100) : 0;
+    p.innerHTML = `
+      <div class="panel">
+        <span class="eyebrow">Auswertung</span>
+        <div class="zeile" style="align-items:baseline"><span class="ergebnis-zahl">${s.richtig}/${n}</span><span class="leise">${pz} % richtig</span></div>
+        <div class="zeile">
+          <button class="btn primaer" id="q-neu">Neues Quiz</button>
+          ${s.falsch.length ? `<button class="btn" id="q-fehler-neu">Falsche wiederholen (${s.falsch.length})</button>` : ""}
+        </div>
+      </div>
+      ${s.falsch.length ? `<div class="stapel"><h2 style="font-size:1.1rem">Diese Fragen nochmal ansehen</h2>
+        ${s.falsch.map(({ q }) => `<div class="panel" style="gap:6px"><b>${esc(q.f)}</b>
+          <span><span style="color:var(--ok);font-weight:700">Richtig:</span> ${esc(q.o[0])}</span>
+          <span class="leise klein">${esc(q.e)} ${q.s ? `<span class="badge seite">${esc(q.s)}</span>` : ""}</span></div>`).join("")}</div>` : ""}`;
+    $("#q-neu").addEventListener("click", () => { quizSitzung = null; render.quiz(); });
+    const f = $("#q-fehler-neu");
+    if (f) f.addEventListener("click", () => {
+      quizSitzung = { fragen: mischen(s.falsch).map(({ q }) => ({ q, opts: mischen(q.o.map((t, i) => ({ t, richtig: i === 0 }))) })), i: 0, gewaehlt: null, richtig: 0, falsch: [] };
+      render.quiz();
+    });
+  }
+
+  /* ================= ZUSAMMENFASSUNG ================= */
+  let skriptThema = null;
+  let skriptSuche = "";
+  render.skript = function () {
+    const p = $("#p-skript");
+    if (!skriptThema || !themaVon(skriptThema)) skriptThema = (themen.find((t) => t.zusammenfassung) || themen[0] || {}).id;
+    const t = themaVon(skriptThema);
+    p.innerHTML = `
+      <div class="held"><span class="eyebrow">Zusammenfassung</span><h2>Nachlesen und suchen</h2></div>
+      <div class="panel">
+        <div class="chips" id="s-themen">${themen.map((x) => `<button class="chip" type="button" data-id="${esc(x.id)}" aria-pressed="${x.id === skriptThema}">${esc(x.kurz)}</button>`).join("")}</div>
+        <div class="feld"><label for="s-suche">In allen Lernkarten suchen</label>
+          <input id="s-suche" type="search" placeholder="z. B. Stemmer, ABI, Erysipel" value="${esc(skriptSuche)}" autocomplete="off"></div>
+      </div>
+      <div id="s-ergebnis"></div>`;
+    p.querySelectorAll("#s-themen .chip").forEach((c) => c.addEventListener("click", () => { skriptThema = c.dataset.id; skriptSuche = ""; render.skript(); }));
+    const inp = $("#s-suche");
+    inp.addEventListener("input", () => { skriptSuche = inp.value; skriptInhalt(t); });
+    skriptInhalt(t);
+  };
+  function markieren(text, q) {
+    const e = esc(text);
+    if (!q) return e;
+    const re = new RegExp("(" + esc(q).replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + ")", "gi");
+    return e.replace(re, "<mark>$1</mark>");
+  }
+  function skriptInhalt(t) {
+    const ziel = $("#s-ergebnis");
+    const q = skriptSuche.trim();
+    if (q.length >= 2) {
+      const ql = q.toLowerCase();
+      const treffer = themen.flatMap((x) => x.karten).filter((k) => (k.f + " " + k.a + " " + k.k).toLowerCase().includes(ql));
+      ziel.innerHTML = `<div class="treffer"><span class="leise">${treffer.length} Karten gefunden</span>
+        ${treffer.map((k) => `<div class="panel"><div class="zeile"><span class="badge akzent">${esc(themaVon(k.thema).kurz)} · ${esc(k.k)}</span>${k.s ? `<span class="badge seite">${esc(k.s)}</span>` : ""}</div>
+          <b>${markieren(k.f, q)}</b><div class="a">${markieren(k.a, q)}</div></div>`).join("")}</div>`;
+      return;
+    }
+    if (!t || !t.zusammenfassung) {
+      ziel.innerHTML = `<div class="panel leer">Für dieses Thema gibt es noch keine Zusammenfassung.</div>`;
+      return;
+    }
+    ziel.innerHTML = `<article class="panel">
+      <div class="stapel" style="gap:6px"><span class="eyebrow">${esc(t.quelle)}</span><h2>${esc(t.titel)}</h2>
+        ${t.hinweis ? `<p class="leise klein" style="margin:0">${esc(t.hinweis)} ★ = im Heft als prüfungsrelevant markiert.</p>` : ""}</div>
+      <nav class="inhalt" id="s-inhalt" aria-label="Inhalt"></nav>
+      <div class="skript" id="s-text">${t.zusammenfassung}</div></article>`;
+    const nav = $("#s-inhalt");
+    $("#s-text").querySelectorAll("h3").forEach((h, i) => {
+      h.id = "abschnitt-" + i;
+      const a = document.createElement("a");
+      a.href = "#" + h.id;
+      a.textContent = (h.childNodes[0] && h.childNodes[0].textContent.trim()) || h.textContent;
+      a.addEventListener("click", (e) => { e.preventDefault(); h.scrollIntoView({ behavior: "smooth", block: "start" }); });
+      nav.appendChild(a);
+    });
+  }
+
+  /* ================= THEMEN VERWALTEN ================= */
+  const VORLAGE = {
+    id: "dekubitus",
+    titel: "Dekubitus",
+    kurz: "Dekubitus",
+    quelle: "Kursheft …",
+    hinweis: "Seitenangaben beziehen sich auf das Heft.",
+    karten: [
+      { k: "Kapitel", f: "Frage?", a: "Antwort.\nZeilenumbruch mit \\n", s: "S. 1" }
+    ],
+    quiz: [
+      { f: "Frage?", o: ["richtige Antwort (immer zuerst)", "falsch", "falsch", "falsch"], e: "Erklärung", s: "S. 1" }
+    ],
+    zusammenfassung: "<h3>1. Abschnitt</h3><ul><li>Punkt</li></ul>"
+  };
+  let themenMeldung = null;
+
+  function eigeneThemen() { return speicher.lesen("eigeneThemen", []); }
+  function eigeneSpeichern(liste) {
+    const ok = speicher.schreiben("eigeneThemen", liste);
+    themenLaden(); kopfInfo();
+    return ok;
+  }
+  function pruefeThema(t) {
+    if (!t || typeof t !== "object" || Array.isArray(t)) return "Die Datei enthält kein Thema (erwartet wird ein Objekt mit { … }).";
+    if (!t.titel) return "Es fehlt der Titel (\"titel\").";
+    if (t.karten && !Array.isArray(t.karten)) return "\"karten\" muss eine Liste sein.";
+    if (t.quiz && !Array.isArray(t.quiz)) return "\"quiz\" muss eine Liste sein.";
+    for (const [i, c] of (t.karten || []).entries()) if (!c || !c.f || !c.a) return "Karte " + (i + 1) + ": \"f\" (Frage) und \"a\" (Antwort) sind Pflicht.";
+    for (const [i, q] of (t.quiz || []).entries()) if (!q || !q.f || !Array.isArray(q.o) || q.o.length < 2) return "Quizfrage " + (i + 1) + ": \"f\" und mindestens zwei Optionen in \"o\" sind Pflicht.";
+    return null;
+  }
+  function importieren(text) {
+    let daten;
+    try { daten = JSON.parse(text); }
+    catch (e) { return { fehler: "Der Text ist kein gültiges JSON. Prüfe Kommas und Anführungszeichen. (" + e.message + ")" }; }
+    const liste = Array.isArray(daten) ? daten : [daten];
+    const eigene = eigeneThemen();
+    const namen = [];
+    for (const t of liste) {
+      const f = pruefeThema(t);
+      if (f) return { fehler: f };
+      t.id = slug(t.id || t.titel);
+      const eingebaut = Lernapp.eingebaut.find((x) => x.id === t.id);
+      if (eingebaut) return { fehler: "Ein eingebautes Thema mit der Kennung „" + t.id + "“ gibt es schon. Bitte eine andere \"id\" wählen." };
+      delete t.eingebaut;
+      const i = eigene.findIndex((x) => x.id === t.id);
+      if (i >= 0) eigene[i] = t; else eigene.push(t);
+      namen.push(t.titel);
+    }
+    if (!eigeneSpeichern(eigene)) return { fehler: "Speichern im Browser nicht möglich (privates Fenster oder Speicher voll)." };
+    return { ok: "Importiert: " + namen.join(", ") };
+  }
+
+  render.themen = function () {
+    const p = $("#p-themen");
+    const eigene = eigeneThemen();
+    p.innerHTML = `
+      <div class="held"><span class="eyebrow">Themen</span><h2>Themen verwalten</h2>
+        <p>Eingebaute Themen sind fest in der App hinterlegt. Eigene Themen und Karten speichert dieser Browser. Sichere sie regelmäßig über „Sicherung“.</p></div>
+      ${themenMeldung ? `<div class="meldung ${themenMeldung.ok ? "ok" : "fehler"}">${esc(themenMeldung.ok || themenMeldung.fehler)}</div>` : ""}
+      <div class="themen-tabelle">
+        ${themen.map((t) => `<div class="panel">
+          <div class="zeile-sb"><div><span class="eyebrow">${t.eingebaut ? "eingebaut" : "eigenes Thema"}</span><h3>${esc(t.titel)}</h3></div>
+            <span class="leise klein">${t.karten.length} Karten · ${t.quiz.length} Quizfragen${t.zusammenfassung ? " · Zusammenfassung" : ""}</span></div>
+          <div class="zeile">
+            <button class="btn" data-reset="${esc(t.id)}">Lernstand zurücksetzen</button>
+            ${!t.eingebaut ? `<button class="btn gefahr" data-del="${esc(t.id)}">Thema löschen</button>` : ""}
+          </div></div>`).join("")}
+      </div>
+
+      <details class="panel" id="d-karte">
+        <summary>Eigene Karte hinzufügen</summary>
+        <form id="f-karte" class="stapel">
+          <div class="feld"><label for="ek-thema">Thema</label>
+            <select id="ek-thema">
+              ${eigene.map((t) => `<option value="${esc(t.id)}">${esc(t.titel)}</option>`).join("")}
+              <option value="__neu">+ Neues eigenes Thema …</option>
+            </select></div>
+          <div class="feld" id="ek-neu-feld" ${eigene.length ? "hidden" : ""}><label for="ek-neu">Name des neuen Themas</label><input id="ek-neu" placeholder="z. B. Dekubitus"></div>
+          <div class="feld"><label for="ek-kat">Kapitel</label><input id="ek-kat" placeholder="z. B. Prophylaxe"></div>
+          <div class="feld"><label for="ek-f">Frage</label><textarea id="ek-f" required></textarea></div>
+          <div class="feld"><label for="ek-a">Antwort</label><textarea id="ek-a" required></textarea></div>
+          <div class="feld"><label for="ek-s">Seitenangabe (optional)</label><input id="ek-s" placeholder="S. 12"></div>
+          <div><button class="btn primaer" type="submit">Karte speichern</button></div>
+        </form>
+      </details>
+
+      <details class="panel" id="d-import">
+        <summary>Thema importieren</summary>
+        <p class="leise klein" style="margin:0">Datei (.json) auswählen oder den Inhalt einfügen. Ein Thema mit gleicher Kennung („id“) wird ersetzt.</p>
+        <div class="feld"><label for="imp-datei">Datei</label><input id="imp-datei" type="file" accept=".json,application/json,text/plain"></div>
+        <div class="feld"><label for="imp-text">oder Text einfügen</label><textarea id="imp-text" class="code" placeholder='{ "titel": "…", "karten": [ … ] }'></textarea></div>
+        <div class="zeile"><button class="btn primaer" id="imp-los">Importieren</button><button class="btn" id="imp-vorlage">Vorlage einsetzen</button></div>
+        <details><summary class="klein">Aufbau einer Themen-Datei</summary>
+          <pre class="vorlage">${esc(JSON.stringify(VORLAGE, null, 2))}</pre>
+          <p class="leise klein">Bei Quizfragen steht die richtige Antwort in „o“ immer an erster Stelle – die App mischt sie. „h“: true markiert Inhalte aus handschriftlichen Notizen.</p>
+        </details>
+      </details>
+
+      <details class="panel" id="d-sicherung">
+        <summary>Sicherung &amp; Wiederherstellung</summary>
+        <p class="leise klein" style="margin:0">Enthält Lernstand, Quiz-Statistik und eigene Themen. Text kopieren und z. B. in einer Notiz ablegen; zum Wiederherstellen hier einfügen.</p>
+        <div class="feld"><label for="sich-text">Sicherungstext</label><textarea id="sich-text" class="code"></textarea></div>
+        <div class="zeile">
+          <button class="btn" id="sich-kopieren">Sicherung kopieren</button>
+          <button class="btn" id="sich-laden">Eingefügte Sicherung laden</button>
+        </div>
+      </details>`;
+
+    p.querySelectorAll("[data-reset]").forEach((b) => b.addEventListener("click", () => bestaetigen(b, "Wirklich zurücksetzen?", () => {
+      const t = themaVon(b.dataset.reset);
+      t.karten.forEach((k) => delete fortschritt[k.id]);
+      t.quiz.forEach((q) => delete quizFehler[q.id]);
+      delete quizStat[t.id];
+      speicher.schreiben("fortschritt", fortschritt); speicher.schreiben("quiz", quizStat); speicher.schreiben("quizFehler", quizFehler);
+      themenMeldung = { ok: "Lernstand für „" + t.titel + "“ zurückgesetzt." }; render.themen();
+    })));
+    p.querySelectorAll("[data-del]").forEach((b) => b.addEventListener("click", () => bestaetigen(b, "Endgültig löschen?", () => {
+      const t = themaVon(b.dataset.del);
+      eigeneSpeichern(eigeneThemen().filter((x) => x.id !== b.dataset.del));
+      themenMeldung = { ok: "Thema „" + (t ? t.titel : "") + "“ gelöscht." }; render.themen();
+    })));
+
+    // Eigene Karte
+    const sel = $("#ek-thema");
+    const neuFeld = $("#ek-neu-feld");
+    const neuWahl = () => (neuFeld.hidden = sel.value !== "__neu");
+    sel.addEventListener("change", neuWahl); neuWahl();
+    $("#f-karte").addEventListener("submit", (e) => {
+      e.preventDefault();
+      const f = $("#ek-f").value.trim(), a = $("#ek-a").value.trim();
+      if (!f || !a) return;
+      const liste = eigeneThemen();
+      let t;
+      if (sel.value === "__neu") {
+        const name = $("#ek-neu").value.trim() || "Eigene Karten";
+        let id = slug(name);
+        while (Lernapp.eingebaut.some((x) => x.id === id) || liste.some((x) => x.id === id)) id += "-2";
+        t = { id, titel: name, kurz: name, quelle: "Eigene Karten", karten: [], quiz: [], zusammenfassung: "" };
+        liste.push(t);
+      } else t = liste.find((x) => x.id === sel.value);
+      t.karten = t.karten || [];
+      t.karten.push({ id: "e" + Date.now().toString(36), k: $("#ek-kat").value.trim() || "Allgemein", f, a, s: $("#ek-s").value.trim() });
+      themenMeldung = eigeneSpeichern(liste) ? { ok: "Karte in „" + t.titel + "“ gespeichert." } : { fehler: "Speichern im Browser nicht möglich." };
+      render.themen();
+      $("#d-karte").open = true;
+      const neuSel = $("#ek-thema"); neuSel.value = t.id; neuSel.dispatchEvent(new Event("change"));
+    });
+
+    // Import
+    $("#imp-datei").addEventListener("change", (e) => {
+      const file = e.target.files[0]; if (!file) return;
+      const r = new FileReader();
+      r.onload = () => { $("#imp-text").value = r.result; };
+      r.readAsText(file, "utf-8");
+    });
+    $("#imp-vorlage").addEventListener("click", () => { $("#imp-text").value = JSON.stringify(VORLAGE, null, 2); });
+    $("#imp-los").addEventListener("click", () => {
+      const txt = $("#imp-text").value.trim();
+      themenMeldung = txt ? importieren(txt) : { fehler: "Bitte zuerst eine Datei wählen oder Text einfügen." };
+      render.themen();
+      if (themenMeldung.fehler) { $("#d-import").open = true; $("#imp-text").value = txt; }
+      window.scrollTo(0, 0);
+    });
+
+    // Sicherung
+    $("#sich-kopieren").addEventListener("click", (e) => {
+      const daten = JSON.stringify({ app: "wundmanager-lernapp", version: 1, datum: new Date().toISOString(), fortschritt, quiz: quizStat, quizFehler, eigeneThemen: eigeneThemen() });
+      $("#sich-text").value = daten;
+      kopieren(daten, e.currentTarget);
+    });
+    $("#sich-laden").addEventListener("click", () => {
+      try {
+        const d = JSON.parse($("#sich-text").value);
+        if (d.app !== "wundmanager-lernapp") throw new Error("keine Sicherung dieser App");
+        fortschritt = d.fortschritt || {}; quizStat = d.quiz || {}; quizFehler = d.quizFehler || {};
+        speicher.schreiben("fortschritt", fortschritt); speicher.schreiben("quiz", quizStat); speicher.schreiben("quizFehler", quizFehler);
+        eigeneSpeichern(d.eigeneThemen || []);
+        themenMeldung = { ok: "Sicherung vom " + new Date(d.datum).toLocaleDateString("de-DE") + " geladen." };
+      } catch (err) {
+        themenMeldung = { fehler: "Sicherung konnte nicht gelesen werden: " + err.message };
+      }
+      render.themen(); window.scrollTo(0, 0);
+    });
+  };
+  function bestaetigen(knopf, frage, aktion) {
+    if (knopf.dataset.scharf) return aktion();
+    const alt = knopf.textContent;
+    knopf.dataset.scharf = "1"; knopf.textContent = frage; knopf.classList.add("gefahr", "scharf");
+    setTimeout(() => { if (knopf.isConnected) { delete knopf.dataset.scharf; knopf.textContent = alt; knopf.classList.remove("scharf"); } }, 3500);
+  }
+
+  /* ---------------- Tastatur ---------------- */
+  document.addEventListener("keydown", (e) => {
+    if (e.target.closest("input, textarea, select") || e.metaKey || e.ctrlKey || e.altKey) return;
+    if (aktuellerTab === "karten" && kartenSitzung && kartenSitzung.i < kartenSitzung.stapel.length) {
+      if (!kartenSitzung.umgedreht && (e.key === " " || e.key === "Enter")) { e.preventDefault(); kartenSitzung.umgedreht = true; kartenZeigen($("#p-karten")); }
+      else if (kartenSitzung.umgedreht && ["1", "2", "3"].includes(e.key)) { e.preventDefault(); noteGeben(+e.key - 1); }
+    }
+    if (aktuellerTab === "quiz" && quizSitzung && quizSitzung.i < quizSitzung.fragen.length) {
+      if (quizSitzung.gewaehlt === null) {
+        const k = e.key.toLowerCase();
+        const i = "abcdef".indexOf(k) >= 0 ? "abcdef".indexOf(k) : ["1", "2", "3", "4", "5", "6"].indexOf(k);
+        if (i >= 0) { e.preventDefault(); quizAntwort(i); }
+      } else if (e.key === "Enter" && !e.target.closest("button")) { e.preventDefault(); quizWeiter(); }
+    }
+  });
+
+  /* ---------------- Start ---------------- */
+  themenLaden();
+  kopfInfo();
+  const gespeicherterTab = speicher.lesen("tab", "start");
+  zeigeTab(render[gespeicherterTab] ? gespeicherterTab : "start");
+})();
+</script>
+</body>
+</html>
