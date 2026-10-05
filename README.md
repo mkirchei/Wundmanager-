@@ -1,5 +1,7 @@
 # Wundmanager Prüfungstrainer
 
+**App öffnen: https://mkirchei.github.io/Wundmanager-/**
+
 Lern-App zur Prüfungsvorbereitung Wundmanager / Wundexperte. Die App läuft im Browser, braucht keine Installation und keinen Server.
 
 ## Inhalte
