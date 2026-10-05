@@ -4,13 +4,17 @@
  * Version (neue Themen erscheinen sofort), ohne Internet die zuletzt geladene.
  * Neue Themen-Dateien unten in DATEIEN ergänzen.
  */
-const CACHE = "wundtrainer-v1";
+const CACHE = "wundtrainer-v2";
 const DATEIEN = [
   "./",
   "./index.html",
   "./manifest.webmanifest",
-  "./themen/gefaesse.js",
+  "./themen/wundheilung.js",
   "./themen/haut.js",
+  "./themen/gefaesse.js",
+  "./themen/dekubitus.js",
+  "./themen/dokumentation.js",
+  "./themen/hygiene.js",
   "./icons/icon-192.png",
   "./icons/icon-512.png",
   "./icons/apple-touch-icon.png"

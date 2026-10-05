@@ -8,8 +8,13 @@ Lern-App zur Prüfungsvorbereitung Wundmanager / Wundexperte. Die App läuft im 
 
 | Thema | Lernkarten | Quizfragen | Quelle |
 |---|---|---|---|
-| Gefäßsysteme & Gefäßerkrankungen | 35 | 26 | murimed-Lernheft |
+| Wunden: Arten, Heilung und Heilungsstörungen | 44 | 29 | murimed-Kursheft Wundexperte Modul I |
 | Erkrankungen der Haut | 44 | 29 | murimed-Kursheft Wundexperte Modul I |
+| Gefäßsysteme & Gefäßerkrankungen | 35 | 26 | murimed-Lernheft |
+| Dekubitus, Ulcus cruris, Diabetisches Fußulkus | 60 | 32 | murimed-Kursheft Wundexperte Modul I |
+| Wundbetreuung und Dokumentation | 50 | 30 | murimed-Kursheft Wundexperte Modul I |
+| Hygienemaßnahmen in der Wundversorgung | 50 | 30 | murimed-Kursheft Wundexperte Modul I |
+| **Gesamt** | **283** | **176** | |
 
 Die Lernkarten und Zusammenfassungen sind aus den PDF-Unterlagen
 `Lernkarten_*.pdf` und `Zusammenfassung_*.pdf` übernommen. Die Quizfragen
