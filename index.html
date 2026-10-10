@@ -227,6 +227,14 @@ kbd { font-family: inherit; border: 1px solid var(--line); border-bottom-width: 
 .option.richtig .bst { background: var(--ok); color: var(--surface); border-color: var(--ok); }
 .option.falsch { border-color: var(--bad); background: var(--bad-soft); }
 .option.falsch .bst { background: var(--bad); color: var(--surface); border-color: var(--bad); }
+.option.mehr .bst { border-radius: 6px; }
+.option.gewaehlt { border-color: var(--accent); background: var(--accent-soft); }
+.option.gewaehlt .bst { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+.option.verpasst { border-style: dashed; background: var(--surface); }
+.option.verpasst .bst { background: var(--surface); color: var(--ok); }
+.sim-panel { border-color: var(--accent); }
+.sim-uhr { font-family: var(--f-display); font-weight: 700; font-size: 1.15rem; font-variant-numeric: tabular-nums; background: var(--surface); border: 1px solid var(--line); border-radius: 999px; padding: 4px 12px; }
+.sim-uhr .knapp { color: var(--bad); }
 .erklaerung { background: var(--surface-2); border-radius: 12px; padding: 12px 14px; border: 1px solid var(--line); }
 .ergebnis-zahl { font-family: var(--f-display); font-size: 3rem; font-weight: 700; font-variant-numeric: tabular-nums; line-height: 1; }
 
@@ -314,6 +322,7 @@ window.Lernapp = {
      THEMEN-DATEIEN
      Neues Thema: Datei in themen/ anlegen und hier eine Zeile ergänzen.
      ============================================================ -->
+<script src="themen/pruefung.js"></script>
 <script src="themen/wundheilung.js"></script>
 <script src="themen/haut.js"></script>
 <script src="themen/gefaesse.js"></script>
@@ -400,7 +409,7 @@ window.Lernapp = {
     }));
     const quiz = (t.quiz || []).map((q) => ({
       id: t.id + ":q" + (q.id || hash(q.f)),
-      thema: t.id, f: q.f, o: q.o, e: q.e || "", s: q.s || "", h: !!q.h
+      thema: t.id, f: q.f, o: q.o, r: Math.min(Math.max(1, q.r | 0), q.o.length - 1), e: q.e || "", s: q.s || "", h: !!q.h
     }));
     return {
       id: t.id, titel: t.titel || t.id, kurz: t.kurz || t.titel || t.id, quelle: t.quelle || "", hinweis: t.hinweis || "",
@@ -680,8 +689,13 @@ window.Lernapp = {
   }
 
   /* ================= QUIZ ================= */
-  const quizOpt = { anzahl: 10, nurFehler: false };
-  let quizSitzung = null; // { fragen:[{q, opts:[{t,richtig}]}], i, gewaehlt, richtig, falsch:[] }
+  // Antwortmodus "einfach": eine Antwort antippen. Modus "pruefung": wie in der Prüfung –
+  // eine oder mehrere Antworten richtig (nie alle), ankreuzen und dann prüfen.
+  // In den Themen-Dateien gibt "r" an, wie viele der ersten Optionen richtig sind (Standard 1).
+  const quizOpt = { anzahl: 10, nurFehler: false, modus: speicher.lesen("quizModus", "einfach") };
+  const SIM = { fragen: 60, minuten: 90 };
+  let quizSitzung = null;
+  let quizTimer = null;
 
   function quizPool() {
     const ids = new Set(aktiveThemen());
@@ -689,17 +703,44 @@ window.Lernapp = {
     if (quizOpt.nurFehler) pool = pool.filter((q) => quizFehler[q.id]);
     return pool;
   }
+  function frageVorbereiten(q) {
+    return { q, opts: mischen(q.o.map((t, i) => ({ t, richtig: i < q.r }))) };
+  }
+  function istRichtig(f, auswahl) { return f.opts.every((o, i) => o.richtig === auswahl.has(i)); }
+  function werten(q, ok) {
+    const st = quizStat[q.thema] || { r: 0, g: 0 };
+    st.g++; if (ok) st.r++;
+    quizStat[q.thema] = st;
+    if (ok) delete quizFehler[q.id]; else quizFehler[q.id] = true;
+    speicher.schreiben("quiz", quizStat);
+    speicher.schreiben("quizFehler", quizFehler);
+  }
+  function neueSitzung(fragen, extra) {
+    return Object.assign({ fragen: fragen.map(frageVorbereiten), i: 0, auswahl: new Set(), geprueft: false, richtig: 0, falsch: [], mehr: quizOpt.modus === "pruefung" }, extra || {});
+  }
+  const richtigeTexte = (q) => q.o.slice(0, q.r);
 
   render.quiz = function () {
     const p = $("#p-quiz");
-    if (quizSitzung) return quizZeigen(p);
+    if (quizSitzung) return quizSitzung.sim ? simZeigen(p) : quizZeigen(p);
     const pool = quizPool();
-    const fehlerAnz = Object.keys(quizFehler).filter((id) => themen.some((t) => t.quiz.some((q) => q.id === id))).length;
+    const alle = themen.flatMap((t) => t.quiz);
+    const simAnz = Math.min(SIM.fragen, alle.length);
+    const fehlerAnz = Object.keys(quizFehler).filter((id) => alle.some((q) => q.id === id)).length;
     p.innerHTML = `
       <div class="held"><span class="eyebrow">Quiz</span><h2>Multiple Choice wie in der Prüfung</h2>
-        <p>Eine Antwort ist richtig. Nach jeder Frage siehst du die Erklärung mit Seitenangabe aus dem Heft.</p></div>
+        <p>Nach jeder Frage siehst du die Erklärung mit Seitenangabe aus dem Heft.</p></div>
       <div class="panel">
         <div class="stapel"><span class="eyebrow">Themen</span><div class="chips" id="q-themen"></div></div>
+        <div class="stapel"><span class="eyebrow">Antwortmodus</span>
+          <div class="chips" id="q-modus">
+            <button class="chip" type="button" data-m="einfach" aria-pressed="${quizOpt.modus === "einfach"}">Eine Antwort antippen</button>
+            <button class="chip" type="button" data-m="pruefung" aria-pressed="${quizOpt.modus === "pruefung"}">Wie in der Prüfung: ankreuzen</button>
+          </div>
+          <span class="leise klein">${quizOpt.modus === "pruefung"
+            ? "Du weißt nicht, wie viele Antworten richtig sind – mindestens eine, nie alle. Kreuze an und tippe auf „Antwort prüfen“."
+            : "Fragen mit mehreren richtigen Antworten werden trotzdem zum Ankreuzen angezeigt und so gekennzeichnet."}</span>
+        </div>
         <div class="stapel"><span class="eyebrow">Anzahl Fragen</span>
           <div class="chips" id="q-anzahl">
             ${[10, 20, 0].map((n) => `<button class="chip" type="button" data-n="${n}" aria-pressed="${quizOpt.anzahl === n}">${n || "Alle"}</button>`).join("")}
@@ -710,27 +751,54 @@ window.Lernapp = {
           <span class="leise">${pool.length} Fragen verfügbar</span>
           <button class="btn primaer gross" id="q-start" ${pool.length ? "" : "disabled"}>Quiz starten</button>
         </div>
+      </div>
+      <div class="panel sim-panel">
+        <div class="stapel" style="gap:6px"><span class="eyebrow">Prüfungssimulation</span>
+          <h2>${simAnz} Fragen · ${SIM.minuten} Minuten</h2>
+          <p class="leise" style="margin:0">Wie die Theorieprüfung laut deiner Mitschrift: Fragen aus allen ${themen.length} Themen, ankreuzen (eine oder mehrere richtig, nie alle), Uhr läuft. Die Auswertung kommt erst nach der Abgabe.</p></div>
+        <div><button class="btn primaer gross" id="sim-start" ${alle.length ? "" : "disabled"}>Simulation starten</button></div>
       </div>`;
     themenChips($("#q-themen"), () => render.quiz(), (t) => t.quiz.length);
+    p.querySelectorAll("#q-modus .chip").forEach((c) => c.addEventListener("click", () => { quizOpt.modus = c.dataset.m; speicher.schreiben("quizModus", quizOpt.modus); render.quiz(); }));
     p.querySelectorAll("#q-anzahl .chip").forEach((c) => c.addEventListener("click", () => { quizOpt.anzahl = +c.dataset.n; render.quiz(); }));
     $("#q-fehler").addEventListener("change", (e) => { quizOpt.nurFehler = e.target.checked; render.quiz(); });
     $("#q-start").addEventListener("click", () => {
       let fragen = mischen(pool);
       if (quizOpt.anzahl) fragen = fragen.slice(0, quizOpt.anzahl);
-      quizSitzung = {
-        fragen: fragen.map((q) => ({ q, opts: mischen(q.o.map((t, i) => ({ t, richtig: i === 0 }))) })),
-        i: 0, gewaehlt: null, richtig: 0, falsch: []
-      };
+      quizSitzung = neueSitzung(fragen);
+      render.quiz();
+    });
+    $("#sim-start").addEventListener("click", () => {
+      const fragen = mischen(alle).slice(0, simAnz);
+      quizSitzung = neueSitzung(fragen, { sim: true, mehr: true, antworten: fragen.map(() => new Set()), start: Date.now(), ende: Date.now() + SIM.minuten * 60000 });
+      simUhrStarten();
       render.quiz();
     });
   };
 
+  function optionenHtml(f, auswahl, mehr, aufgedeckt) {
+    return f.opts.map((o, i) => {
+      const gew = auswahl.has(i);
+      let cls = mehr ? "mehr" : "";
+      if (aufgedeckt) {
+        if (o.richtig && gew) cls += " richtig";
+        else if (o.richtig) cls += " richtig verpasst";
+        else if (gew) cls += " falsch";
+      } else if (gew) cls += " gewaehlt";
+      const marke = aufgedeckt && o.richtig && !gew ? `<span class="badge">fehlte</span>` : "";
+      return `<button class="option ${cls}" data-i="${i}" ${aufgedeckt ? "disabled" : ""} ${mehr && !aufgedeckt ? `aria-pressed="${gew}"` : ""}><span class="bst">${"ABCDEF"[i]}</span><span style="flex:1">${esc(o.t)}</span>${marke}</button>`;
+    }).join("");
+  }
+
   function quizZeigen(p) {
     const s = quizSitzung;
     if (s.i >= s.fragen.length) return quizFertig(p);
-    const { q, opts } = s.fragen[s.i];
+    const f = s.fragen[s.i];
+    const { q } = f;
     const t = themaVon(q.thema);
-    const beantwortet = s.gewaehlt !== null;
+    const mehr = s.mehr || q.r > 1;
+    const hinweis = s.mehr ? "Eine oder mehrere Antworten sind richtig." : (q.r > 1 ? "Mehrere Antworten sind richtig – kreuze alle an." : "");
+    const ok = s.geprueft && istRichtig(f, s.auswahl);
     p.innerHTML = `
       <div class="lernbereich">
         <div class="zeile-sb">
@@ -739,69 +807,158 @@ window.Lernapp = {
         </div>
         <div class="fortschritt"><i style="width:${(s.i / s.fragen.length) * 100}%"></i></div>
         <div class="panel">
-          <div class="zeile"><span class="badge akzent">${esc(t ? t.kurz : "")}</span>${q.h ? `<span class="badge hand">handschriftlich</span>` : ""}</div>
+          <div class="zeile"><span class="badge akzent">${esc(t ? t.kurz : "")}</span>${q.h ? `<span class="badge hand">handschriftlich</span>` : ""}${hinweis ? `<span class="badge">${hinweis}</span>` : ""}</div>
           <h2 style="font-size:1.25rem;font-weight:600">${esc(q.f)}</h2>
-          <div class="optionen">
-            ${opts.map((o, i) => {
-              let cls = "";
-              if (beantwortet && o.richtig) cls = "richtig";
-              else if (beantwortet && i === s.gewaehlt) cls = "falsch";
-              return `<button class="option ${cls}" data-i="${i}" ${beantwortet ? "disabled" : ""}><span class="bst">${"ABCDEF"[i]}</span><span>${esc(o.t)}</span></button>`;
-            }).join("")}
-          </div>
-          ${beantwortet ? `
+          <div class="optionen">${optionenHtml(f, s.auswahl, mehr, s.geprueft)}</div>
+          ${!s.geprueft && mehr ? `<div class="zeile"><button class="btn primaer gross" id="q-pruefen" ${s.auswahl.size ? "" : "disabled"}>Antwort prüfen</button></div>` : ""}
+          ${s.geprueft ? `
             <div class="erklaerung">
-              <b style="color:${opts[s.gewaehlt].richtig ? "var(--ok)" : "var(--bad)"}">${opts[s.gewaehlt].richtig ? "Richtig." : "Leider falsch."}</b>
+              <b style="color:${ok ? "var(--ok)" : "var(--bad)"}">${ok ? "Richtig." : (mehr ? "Nicht ganz." : "Leider falsch.")}</b>
+              ${!ok && mehr ? `Richtig ${q.r > 1 ? "sind" : "ist"}: ${richtigeTexte(q).map(esc).join(" · ")}.<br>` : ""}
               ${esc(q.e)} ${q.s ? `<span class="badge seite">${esc(q.s)}</span>` : ""}
             </div>
             <div class="zeile"><button class="btn primaer gross" id="q-weiter">${s.i + 1 < s.fragen.length ? "Nächste Frage" : "Auswertung"}</button></div>` : ""}
         </div>
-        ${!beantwortet ? `<div class="tasten">Tastatur: <kbd>A</kbd>–<kbd>D</kbd> oder <kbd>1</kbd>–<kbd>4</kbd> wählen</div>` : `<div class="tasten"><kbd>Enter</kbd> weiter</div>`}
+        <div class="tasten">${!s.geprueft ? (mehr ? "Tastatur: <kbd>A</kbd>–<kbd>D</kbd> ankreuzen · <kbd>Enter</kbd> prüfen" : "Tastatur: <kbd>A</kbd>–<kbd>D</kbd> oder <kbd>1</kbd>–<kbd>4</kbd> wählen") : "<kbd>Enter</kbd> weiter"}</div>
       </div>`;
-    p.querySelectorAll(".option").forEach((b) => b.addEventListener("click", () => quizAntwort(+b.dataset.i)));
+    p.querySelectorAll(".option").forEach((b) => b.addEventListener("click", () => quizWaehlen(+b.dataset.i)));
+    const pr = $("#q-pruefen"); if (pr) pr.addEventListener("click", quizPruefen);
     const w = $("#q-weiter"); if (w) { w.addEventListener("click", quizWeiter); w.focus({ preventScroll: true }); }
-    $("#q-ende").addEventListener("click", () => { s.fragen = s.fragen.slice(0, s.i + (beantwortet ? 1 : 0)); s.i = s.fragen.length; quizZeigen(p); });
+    $("#q-ende").addEventListener("click", () => { s.fragen = s.fragen.slice(0, s.i + (s.geprueft ? 1 : 0)); s.i = s.fragen.length; quizZeigen(p); });
   }
-  function quizAntwort(i) {
+  function quizWaehlen(i) {
     const s = quizSitzung;
-    if (s.gewaehlt !== null) return;
-    const { q, opts } = s.fragen[s.i];
-    if (i < 0 || i >= opts.length) return;
-    s.gewaehlt = i;
-    const ok = opts[i].richtig;
-    const st = quizStat[q.thema] || { r: 0, g: 0 };
-    st.g++; if (ok) st.r++;
-    quizStat[q.thema] = st;
-    if (ok) { s.richtig++; delete quizFehler[q.id]; }
-    else { s.falsch.push(s.fragen[s.i]); quizFehler[q.id] = true; }
-    speicher.schreiben("quiz", quizStat);
-    speicher.schreiben("quizFehler", quizFehler);
+    if (s.geprueft) return;
+    const f = s.fragen[s.i];
+    if (i < 0 || i >= f.opts.length) return;
+    if (s.mehr || f.q.r > 1) {
+      if (s.auswahl.has(i)) s.auswahl.delete(i); else s.auswahl.add(i);
+      quizZeigen($("#p-quiz"));
+    } else {
+      s.auswahl = new Set([i]);
+      quizPruefen();
+    }
+  }
+  function quizPruefen() {
+    const s = quizSitzung;
+    if (s.geprueft || !s.auswahl.size) return;
+    const f = s.fragen[s.i];
+    s.geprueft = true;
+    const ok = istRichtig(f, s.auswahl);
+    werten(f.q, ok);
+    if (ok) s.richtig++; else s.falsch.push(f);
     quizZeigen($("#p-quiz"));
   }
-  function quizWeiter() { quizSitzung.i++; quizSitzung.gewaehlt = null; quizZeigen($("#p-quiz")); }
+  function quizWeiter() { const s = quizSitzung; s.i++; s.auswahl = new Set(); s.geprueft = false; quizZeigen($("#p-quiz")); }
+  function falschListe(liste, mitAuswahl) {
+    return liste.map((x) => {
+      const q = x.q;
+      const deine = mitAuswahl ? [...x.auswahl].map((i) => x.opts[i].t) : null;
+      return `<div class="panel" style="gap:6px"><b>${esc(q.f)}</b>
+        ${mitAuswahl ? `<span class="klein"><span style="color:var(--bad);font-weight:700">Deine Auswahl:</span> ${deine.length ? deine.map(esc).join(" · ") : "keine"}</span>` : ""}
+        <span><span style="color:var(--ok);font-weight:700">Richtig:</span> ${richtigeTexte(q).map(esc).join(" · ")}</span>
+        <span class="leise klein">${esc(q.e)} ${q.s ? `<span class="badge seite">${esc(q.s)}</span>` : ""}</span></div>`;
+    }).join("");
+  }
   function quizFertig(p) {
     const s = quizSitzung;
     const n = s.fragen.length;
     const pz = n ? Math.round((s.richtig / n) * 100) : 0;
     p.innerHTML = `
       <div class="panel">
-        <span class="eyebrow">Auswertung</span>
-        <div class="zeile" style="align-items:baseline"><span class="ergebnis-zahl">${s.richtig}/${n}</span><span class="leise">${pz} % richtig</span></div>
+        <span class="eyebrow">${s.sim ? "Auswertung der Prüfungssimulation" : "Auswertung"}</span>
+        <div class="zeile" style="align-items:baseline"><span class="ergebnis-zahl">${s.richtig}/${n}</span><span class="leise">${pz} % richtig${s.sim ? " · Bearbeitungszeit " + dauerText(s.abgabe - s.start) : ""}</span></div>
+        ${s.sim && s.zeitAbgelaufen ? `<div class="meldung fehler">Die Zeit war abgelaufen – die Simulation wurde automatisch abgegeben.</div>` : ""}
         <div class="zeile">
-          <button class="btn primaer" id="q-neu">Neues Quiz</button>
+          <button class="btn primaer" id="q-neu">${s.sim ? "Zurück zum Quiz" : "Neues Quiz"}</button>
           ${s.falsch.length ? `<button class="btn" id="q-fehler-neu">Falsche wiederholen (${s.falsch.length})</button>` : ""}
         </div>
       </div>
-      ${s.falsch.length ? `<div class="stapel"><h2 style="font-size:1.1rem">Diese Fragen nochmal ansehen</h2>
-        ${s.falsch.map(({ q }) => `<div class="panel" style="gap:6px"><b>${esc(q.f)}</b>
-          <span><span style="color:var(--ok);font-weight:700">Richtig:</span> ${esc(q.o[0])}</span>
-          <span class="leise klein">${esc(q.e)} ${q.s ? `<span class="badge seite">${esc(q.s)}</span>` : ""}</span></div>`).join("")}</div>` : ""}`;
+      ${s.falsch.length ? `<div class="stapel"><h2 style="font-size:1.1rem">Diese Fragen nochmal ansehen</h2>${falschListe(s.falsch, !!s.sim)}</div>` : ""}`;
     $("#q-neu").addEventListener("click", () => { quizSitzung = null; render.quiz(); });
     const f = $("#q-fehler-neu");
     if (f) f.addEventListener("click", () => {
-      quizSitzung = { fragen: mischen(s.falsch).map(({ q }) => ({ q, opts: mischen(q.o.map((t, i) => ({ t, richtig: i === 0 }))) })), i: 0, gewaehlt: null, richtig: 0, falsch: [] };
+      quizSitzung = neueSitzung(mischen(s.falsch).map((x) => x.q), { mehr: s.mehr });
       render.quiz();
     });
+  }
+
+  /* ---------- Prüfungssimulation ---------- */
+  function dauerText(ms) {
+    const sek = Math.max(0, Math.round(ms / 1000));
+    return Math.floor(sek / 60) + ":" + String(sek % 60).padStart(2, "0") + " min";
+  }
+  function simUhrStarten() {
+    clearInterval(quizTimer);
+    quizTimer = setInterval(() => {
+      const s = quizSitzung;
+      if (!s || !s.sim || s.abgabe) { clearInterval(quizTimer); return; }
+      const rest = s.ende - Date.now();
+      const el = document.getElementById("sim-zeit");
+      if (el) { el.textContent = dauerText(rest); el.classList.toggle("knapp", rest < 5 * 60000); }
+      if (rest <= 0) { s.zeitAbgelaufen = true; simAbgeben(); }
+    }, 1000);
+  }
+  function simZeigen(p) {
+    const s = quizSitzung;
+    if (s.abgabe) return quizFertig(p);
+    const f = s.fragen[s.i];
+    const t = themaVon(f.q.thema);
+    const beantwortet = s.antworten.filter((a) => a.size).length;
+    const letzte = s.i === s.fragen.length - 1;
+    p.innerHTML = `
+      <div class="lernbereich">
+        <div class="zeile-sb">
+          <span class="leise klein">Frage ${s.i + 1} von ${s.fragen.length} · ${beantwortet} beantwortet</span>
+          <span class="sim-uhr" aria-label="Verbleibende Zeit"><span id="sim-zeit">${dauerText(s.ende - Date.now())}</span></span>
+        </div>
+        <div class="fortschritt"><i style="width:${(beantwortet / s.fragen.length) * 100}%"></i></div>
+        <div class="panel">
+          <div class="zeile"><span class="badge akzent">${esc(t ? t.kurz : "")}</span><span class="badge">Eine oder mehrere Antworten sind richtig.</span></div>
+          <h2 style="font-size:1.25rem;font-weight:600">${esc(f.q.f)}</h2>
+          <div class="optionen">${optionenHtml(f, s.antworten[s.i], true, false)}</div>
+          <div class="zeile-sb">
+            <button class="btn" id="sim-zurueck" ${s.i ? "" : "disabled"}>Zurück</button>
+            <button class="btn primaer" id="sim-weiter">${letzte ? "Zur ersten Frage" : "Weiter"}</button>
+          </div>
+        </div>
+        <div class="zeile-sb">
+          <span class="tasten">Tastatur: <kbd>A</kbd>–<kbd>D</kbd> ankreuzen · <kbd>←</kbd> <kbd>→</kbd> blättern</span>
+          <button class="btn gefahr" id="sim-abgeben">Abgeben</button>
+        </div>
+      </div>`;
+    p.querySelectorAll(".option").forEach((b) => b.addEventListener("click", () => simWaehlen(+b.dataset.i)));
+    $("#sim-zurueck").addEventListener("click", () => simBlaettern(-1));
+    $("#sim-weiter").addEventListener("click", () => simBlaettern(1));
+    $("#sim-abgeben").addEventListener("click", (e) => {
+      const offen = s.fragen.length - s.antworten.filter((a) => a.size).length;
+      bestaetigen(e.currentTarget, offen ? offen + " offen – trotzdem abgeben?" : "Wirklich abgeben?", simAbgeben);
+    });
+  }
+  function simWaehlen(i) {
+    const s = quizSitzung, a = s.antworten[s.i];
+    if (i < 0 || i >= s.fragen[s.i].opts.length) return;
+    if (a.has(i)) a.delete(i); else a.add(i);
+    simZeigen($("#p-quiz"));
+  }
+  function simBlaettern(d) {
+    const s = quizSitzung;
+    s.i = (s.i + d + s.fragen.length) % s.fragen.length;
+    simZeigen($("#p-quiz"));
+    window.scrollTo(0, 0);
+  }
+  function simAbgeben() {
+    const s = quizSitzung;
+    if (!s || s.abgabe) return;
+    clearInterval(quizTimer);
+    s.abgabe = Math.min(Date.now(), s.ende);
+    s.richtig = 0; s.falsch = [];
+    s.fragen.forEach((f, i) => {
+      const ok = istRichtig(f, s.antworten[i]);
+      werten(f.q, ok);
+      if (ok) s.richtig++; else s.falsch.push(Object.assign({}, f, { auswahl: s.antworten[i] }));
+    });
+    if (aktuellerTab === "quiz") { quizFertig($("#p-quiz")); window.scrollTo(0, 0); }
   }
 
   /* ================= ZUSAMMENFASSUNG ================= */
@@ -872,7 +1029,8 @@ window.Lernapp = {
       { k: "Kapitel", f: "Frage?", a: "Antwort.\nZeilenumbruch mit \\n", s: "S. 1" }
     ],
     quiz: [
-      { f: "Frage?", o: ["richtige Antwort (immer zuerst)", "falsch", "falsch", "falsch"], e: "Erklärung", s: "S. 1" }
+      { f: "Frage?", o: ["richtige Antwort (immer zuerst)", "falsch", "falsch", "falsch"], e: "Erklärung", s: "S. 1" },
+      { f: "Frage mit zwei richtigen Antworten?", o: ["richtig", "richtig", "falsch", "falsch"], r: 2, e: "Erklärung", s: "S. 2" }
     ],
     zusammenfassung: "<h3>1. Abschnitt</h3><ul><li>Punkt</li></ul>"
   };
@@ -957,7 +1115,7 @@ window.Lernapp = {
         <div class="zeile"><button class="btn primaer" id="imp-los">Importieren</button><button class="btn" id="imp-vorlage">Vorlage einsetzen</button></div>
         <details><summary class="klein">Aufbau einer Themen-Datei</summary>
           <pre class="vorlage">${esc(JSON.stringify(VORLAGE, null, 2))}</pre>
-          <p class="leise klein">Bei Quizfragen steht die richtige Antwort in „o“ immer an erster Stelle – die App mischt sie. „h“: true markiert Inhalte aus handschriftlichen Notizen.</p>
+          <p class="leise klein">Bei Quizfragen stehen die richtigen Antworten in „o“ immer vorne; „r“ gibt an, wie viele es sind (ohne „r“: eine). Die App mischt die Reihenfolge. „h“: true markiert Inhalte aus handschriftlichen Notizen.</p>
         </details>
       </details>
 
@@ -1061,11 +1219,17 @@ window.Lernapp = {
       if (!kartenSitzung.umgedreht && (e.key === " " || e.key === "Enter")) { e.preventDefault(); kartenSitzung.umgedreht = true; kartenZeigen($("#p-karten")); }
       else if (kartenSitzung.umgedreht && ["1", "2", "3"].includes(e.key)) { e.preventDefault(); noteGeben(+e.key - 1); }
     }
-    if (aktuellerTab === "quiz" && quizSitzung && quizSitzung.i < quizSitzung.fragen.length) {
-      if (quizSitzung.gewaehlt === null) {
-        const k = e.key.toLowerCase();
-        const i = "abcdef".indexOf(k) >= 0 ? "abcdef".indexOf(k) : ["1", "2", "3", "4", "5", "6"].indexOf(k);
-        if (i >= 0) { e.preventDefault(); quizAntwort(i); }
+    if (aktuellerTab === "quiz" && quizSitzung && quizSitzung.i < quizSitzung.fragen.length && !quizSitzung.abgabe) {
+      const s = quizSitzung;
+      const k = e.key.toLowerCase();
+      const i = "abcdef".indexOf(k) >= 0 ? "abcdef".indexOf(k) : ["1", "2", "3", "4", "5", "6"].indexOf(k);
+      if (s.sim) {
+        if (i >= 0) { e.preventDefault(); simWaehlen(i); }
+        else if (e.key === "ArrowRight") { e.preventDefault(); simBlaettern(1); }
+        else if (e.key === "ArrowLeft") { e.preventDefault(); simBlaettern(-1); }
+      } else if (!s.geprueft) {
+        if (i >= 0) { e.preventDefault(); quizWaehlen(i); }
+        else if (e.key === "Enter" && !e.target.closest("button")) { e.preventDefault(); quizPruefen(); }
       } else if (e.key === "Enter" && !e.target.closest("button")) { e.preventDefault(); quizWeiter(); }
     }
   });

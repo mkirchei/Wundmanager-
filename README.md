@@ -8,13 +8,14 @@ Lern-App zur Prüfungsvorbereitung Wundmanager / Wundexperte. Die App läuft im 
 
 | Thema | Lernkarten | Quizfragen | Quelle |
 |---|---|---|---|
+| Prüfungsschwerpunkte Modul I (Mitschrift) | 29 | 27 | Mitschrift + murimed-Kurshefte |
 | Wunden: Arten, Heilung und Heilungsstörungen | 44 | 29 | murimed-Kursheft Wundexperte Modul I |
 | Erkrankungen der Haut | 44 | 29 | murimed-Kursheft Wundexperte Modul I |
 | Gefäßsysteme & Gefäßerkrankungen | 35 | 26 | murimed-Lernheft |
 | Dekubitus, Ulcus cruris, Diabetisches Fußulkus | 60 | 32 | murimed-Kursheft Wundexperte Modul I |
 | Wundbetreuung und Dokumentation | 50 | 30 | murimed-Kursheft Wundexperte Modul I |
 | Hygienemaßnahmen in der Wundversorgung | 50 | 30 | murimed-Kursheft Wundexperte Modul I |
-| **Gesamt** | **283** | **176** | |
+| **Gesamt** | **312** | **203** | |
 
 Die Lernkarten und Zusammenfassungen sind aus den PDF-Unterlagen
 `Lernkarten_*.pdf` und `Zusammenfassung_*.pdf` übernommen. Die Quizfragen
@@ -25,7 +26,8 @@ stammen, sind als „handschriftlich“ markiert.
 ## Funktionen
 
 - **Karten**: Karteikarten mit Lernfächern (Leitner-System). „Gewusst“ schiebt eine Karte ein Fach höher (Wiederholung nach 1, 3, 7, 14 Tagen), „Nicht gewusst“ holt sie zurück in Fach 1 und zeigt sie in derselben Runde noch einmal. Filter nach Thema und Kapitel.
-- **Quiz**: Multiple Choice mit Erklärung und Seitenangabe; falsch beantwortete Fragen lassen sich gezielt wiederholen.
+- **Quiz**: Multiple Choice mit Erklärung und Seitenangabe; falsch beantwortete Fragen lassen sich gezielt wiederholen. Im Antwortmodus „Wie in der Prüfung“ wird angekreuzt, ohne zu wissen, wie viele Antworten richtig sind (mindestens eine, nie alle).
+- **Prüfungssimulation**: 60 Fragen aus allen Themen in 90 Minuten mit Countdown, Auswertung erst nach der Abgabe – nach dem Prüfungsformat aus der Mitschrift.
 - **Skript**: die Zusammenfassungen zum Nachlesen, mit Volltextsuche über alle Lernkarten.
 - **Themen**: eigene Karten anlegen, Themen als JSON importieren, Lernstand sichern und wiederherstellen.
 
@@ -70,8 +72,10 @@ steht danach auf derselben Einstellungsseite.
        { k: "Kapitel", f: "…", a: "…", s: "S. 4", h: true }   // h = nur handschriftlich
      ],
      quiz: [
-       // Die RICHTIGE Antwort steht immer an erster Stelle; die App mischt.
-       { f: "Frage?", o: ["richtig", "falsch", "falsch", "falsch"], e: "Erklärung", s: "S. 3" }
+       // Die richtigen Antworten stehen immer vorne; die App mischt.
+       { f: "Frage?", o: ["richtig", "falsch", "falsch", "falsch"], e: "Erklärung", s: "S. 3" },
+       // r = Anzahl richtiger Antworten (Standard 1, nie alle)
+       { f: "Frage?", o: ["richtig", "richtig", "falsch", "falsch"], r: 2, e: "Erklärung", s: "S. 3" }
      ],
      zusammenfassung: `<h3>1. Abschnitt <span class="seite">S. 3</span></h3><ul><li>…</li></ul>`
    });
