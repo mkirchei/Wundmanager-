@@ -70,7 +70,7 @@ Lernapp.thema({
     { k: "Venen", f: "Nenne die CVI-Stadien nach Widmer.",
       a: "I Corona phlebectatica, Phlebödem\nII Ödem, Dermatoliposklerose, Atrophie blanche, Purpura jaune d’ocre, Stauungsekzem\nIIIa abgeheiltes Ulcus\nIIIb florides Ulcus", s: "G S. 16; M S. 15" },
     { k: "Venen", f: "Einteilung der Varikose nach Hach?",
-      a: "Nur handschriftlich im Heft (G S. 15): 1 Mündungsklappe · 2 bis Mitte Oberschenkel · 3 bis unterhalb Knie · 4 bis Sprunggelenk.\nMit dem App-Anhang abgleichen.", s: "G S. 15", h: true },
+      a: "1 – nur die Venenklappe betroffen\n2 – Klappen bis Mitte Oberschenkel defekt\n3 – Insuffizienz bis unter das Kniegelenk\n4 – bis zum Sprunggelenk", s: "Zusatzskript Varikose S. 2" },
     { k: "Wunde", f: "IAD vs. Dekubitus – wie unterscheidet man sie?",
       a: "Dekubitus: über knöchernen Vorsprüngen, scharf begrenzt, Ursprung in der Tiefe.\nIAD/Feuchtigkeitswunde: Ursprung an der Epidermis, in Hautfalten (Gesäßfalte), ohne Bezug zu Knochenvorsprüngen.", s: "M S. 9–10" },
     { k: "Wunde", f: "Was ist bei analnahen Wunden zu beachten?",
@@ -151,8 +151,8 @@ Lernapp.thema({
       o: ["Grad I: Corona phlebectatica, Phlebödem", "Grad IIIb: florides Ulcus", "Grad II: abgeheiltes Ulcus", "Grad IIIa: florides Ulcus"], r: 2,
       e: "I Corona phlebectatica, Phlebödem · II Ödem, Dermatoliposklerose, Atrophie blanche, Purpura jaune d’ocre, Stauungsekzem · IIIa abgeheiltes Ulcus · IIIb florides Ulcus.", s: "G S. 16; M S. 15" },
     { f: "Welche Zuordnungen der Varikose-Stadien nach Hach sind richtig?",
-      o: ["Stadium 1: nur Mündungsklappe", "Stadium 4: bis zum Sprunggelenk", "Stadium 2: bis zum Sprunggelenk", "Stadium 3: nur Mündungsklappe"], r: 2,
-      e: "1 Mündungsklappe · 2 bis Mitte Oberschenkel · 3 bis unterhalb Knie · 4 bis Sprunggelenk. Nur handschriftlich im Heft – mit dem App-Anhang abgleichen.", s: "G S. 15", h: true },
+      o: ["Stadium 1: nur die Venenklappe betroffen", "Stadium 4: Vene über die gesamte Länge bis zum Sprunggelenk erkrankt", "Stadium 2: Insuffizienz bis zum Sprunggelenk", "Stadium 3: nur die Venenklappe betroffen"], r: 2,
+      e: "1 nur die Venenklappe · 2 Klappen bis Mitte Oberschenkel defekt · 3 Insuffizienz bis unter das Kniegelenk · 4 gesamte Länge bis zum Sprunggelenk. Durch das Zusatzskript Varikose bestätigt.", s: "Zusatzskript Varikose S. 2; G S. 15" },
     { f: "Wie unterscheidet man IAD und Dekubitus?",
       o: ["Ein Dekubitus entsteht über knöchernen Vorsprüngen", "Ein Dekubitus hat seinen Ursprung in der Tiefe", "IAD entsteht an der Epidermis, z. B. in der Gesäßfalte", "IAD ist an knöcherne Vorsprünge gebunden"], r: 3,
       e: "Feuchtigkeitswunden (IAD, Mazeration, Intertrigo) entstehen an der Epidermis, in Hautfalten, unabhängig von Knochenvorsprüngen.", s: "M S. 9–10" },
@@ -170,7 +170,7 @@ Lernapp.thema({
 </ul>
 
 <h3>2. Abgleich: Notiz → Heft</h3>
-<p class="leise">✔ = durch das Heft bestätigt · ➜ = präzisiert oder korrigiert · ? = im Drucktext nicht enthalten</p>
+<p class="leise">✔ = durch das Heft bestätigt · ➜ = präzisiert oder korrigiert · ? = nicht belegt</p>
 <div class="tabelle"><table>
   <thead><tr><th>Notiz (Prüfungsstoff)</th><th>Fundstelle</th><th>Ergebnis</th></tr></thead>
   <tbody>
@@ -189,7 +189,7 @@ Lernapp.thema({
     <tr><td style="white-space:normal">Welche Abfallprodukte? → Darmfette</td><td>G S. 8</td><td>➜ Abfallprodukte laut Heft: Reste abgestorbener Zellen und Eiweißkörper. Darmfette werden zusätzlich über die Lymphe transportiert, sind aber keine Abfallprodukte.</td></tr>
     <tr><td style="white-space:normal">Halboffenes System</td><td>G S. 7</td><td>✔ durchzieht den Körper wie ein Netz</td></tr>
     <tr><td style="white-space:normal">Diagnostik pAVK</td><td>G S. 12; M S. 24–25</td><td>✔ ergänzt um Heftinhalte (siehe unten)</td></tr>
-    <tr><td style="white-space:normal">Einteilung der Varikose nach Hach</td><td>G S. 15 (nur handschriftlich)</td><td>? Nicht im Drucktext – Stadien bitte mit dem App-Anhang abgleichen</td></tr>
+    <tr><td style="white-space:normal">Einteilung der Varikose nach Hach</td><td style="white-space:normal">G S. 15 (handschriftlich); Zusatzskript Varikose S. 2</td><td>✔ Durch das Zusatzskript bestätigt</td></tr>
     <tr><td style="white-space:normal">CVI nach Widmer</td><td>G S. 16; M S. 15</td><td>✔ in beiden Heften identisch</td></tr>
     <tr><td style="white-space:normal">IAD vs. Dekubitus (knöcherner Vorsprung)</td><td>M S. 9–10</td><td>✔</td></tr>
     <tr><td style="white-space:normal">Analnahe Wunden: Umgebung vor Feuchtigkeit schützen</td><td>W S. 15; D S. 24</td><td>✔</td></tr>
@@ -249,7 +249,7 @@ Lernapp.thema({
     <tr><td>IIIb</td><td>florides Ulcus</td></tr>
   </tbody>
 </table></div>
-<p class="hand">Varikose nach Hach – laut Mitschrift Prüfungsfrage, Vorlage im App-Anhang. Im Gefäß-Heft (S. 15) nur handschriftlich: 1 nur Mündungsklappe · 2 bis Mitte Oberschenkel · 3 bis unterhalb des Knies · 4 bis zum Sprunggelenk. Bitte mit dem App-Anhang abgleichen.</p>
+<p class="merke"><b>Varikose nach Hach ★</b> (Zusatzskript Varikose S. 2; Stammvarikose, meist V. saphena magna): 1 nur die Venenklappe betroffen · 2 Klappen bis mittlerer Oberschenkel defekt · 3 Insuffizienz bis unter das Kniegelenk · 4 gesamte Länge bis zum Sprunggelenk. Deine Notiz im Gefäß-Heft stimmt damit überein. Mehr im Thema „Varikose“.</p>
 
 <h3>5. Weitere Notizen</h3>
 <ul>

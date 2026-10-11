@@ -4,7 +4,7 @@
  * Version (neue Themen erscheinen sofort), ohne Internet die zuletzt geladene.
  * Neue Themen-Dateien unten in DATEIEN ergänzen.
  */
-const CACHE = "wundtrainer-v3";
+const CACHE = "wundtrainer-v4";
 const DATEIEN = [
   "./",
   "./index.html",
@@ -13,6 +13,7 @@ const DATEIEN = [
   "./themen/wundheilung.js",
   "./themen/haut.js",
   "./themen/gefaesse.js",
+  "./themen/varikose.js",
   "./themen/dekubitus.js",
   "./themen/dokumentation.js",
   "./themen/hygiene.js",

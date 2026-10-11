@@ -64,7 +64,7 @@ Lernapp.thema({
     { k: "Venös", f: "Woran erkennt man ein Phlebödem?",
       a: "Delle bleibt nach Daumendruck auf das Schienbein (Pitting edema); meist unsymmetrisch; Haut im Sinne einer CVI verändert.", s: "S. 16" },
     { k: "Venös", f: "Hach-Stadien der Varikose?",
-      a: "1 nur Mündungsklappe\n2 bis Mitte Oberschenkel\n3 bis unterhalb Knie\n4 bis Sprunggelenk", s: "S. 15", h: true },
+      a: "1 nur Mündungsklappe\n2 bis Mitte Oberschenkel\n3 bis unterhalb Knie\n4 bis Sprunggelenk\nIm Heft nur handschriftlich; bestätigt durch das Zusatzskript Varikose (S. 2).", s: "S. 15", h: true },
 
     { k: "Lymphe", f: "Definition des Lymphödems?",
       a: "Chronisch entzündliche Erkrankung des Interstitiums als Folge einer primären (anlagebedingten) oder sekundären (erworbenen) Schädigung des Lymphdrainagesystems (Wilting 2017).\nEiweißreich, frühe Verhärtung.", s: "S. 17–18" },
@@ -171,7 +171,7 @@ Lernapp.thema({
       e: "Prognose: Lebenserwartung ca. 10 Jahre kürzer, Sterblichkeit doppelt so hoch.", s: "S. 10–11" },
     { f: "Hach-Stadium 3 der Varikose bedeutet …",
       o: ["Insuffizienz bis unterhalb des Knies", "Nur die Mündungsklappe ist betroffen", "Insuffizienz bis Mitte Oberschenkel", "Insuffizienz bis zum Sprunggelenk"],
-      e: "1: nur Mündungsklappe · 2: bis Mitte Oberschenkel · 3: bis unterhalb des Knies · 4: bis zum Sprunggelenk.", s: "S. 15", h: true }
+      e: "1: nur Mündungsklappe · 2: bis Mitte Oberschenkel · 3: bis unterhalb des Knies · 4: bis zum Sprunggelenk. Im Heft nur handschriftlich; bestätigt durch das Zusatzskript Varikose (S. 2).", s: "S. 15", h: true }
   ],
 
   zusammenfassung: `
@@ -260,7 +260,7 @@ Lernapp.thema({
 <ul>
   <li>Phlebödem: Auf Daumendruck bleibt eine Delle (Pitting edema); meist unsymmetrisch, Haut im Sinne einer CVI verändert.</li>
 </ul>
-<p class="hand">Nur handschriftlich als „Prüfungsfrage“ vermerkt, nicht im Drucktext: Hach-Stadien der Varikose – 1: nur Mündungsklappe betroffen · 2: bis Mitte Oberschenkel · 3: bis unterhalb des Knies · 4: bis zum Sprunggelenk.</p>
+<p class="hand">Nur handschriftlich als „Prüfungsfrage“ vermerkt, nicht im Drucktext: Hach-Stadien der Varikose – 1: nur Mündungsklappe betroffen · 2: bis Mitte Oberschenkel · 3: bis unterhalb des Knies · 4: bis zum Sprunggelenk. Bestätigt durch das Zusatzskript Varikose (S. 2) – siehe Thema „Varikose“.</p>
 
 <h3>6. Lymphödem <span class="stern" title="im Heft als prüfungsrelevant markiert">★</span> <span class="seite">S. 17–26</span></h3>
 <ul>
