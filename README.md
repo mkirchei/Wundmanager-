@@ -8,6 +8,7 @@ Lern-App zur Prüfungsvorbereitung Wundmanager / Wundexperte. Die App läuft im 
 
 | Thema | Lernkarten | Quizfragen | Quelle |
 |---|---|---|---|
+| **Modul I** | | | |
 | Prüfungsschwerpunkte Modul I (Mitschrift) | 29 | 27 | Mitschrift + murimed-Kurshefte |
 | Wunden: Arten, Heilung und Heilungsstörungen | 51 | 36 | murimed-Kursheft Wundexperte Modul I |
 | Erkrankungen der Haut | 54 | 37 | murimed-Kursheft Wundexperte Modul I |
@@ -16,7 +17,16 @@ Lern-App zur Prüfungsvorbereitung Wundmanager / Wundexperte. Die App läuft im 
 | Dekubitus, Ulcus cruris, Diabetisches Fußulkus | 71 | 41 | murimed-Kursheft Wundexperte Modul I |
 | Wundbetreuung und Dokumentation | 50 | 30 | murimed-Kursheft Wundexperte Modul I |
 | Hygienemaßnahmen in der Wundversorgung | 50 | 30 | murimed-Kursheft Wundexperte Modul I |
-| **Gesamt** | **363** | **248** | |
+| **Modul II** | | | |
+| Einflussfaktoren auf die Wundheilung | 55 | 39 | murimed-Kursheft Wundexperte Modul II |
+| Expertenstandard Ernährungsmanagement | 53 | 38 | murimed-Lernheft Modul II |
+| Schmerzmanagement in der Wundversorgung | 52 | 36 | murimed-Lernheft Modul II |
+| Kompressionstherapie | 53 | 43 | murimed-Lernheft Modul II |
+| Expertenstandard Hautintegrität | 57 | 36 | murimed-Lernheft Modul II |
+| Wundreinigung und Débridement | 49 | 35 | murimed-Lernheft Modul II |
+| Wundbehandlung und Verbandstoffe | 49 | 42 | murimed-Kursheft Modul II |
+| Expertenstandard Dekubitusprophylaxe | 48 | 42 | murimed-Lernheft Modul II |
+| **Gesamt** | **779** | **559** | |
 
 Die Lernkarten und Zusammenfassungen sind aus den PDF-Unterlagen
 `Lernkarten_*.pdf` und `Zusammenfassung_*.pdf` übernommen. Die Quizfragen
@@ -26,6 +36,19 @@ stammen, sind als „handschriftlich“ markiert.
 Inhalte aus den zusätzlich bereitgestellten Foliensätzen stehen in den Lernkarten
 im Kapitel „Folien“ und in den Zusammenfassungen im Abschnitt „Abgleich mit dem
 Foliensatz“; Abweichungen zwischen Heft und Folien sind dort mit ⚠ gekennzeichnet.
+
+## Prüfungsschwerpunkte
+
+Die Schwerpunkt-Listen der Kursleitung (Padlet, Seiten 6–17) stehen in `themen/schwerpunkte.js`.
+Karten und Quizfragen, die einen Punkt abdecken, tragen das Feld `sp` (z. B.
+`sp: ["haut: Aufbau der Epidermis"]`, bei Unterpunkten `"dekubitus: Def. Ulcus cruris venosum – Diagnostik"`);
+im Skript markiert `<span class="sp" data-sp="…">Schwerpunkt</span>` die passenden Stellen.
+In der App:
+
+- **Karten** und **Quiz**: Kategorie „Nur Schwerpunkte“; markierte Karten und Fragen zeigen ein Schwerpunkt-Abzeichen.
+- **Skript → Schwerpunkte**: alle Listen mit den zugeordneten Karten und Fragen je Punkt, Lern- und Quiz-Knöpfe je Liste.
+  Punkte ohne Inhalte in der App sind als solche gekennzeichnet (z. B. „Geschichte, Recht und Ethik“ und
+  „Exp. Pflege von Menschen mit chronischen Wunden“, zu denen noch keine Unterlagen in der App sind).
 
 ## Funktionen
 

@@ -18,23 +18,23 @@ Lernapp.thema({
 
   karten: [
     { k: "Haut", f: "Was sind die Adnexorgane der Haut?",
-      a: "Hautanhangsgebilde: Haare, Nägel und Hautdrüsen (Schweiß-, Duft- und Talgdrüsen).", s: "H S. 3" },
+      a: "Hautanhangsgebilde: Haare, Nägel und Hautdrüsen (Schweiß-, Duft- und Talgdrüsen).", s: "H S. 3", sp: ["haut: Aufbau der Haut"] },
     { k: "Haut", f: "Nenne die Schichten der Epidermis von innen nach außen – deutsch und lateinisch.",
-      a: "1. Basalzellschicht – Stratum basale\n2. Stachelzellschicht – Stratum spinosum\n3. Körnerzellschicht – Stratum granulosum\n4. Glanzschicht – Stratum lucidum\n5. Hornschicht – Stratum corneum", s: "H S. 3–5" },
+      a: "1. Basalzellschicht – Stratum basale\n2. Stachelzellschicht – Stratum spinosum\n3. Körnerzellschicht – Stratum granulosum\n4. Glanzschicht – Stratum lucidum\n5. Hornschicht – Stratum corneum", s: "H S. 3–5", sp: ["haut: Aufbau der Epidermis"] },
     { k: "Haut", f: "In welcher Schicht liegen die Langerhans-Zellen und was tun sie?",
-      a: "In der Stachelzellschicht (Stratum spinosum); aus dem Knochenmark, fangen mit ihren Dendriten Pathogene und Antigene ab – „Wachposten des Immunsystems“.", s: "H S. 4" },
+      a: "In der Stachelzellschicht (Stratum spinosum); aus dem Knochenmark, fangen mit ihren Dendriten Pathogene und Antigene ab – „Wachposten des Immunsystems“.", s: "H S. 4", sp: ["haut: Def. Langerhanszellen"] },
     { k: "Haut", f: "Welche Schicht kommt nur an Handflächen und Fußsohlen vor?",
-      a: "Die Glanzschicht (Stratum lucidum) – 1–2 Lagen kernloser Keratinozyten.", s: "H S. 4" },
+      a: "Die Glanzschicht (Stratum lucidum) – 1–2 Lagen kernloser Keratinozyten.", s: "H S. 4", sp: ["haut: Aufbau der Epidermis"] },
     { k: "Haut", f: "Erysipel: Erreger, Klinik, Komplikationen?",
-      a: "Akute bakterielle Infektion der Dermis durch β-hämolysierende Streptokokken Gruppe A; klar begrenzte, schmerzhafte, überwärmte Rötung, Fieber; Komplikationen Sepsis, Lymphödem. Häufigste Komplikation des chronischen Lymphödems.", s: "H S. 20" },
+      a: "Akute bakterielle Infektion der Dermis durch β-hämolysierende Streptokokken Gruppe A; klar begrenzte, schmerzhafte, überwärmte Rötung, Fieber; Komplikationen Sepsis, Lymphödem. Häufigste Komplikation des chronischen Lymphödems.", s: "H S. 20", sp: ["haut: Beispiel für bakterielle Infektionskrankheit der Haut"] },
     { k: "Haut", f: "Was ist eine Mykose?",
       a: "Pilzinfektion (Dermatophyten, Schimmel-, Hefepilze) von Haut, Schleimhaut, Nägeln oder systemisch; begünstigt durch verminderte Abwehr.", s: "H S. 22" },
     { k: "Haut", f: "Unterschied Tumor und Neoplasie?",
       a: "Neoplasie: autonome Gewebeneubildung (benigne, semimaligne, maligne).\nTumor: jede örtliche Zunahme des Gewebevolumens (Schwellung) – weiter gefasst.", s: "H S. 33" },
     { k: "Haut", f: "Erkläre die ABCD(E)-Regel.",
-      a: "A – Asymmetrie\nB – Begrenzung unscharf\nC – Color, Mehrfarbigkeit\nD – Dynamik, Veränderung\nE – Erhabenheit (nur handschriftlich im Heft)", s: "H S. 27", h: true },
+      a: "A – Asymmetrie\nB – Begrenzung unscharf\nC – Color, Mehrfarbigkeit\nD – Dynamik, Veränderung\nE – Erhabenheit (nur handschriftlich im Heft)", s: "H S. 27", h: true, sp: ["haut: Was ist die A-B-C-D-Regel?"] },
     { k: "Gefäße", f: "Was gehört zum Herz-Kreislauf-System?",
-      a: "Herz als Druck-Saug-Pumpe, Blutgefäße (Arterien, Venen, Kapillaren) und Lymphgefäße als Leitungsröhren bzw. Stätten des Stoffaustauschs.", s: "G S. 3" },
+      a: "Herz als Druck-Saug-Pumpe, Blutgefäße (Arterien, Venen, Kapillaren) und Lymphgefäße als Leitungsröhren bzw. Stätten des Stoffaustauschs.", s: "G S. 3", sp: ["gefaesse: Bestandteile des Herz-Kreislauf-Systems"] },
     { k: "Gefäße", f: "Welche Aufgaben hat das Blutgefäßsystem?",
       a: "Ernährung des Organismus, Abtransport von Schlackenstoffen, Hormontransport (Steuerung vegetativer Funktionen), Wärmeregulation.", s: "G S. 3" },
     { k: "Gefäße", f: "Wie lauten die drei Kreisläufe des Blutgefäßsystems?",
@@ -50,11 +50,11 @@ Lernapp.thema({
     { k: "Gefäße", f: "Was ist die Windkesselfunktion – und wo findet sie statt?",
       a: "Funktion der elastischen Arterien (herznah): Aorta dehnt sich bei Herzkontraktion und zieht sich danach zusammen → stoßweise wird kontinuierliche Strömung.", s: "G S. 4, 6" },
     { k: "Lymphe", f: "Woraus besteht das Lymphsystem?",
-      a: "Lymphgefäße zusammen mit Lymphknoten, Knochenmark, Mandeln und Milz.", s: "G S. 7" },
+      a: "Lymphgefäße zusammen mit Lymphknoten, Knochenmark, Mandeln und Milz.", s: "G S. 7", sp: ["gefaesse: Bestandteile des Lymphgefäßsystems"] },
     { k: "Lymphe", f: "Warum heißt das Lymphgefäßsystem „halboffen“?",
       a: "Es beginnt blind mit Lymphkapillaren, die interstitielle Flüssigkeit aufnehmen, durchzieht den Körper wie ein Netz und mündet in den Blutkreislauf.", s: "G S. 7" },
     { k: "Lymphe", f: "Beschreibe den Weg der Lymphe.",
-      a: "Lymphkapillaren → kleine/große Lymphgefäße mit Klappen → Lymphknoten → Lymphstämme → Ductus thoracicus → linke Schlüsselbeinvene (V. subclavia).", s: "G S. 7–8" },
+      a: "Lymphkapillaren → kleine/große Lymphgefäße mit Klappen → Lymphknoten → Lymphstämme → Ductus thoracicus → linke Schlüsselbeinvene (V. subclavia).", s: "G S. 7–8", sp: ["gefaesse: Bestandteile des Lymphgefäßsystems"] },
     { k: "Lymphe", f: "Warum kann die Lymphe nicht zurückfließen?",
       a: "Die Lymphgefäße besitzen wie kleine Venen Klappen (schwingende Zipfel), die den Rückfluss verhindern.", s: "G S. 7" },
     { k: "Lymphe", f: "Wie wird die Lymphe ohne eigenes Pumporgan transportiert?",
@@ -64,13 +64,13 @@ Lernapp.thema({
     { k: "Lymphe", f: "Welche Aufgabe haben Lymphknoten?",
       a: "Bildung von Lymphozyten; Abwehr – sie fangen schädigende Stoffe und Erreger ab und machen sie unschädlich; schwellen bei Entzündung (diagnostischer Hinweis).", s: "G S. 8" },
     { k: "pAVK", f: "Welche diagnostischen Maßnahmen gibt es bei pAVK?",
-      a: "Anamnese, AZ, Schmerz, Gangbild, Temperatur, Fußpulse, ABI (Dopplerdruck), Ratschow-Lagerungsprobe, Ultraschall/Duplex, Laufband, MRT, Angiographie, CT; tcpO₂, Labor.", s: "G S. 12; M S. 24–25" },
+      a: "Anamnese, AZ, Schmerz, Gangbild, Temperatur, Fußpulse, ABI (Dopplerdruck), Ratschow-Lagerungsprobe, Ultraschall/Duplex, Laufband, MRT, Angiographie, CT; tcpO₂, Labor.", s: "G S. 12; M S. 24–25", sp: ["gefaesse: Arterielle Gefäßerkrankungen – Diagnostik (ABI-Messung)"] },
     { k: "pAVK", f: "Wie wird der ABI berechnet und was ist zu beachten?",
-      a: "Syst. Druck Knöchel ÷ syst. Druck Arm; gesund ca. 1,0, ≤ 0,9 = pAVK.\nBei Mönckeberg-Sklerose falsch hohe Werte.", s: "G S. 12; M S. 24" },
+      a: "Syst. Druck Knöchel ÷ syst. Druck Arm; gesund ca. 1,0, ≤ 0,9 = pAVK.\nBei Mönckeberg-Sklerose falsch hohe Werte.", s: "G S. 12; M S. 24", sp: ["gefaesse: Arterielle Gefäßerkrankungen – Diagnostik (ABI-Messung)"] },
     { k: "Venen", f: "Nenne die CVI-Stadien nach Widmer.",
-      a: "I Corona phlebectatica, Phlebödem\nII Ödem, Dermatoliposklerose, Atrophie blanche, Purpura jaune d’ocre, Stauungsekzem\nIIIa abgeheiltes Ulcus\nIIIb florides Ulcus", s: "G S. 16; M S. 15" },
+      a: "I Corona phlebectatica, Phlebödem\nII Ödem, Dermatoliposklerose, Atrophie blanche, Purpura jaune d’ocre, Stauungsekzem\nIIIa abgeheiltes Ulcus\nIIIb florides Ulcus", s: "G S. 16; M S. 15", sp: ["gefaesse: Venöse Gefäßerkrankungen – CVI", "dekubitus: Def. Ulcus cruris venosum – Klassifikation"] },
     { k: "Venen", f: "Einteilung der Varikose nach Hach?",
-      a: "1 – nur die Venenklappe betroffen\n2 – Klappen bis Mitte Oberschenkel defekt\n3 – Insuffizienz bis unter das Kniegelenk\n4 – bis zum Sprunggelenk", s: "Zusatzskript Varikose S. 2" },
+      a: "1 – nur die Venenklappe betroffen\n2 – Klappen bis Mitte Oberschenkel defekt\n3 – Insuffizienz bis unter das Kniegelenk\n4 – bis zum Sprunggelenk", s: "Zusatzskript Varikose S. 2", sp: ["gefaesse: Venöse Gefäßerkrankungen – Varikosis"] },
     { k: "Wunde", f: "IAD vs. Dekubitus – wie unterscheidet man sie?",
       a: "Dekubitus: über knöchernen Vorsprüngen, scharf begrenzt, Ursprung in der Tiefe.\nIAD/Feuchtigkeitswunde: Ursprung an der Epidermis, in Hautfalten (Gesäßfalte), ohne Bezug zu Knochenvorsprüngen.", s: "M S. 9–10" },
     { k: "Wunde", f: "Was ist bei analnahen Wunden zu beachten?",
@@ -80,16 +80,16 @@ Lernapp.thema({
   quiz: [
     { f: "Welche gehören zu den Adnexorganen (Hautanhangsgebilden) der Haut?",
       o: ["Haare", "Nägel", "Talgdrüsen", "Langerhans-Zellen"], r: 3,
-      e: "Adnexorgane: Haare, Nägel und Hautdrüsen (Schweiß-, Duft- und Talgdrüsen). Langerhans-Zellen sind Immunzellen in der Stachelzellschicht.", s: "H S. 3–4" },
+      e: "Adnexorgane: Haare, Nägel und Hautdrüsen (Schweiß-, Duft- und Talgdrüsen). Langerhans-Zellen sind Immunzellen in der Stachelzellschicht.", s: "H S. 3–4", sp: ["haut: Aufbau der Haut"] },
     { f: "Welche Aussagen zur Reihenfolge der Epidermis-Schichten (von innen nach außen) sind richtig?",
       o: ["Die innerste Schicht ist das Stratum basale", "Auf das Stratum spinosum folgt das Stratum granulosum", "Die äußerste Schicht ist das Stratum lucidum", "Das Stratum corneum liegt direkt auf dem Stratum basale"], r: 2,
-      e: "Von innen nach außen: Stratum basale → spinosum → granulosum → lucidum → corneum (äußerste Schicht).", s: "H S. 3–5" },
+      e: "Von innen nach außen: Stratum basale → spinosum → granulosum → lucidum → corneum (äußerste Schicht).", s: "H S. 3–5", sp: ["haut: Aufbau der Epidermis"] },
     { f: "Welche Aussagen zu den Langerhans-Zellen stimmen?",
       o: ["Sie liegen in der Stachelzellschicht (Stratum spinosum)", "Sie stammen aus dem Knochenmark", "Sie kommen nur an Handflächen und Fußsohlen vor", "Sie bilden den Säureschutzmantel"], r: 2,
-      e: "Langerhans-Zellen: aus dem Knochenmark, in der Stachelzellschicht; fangen mit ihren Dendriten Pathogene und Antigene ab – „Wachposten des Immunsystems“.", s: "H S. 4" },
+      e: "Langerhans-Zellen: aus dem Knochenmark, in der Stachelzellschicht; fangen mit ihren Dendriten Pathogene und Antigene ab – „Wachposten des Immunsystems“.", s: "H S. 4", sp: ["haut: Def. Langerhanszellen"] },
     { f: "Welche Aussagen zum Erysipel sind richtig?",
       o: ["Erreger sind β-hämolysierende Streptokokken der Gruppe A", "Es ist die häufigste Komplikation des chronischen Lymphödems", "Erreger sind Clostridien", "Es ist eine Pilzinfektion der Nägel"], r: 2,
-      e: "Erysipel: akute bakterielle Infektion der Dermis; klar begrenzte, schmerzhafte, überwärmte Rötung, Fieber; Komplikationen Sepsis, Lymphödem.", s: "H S. 20" },
+      e: "Erysipel: akute bakterielle Infektion der Dermis; klar begrenzte, schmerzhafte, überwärmte Rötung, Fieber; Komplikationen Sepsis, Lymphödem.", s: "H S. 20", sp: ["haut: Beispiel für bakterielle Infektionskrankheit der Haut"] },
     { f: "Welche Aussagen zur Mykose sind richtig?",
       o: ["Erreger können Dermatophyten, Schimmel- oder Hefepilze sein", "Verminderte Abwehr begünstigt sie", "Die Onychomykose macht ca. ¼ aller Nagelkrankheiten aus", "Sie wird durch Streptokokken ausgelöst"], r: 3,
       e: "Mykose: Pilzinfektion von Haut, Schleimhaut, Nägeln oder systemisch; begünstigt durch verminderte Abwehr.", s: "H S. 22" },
@@ -98,10 +98,10 @@ Lernapp.thema({
       e: "Tumor ist der weiter gefasste Begriff; eine Neoplasie kann benigne, semimaligne oder maligne sein.", s: "H S. 33" },
     { f: "Welche Zuordnungen der ABCD-Regel sind richtig?",
       o: ["A = Asymmetrie", "C = Color (Mehrfarbigkeit)", "D = Dynamik (Veränderung)", "B = Blutung"], r: 3,
-      e: "Asymmetrie · Begrenzung unscharf · Color · Dynamik. Das „E = Erhabenheit“ steht nur handschriftlich im Heft.", s: "H S. 27" },
+      e: "Asymmetrie · Begrenzung unscharf · Color · Dynamik. Das „E = Erhabenheit“ steht nur handschriftlich im Heft.", s: "H S. 27", sp: ["haut: Was ist die A-B-C-D-Regel?"] },
     { f: "Was gehört zum Herz-Kreislauf-System?",
       o: ["Das Herz als Druck-Saug-Pumpe", "Blutgefäße (Arterien, Venen, Kapillaren)", "Lymphgefäße", "Talgdrüsen"], r: 3,
-      e: "Herz, Blutgefäße und Lymphgefäße als Leitungsröhren bzw. Stätten des Stoffaustauschs (im Heft als Prüfung markiert).", s: "G S. 3" },
+      e: "Herz, Blutgefäße und Lymphgefäße als Leitungsröhren bzw. Stätten des Stoffaustauschs (im Heft als Prüfung markiert).", s: "G S. 3", sp: ["gefaesse: Bestandteile des Herz-Kreislauf-Systems"] },
     { f: "Welche Aufgaben hat das Blutgefäßsystem?",
       o: ["Ernährung des Organismus", "Abtransport von Schlackenstoffen", "Hormontransport", "Bildung von Lymphozyten"], r: 3,
       e: "Ernährung, Abtransport von Schlackenstoffen, Hormontransport, Wärmeregulation. Lymphozyten werden in den Lymphknoten gebildet.", s: "G S. 3, 8" },
@@ -122,7 +122,7 @@ Lernapp.thema({
       e: "20 l ins Interstitium, 18 l reabsorbiert, 2 l als Lymphe. (Die 7.000 l beziehen sich auf das Blut, das die Venen täglich transportieren.)", s: "G S. 7; G S. 14" },
     { f: "Woraus besteht das Lymphsystem?",
       o: ["Lymphgefäße", "Lymphknoten", "Milz", "Leber"], r: 3,
-      e: "Lymphsystem = Lymphgefäße zusammen mit Lymphknoten, Knochenmark, Mandeln und Milz.", s: "G S. 7" },
+      e: "Lymphsystem = Lymphgefäße zusammen mit Lymphknoten, Knochenmark, Mandeln und Milz.", s: "G S. 7", sp: ["gefaesse: Bestandteile des Lymphgefäßsystems"] },
     { f: "Warum heißt das Lymphgefäßsystem „halboffen“? Was trifft zu?",
       o: ["Es beginnt blind mit Lymphkapillaren", "Es durchzieht den Körper wie ein Netz", "Es mündet in den Blutkreislauf", "Es besitzt ein eigenes Pumporgan"], r: 3,
       e: "Halboffenes System ohne eigenes Pumporgan; Lymphkapillaren nehmen interstitielle Flüssigkeit auf.", s: "G S. 7" },
@@ -143,16 +143,16 @@ Lernapp.thema({
       e: "Herz kontrahiert → Aorta dehnt sich; Herz entspannt → Aorta zieht sich zusammen.", s: "G S. 4, 6" },
     { f: "Welche Maßnahmen gehören zur Diagnostik der pAVK?",
       o: ["ABI-Messung (Dopplerdruck)", "Ratschow-Lagerungsprobe", "Laufbandtest", "Stemmer-Zeichen"], r: 3,
-      e: "Anamnese, AZ, Schmerz, Gangbild, Temperatur, Fußpulse, ABI, Ratschow, Ultraschall/Duplex, Laufband, MRT, Angiographie, CT, tcpO₂, Labor. Das Stemmer-Zeichen gehört zum Lymphödem.", s: "G S. 12; M S. 24–25" },
+      e: "Anamnese, AZ, Schmerz, Gangbild, Temperatur, Fußpulse, ABI, Ratschow, Ultraschall/Duplex, Laufband, MRT, Angiographie, CT, tcpO₂, Labor. Das Stemmer-Zeichen gehört zum Lymphödem.", s: "G S. 12; M S. 24–25", sp: ["gefaesse: Arterielle Gefäßerkrankungen – Diagnostik (ABI-Messung)"] },
     { f: "Welche Aussagen zum ABI sind richtig?",
       o: ["ABI = syst. Druck Knöchel ÷ syst. Druck Arm", "Ein Wert ≤ 0,9 spricht für eine pAVK", "Bei Mönckeberg-Sklerose werden falsch hohe Werte gemessen", "Gesund ist ein Wert von ca. 0,5"], r: 3,
-      e: "Gesund ca. 1,0; ≤ 0,9 = pAVK; Mönckeberg-Sklerose → falsch hohe Werte.", s: "G S. 12; M S. 24" },
+      e: "Gesund ca. 1,0; ≤ 0,9 = pAVK; Mönckeberg-Sklerose → falsch hohe Werte.", s: "G S. 12; M S. 24", sp: ["gefaesse: Arterielle Gefäßerkrankungen – Diagnostik (ABI-Messung)"] },
     { f: "Welche Zuordnungen der CVI-Stadien nach Widmer sind richtig?",
       o: ["Grad I: Corona phlebectatica, Phlebödem", "Grad IIIb: florides Ulcus", "Grad II: abgeheiltes Ulcus", "Grad IIIa: florides Ulcus"], r: 2,
-      e: "I Corona phlebectatica, Phlebödem · II Ödem, Dermatoliposklerose, Atrophie blanche, Purpura jaune d’ocre, Stauungsekzem · IIIa abgeheiltes Ulcus · IIIb florides Ulcus.", s: "G S. 16; M S. 15" },
+      e: "I Corona phlebectatica, Phlebödem · II Ödem, Dermatoliposklerose, Atrophie blanche, Purpura jaune d’ocre, Stauungsekzem · IIIa abgeheiltes Ulcus · IIIb florides Ulcus.", s: "G S. 16; M S. 15", sp: ["gefaesse: Venöse Gefäßerkrankungen – CVI", "dekubitus: Def. Ulcus cruris venosum – Klassifikation"] },
     { f: "Welche Zuordnungen der Varikose-Stadien nach Hach sind richtig?",
       o: ["Stadium 1: nur die Venenklappe betroffen", "Stadium 4: Vene über die gesamte Länge bis zum Sprunggelenk erkrankt", "Stadium 2: Insuffizienz bis zum Sprunggelenk", "Stadium 3: nur die Venenklappe betroffen"], r: 2,
-      e: "1 nur die Venenklappe · 2 Klappen bis Mitte Oberschenkel defekt · 3 Insuffizienz bis unter das Kniegelenk · 4 gesamte Länge bis zum Sprunggelenk. Durch das Zusatzskript Varikose bestätigt.", s: "Zusatzskript Varikose S. 2; G S. 15" },
+      e: "1 nur die Venenklappe · 2 Klappen bis Mitte Oberschenkel defekt · 3 Insuffizienz bis unter das Kniegelenk · 4 gesamte Länge bis zum Sprunggelenk. Durch das Zusatzskript Varikose bestätigt.", s: "Zusatzskript Varikose S. 2; G S. 15", sp: ["gefaesse: Venöse Gefäßerkrankungen – Varikosis"] },
     { f: "Wie unterscheidet man IAD und Dekubitus?",
       o: ["Ein Dekubitus entsteht über knöchernen Vorsprüngen", "Ein Dekubitus hat seinen Ursprung in der Tiefe", "IAD entsteht an der Epidermis, z. B. in der Gesäßfalte", "IAD ist an knöcherne Vorsprünge gebunden"], r: 3,
       e: "Feuchtigkeitswunden (IAD, Mazeration, Intertrigo) entstehen an der Epidermis, in Hautfalten, unabhängig von Knochenvorsprüngen.", s: "M S. 9–10" },
@@ -191,7 +191,7 @@ Lernapp.thema({
     <tr><td style="white-space:normal">Diagnostik pAVK</td><td>G S. 12; M S. 24–25</td><td>✔ ergänzt um Heftinhalte (siehe unten)</td></tr>
     <tr><td style="white-space:normal">Einteilung der Varikose nach Hach</td><td style="white-space:normal">G S. 15 (handschriftlich); Zusatzskript Varikose S. 2</td><td>✔ Durch das Zusatzskript bestätigt</td></tr>
     <tr><td style="white-space:normal">CVI nach Widmer</td><td>G S. 16; M S. 15</td><td>✔ in beiden Heften identisch</td></tr>
-    <tr><td style="white-space:normal">Wagner-Klassifikation (DFU)</td><td style="white-space:normal">M S. 29; Foliensatz</td><td>⚠ Heft und Foliensatz formulieren Grad 0, 2 und 3 unterschiedlich (Folien: Grad 3 = Abszess/Osteomyelitis) – siehe Zusammenfassung Dekubitus/UC/DFU, Abschnitt 8</td></tr>
+    <tr><td style="white-space:normal"><span class="sp" data-sp="dekubitus: Def. Diabetisches Fußulcus – Klassifikation">Schwerpunkt</span>Wagner-Klassifikation (DFU)</td><td style="white-space:normal">M S. 29; Foliensatz</td><td>⚠ Heft und Foliensatz formulieren Grad 0, 2 und 3 unterschiedlich (Folien: Grad 3 = Abszess/Osteomyelitis) – siehe Zusammenfassung Dekubitus/UC/DFU, Abschnitt 8</td></tr>
     <tr><td style="white-space:normal">IAD vs. Dekubitus (knöcherner Vorsprung)</td><td>M S. 9–10</td><td>✔</td></tr>
     <tr><td style="white-space:normal">Analnahe Wunden: Umgebung vor Feuchtigkeit schützen</td><td>W S. 15; D S. 24</td><td>✔</td></tr>
   </tbody>
@@ -202,24 +202,24 @@ Lernapp.thema({
   <caption>Epidermis von innen nach außen (H S. 3–5)</caption>
   <thead><tr><th>Nr.</th><th>Deutsch</th><th>Latein</th><th>Kernmerkmal</th></tr></thead>
   <tbody>
-    <tr><td>1</td><td>Basalzellschicht</td><td>Stratum basale</td><td>Keimzellen, Teilung → Regeneration; Merkelzellen</td></tr>
-    <tr><td>2</td><td>Stachelzellschicht</td><td>Stratum spinosum</td><td>Desmosomen; Langerhans-Zellen (Immunabwehr)</td></tr>
+    <tr><td><span class="sp" data-sp="haut: Aufbau der Epidermis">Schwerpunkt</span>1</td><td>Basalzellschicht</td><td>Stratum basale</td><td>Keimzellen, Teilung → Regeneration; Merkelzellen</td></tr>
+    <tr><td>2</td><td>Stachelzellschicht</td><td>Stratum spinosum</td><td><span class="sp" data-sp="haut: Def. Langerhanszellen">Schwerpunkt</span>Desmosomen; Langerhans-Zellen (Immunabwehr)</td></tr>
     <tr><td>3</td><td>Körnerzellschicht</td><td>Stratum granulosum</td><td>Keratinozyten flachen ab, beginnen zu verhornen</td></tr>
     <tr><td>4</td><td>Glanzschicht</td><td>Stratum lucidum</td><td>nur an Handflächen und Fußsohlen</td></tr>
     <tr><td>5</td><td>Hornschicht</td><td>Stratum corneum</td><td>äußerste Schicht, abgestorbene Korneozyten, Schutz vor Wasserverlust</td></tr>
   </tbody>
 </table></div>
-<p>Darunter: Dermis (Stratum papillare, Stratum reticulare) und Subcutis. Adnexorgane: Haare, Nägel, Schweiß-, Duft-, Talgdrüsen. Erneuerung der Epidermis 27–30 Tage (ab 65 Jahren 5–7 Wochen).</p>
+<p><span class="sp" data-sp="haut: Aufbau der Haut">Schwerpunkt</span>Darunter: Dermis (Stratum papillare, Stratum reticulare) und Subcutis. Adnexorgane: Haare, Nägel, Schweiß-, Duft-, Talgdrüsen. Erneuerung der Epidermis 27–30 Tage (ab 65 Jahren 5–7 Wochen).</p>
 <ul>
-  <li><b>Erysipel:</b> akute bakterielle Infektion der Dermis durch β-hämolysierende Streptokokken der Gruppe A; häufigste Komplikation des chronischen Lymphödems; klar begrenzte, schmerzhafte Rötung, Überwärmung, Fieber; Komplikationen Sepsis, Lymphödem (H S. 20).</li>
+  <li><span class="sp" data-sp="haut: Beispiel für bakterielle Infektionskrankheit der Haut">Schwerpunkt</span><b>Erysipel:</b> akute bakterielle Infektion der Dermis durch β-hämolysierende Streptokokken der Gruppe A; häufigste Komplikation des chronischen Lymphödems; klar begrenzte, schmerzhafte Rötung, Überwärmung, Fieber; Komplikationen Sepsis, Lymphödem (H S. 20).</li>
   <li><b>Mykose:</b> Pilzinfektion (Dermatophyten, Schimmel-, Hefepilze) von Haut, Schleimhaut, Nägeln oder systemisch; begünstigt durch verminderte Abwehr. Onychomykose ca. ¼ aller Nagelkrankheiten (H S. 22).</li>
   <li><b>Neoplasie</b> = autonome Gewebeneubildung (benigne, semimaligne, maligne). <b>Tumor</b> = jede örtliche Zunahme des Gewebevolumens (Schwellung) – weiter gefasst (H S. 33).</li>
-  <li><b>ABCD(E)-Regel:</b> Asymmetrie · Begrenzung unscharf · Color (Mehrfarbigkeit) · Dynamik · <span class="hand-inline">E = Erhabenheit (nur handschriftlich)</span> (H S. 27).</li>
+  <li><span class="sp" data-sp="haut: Was ist die A-B-C-D-Regel?">Schwerpunkt</span><b>ABCD(E)-Regel:</b> Asymmetrie · Begrenzung unscharf · Color (Mehrfarbigkeit) · Dynamik · <span class="hand-inline">E = Erhabenheit (nur handschriftlich)</span> (H S. 27).</li>
 </ul>
 
 <h3>4. Prüfungsstoff Tag 2 – Gefäßsystem</h3>
 <ul>
-  <li><b>Herz-Kreislauf-System</b> (kardiovaskuläres System): Herz als Druck-Saug-Pumpe · Blutgefäße (Arterien, Venen, Kapillaren) · Lymphgefäße als Leitungsröhren bzw. Stätten des Stoffaustauschs (G S. 3).</li>
+  <li><span class="sp" data-sp="gefaesse: Bestandteile des Herz-Kreislauf-Systems">Schwerpunkt</span><b>Herz-Kreislauf-System</b> (kardiovaskuläres System): Herz als Druck-Saug-Pumpe · Blutgefäße (Arterien, Venen, Kapillaren) · Lymphgefäße als Leitungsröhren bzw. Stätten des Stoffaustauschs (G S. 3).</li>
   <li><b>Blutgefäßsystem:</b> Ernährung des Organismus, Abtransport von Schlackenstoffen, Hormontransport, Wärmeregulation; geschlossenes System mit drei Kreisläufen: Lungenkreislauf, großer Körperkreislauf, Pfortaderkreislauf (G S. 3–4).</li>
   <li><b>Arteriovenöse Anastomosen:</b> Querverbindungen zwischen Arteriolen und Venolen; umgehen die Kapillaren (Kollateralkreislauf), regulieren die Durchblutung, z. B. Hautdurchblutung für den Wärmehaushalt (G S. 5).</li>
 </ul>
@@ -233,24 +233,24 @@ Lernapp.thema({
 </table></div>
 <p class="merke">Durch Diffusion und Filtration gelangen täglich ca. 20 l ins Interstitium, ca. 18 l werden – laut Foliensatz durch Osmose – reabsorbiert, die übrigen 2 l fließen als Lymphe ab (G S. 7).</p>
 <ul>
-  <li><b>Lymphsystem</b> = Lymphgefäße + Lymphknoten, Knochenmark, Mandeln, Milz; zusätzliches Abflusssystem; halboffenes System, das den Körper wie ein Netz durchzieht (G S. 7).</li>
-  <li><b>Weg der Lymphe:</b> Lymphkapillaren (dehnbar, fingerförmig) → kleine/große Lymphgefäße mit Klappen (schwingende Zipfel) gegen Rückfluss → Lymphknoten (Lymphozytenbildung, fangen Erreger ab und machen sie unschädlich; schwellen bei Entzündung) → Lymphstämme → Ductus thoracicus → linke Schlüsselbeinvene (V. subclavia), wo das Lymphgefäßsystem endet (G S. 7–8).</li>
+  <li><span class="sp" data-sp="gefaesse: Bestandteile des Lymphgefäßsystems">Schwerpunkt</span><b>Lymphsystem</b> = Lymphgefäße + Lymphknoten, Knochenmark, Mandeln, Milz; zusätzliches Abflusssystem; halboffenes System, das den Körper wie ein Netz durchzieht (G S. 7).</li>
+  <li><span class="sp" data-sp="gefaesse: Bestandteile des Lymphgefäßsystems">Schwerpunkt</span><b>Weg der Lymphe:</b> Lymphkapillaren (dehnbar, fingerförmig) → kleine/große Lymphgefäße mit Klappen (schwingende Zipfel) gegen Rückfluss → Lymphknoten (Lymphozytenbildung, fangen Erreger ab und machen sie unschädlich; schwellen bei Entzündung) → Lymphstämme → Ductus thoracicus → linke Schlüsselbeinvene (V. subclavia), wo das Lymphgefäßsystem endet (G S. 7–8).</li>
   <li><b>Kein eigenes Pumporgan:</b> Transport durch Kontraktion der Gefäßmuskulatur, Drucksteigerung durch Puls-, Atem- und Körperbewegung (G S. 8); der Foliensatz bezeichnet die Pulsbewegung als „Windkesselfunktion“ und betont: Bewegung ist essentiell. <span class="hand-inline">Mitschrift ergänzt: Muskelpumpe und Darmperistaltik.</span></li>
   <li><b>Was transportiert die Lymphe?</b> Abfallprodukte des Stoffwechsels – Reste abgestorbener Zellen und Eiweißkörper; außerdem die über den Darm resorbierten Fette (G S. 8).</li>
   <li><b>Windkesselfunktion</b> gehört zu den elastischen Arterien: stoßweise Strömung am Aortenanfang → annähernd kontinuierliche Strömung (G S. 6; <span class="hand-inline">handschriftlich S. 4: Herz kontrahiert → Aorta dehnt sich; Herz entspannt → Aorta zieht sich zusammen</span>).</li>
 </ul>
-<p class="merke"><b>Diagnostik pAVK – Mitschrift:</b> Anamnese, Allgemeinzustand, Schmerz, Gangbild, Temperatur, schwacher Fußpuls, Blutdruck/ABI-Messung an den Extremitäten, Bildgebung.<br><b>Heft ergänzt:</b> ABI = syst. Druck Knöchel ÷ syst. Druck Arm, gesund ca. 1,0, ≤ 0,9 = pAVK; Ratschow-Lagerungsprobe, Ultraschall/Doppler/Duplex, Laufband, MRT, Angiographie, CT (G S. 12); tcpO₂, Labor; bei Mönckeberg-Sklerose falsch hohe ABI-Werte (M S. 24–25).</p>
+<p class="merke"><span class="sp" data-sp="gefaesse: Arterielle Gefäßerkrankungen – Diagnostik (ABI-Messung)">Schwerpunkt</span><b>Diagnostik pAVK – Mitschrift:</b> Anamnese, Allgemeinzustand, Schmerz, Gangbild, Temperatur, schwacher Fußpuls, Blutdruck/ABI-Messung an den Extremitäten, Bildgebung.<br><b>Heft ergänzt:</b> ABI = syst. Druck Knöchel ÷ syst. Druck Arm, gesund ca. 1,0, ≤ 0,9 = pAVK; Ratschow-Lagerungsprobe, Ultraschall/Doppler/Duplex, Laufband, MRT, Angiographie, CT (G S. 12); tcpO₂, Labor; bei Mönckeberg-Sklerose falsch hohe ABI-Werte (M S. 24–25).</p>
 <div class="tabelle"><table>
   <caption>CVI nach Widmer ★ (G S. 16; M S. 15)</caption>
   <thead><tr><th>Grad</th><th>Klinik</th></tr></thead>
   <tbody>
-    <tr><td>I</td><td>Corona phlebectatica (Fußrand), Phlebödem</td></tr>
+    <tr><td><span class="sp" data-sp="gefaesse: Venöse Gefäßerkrankungen – CVI|dekubitus: Def. Ulcus cruris venosum – Klassifikation">Schwerpunkt</span>I</td><td>Corona phlebectatica (Fußrand), Phlebödem</td></tr>
     <tr><td>II</td><td>Ödem, Dermatoliposklerose, Atrophie blanche, Purpura jaune d’ocre, Stauungsekzem</td></tr>
     <tr><td>IIIa</td><td>abgeheiltes Ulcus (Ulcusnarbe)</td></tr>
     <tr><td>IIIb</td><td>florides Ulcus</td></tr>
   </tbody>
 </table></div>
-<p class="merke"><b>Varikose nach Hach ★</b> (Zusatzskript Varikose S. 2; Stammvarikose, meist V. saphena magna): 1 nur die Venenklappe betroffen · 2 Klappen bis mittlerer Oberschenkel defekt · 3 Insuffizienz bis unter das Kniegelenk · 4 gesamte Länge bis zum Sprunggelenk. Deine Notiz im Gefäß-Heft stimmt damit überein. Mehr im Thema „Varikose“.</p>
+<p class="merke"><span class="sp" data-sp="gefaesse: Venöse Gefäßerkrankungen – Varikosis">Schwerpunkt</span><b>Varikose nach Hach ★</b> (Zusatzskript Varikose S. 2; Stammvarikose, meist V. saphena magna): 1 nur die Venenklappe betroffen · 2 Klappen bis mittlerer Oberschenkel defekt · 3 Insuffizienz bis unter das Kniegelenk · 4 gesamte Länge bis zum Sprunggelenk. Deine Notiz im Gefäß-Heft stimmt damit überein. Mehr im Thema „Varikose“.</p>
 
 <h3>5. Weitere Notizen</h3>
 <ul>
