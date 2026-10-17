@@ -111,7 +111,27 @@ Lernapp.thema({
     { k: "MARSI", f: "Versorgung eines Skin Tears in 4 Schritten?",
       a: "1. Blutung mit sterilen Kompressen stillen\n2. sanft mit NaCl 0,9 % oder Wundspüllösung reinigen\n3. Hautlappen repositionieren (sterile Pinzette)\n4. mit silikonbeschichteten, nicht klebenden Verbandmitteln fixieren", s: "S. 31" },
     { k: "MARSI", f: "Wie beugt man Follikulitis vor?",
-      a: "Haare mit elektrischer Haarschneidemaschine kürzen statt rasieren; Verbandmittel immer in Haarwuchsrichtung abziehen.", s: "S. 31" }
+      a: "Haare mit elektrischer Haarschneidemaschine kürzen statt rasieren; Verbandmittel immer in Haarwuchsrichtung abziehen.", s: "S. 31" },
+    { k: "Folien", f: "Welche Funktion haben die einzelnen Hautanhangsgebilde?",
+      a: "Haare: mechanischer Schutz, Temperaturregulation\nNägel: Schutz der Finger-/Zehenspitzen, Greifen\nSchweißdrüsen: Temperaturregulation, Ausscheidung\nTalgdrüsen: Hautfett für den Säureschutzmantel", s: "Foliensatz Haut" },
+    { k: "Folien", f: "Wie wird der Hautfaltentest beurteilt?",
+      a: "Hautfalte (z. B. Handrücken) zusammenkneifen und loslassen. Normal: glättet sich sofort bzw. in 1–2 s. Bleibt sie länger → verminderter Turgor (Dehydration, Alter, Gewichtsverlust).", s: "Foliensatz Haut" },
+    { k: "Folien", f: "Welche Aufgaben haben die Bestandteile des Säureschutzmantels?",
+      a: "Schweiß: wässriger Anteil mit Salzen\nFettsäuren: antimikrobiell\nCholesterin: stabilisiert die Barriere\nTalg: Geschmeidigkeit, Wasserschutz", s: "Foliensatz Haut" },
+    { k: "Folien", f: "Was bedeuten sebostatisch und seborrhoisch – und wie pflegt man?",
+      a: "Sebostatisch = trocken: W/O-Produkte + Urea.\nSeborrhoisch = fettig: milde Syndets, wässrige O/W-Produkte.", s: "Foliensatz Haut" },
+    { k: "Folien", f: "Panaritium: Formen und Therapie?",
+      a: "Cutaneum – Abtragung und Inspektion\nSubcutaneum – seitliche Inzision\nTendinosum (Sehnenscheide) – sofortige operative Eröffnung", s: "Foliensatz Haut" },
+    { k: "Folien", f: "Wo treten Lentigo-maligna- und akrolentiginöses Melanom auf?",
+      a: "Lentigo-maligna: meist bei Älteren im Gesicht.\nAkrolentiginös: Handflächen, Fußsohlen, Nägel.", s: "Foliensatz Haut" },
+    { k: "Folien", f: "Welche Verbandmittel bei Alters-, Pergament-, Kortison- und Ödemhaut?",
+      a: "Altershaut: Silikon, keine Kleberänder\nPergamenthaut: Hydrogelkompressen\nKortisonhaut: minimale Klebekraft, häufige Kontrollen\nÖdemhaut: dehnbare Materialien, Druckentlastung", s: "Foliensatz Haut" },
+    { k: "Folien", f: "Wie dokumentiert man verbandmittelbedingte Hautschäden?",
+      a: "Erstbeurteilung vor Verbandanlage · Kontrolle bei jedem Verbandwechsel · Fotodokumentation · Maßnahmen und Produktwechsel dokumentieren.", s: "Foliensatz Haut" },
+    { k: "Folien", f: "Welche rechtlichen Aspekte gelten bei MARSI?",
+      a: "Sorgfaltspflicht, Dokumentationspflicht, Aufklärungspflicht, Haftung – vermeidbare Hautschäden können Schadensersatzforderungen nach sich ziehen.", s: "Foliensatz Haut" },
+    { k: "Folien", f: "Was sind neutrophile Dermatosen?",
+      a: "Seltene, nicht infektiöse Hauterkrankungen unklarer Ursache mit Ansammlung neutrophiler Granulozyten: sterile Pusteln, Nekrosen; z. B. Pyoderma gangraenosum.", s: "Foliensatz Haut" }
   ],
 
   quiz: [
@@ -201,7 +221,31 @@ Lernapp.thema({
       e: "1. Blutung stillen · 2. sanft mit NaCl 0,9 % oder Wundspüllösung reinigen · 3. Hautlappen repositionieren · 4. mit nicht klebenden, silikonbeschichteten Verbandmitteln fixieren.", s: "S. 30–31" },
     { f: "Wie entstehen die Narben der Livedo-Vaskulopathie?",
       o: ["Als Atrophie blanche", "Als Gichttophi", "Als perlschnurartiger Saum", "Als Papillomatose"],
-      e: "Livedo-Vaskulopathie: schmerzhafte thromboembolische Verschlusskrankheit der Hautgefäße mit Ulzerationen an den Unterschenkeln, Narben als Atrophie blanche.", s: "S. 28–30" }
+      e: "Livedo-Vaskulopathie: schmerzhafte thromboembolische Verschlusskrankheit der Hautgefäße mit Ulzerationen an den Unterschenkeln, Narben als Atrophie blanche.", s: "S. 28–30" },
+    { f: "Welche Funktion haben die Talgdrüsen laut Foliensatz?",
+      o: ["Produktion von Hautfett für den Säureschutzmantel", "Temperaturregulation und Ausscheidung", "Schutz der Finger- und Zehenspitzen", "Abfangen von Antigenen"],
+      e: "Haare: mechanischer Schutz, Temperaturregulation · Nägel: Schutz, Greifen · Schweißdrüsen: Temperaturregulation, Ausscheidung · Talgdrüsen: Hautfett für den Säureschutzmantel.", s: "Foliensatz Haut" },
+    { f: "Was ist beim Hautfaltentest normal?",
+      o: ["Die Hautfalte glättet sich sofort bzw. innerhalb von 1–2 Sekunden", "Die Hautfalte bleibt mindestens 30 Sekunden stehen", "Die Hautfalte färbt sich weiß", "Die Hautfalte lässt sich gar nicht abheben"],
+      e: "Bleibt die Falte länger stehen → verminderter Turgor (Dehydration, Alter, Gewichtsverlust).", s: "Foliensatz Haut" },
+    { f: "Welche Aussagen zu den Bestandteilen des Säureschutzmantels stimmen?",
+      o: ["Fettsäuren wirken antimikrobiell", "Cholesterin stabilisiert die Barriere", "Talg sorgt für Geschmeidigkeit und Wasserschutz", "Schweiß macht die Haut alkalisch"], r: 3,
+      e: "Schweiß liefert den wässrigen Anteil mit Salzen; der Säureschutzmantel hat einen pH von ca. 5,5.", s: "Foliensatz Haut; S. 9" },
+    { f: "Wie pflegt man sebostatische (trockene) Haut?",
+      o: ["W/O-Produkte mit Urea", "Milde Syndets und wässrige O/W-Produkte", "Alkoholische Lösungen", "Puder"],
+      e: "Sebostatisch = trocken: W/O + Urea. Seborrhoisch = fettig: milde Syndets, O/W. Xerodermie: wie trocken, höherer Urea-Anteil.", s: "Foliensatz Haut" },
+    { f: "Wie wird ein Panaritium tendinosum behandelt?",
+      o: ["Sofortige operative Eröffnung", "Nur Abtragung und Inspektion", "Abwarten und kühlen", "Nur Salbenverband"],
+      e: "Cutaneum: Abtragung · Subcutaneum: seitliche Inzision · Tendinosum (Sehnenscheide): sofortige operative Eröffnung.", s: "Foliensatz Haut" },
+    { f: "Wo tritt das akrolentiginöse Melanom auf?",
+      o: ["An Handflächen, Fußsohlen und Nägeln", "Meist bei Älteren im Gesicht", "Nur am Rumpf", "Nur an der Schleimhaut"],
+      e: "Lentigo-maligna: meist Ältere im Gesicht · akrolentiginös: Handflächen, Fußsohlen, Nägel · nodulär: aggressiv.", s: "Foliensatz Haut" },
+    { f: "Welche Verbandmittel-Empfehlungen nennt der Foliensatz?",
+      o: ["Altershaut: silikonbeschichtete Auflagen ohne Kleberand", "Kortisonhaut: minimale Klebekraft, häufige Kontrollen", "Ödemhaut: dehnbare Materialien, Druckentlastung", "Pergamenthaut: stark klebende Pflaster"], r: 3,
+      e: "Pergamenthaut: Hydrogelkompressen, sehr schonende Entfernung.", s: "Foliensatz Haut" },
+    { f: "Welche rechtlichen Aspekte gelten bei MARSI?",
+      o: ["Sorgfaltspflicht", "Dokumentationspflicht", "Aufklärungspflicht", "Meldepflicht an das Gesundheitsamt"], r: 3,
+      e: "Dazu Haftung – vermeidbare Hautschäden können Schadensersatzforderungen nach sich ziehen.", s: "Foliensatz Haut" }
   ],
 
   zusammenfassung: `
@@ -338,5 +382,52 @@ Lernapp.thema({
   </tbody>
 </table></div>
 <p class="merke"><b>Versorgung:</b> 1. Blutung mit sterilen Kompressen stillen · 2. sanft mit NaCl 0,9 % oder Wundspüllösung reinigen · 3. Hautlappen mit steriler Pinzette repositionieren (Anfeuchten 5–10 min) · 4. mit nicht klebenden, silikonbeschichteten Verbandmitteln fixieren.</p>
+<h3>10. Abgleich mit dem Foliensatz „Haut und Hauterkrankungen“ <span class="seite">57 Folien</span></h3>
+<p class="leise">✔ = deckt sich mit dem Heft · ➜ = neu oder präzisiert · ⚠ = Abweichung</p>
+<div class="tabelle"><table>
+  <caption>Hautanhangsgebilde (Adnexorgane) mit Funktion ★</caption>
+  <thead><tr><th>Gebilde</th><th>Funktion laut Foliensatz</th></tr></thead>
+  <tbody>
+    <tr><td>Haare</td><td>Schutz vor mechanischen Einwirkungen, Temperaturregulation</td></tr>
+    <tr><td>Nägel</td><td>Schutz der Finger- und Zehenspitzen, Unterstützung beim Greifen</td></tr>
+    <tr><td>Schweißdrüsen</td><td>Temperaturregulation, Ausscheidung von Stoffwechselprodukten</td></tr>
+    <tr><td>Talgdrüsen</td><td>Produktion von Hautfett für den Säureschutzmantel</td></tr>
+  </tbody>
+</table></div>
+<div class="tabelle"><table>
+  <thead><tr><th>Thema</th><th>Ergebnis</th></tr></thead>
+  <tbody>
+    <tr><td style="white-space:normal">Erneuerung ab 65 Jahren</td><td>✔ F: 35–49 Tage = Heft „5–7 Wochen“. ⚠ Deine Randnotiz „45–49 Tage“ weicht davon ab.</td></tr>
+    <tr><td style="white-space:normal">Glanzschicht</td><td>➜ verstärkt die Barrierefunktion, erhöht die mechanische Widerstandsfähigkeit, schützt vor Wasserverlust.</td></tr>
+    <tr><td style="white-space:normal">Hautturgor</td><td>➜ Normal glättet sich die Hautfalte sofort bzw. innerhalb von 1–2 Sekunden; bleibt sie länger stehen → verminderter Turgor (Dehydration, Alter, Gewichtsverlust).</td></tr>
+    <tr><td style="white-space:normal">Leistenhaut</td><td>➜ ca. 4 % der Körperoberfläche (Felderhaut 96 %); viele Hautrezeptoren.</td></tr>
+    <tr><td style="white-space:normal">Säureschutzmantel</td><td>➜ Schweiß (wässriger Anteil, Salze) · Fettsäuren (antimikrobiell) · Cholesterin (stabilisiert die Barriere) · Talg (Geschmeidigkeit, Wasserschutz).</td></tr>
+    <tr><td style="white-space:normal">Hautzustände</td><td>➜ Normale Haut: Pflege nicht zwingend, höchstens O/W · trockene (sebostatische) Haut: W/O + Urea · fettige (seborrhoische) Haut: milde Syndets, O/W · Xerodermie: wie trocken, höherer Urea-Anteil.</td></tr>
+    <tr><td style="white-space:normal">Erysipel / Phlegmone</td><td>➜ Erysipel: rechtzeitige Antibiose entscheidend. Phlegmone entsteht nach tiefen Traumen, OP- und Stichwunden, Substanzdefekten wie Ulcus cruris.</td></tr>
+    <tr><td style="white-space:normal">Panaritium</td><td>➜ Cutaneum: Abtragung · Subcutaneum: seitliche Inzision · Tendinosum: sofortige operative Eröffnung.</td></tr>
+    <tr><td style="white-space:normal">Psoriasis</td><td>➜ streckseitig betont; auch Nägel, Lymphknoten und Gelenke beteiligt.</td></tr>
+    <tr><td style="white-space:normal">Basalzellkarzinom</td><td>➜ ca. 200 Neuerkrankungen/100.000/Jahr, Lebenszeitprävalenz ca. 10 %; OP mit ca. 95 % Erfolgsrate (Heft: 5-Jahres-Rezidivrate 2–8 %).</td></tr>
+    <tr><td style="white-space:normal">Melanom-Typen</td><td>➜ Lentigo-maligna: meist Ältere im Gesicht · akrolentiginös: Handflächen, Fußsohlen, Nägel · nodulär: aggressiv.</td></tr>
+    <tr><td style="white-space:normal">Plattenepithelkarzinom</td><td>➜ bei Metastasen systemische Chemotherapie.</td></tr>
+    <tr><td style="white-space:normal">Calcinosis cutis</td><td>➜ Kalksalzablagerung durch gestörten Kalzium-Phosphat-Stoffwechsel; vorwiegend Nieren, Lunge, Herz, seltener Haut; Therapie: Grunderkrankung, ggf. Exzision.</td></tr>
+    <tr><td style="white-space:normal">Livedo-Vaskulopathie</td><td>➜ blitzförmige Ulzera; Therapie mit Gerinnungshemmern, IVIG, Immunsuppressiva.</td></tr>
+    <tr><td style="white-space:normal">Neutrophile Dermatosen</td><td>➜ selten, nicht infektiös, sterile Pusteln, Nekrosen; Pyoderma gangraenosum breitet sich zentrifugal aus, schubartig-rezidivierend.</td></tr>
+  </tbody>
+</table></div>
+<div class="tabelle"><table>
+  <caption>Besondere Hauttypen und Verbandmittel (Foliensatz)</caption>
+  <thead><tr><th>Hauttyp</th><th>Merkmale</th><th>Empfehlung</th></tr></thead>
+  <tbody>
+    <tr><td>Altershaut</td><td>dünn, trocken, verschiebbar</td><td>silikonbeschichtete Auflagen, keine Kleberänder</td></tr>
+    <tr><td>Pergamenthaut</td><td>extrem dünn und fragil</td><td>Hydrogelkompressen, sehr schonende Entfernung</td></tr>
+    <tr><td>Kortisonhaut</td><td>atrophisch durch Langzeittherapie</td><td>minimale Klebekraft, häufige Kontrollen</td></tr>
+    <tr><td>Ödemhaut</td><td>gespannt, verletzungsanfällig</td><td>dehnbare Materialien, Druckentlastung</td></tr>
+  </tbody>
+</table></div>
+<ul>
+  <li><b>MARSI-Prävention:</b> atraumatische Entfernung (Silikon), regelmäßige Hautbeurteilung unter Verbänden, korrekte Applikation (nicht unter Spannung), Hautvorbereitung mit Hautschutzfilm.</li>
+  <li><b>Dokumentation von Hautschäden:</b> Erstbeurteilung vor Verbandanlage · Kontrolle bei jedem Verbandwechsel · Fotodokumentation · eingeleitete Maßnahmen und Produktwechsel.</li>
+  <li><b>Rechtliche Aspekte:</b> Sorgfaltspflicht (Verbandmittel nach Stand der Technik), Dokumentationspflicht, Aufklärungspflicht, Haftung – vermeidbare Hautschäden können zu Schadensersatz führen.</li>
+</ul>
 `
 });

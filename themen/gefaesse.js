@@ -90,7 +90,27 @@ Lernapp.thema({
     { k: "Lipödem", f: "Lipödem vs. Lymphödem – wichtigste Unterschiede?",
       a: "Lipödem: symmetrisch, Hände/Füße frei, Druckschmerz, Hämatome, Stemmer negativ.\nLymphödem: asymmetrisch, Zehen/Finger beteiligt, schmerzlos, Stemmer positiv.", s: "S. 21–30" },
     { k: "Lipödem", f: "Therapie des Lipödems?",
-      a: "Symptomatisch (Ursache unbekannt): Kompression, MLD, IPK/AIK, Bewegung, Liposuktion. Sport/Diät helfen nicht gegen die typischen Fettpolster; Übergewicht verschlechtert den Verlauf.", s: "S. 26–32" }
+      a: "Symptomatisch (Ursache unbekannt): Kompression, MLD, IPK/AIK, Bewegung, Liposuktion. Sport/Diät helfen nicht gegen die typischen Fettpolster; Übergewicht verschlechtert den Verlauf.", s: "S. 26–32" },
+    { k: "Folien", f: "Wodurch wird filtriert und wodurch reabsorbiert?",
+      a: "Filtration: durch den hydrostatischen Druck (Blutdruck) in der Blutsäule.\nReabsorption der ca. 18 l: durch Osmose.", s: "Foliensatz Gefäße" },
+    { k: "Folien", f: "Welche vier Funktionen hat das Lymphsystem?",
+      a: "Flüssigkeitsrückführung · Abfallentsorgung (Reste abgestorbener Zellen, Eiweißkörper) · Fetttransport (Darmfette) · Immunabwehr (Lymphozyten).", s: "Foliensatz Gefäße" },
+    { k: "Folien", f: "Welche drei Kräfte sichern den venösen Rückfluss?",
+      a: "Venenklappen (verhindern Rückfluss) · Muskelpumpe (Fuß- und Beinmuskulatur) · Herzsog (saugt venöses Blut an).", s: "Foliensatz Gefäße" },
+    { k: "Folien", f: "Wie wird die Arteriosklerose pathologisch eingeteilt?",
+      a: "Atherosklerose · Arteriolosklerose · Mönckeberg-Sklerose. Klinisch werden Arterio- und Atherosklerose synonym verwendet.", s: "Foliensatz Gefäße" },
+    { k: "Folien", f: "Behandlungsziele bei pAVK?",
+      a: "Schwere Ereignisse verhindern (Herzinfarkt, Schlaganfall, plötzlicher Herztod) · Amputationen vermeiden · Lebensqualität verbessern.", s: "Foliensatz Gefäße" },
+    { k: "Folien", f: "Was ist der Hauptrisikofaktor der pAVK – und ist Arteriosklerose heilbar?",
+      a: "Nikotinkonsum. Arteriosklerose kann verlangsamt, aber nicht geheilt werden.", s: "Foliensatz Gefäße" },
+    { k: "Folien", f: "Wie entsteht ein Lymphödem?",
+      a: "Gleichgewicht aus Filtration, Reabsorption und Lymphdrainage ist gestört: erhöhter Zufluss ins Interstitium oder verminderter Abfluss über Blut- und/oder Lymphgefäße. Lymphödem = eigenständiges Krankheitsbild.", s: "Foliensatz Gefäße" },
+    { k: "Folien", f: "Welche Komplikationen des Lipödems nennt der Foliensatz?",
+      a: "Chronische Schmerzen, Bewegungseinschränkungen, Lipo-Lymphödem, psychische Belastung (Körperschema, Scham, Stigmatisierung).", s: "Foliensatz Gefäße" },
+    { k: "Folien", f: "Wann kommt beim Lipödem die Liposuktion in Betracht?",
+      a: "Erst nach Ausschöpfung der konservativen Maßnahmen; sie ist die einzige Behandlung, die die erkrankten Fettzellen dauerhaft entfernt. Lipödem ist nicht heilbar.", s: "Foliensatz Gefäße" },
+    { k: "Folien", f: "Wie läuft eine Phlebothrombose ab?",
+      a: "Thrombus verschließt die Vene → Blutstau, Vene gedehnt → Venenklappen geschädigt → Auflösungsversuche greifen die Klappen zusätzlich an; Klappen bleiben insuffizient.", s: "Foliensatz Gefäße" }
   ],
 
   quiz: [
@@ -141,7 +161,7 @@ Lernapp.thema({
       e: "Thrombophlebitis (oberflächlich): roter, harter, schmerzhafter Strang; Übergang in TVT oder Lungenembolie möglich.", s: "S. 14–15" },
     { f: "Was sichert den venösen Rückfluss zum Herzen?",
       o: ["Muskelpumpe und Venenklappen", "Windkesselfunktion der Venen", "Der Ductus thoracicus", "Die Kontraktion der Kapillaren"],
-      e: "Venen transportieren täglich ca. 7.000 l Blut zum Herzen; Hilfe durch Muskelpumpe und Venenklappen.", s: "S. 14" },
+      e: "Venen transportieren täglich ca. 7.000 l Blut zum Herzen; Hilfe durch Muskelpumpe und Venenklappen. Der Foliensatz nennt als dritte Kraft den Herzsog.", s: "S. 14" },
     { f: "Wo beginnt ein primäres Lymphödem typischerweise?",
       o: ["Distal, breitet sich nach oben aus", "Proximal, breitet sich nach unten aus", "Immer beidseitig symmetrisch an Oberschenkeln", "Am Rumpf"],
       e: "Primär: beginnt distal, breitet sich nach oben aus. Sekundär: beginnt meist proximal.", s: "S. 18–21" },
@@ -171,7 +191,28 @@ Lernapp.thema({
       e: "Prognose: Lebenserwartung ca. 10 Jahre kürzer, Sterblichkeit doppelt so hoch.", s: "S. 10–11" },
     { f: "Hach-Stadium 3 der Varikose bedeutet …",
       o: ["Insuffizienz bis unterhalb des Knies", "Nur die Mündungsklappe ist betroffen", "Insuffizienz bis Mitte Oberschenkel", "Insuffizienz bis zum Sprunggelenk"],
-      e: "1: nur Mündungsklappe · 2: bis Mitte Oberschenkel · 3: bis unterhalb des Knies · 4: bis zum Sprunggelenk. Im Heft nur handschriftlich; bestätigt durch das Zusatzskript Varikose (S. 2).", s: "S. 15", h: true }
+      e: "1: nur Mündungsklappe · 2: bis Mitte Oberschenkel · 3: bis unterhalb des Knies · 4: bis zum Sprunggelenk. Im Heft nur handschriftlich; bestätigt durch das Zusatzskript Varikose (S. 2).", s: "S. 15", h: true },
+    { f: "Wodurch werden die ca. 18 l laut Foliensatz reabsorbiert?",
+      o: ["Durch Osmose", "Durch den hydrostatischen Druck in der Blutsäule", "Durch die Muskelpumpe", "Durch die Lymphdrainage"],
+      e: "F: Filtration durch den hydrostatischen Druck (Blutdruck) in der Blutsäule; Reabsorption der 18 l durch Osmose. Das Heft nennt Osmose nicht.", s: "Foliensatz Gefäße" },
+    { f: "Welche Funktionen hat das Lymphsystem laut Foliensatz?",
+      o: ["Flüssigkeitsrückführung", "Fetttransport (Darmfette)", "Immunabwehr (Lymphozyten)", "Sauerstofftransport zu den Organen"], r: 3,
+      e: "Vier Funktionen: Flüssigkeitsrückführung · Abfallentsorgung · Fetttransport · Immunabwehr.", s: "Foliensatz Gefäße" },
+    { f: "Welche drei Kräfte sichern laut Foliensatz den venösen Rückfluss?",
+      o: ["Venenklappen", "Muskelpumpe", "Herzsog", "Windkesselfunktion der Aorta"], r: 3,
+      e: "F: Venenklappen, Muskelpumpe, Herzsog (Heft: Muskelpumpe, Klappen).", s: "Foliensatz Gefäße" },
+    { f: "Wie wird die Arteriosklerose pathologisch eingeteilt?",
+      o: ["Atherosklerose", "Arteriolosklerose", "Mönckeberg-Sklerose", "Dermatoliposklerose"], r: 3,
+      e: "Klinisch werden Arterio- und Atherosklerose synonym verwendet. Dermatoliposklerose ist ein Hautbefund der CVI.", s: "Foliensatz Gefäße" },
+    { f: "Was trifft auf die pAVK laut Foliensatz zu?",
+      o: ["Nikotinkonsum ist der Hauptrisikofaktor", "Arteriosklerose kann verlangsamt, aber nicht geheilt werden", "Ein Behandlungsziel ist, Amputationen zu vermeiden", "Arteriosklerose ist durch Gehtraining vollständig heilbar"], r: 3,
+      e: "Behandlungsziele: schwere Ereignisse verhindern (Herzinfarkt, Schlaganfall, plötzlicher Herztod), Amputationen vermeiden, Lebensqualität verbessern.", s: "Foliensatz Gefäße" },
+    { f: "Was trifft auf das Lipödem laut Foliensatz zu?",
+      o: ["Es ist chronisch und nicht heilbar", "Die Liposuktion kommt erst nach Ausschöpfung der konservativen Maßnahmen in Betracht", "Füße, Hände und Rumpf bleiben schlank", "Sport und Diät beseitigen die typischen Fettpolster"], r: 3,
+      e: "Liposuktion ist die einzige Behandlung, die die erkrankten Fettzellen dauerhaft entfernt. Konservativ: Kompression, MLD, Bewegung, Hautpflege, Gewichtsmanagement.", s: "Foliensatz Gefäße" },
+    { f: "Wie entsteht laut Foliensatz ein Lymphödem?",
+      o: ["Das Gleichgewicht aus Filtration, Reabsorption und Lymphdrainage ist gestört", "Durch erhöhten Zufluss ins Interstitium oder verminderten Abfluss", "Ausschließlich durch eine Herzinsuffizienz", "Durch eine Fettverteilungsstörung an den Beinen"], r: 2,
+      e: "Ödeme sind sonst Symptom – das Lymphödem ist ein eigenständiges Krankheitsbild.", s: "Foliensatz Gefäße" }
   ],
 
   zusammenfassung: `
@@ -309,6 +350,28 @@ Lernapp.thema({
     <tr><td>Ödem</td><td>+++</td><td>Ø</td><td>(+)</td><td>+++</td></tr>
     <tr><td>Druckschmerz</td><td>+++</td><td>Ø</td><td>Ø</td><td>Ø</td></tr>
     <tr><td>Hämatomneigung</td><td>+++</td><td>(+)</td><td>Ø</td><td>Ø</td></tr>
+  </tbody>
+</table></div>
+<h3>8. Abgleich mit dem Foliensatz „Gefäßerkrankungen und chronische Wunden“ <span class="seite">61 Folien</span></h3>
+<p class="leise">F = Foliensatz (ohne Foliennummern). ✔ = deckt sich mit dem Heft · ➜ = neu oder präzisiert · ⚠ = Abweichung Heft ↔ Folien</p>
+<div class="tabelle"><table>
+  <thead><tr><th>Thema</th><th>Ergebnis</th></tr></thead>
+  <tbody>
+    <tr><td style="white-space:normal">Filtration / Reabsorption</td><td>➜ F: Filtration durch den hydrostatischen Druck (Blutdruck) in der Blutsäule; die 18 l werden durch Osmose reabsorbiert. Das Heft nennt Osmose nicht.</td></tr>
+    <tr><td style="white-space:normal">Lymphtransport</td><td>➜ F: Kontraktion der Gefäßmuskulatur sowie Drucksteigerung durch Pulsbewegung (Windkesselfunktion), Atem- und Körperbewegung – „Bewegung ist essentiell für den Lymphtransport“.</td></tr>
+    <tr><td style="white-space:normal">Funktionen des Lymphsystems</td><td>➜ F nennt vier: Flüssigkeitsrückführung · Abfallentsorgung (Reste abgestorbener Zellen, Eiweißkörper) · Fetttransport (Darmfette) · Immunabwehr (Lymphozyten in Lymphknoten).</td></tr>
+    <tr><td style="white-space:normal">Venöser Rückfluss</td><td>➜ F: drei Kräfte – Venenklappen, Muskelpumpe, Herzsog (Heft: Muskelpumpe, Klappen).</td></tr>
+    <tr><td style="white-space:normal">Arteriosklerose</td><td>➜ Pathologische Einteilung: Atherosklerose · Arteriolosklerose · Mönckeberg-Sklerose; klinisch Arterio- = Atherosklerose.</td></tr>
+    <tr><td style="white-space:normal">pAVK</td><td>➜ Nikotin = Hauptrisikofaktor; im jüngeren Alter Männer häufiger, aber auch junge Raucherinnen gefährdet; Arteriosklerose kann verlangsamt, aber nicht geheilt werden; pAVK ist Vorbote von Herzinfarkt/Schlaganfall. Behandlungsziele: schwere Ereignisse verhindern, Amputation vermeiden, Lebensqualität verbessern.</td></tr>
+    <tr><td style="white-space:normal">Lymphödem</td><td>➜ Ödeme sind sonst Symptom – das Lymphödem ist ein eigenständiges Krankheitsbild. Entstehung: Gleichgewicht aus Filtration, Reabsorption und Lymphdrainage gestört durch erhöhten Zufluss oder verminderten Abfluss. Komplikationen zusätzlich: Dekubitalgeschwüre, Fibrome, Lähmungserscheinungen. Stadium 0: z. T. pathologisches Lymphszintigramm.</td></tr>
+    <tr><td style="white-space:normal">Lipödem – Häufigkeit</td><td>⚠ F: 8–11 % der Frauen · Heft: 8–18 %</td></tr>
+    <tr><td style="white-space:normal">Lipödem – Ursache</td><td>⚠ F: „starke genetische Veranlagung angenommen“, hormonelle Faktoren wesentlich · Heft: genetische Komponente in bis zu 60 %</td></tr>
+    <tr><td style="white-space:normal">Lipödem – Verteilung</td><td>➜ Beine von Hüfte bis Knöchel, Arme von Schulter bis Handgelenk; Füße/Hände und Rumpf bleiben schlank. Stemmer beim Lymphödem „oft“ positiv.</td></tr>
+    <tr><td style="white-space:normal">Lipödem – Komplikationen</td><td>➜ F: chronische Schmerzen, Bewegungseinschränkung, Lipo-Lymphödem, psychische Belastung (Heft: dermatologisch, lymphatisch, orthopädisch).</td></tr>
+    <tr><td style="white-space:normal">Lipödem – Therapie</td><td>➜ Chronisch, nicht heilbar; konservativ (Kompression, MLD, Bewegung z. B. Aqua-Gymnastik, Hautpflege, Gewichtsmanagement); Liposuktion erst nach Ausschöpfung der konservativen Maßnahmen; interdisziplinär.</td></tr>
+    <tr><td style="white-space:normal">Phlebothrombose</td><td>➜ Ablauf: Verschluss → Blutstau, Vene gedehnt → Klappenschaden → Auflösungsversuche des Körpers greifen die Klappen zusätzlich an.</td></tr>
+    <tr><td style="white-space:normal">Thrombophlebitis, CVI-Folgen</td><td>➜ Thrombophlebitis auch an den Armen. CVI-Folgen gestuft: Juckreiz, Kribbeln, Schwellung → Ekzeme, Ernährungsstörung des Gewebes → Verhärtung, Braunfärbung/Abblassung am Knöchel → Ulcus cruris venosum.</td></tr>
+    <tr><td style="white-space:normal">Übrige Inhalte</td><td>✔ Kreisläufe, Gefäßtypen, Kapillaren, Fontaine, Widmer, Phlebödem, Stemmer, Lymphödem-Stadien und -Kompensation decken sich mit dem Heft.</td></tr>
   </tbody>
 </table></div>
 `

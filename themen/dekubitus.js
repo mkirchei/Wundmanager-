@@ -136,7 +136,29 @@ Lernapp.thema({
     { k: "Diab. Fuß", f: "Was ist bei der Hautpflege des diabetischen Fußes zu beachten?",
       a: "W/O-Cremes oder Schäume mit Urea (Hornhaut, Rhagaden, Juckreiz).\nZehenzwischenräume nicht eincremen → Mazeration und Pilzbefall vermeiden.", s: "S. 33" },
     { k: "Diab. Fuß", f: "Warum Hydrokolloide beim diabetischen Fuß nur mit Vorsicht?",
-      a: "Bei PNP fehlen oft Entzündungszeichen; durch den eingeschränkten Gasaustausch kann sich eine Infektion unbemerkt ausbreiten.\nKI: Infektion, freiliegende Muskeln/Sehnen/Knochen, ischämische Ulcera (pAVK IV).", s: "S. 33" }
+      a: "Bei PNP fehlen oft Entzündungszeichen; durch den eingeschränkten Gasaustausch kann sich eine Infektion unbemerkt ausbreiten.\nKI: Infektion, freiliegende Muskeln/Sehnen/Knochen, ischämische Ulcera (pAVK IV).", s: "S. 33" },
+    { k: "Folien", f: "Wagner-Klassifikation laut Foliensatz?",
+      a: "0 intakte Haut, Risikofuß · 1 oberflächlich · 2 tief bis Sehnen/Knochen · 3 tief mit Abszess/Osteomyelitis · 4 begrenzte Gangrän (Vorfuß) · 5 ausgedehnte Gangrän.\nAchtung: Grad 2/3 im Heft anders formuliert.", s: "Foliensatz" },
+    { k: "Folien", f: "Was ist die Armstrong-Klassifikation (University of Texas)?",
+      a: "4×3-System: Grade 0 epithelisiert · 1 oberflächlich · 2 bis Sehne/Kapsel/Knochen · 3 Abszess/Osteomyelitis; kombiniert mit Stadien A ohne · B Infektion · C Ischämie · D beides.", s: "Foliensatz" },
+    { k: "Folien", f: "Welche Form des diabetischen Fußulkus ist am häufigsten – welche am problematischsten?",
+      a: "Neuropathisch: häufigste Form (60–70 % laut Folien).\nNeuro-ischämisch: häufigste komplizierte Form, schlechte Prognose, da meist schmerzlos.", s: "Foliensatz" },
+    { k: "Folien", f: "Wo liegen neuropathische und ischämische Fußulcera typischerweise?",
+      a: "Neuropathisch: Druckstellen – Fußsohle, Zehen.\nIschämisch: Akren, Zehen, Ferse; Nekrosegefahr.", s: "Foliensatz" },
+    { k: "Folien", f: "Welcher HbA1c-Zielwert wird beim diabetischen Fußulkus genannt?",
+      a: "HbA1c < 7 % (Blutzuckeroptimierung im multidisziplinären Ansatz).", s: "Foliensatz" },
+    { k: "Folien", f: "Wofür steht das S im IRAS-Prinzip laut Foliensatz?",
+      a: "Schutz vor Rezidiven (Druckentlastung, Schulung). Im Heft: Schulung, Beratung, Information.", s: "Foliensatz" },
+    { k: "Folien", f: "Woher stammt der Begriff Dekubitus und wie lautet die Mehrzahl?",
+      a: "Von lat. decumbere = niederliegen. Mehrzahl ebenfalls „Dekubitus“. Synonym: Druckgeschwür, Druckverletzung.", s: "Foliensatz" },
+    { k: "Folien", f: "Muss bei „keiner Kategorie zuordenbar“ jeder Belag entfernt werden?",
+      a: "Nein – stabiler Schorf kann schützend wirken. Die Kategorie gilt, bis die wirkliche Tiefe beurteilt werden kann.", s: "Foliensatz" },
+    { k: "Folien", f: "Welche Risikofaktoren wirken direkt, welche indirekt auf das Dekubitusrisiko?",
+      a: "Direkt: beeinträchtigte Mobilität (mehr Druck und Scherkräfte).\nIndirekt: Durchblutungsstörungen (schwächen die Gewebetoleranz).", s: "Foliensatz" },
+    { k: "Folien", f: "Ursachen der arteriellen Minderdurchblutung laut Foliensatz?",
+      a: "Atherosklerose · arterielle Embolie (Herzrhythmusstörungen, Aneurysmen) · Entzündungen (Vaskulitis) · Gerinnungsstörungen · Trauma (selten alleinige Ursache).", s: "Foliensatz" },
+    { k: "Folien", f: "Welche Sportarten und Wärmequellen sollen Menschen mit Ulcus cruris venosum meiden?",
+      a: "Kein Kraftsport, keine Sportarten mit abrupten Bewegungswechseln; Wärme über 28 °C meiden: Wärmflaschen, heißes Baden, Sauna, Solarium.", s: "Foliensatz" }
   ],
 
   quiz: [
@@ -209,18 +231,18 @@ Lernapp.thema({
     { f: "Was ist beim Ulcus cruris mixtum typisch?",
       o: ["Schmerz ist meist führend; Kompression stark eingeschränkt oder kontraindiziert", "Es ist schmerzlos und wird immer voll komprimiert", "Es liegt immer einzeln am Innenknöchel", "Es entsteht nur durch Polyneuropathie"],
       e: "Arterielle und venöse Ursache; meist mehrere Ulcera, Schmerz meist führend; pAVK früh behandeln, um wieder komprimieren zu können.", s: "S. 28" },
-    { f: "Was ist die häufigste Ursache diabetischer Fußulcera?",
+    { f: "Was ist laut Kursheft die häufigste Ursache diabetischer Fußulcera?",
       o: ["Polyneuropathie allein (ca. 50 %)", "pAVK allein (ca. 50 %)", "Venöse Insuffizienz (ca. 35 %)", "Pilzinfektionen (ca. 15 %)"],
-      e: "Ca. 50 % Polyneuropathie, ca. 15 % pAVK, ca. 35 % Kombination aus PNP und Gefäßerkrankung.", s: "S. 29" },
+      e: "Ca. 50 % Polyneuropathie, ca. 15 % pAVK, ca. 35 % Kombination aus PNP und Gefäßerkrankung. Der Foliensatz nennt für das neuropathische Ulkus 60–70 %.", s: "S. 29" },
     { f: "Woran erkennt man einen neuropathischen diabetischen Fuß?",
       o: ["Trocken, warm, rosig, Pulse tastbar, schmerzlose Ulcera", "Kühl, blass, Pulse fehlend, starke Schmerzen", "Livide, mit akralen Nekrosen und Ruheschmerz", "Ödematös, mit Stauungsekzem"],
       e: "Neuropathisch: trocken, warm, rosig, Pulse tastbar, schmerzlos (Malum perforans). Ischämisch: kühl, blass/livide, Pulse vermindert, Schmerzen.", s: "S. 30" },
     { f: "Welcher Temperaturunterschied ist typisch für den Charcot-Fuß (DNOAP)?",
       o: ["Überwärmung > 1 °C (oft > 2 °C) gegenüber der Gegenseite", "Der Fuß ist mindestens 2 °C kälter als die Gegenseite", "Kein Unterschied zur Gegenseite", "Überwärmung von mindestens 5 °C"],
       e: "DNOAP: meist einseitige, schmerzlose Destruktion des Fußskeletts; Überwärmung > 1 °C (oft > 2 °C) gegenüber der Gegenseite.", s: "S. 30" },
-    { f: "Was bedeutet Wagner-Grad 3?",
+    { f: "Was bedeutet Wagner-Grad 3 laut Kursheft?",
       o: ["Tiefes Ulcus bis Knochen und/oder Sehnen", "Oberflächliches Ulcus", "Nekrose von Fußteilen", "Keine Läsion, evtl. Fußdeformation"],
-      e: "Wagner: 0 keine Läsion · 1 oberflächlich · 2 bis Sehne/Kapsel · 3 bis Knochen · 4 Nekrose von Fußteilen · 5 Nekrose des gesamten Fußes.", s: "S. 29" },
+      e: "Wagner laut Heft: 0 keine Läsion · 1 oberflächlich · 2 bis Sehne/Kapsel · 3 bis Knochen · 4 Nekrose von Fußteilen · 5 Nekrose des gesamten Fußes. Achtung: Der Foliensatz formuliert Grad 3 als Abszess/Osteomyelitis.", s: "S. 29" },
     { f: "Was bedeutet Armstrong-Stadium C?",
       o: ["Mit Ischämie", "Mit Infektion", "Mit Infektion und Ischämie", "Ohne Infektion und Ischämie"],
       e: "Armstrong: A ohne · B mit Infektion · C mit Ischämie · D mit Infektion und Ischämie.", s: "S. 29" },
@@ -235,7 +257,34 @@ Lernapp.thema({
       e: "W/O-Cremes oder Schäume mit Urea; Zehenzwischenräume nicht eincremen → Mazeration und Pilzbefall vermeiden.", s: "S. 33" },
     { f: "Warum dürfen Hydrokolloide beim diabetischen Fußulkus nur mit engmaschiger Kontrolle verwendet werden?",
       o: ["Bei Polyneuropathie bleibt eine Infektion oft unbemerkt", "Hydrokolloide lösen immer eine Allergie aus", "Sie trocknen die Wunde zu stark aus", "Sie sind zu teuer für die Dauertherapie"],
-      e: "Bei PNP fehlen oft Entzündungszeichen; durch den eingeschränkten Gasaustausch kann sich eine Infektion unbemerkt ausbreiten. KI: klinische Infektion, freiliegende Muskeln/Sehnen/Knochen, ischämische Ulcera (pAVK IV).", s: "S. 33" }
+      e: "Bei PNP fehlen oft Entzündungszeichen; durch den eingeschränkten Gasaustausch kann sich eine Infektion unbemerkt ausbreiten. KI: klinische Infektion, freiliegende Muskeln/Sehnen/Knochen, ischämische Ulcera (pAVK IV).", s: "S. 33" },
+    { f: "Was bedeutet Wagner-Grad 3 laut Foliensatz?",
+      o: ["Tiefe Wunde mit Abszess/Osteomyelitis", "Tiefes Ulcus bis Knochen und/oder Sehnen", "Begrenzte Gangrän (Vorfuß)", "Oberflächliche Wunde"],
+      e: "Achtung: Das Kursheft (S. 29) formuliert Grad 3 als „tiefes Ulcus bis Knochen und/oder Sehnen“. Bitte klären, welche Fassung in der Prüfung gilt.", s: "Foliensatz; Heft S. 29" },
+    { f: "Was trifft auf die Armstrong-Klassifikation (University of Texas) laut Foliensatz zu?",
+      o: ["Sie ist ein 4×3-System aus Graden und Stadien", "Stadium C bedeutet Ischämie", "Grad 0 ist eine epithelisierte Wunde", "Stadium A bedeutet Infektion und Ischämie"], r: 3,
+      e: "Grade 0 epithelisiert · 1 oberflächlich · 2 bis Sehne/Kapsel/Knochen · 3 Abszess/Osteomyelitis; Stadien A ohne · B Infektion · C Ischämie · D beides.", s: "Foliensatz" },
+    { f: "Welche Form des diabetischen Fußulkus ist laut Foliensatz die häufigste komplizierte Form?",
+      o: ["Neuro-ischämisch – schlechte Prognose, da meist schmerzlos", "Rein neuropathisch", "Rein ischämisch", "Charcot-Fuß"],
+      e: "Neuropathisch ist die häufigste Form (60–70 % laut Folien); neuro-ischämisch die häufigste komplizierte Form.", s: "Foliensatz" },
+    { f: "Welcher HbA1c-Zielwert wird beim diabetischen Fußulkus genannt?",
+      o: ["HbA1c < 7 %", "HbA1c < 12 %", "HbA1c > 9 %", "HbA1c < 3 %"],
+      e: "Blutzuckeroptimierung im multidisziplinären Ansatz (Diabetologie, Chirurgie, Podologie).", s: "Foliensatz" },
+    { f: "Wofür steht das „S“ im IRAS-Prinzip laut Foliensatz?",
+      o: ["Schutz vor Rezidiven (Druckentlastung, Schulung)", "Sepsis-Therapie", "Stentimplantation", "Sofortige Amputation"],
+      e: "Im Heft: Schulung, Beratung, Information – deckt sich mit deiner Randnotiz.", s: "Foliensatz; Heft S. 32" },
+    { f: "Woher stammt der Begriff „Dekubitus“?",
+      o: ["Von lat. decumbere = niederliegen", "Von lat. decubitus = Druckstelle am Knochen", "Von griech. dekas = zehn", "Von lat. cubitus = Ellenbogen"],
+      e: "Mehrzahl ebenfalls „Dekubitus“; synonym: Druckgeschwür, Druckverletzung.", s: "Foliensatz" },
+    { f: "Muss bei der Kategorie „keiner Kategorie zuordenbar“ jeder Belag entfernt werden?",
+      o: ["Nein – stabiler Schorf kann schützend wirken", "Ja, immer sofort chirurgisch", "Ja, aber nur mit Hydrogel", "Nein, Beläge werden nie entfernt"],
+      e: "Die Kategorie gilt, bis die wirkliche Tiefe beurteilt werden kann.", s: "Foliensatz" },
+    { f: "Welcher Risikofaktor wirkt laut Foliensatz direkt auf das Dekubitusrisiko?",
+      o: ["Beeinträchtigte Mobilität", "Durchblutungsstörung", "Mangelernährung", "Hautfeuchtigkeit"],
+      e: "Mobilität wirkt direkt (mehr Druck und Scherkräfte); Durchblutungsstörungen wirken indirekt (schwächen die Gewebetoleranz).", s: "Foliensatz" },
+    { f: "Was sollen Menschen mit Ulcus cruris venosum laut Foliensatz meiden?",
+      o: ["Sauna", "Wärmflaschen", "Kraftsport", "Spazierengehen"], r: 3,
+      e: "Kein Kraftsport, keine Sportarten mit abrupten Bewegungswechseln; Wärme über 28 °C meiden: Wärmflaschen, heißes Baden, Sauna, Solarium.", s: "Foliensatz" }
   ],
 
   zusammenfassung: `
@@ -433,5 +482,37 @@ Lernapp.thema({
   <li><b>Wundversorgung (S. 33):</b> Verdacht auf Infektion → Antiseptika, Auflagen mit Polihexanid; systemische Antibiose nach Antibiogramm. Trockene Nekrosen bei arterieller/gemischter Ursache nicht einweichen und erst nach Revaskularisation entfernen. Standard: PU-Schaumverbände ohne Klebeflächen; Fixierung locker, an Zehen kein Druck durch Drehungen. Hydrokolloide nur mit engmaschiger Kontrolle (Infektion wird bei PNP nicht bemerkt); kontraindiziert bei klinischer Infektion, freiliegenden Muskeln/Sehnen/Knochen, ischämischen Ulcera (pAVK IV).</li>
   <li><b>Prävention (S. 34):</b> tägliche Fußinspektion, Blutzuckerkontrolle, regelmäßige Fuß- und Nagelpflege, Hautpflege, Verletzungen vermeiden, geeignete Schuhe – nur wirksam bei aktiver Mitarbeit und regelmäßiger Schulung.</li>
 </ul>
+<h3>8. Abgleich mit dem Foliensatz „Ulcus cruris, Dekubitus, Diabetisches Fußsyndrom“ <span class="seite">48 Folien</span></h3>
+<p class="leise">✔ = deckt sich mit dem Heft · ➜ = neu oder präzisiert · ⚠ = Abweichung Heft ↔ Folien</p>
+<p class="warnung">Wagner-Klassifikation weicht ab. Bitte beim Lernen klären, welche Fassung in der Prüfung gilt.</p>
+<div class="tabelle"><table>
+  <thead><tr><th>Grad</th><th>Kursheft (S. 29)</th><th>Foliensatz</th></tr></thead>
+  <tbody>
+    <tr><td>0</td><td>keine Läsion, evtl. Fußdeformation, Cellulitis, Hyperkeratose</td><td>intakte Haut, Risikofuß</td></tr>
+    <tr><td>1</td><td>oberflächliches Ulcus</td><td>oberflächliche Wunde</td></tr>
+    <tr><td>2</td><td>tiefes Ulcus bis Sehne oder Kapsel</td><td>tiefe Wunde bis zu Sehnen/Knochen</td></tr>
+    <tr><td>3</td><td>tiefes Ulcus bis Knochen und/oder Sehnen</td><td>tiefe Wunde mit Abszess/Osteomyelitis</td></tr>
+    <tr><td>4</td><td>Nekrose von Fußteilen</td><td>begrenzte Gangrän (Vorfuß)</td></tr>
+    <tr><td>5</td><td>Nekrose des gesamten Fußes</td><td>ausgedehnte Gangrän (ganzer Fuß)</td></tr>
+  </tbody>
+</table></div>
+<p><b>Armstrong (University of Texas) laut Folien:</b> 4×3-System – Grade 0 epithelisierte Wunde · 1 oberflächlich · 2 bis Sehne, Kapsel oder Knochen · 3 mit Abszess oder Osteomyelitis; kombiniert mit Stadien A ohne · B Infektion · C Ischämie · D beides. Das Heft kombiniert die Stadien A–D mit den Wagner-Graden 0–5.</p>
+<div class="tabelle"><table>
+  <thead><tr><th>Thema</th><th>Ergebnis</th></tr></thead>
+  <tbody>
+    <tr><td style="white-space:normal">Häufigkeit neuropathisch</td><td>⚠ F: neuropathisches Ulkus ist die häufigste Form (60–70 %) · Heft: ca. 50 % durch Polyneuropathie, 35 % Kombination, 15 % pAVK</td></tr>
+    <tr><td style="white-space:normal">Formen des DFU</td><td>➜ Lokalisation: neuropathisch an Druckstellen (Fußsohle, Zehen); ischämisch an Akren, Zehen, Ferse, Nekrosegefahr. Neuro-ischämisch = häufigste komplizierte Form, schlechte Prognose, da meist schmerzlos. Charcot: akute und chronische Phase.</td></tr>
+    <tr><td style="white-space:normal">Polyneuropathie</td><td>➜ motorisch auch Fußdeformitäten, Gangstörungen; autonom auch gestörte Durchblutungsregulation, trockene Haut; Verlust von Vibrations- und Lageempfinden.</td></tr>
+    <tr><td style="white-space:normal">DFU – Diagnostik</td><td>➜ Anamnese mit Diabetesdauer und HbA1c; Röntgen/MRT bei Verdacht auf Osteomyelitis; Wundabstrich oder Gewebeprobe.</td></tr>
+    <tr><td style="white-space:normal">DFU – Therapie</td><td>➜ multidisziplinär (Diabetologie, Chirurgie, Podologie); Blutzuckerziel HbA1c &lt; 7 %; IRAS mit S = Schutz vor Rezidiven (Druckentlastung, Schulung) – deckt sich mit deiner Randnotiz; phasengerecht: Reinigung Débridement/Hydrogele · Granulation Alginate/Schäume · Epithelisierung Folien/dünne Hydrogele.</td></tr>
+    <tr><td style="white-space:normal">Dekubitus – Begriff</td><td>➜ von lat. decumbere (niederliegen); Mehrzahl ebenfalls „Dekubitus“; synonym: Druckgeschwür, Druckverletzung.</td></tr>
+    <tr><td style="white-space:normal">Dekubitus – Kategorien</td><td>➜ Kat. I: Bereich kann schmerzhaft, verhärtet, weich, wärmer oder kälter sein; bei dunkler Haut Abblassen evtl. nicht sichtbar. Kat. III: Beläge möglich, verdecken die Tiefe aber nicht. Nicht zuordenbar: stabiler Schorf kann schützend wirken – nicht jeder Belag muss entfernt werden. Vermutete tiefe Schädigung: rascher Verlauf trotz optimaler Behandlung möglich.</td></tr>
+    <tr><td style="white-space:normal">Dekubitus – Risikofaktoren</td><td>➜ Mobilität = direkter, Durchblutung = indirekter Einfluss. Zwei Gruppen: Druck/Scherkräfte (Mobilität, Neurologie, medizinische Geräte, Reibung) und beeinträchtigte Gewebetoleranz (Mangelernährung, Durchblutung, Hautfeuchtigkeit).</td></tr>
+    <tr><td style="white-space:normal">Ulcus cruris venosum</td><td>➜ Wundumgebung gerötet, schuppig, sklerotisch, ekzematös, verhärtet oder mazeriert; Infektionszeichen: starker Geruch, entzündeter Rand, eitriges Exsudat. Diagnostik zusätzlich: Faszienlücken tasten, Umfang an Vorfuß, Knöchel, Wade.</td></tr>
+    <tr><td style="white-space:normal">Kompression / Beratung</td><td>➜ Erhaltungsphase beginnt, wenn Ödeme entstaut und Ulcera stabil sind. Kein Kraftsport, keine Sportarten mit abrupten Bewegungswechseln; Wärmflaschen, heißes Baden, Sauna, Solarium meiden.</td></tr>
+    <tr><td style="white-space:normal">Ulcus cruris arteriosum</td><td>➜ Ursachen: Atherosklerose · arterielle Embolie (Herzrhythmusstörungen, Aneurysmen) · Entzündung (Vaskulitis) · Gerinnungsstörungen · Trauma (selten allein). Nikotin = wichtigster beeinflussbarer Risikofaktor. Wunde sehr schmerzhaft.</td></tr>
+    <tr><td style="white-space:normal">Übrige Inhalte</td><td>✔ Definitionen, Kategorien, Fingertest, Prophylaxe, Hilfsmittel, Widmer, Kompression, 3S-3L, IRAN, Vergleich venosum/arteriosum, Mixtum decken sich mit dem Heft.</td></tr>
+  </tbody>
+</table></div>
 `
 });

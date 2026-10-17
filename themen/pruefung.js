@@ -116,7 +116,7 @@ Lernapp.thema({
       e: "Diffusion: Wanderung durch Eigenbeweglichkeit bis zum Konzentrationsausgleich; langsam (Beispiel Tinte in Wasser). Druck und Kaffeefilter gehören zur Filtration.", s: "G S. 7" },
     { f: "Was trifft auf die Filtration zu?",
       o: ["Antrieb ist ein Druckunterschied (Blutdruck)", "Beispiel: Kaffeefilter", "Teilchen wandern durch Eigenbeweglichkeit bis zum Konzentrationsausgleich", "Sie läuft sehr langsam ab"], r: 2,
-      e: "Filtration: schnell; Teilchen, die durch die Membranporen passen, werden vom Ort höheren zum Ort niedrigeren Blutdrucks gepresst. Das Heft nennt den osmotischen Druck hier nicht.", s: "G S. 7" },
+      e: "Filtration: schnell; Teilchen, die durch die Membranporen passen, werden vom Ort höheren zum Ort niedrigeren Blutdrucks gepresst. Laut Foliensatz erfolgt die Reabsorption durch Osmose.", s: "G S. 7; Foliensatz" },
     { f: "Welche Angaben zur täglichen Flüssigkeitsbilanz sind richtig?",
       o: ["Ca. 20 l gelangen ins Interstitium", "Ca. 18 l werden reabsorbiert", "Ca. 2 l fließen als Lymphe ab", "Ca. 7.000 l fließen als Lymphe ab"], r: 3,
       e: "20 l ins Interstitium, 18 l reabsorbiert, 2 l als Lymphe. (Die 7.000 l beziehen sich auf das Blut, das die Venen täglich transportieren.)", s: "G S. 7; G S. 14" },
@@ -130,8 +130,8 @@ Lernapp.thema({
       o: ["In die linke Schlüsselbeinvene (V. subclavia) über den Ductus thoracicus", "In den rechten Vorhof", "In die Pfortader", "In die Milz"],
       e: "Lymphkapillaren → Lymphgefäße mit Klappen → Lymphknoten → Lymphstämme → Ductus thoracicus → linke V. subclavia.", s: "G S. 7–8" },
     { f: "Wodurch wird die Lymphe ohne eigenes Pumporgan transportiert (laut Heft)?",
-      o: ["Kontraktion der Gefäßmuskulatur", "Pulsbewegung", "Atem- und Körperbewegung", "Windkesselfunktion der Lymphgefäße"], r: 3,
-      e: "Die Windkesselfunktion ordnet das Heft den elastischen Arterien zu, nicht der Lymphe. Die Mitschrift ergänzt Muskelpumpe und Darmperistaltik.", s: "G S. 6, 8" },
+      o: ["Kontraktion der Gefäßmuskulatur", "Pulsbewegung", "Atem- und Körperbewegung", "Ein eigenes Pumporgan (Lymphherz)"], r: 3,
+      e: "Das Lymphsystem hat kein eigenes Pumporgan. Der Foliensatz nennt die Pulsbewegung „Windkesselfunktion“; das Heft beschreibt die Windkesselfunktion bei den elastischen Arterien. Die Mitschrift ergänzt Muskelpumpe und Darmperistaltik.", s: "G S. 6, 8; Foliensatz" },
     { f: "Was transportiert die Lymphe?",
       o: ["Reste abgestorbener Zellen", "Eiweißkörper", "Über den Darm resorbierte Fette", "Sauerstoff zu den Organen"], r: 3,
       e: "Abfallprodukte des Stoffwechsels sind laut Heft Reste abgestorbener Zellen und Eiweißkörper; Darmfette werden zusätzlich transportiert, sind aber keine Abfallprodukte.", s: "G S. 8" },
@@ -139,7 +139,7 @@ Lernapp.thema({
       o: ["Bildung von Lymphozyten", "Sie fangen Erreger ab und machen sie unschädlich", "Sie schwellen bei Entzündung", "Sie pumpen die Lymphe aktiv weiter"], r: 3,
       e: "Lymphknoten: Lymphozytenbildung und Abwehr; die Schwellung bei Entzündung ist ein diagnostischer Hinweis. Ein Pumporgan hat das Lymphsystem nicht.", s: "G S. 8" },
     { f: "Was trifft auf die Windkesselfunktion zu?",
-      o: ["Sie ist eine Funktion der elastischen, herznahen Arterien", "Sie wandelt die stoßweise in eine annähernd kontinuierliche Strömung um", "Sie treibt die Lymphe an", "Sie findet in den Kapillaren statt"], r: 2,
+      o: ["Sie ist eine Funktion der elastischen, herznahen Arterien", "Sie wandelt die stoßweise in eine annähernd kontinuierliche Strömung um", "Sie ist eine Funktion der Venenklappen", "Sie findet in den Kapillaren statt"], r: 2,
       e: "Herz kontrahiert → Aorta dehnt sich; Herz entspannt → Aorta zieht sich zusammen.", s: "G S. 4, 6" },
     { f: "Welche Maßnahmen gehören zur Diagnostik der pAVK?",
       o: ["ABI-Messung (Dopplerdruck)", "Ratschow-Lagerungsprobe", "Laufbandtest", "Stemmer-Zeichen"], r: 3,
@@ -182,15 +182,16 @@ Lernapp.thema({
     <tr><td style="white-space:normal">Was gehört zum Herz-Kreislauf-System?</td><td>G S. 3</td><td>✔ Herz, Blutgefäße, Lymphgefäße (im Heft als Prüfung markiert)</td></tr>
     <tr><td style="white-space:normal">Drei Kreisläufe</td><td>G S. 3–4</td><td>✔ Lungen-, Körper-, Pfortaderkreislauf</td></tr>
     <tr><td style="white-space:normal">Arteriovenöse Anastomosen = Querverbindungen</td><td>G S. 5</td><td>✔ zwischen Arteriolen und Venolen, Umgehung der Kapillaren</td></tr>
-    <tr><td style="white-space:normal">Diffusion / Filtration</td><td>G S. 7</td><td>✔ Diffusion; ➜ Filtration: Heft nennt als Antrieb den Druckunterschied (Blutdruck) an der Membran – „osmotischer Druck“ wird dort nicht genannt</td></tr>
+    <tr><td style="white-space:normal">Diffusion / Filtration</td><td>G S. 7</td><td>✔ Diffusion; ✔ Filtration durch hydrostatischen Druck (Blutdruck). Laut Foliensatz erfolgt die Reabsorption durch Osmose – der „osmotische Druck“ der Mitschrift gehört also zur Reabsorption, nicht zur Filtration.</td></tr>
     <tr><td style="white-space:normal">20 l täglich, 18 l reabsorbiert, 2 l Lymphe</td><td>G S. 7</td><td>✔</td></tr>
     <tr><td style="white-space:normal">Lymphe: Klappen, Lymphknoten, linke Schlüsselbeinvene</td><td>G S. 7–8</td><td>✔ Ductus thoracicus → linke V. subclavia</td></tr>
-    <tr><td style="white-space:normal">Lymphe ohne Pumporgan: „Windkesselfunktion, Pulsbewegung“</td><td>G S. 6, 8</td><td>➜ Heft: Transport durch Gefäßmuskulatur, Pulsbewegung, Atem- und Körperbewegung. Die Windkesselfunktion ordnet das Heft den elastischen Arterien zu, nicht der Lymphe.</td></tr>
+    <tr><td style="white-space:normal">Lymphe ohne Pumporgan: „Windkesselfunktion, Pulsbewegung“</td><td style="white-space:normal">G S. 6, 8; Foliensatz</td><td>✔ Foliensatz: Drucksteigerung durch „Pulsbewegung (Windkesselfunktion)“, Atem- und Körperbewegung – entspricht der Mitschrift. Das Heft nennt nur „Pulsbewegung“ und beschreibt die Windkesselfunktion bei den elastischen Arterien.</td></tr>
     <tr><td style="white-space:normal">Welche Abfallprodukte? → Darmfette</td><td>G S. 8</td><td>➜ Abfallprodukte laut Heft: Reste abgestorbener Zellen und Eiweißkörper. Darmfette werden zusätzlich über die Lymphe transportiert, sind aber keine Abfallprodukte.</td></tr>
     <tr><td style="white-space:normal">Halboffenes System</td><td>G S. 7</td><td>✔ durchzieht den Körper wie ein Netz</td></tr>
     <tr><td style="white-space:normal">Diagnostik pAVK</td><td>G S. 12; M S. 24–25</td><td>✔ ergänzt um Heftinhalte (siehe unten)</td></tr>
     <tr><td style="white-space:normal">Einteilung der Varikose nach Hach</td><td style="white-space:normal">G S. 15 (handschriftlich); Zusatzskript Varikose S. 2</td><td>✔ Durch das Zusatzskript bestätigt</td></tr>
     <tr><td style="white-space:normal">CVI nach Widmer</td><td>G S. 16; M S. 15</td><td>✔ in beiden Heften identisch</td></tr>
+    <tr><td style="white-space:normal">Wagner-Klassifikation (DFU)</td><td style="white-space:normal">M S. 29; Foliensatz</td><td>⚠ Heft und Foliensatz formulieren Grad 0, 2 und 3 unterschiedlich (Folien: Grad 3 = Abszess/Osteomyelitis) – siehe Zusammenfassung Dekubitus/UC/DFU, Abschnitt 8</td></tr>
     <tr><td style="white-space:normal">IAD vs. Dekubitus (knöcherner Vorsprung)</td><td>M S. 9–10</td><td>✔</td></tr>
     <tr><td style="white-space:normal">Analnahe Wunden: Umgebung vor Feuchtigkeit schützen</td><td>W S. 15; D S. 24</td><td>✔</td></tr>
   </tbody>
@@ -230,11 +231,11 @@ Lernapp.thema({
     <tr><td>Beispiel (Mitschrift)</td><td>Tinte in Wasser</td><td>Kaffeefilter: Wasser läuft durch, Kaffeesatz bleibt zurück</td></tr>
   </tbody>
 </table></div>
-<p class="merke">Durch Diffusion und Filtration gelangen täglich ca. 20 l ins Interstitium, ca. 18 l werden reabsorbiert, die übrigen 2 l fließen als Lymphe ab (G S. 7).</p>
+<p class="merke">Durch Diffusion und Filtration gelangen täglich ca. 20 l ins Interstitium, ca. 18 l werden – laut Foliensatz durch Osmose – reabsorbiert, die übrigen 2 l fließen als Lymphe ab (G S. 7).</p>
 <ul>
   <li><b>Lymphsystem</b> = Lymphgefäße + Lymphknoten, Knochenmark, Mandeln, Milz; zusätzliches Abflusssystem; halboffenes System, das den Körper wie ein Netz durchzieht (G S. 7).</li>
   <li><b>Weg der Lymphe:</b> Lymphkapillaren (dehnbar, fingerförmig) → kleine/große Lymphgefäße mit Klappen (schwingende Zipfel) gegen Rückfluss → Lymphknoten (Lymphozytenbildung, fangen Erreger ab und machen sie unschädlich; schwellen bei Entzündung) → Lymphstämme → Ductus thoracicus → linke Schlüsselbeinvene (V. subclavia), wo das Lymphgefäßsystem endet (G S. 7–8).</li>
-  <li><b>Kein eigenes Pumporgan:</b> Transport durch Kontraktion der Gefäßmuskulatur, Drucksteigerung durch Puls-, Atem- und Körperbewegung (G S. 8). <span class="hand-inline">Mitschrift ergänzt: Muskelpumpe und Darmperistaltik.</span></li>
+  <li><b>Kein eigenes Pumporgan:</b> Transport durch Kontraktion der Gefäßmuskulatur, Drucksteigerung durch Puls-, Atem- und Körperbewegung (G S. 8); der Foliensatz bezeichnet die Pulsbewegung als „Windkesselfunktion“ und betont: Bewegung ist essentiell. <span class="hand-inline">Mitschrift ergänzt: Muskelpumpe und Darmperistaltik.</span></li>
   <li><b>Was transportiert die Lymphe?</b> Abfallprodukte des Stoffwechsels – Reste abgestorbener Zellen und Eiweißkörper; außerdem die über den Darm resorbierten Fette (G S. 8).</li>
   <li><b>Windkesselfunktion</b> gehört zu den elastischen Arterien: stoßweise Strömung am Aortenanfang → annähernd kontinuierliche Strömung (G S. 6; <span class="hand-inline">handschriftlich S. 4: Herz kontrahiert → Aorta dehnt sich; Herz entspannt → Aorta zieht sich zusammen</span>).</li>
 </ul>

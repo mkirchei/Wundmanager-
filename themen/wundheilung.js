@@ -104,7 +104,21 @@ Lernapp.thema({
     { k: "Störungen", f: "Hypertrophe Narbe vs. Keloid?",
       a: "Hypertroph: häufig, < 6 Monate, auf Verletzung beschränkt, bildet sich oft zurück.\nKeloid: selten, > 6 Monate, wächst über die Verletzung hinaus, keine Rückbildung, oft nach Minimaltrauma.", s: "S. 23" },
     { k: "Störungen", f: "Was ist ein Narbenkarzinom?",
-      a: "Seltene maligne Entartung auf chronisch irritierten Narben (v. a. Brandnarben), meist Plattenepithelkarzinom; Risiko nach Brandverletzung 1–2 %. Therapie: weite Exzision, plastische Deckung, ggf. Amputation.", s: "S. 24" }
+      a: "Seltene maligne Entartung auf chronisch irritierten Narben (v. a. Brandnarben), meist Plattenepithelkarzinom; Risiko nach Brandverletzung 1–2 %. Therapie: weite Exzision, plastische Deckung, ggf. Amputation.", s: "S. 24" },
+    { k: "Folien", f: "Beschreibe die Hämostase in sechs Schritten.",
+      a: "1. Kapillaren ziehen sich zusammen\n2. Vasokonstriktion der nächstgrößeren Gefäße\n3. Blut und Plasma füllen den Wundspalt\n4. Thrombozyten haften an Kollagenfasern\n5. Thrombus mit Erythrozyten\n6. erste Reinigungszellen wandern ein", s: "Foliensatz" },
+    { k: "Folien", f: "Nenne lokale und allgemeine Einflussfaktoren auf die Wundheilung.",
+      a: "Lokal: Fremdkörper, Infektion, Naht/Spannung, Durchblutungsstörung, mechanische Belastung, ungeeignete Versorgung.\nAllgemein: Alter, Ernährung, Stoffwechsel, Immunschwäche, Medikamente, Grunderkrankungen.", s: "Foliensatz" },
+    { k: "Folien", f: "Was sind nutritive Gefäße?",
+      a: "Blutgefäße, die Nährstoffe, Sauerstoff und Stoffwechselendprodukte von Organen und Geweben transportieren – Arteriolen, Venolen, Kapillaren. Ihre Schädigung führt zur Wundrandnekrose.", s: "Foliensatz" },
+    { k: "Folien", f: "Ab welchem Alter verschlechtert sich die Zugbelastung von Narbengewebe deutlich?",
+      a: "Ab ca. 60 Jahren. Narbengewebe erreicht ohnehin nur ca. 80 % der Stabilität normaler Haut.", s: "Foliensatz; Heft S. 19" },
+    { k: "Folien", f: "Wie unterscheiden sich hypertrophe Narbe und Keloid histologisch?",
+      a: "Hypertroph: Kollagenfasern wellenförmig, parallel zur Epidermis.\nKeloid: dicke Kollagenfasern, knotig angeordnet.", s: "Foliensatz; Heft S. 23" },
+    { k: "Folien", f: "Wovon hängt das Ausmaß einer Verätzung ab?",
+      a: "pH-Wert, Konzentration, Menge, Art und Dauer des Kontakts sowie Eindringtiefe.", s: "Foliensatz; Heft S. 8" },
+    { k: "Folien", f: "Welche Schlüsselprinzipien der Wundheilung nennt der Foliensatz?",
+      a: "Saubere Wunde · feucht-warmes Milieu (ab 28 °C) · gute Durchblutung · Schutz vor mechanischen Reizen, Austrocknung, Infektion · lokale und systemische Faktoren optimieren.", s: "Foliensatz" }
   ],
 
   quiz: [
@@ -194,7 +208,28 @@ Lernapp.thema({
       e: "Narbenkarzinom: selten, v. a. auf Brandnarben; meist Plattenepithelkarzinom. Risiko nach Brandverletzung 1–2 %.", s: "S. 24" },
     { f: "Was ist eine Wunddehiszenz?",
       o: ["Sekundäres Auseinanderweichen genähter Wundränder", "Ansammlung von Serum in einem Wundhohlraum", "Überschießende Narbenbildung", "Blutgefüllter Hohlraum nach mangelhafter Blutstillung"],
-      e: "Wunddehiszenz: sekundäres Auseinanderweichen genähter Wundränder; Sonderformen Narbenhernie und Platzbauch.", s: "S. 22–23" }
+      e: "Wunddehiszenz: sekundäres Auseinanderweichen genähter Wundränder; Sonderformen Narbenhernie und Platzbauch.", s: "S. 22–23" },
+    { f: "Was geschieht laut Foliensatz als erster Schritt der Hämostase?",
+      o: ["Die Kapillaren ziehen sich zusammen", "Thrombozyten haften an Kollagenfasern", "Erste Reinigungszellen wandern ein", "Blut und Plasma füllen den Wundspalt"],
+      e: "1 Kapillaren ziehen sich zusammen · 2 Vasokonstriktion der nächstgrößeren Gefäße · 3 Blut und Plasma füllen den Wundspalt · 4 Thrombozyten haften an Kollagenfasern · 5 Thrombus mit Erythrozyten · 6 erste Reinigungszellen wandern ein.", s: "Foliensatz" },
+    { f: "Welche sind lokale Einflussfaktoren auf die Wundheilung?",
+      o: ["Fremdkörper", "Durchblutungsstörung", "Mechanische Belastung", "Lebensalter"], r: 3,
+      e: "Lokal: Fremdkörper, Infektion, Naht/Spannung, Durchblutungsstörung, mechanische Belastung, ungeeignete Versorgung. Allgemein: Alter, Ernährung, Stoffwechsel, Immunschwäche, Medikamente, Grunderkrankungen.", s: "Foliensatz" },
+    { f: "Welche Gefäße zählen zu den nutritiven Gefäßen?",
+      o: ["Arteriolen", "Venolen", "Kapillaren", "Lymphknoten"], r: 3,
+      e: "Nutritive Gefäße transportieren Nährstoffe, Sauerstoff und Stoffwechselendprodukte; ihre Schädigung führt zur Wundrandnekrose.", s: "Foliensatz" },
+    { f: "Ab welchem Alter verschlechtert sich die Zugbelastung von Narbengewebe deutlich?",
+      o: ["Ab ca. 60 Jahren", "Ab ca. 20 Jahren", "Ab ca. 40 Jahren", "Ab ca. 90 Jahren"],
+      e: "Narbengewebe erreicht ohnehin nur ca. 80 % der Stabilität normaler Haut.", s: "Foliensatz; Heft S. 19" },
+    { f: "Wie unterscheidet sich ein Keloid histologisch von einer hypertrophen Narbe?",
+      o: ["Dicke Kollagenfasern, knotig angeordnet", "Kollagenfasern wellenförmig, parallel zur Epidermis", "Keine Kollagenfasern", "Vermehrt Talg- und Schweißdrüsen"],
+      e: "Hypertroph: Kollagenfasern wellenförmig, parallel zur Epidermis. Keloid: dicke Kollagenfasern, knotig angeordnet.", s: "Foliensatz; Heft S. 23" },
+    { f: "Wovon hängt das Ausmaß einer Verätzung ab?",
+      o: ["Vom pH-Wert", "Von der Konzentration", "Von der Dauer des Kontakts", "Von der Hautfarbe"], r: 3,
+      e: "pH-Wert, Konzentration, Menge, Art und Dauer des Kontakts sowie Eindringtiefe.", s: "Foliensatz; Heft S. 8" },
+    { f: "Welche Schlüsselprinzipien der Wundheilung nennt der Foliensatz?",
+      o: ["Saubere Wunde", "Feucht-warmes Milieu (ab 28 °C)", "Gute Durchblutung", "Wunde möglichst austrocknen lassen"], r: 3,
+      e: "Dazu: Schutz vor mechanischen Reizen, Austrocknung, Infektion; lokale und systemische Faktoren optimieren.", s: "Foliensatz" }
   ],
 
   zusammenfassung: `
@@ -339,5 +374,22 @@ Lernapp.thema({
   <li><b>Narbenkarzinom (S. 24):</b> selten; auf dem Boden chronischer Irritation (instabile Narbe, Fistel, Ulcera, Radiodermatitis), v. a. Brandnarben; meist Plattenepithelkarzinom. Risiko nach Brandverletzung 1–2 %, Unterschenkel 0,8 %. Der Begriff „Marjolin-Ulkus“ wird dafür fälschlicherweise verwendet. Therapie: weite Exzision, plastische Deckung, ggf. Amputation.</li>
 </ul>
 <p class="hand">Nur handschriftlich (S. 25), nicht im Drucktext: gelbes Exsudat = unauffällig; grünes Exsudat → Pseudomonas (Wundinfektion). Wunddokumentation: Wundart, -umgebung, -grund, -rand, Größe (Länge/Breite), Entzündungszeichen, Geruch; Evaluation alle 7 Tage oder bei Veränderung.</p>
+<h3>9. Abgleich mit dem Foliensatz „Arten, Heilung, Heilungsstörungen“ <span class="seite">42 Folien</span></h3>
+<p class="leise">✔ = deckt sich mit dem Heft · ➜ = neu oder präzisiert · ⚠ = Abweichung</p>
+<div class="tabelle"><table>
+  <thead><tr><th>Thema</th><th>Ergebnis</th></tr></thead>
+  <tbody>
+    <tr><td style="white-space:normal">Definition chronische Wunde</td><td>⚠ Die Folie „Entstehungsart“ nennt 4–6 Wochen, die Folie „Akut vs. chronisch“ 4–12 Wochen. Heft und Expertenstandard: 4–12 Wochen – diese Angabe lernen.</td></tr>
+    <tr><td style="white-space:normal">Hämostase</td><td>➜ Ablauf in 6 Schritten: Kapillaren ziehen sich zusammen → Vasokonstriktion der nächstgrößeren Gefäße → Blut und Plasma füllen den Wundspalt → Thrombozyten haften an Kollagenfasern → Thrombus mit Erythrozyten → erste Blutzellen zur Reinigung wandern ein.</td></tr>
+    <tr><td style="white-space:normal">Remodulierung</td><td>➜ Bei Menschen ab 60 Jahren verschlechtert sich die Zugbelastung des Narbengewebes deutlich (so auch im Heft S. 19).</td></tr>
+    <tr><td style="white-space:normal">Einflussfaktoren</td><td>➜ Lokal: Fremdkörper, lokale Infektion, Naht/Spannung, Durchblutungsstörung, mechanische Belastung, ungeeignete Wundversorgung. Allgemein: Lebensalter, Ernährungszustand, Stoffwechselstörungen, Immunschwäche, Medikamente, Grunderkrankungen.</td></tr>
+    <tr><td style="white-space:normal">Wundrandnekrose</td><td>➜ Nutritive Gefäße = Gefäße, die Nährstoffe, Sauerstoff und Stoffwechselendprodukte transportieren (Arteriolen, Venolen, Kapillaren). Verlauf: blass/zyanotisch-kühl → braun → Nekrose → Demarkation.</td></tr>
+    <tr><td style="white-space:normal">Wundinfektion</td><td>➜ Stufen: oberflächlich · tief · Organ/Körperhöhle · systemisch (Sepsis).</td></tr>
+    <tr><td style="white-space:normal">Hypertrophe Narbe / Keloid</td><td>➜ Histologie: hypertroph – Kollagenfasern wellenförmig; Keloid – dicke Fasern, knotig angeordnet.</td></tr>
+    <tr><td style="white-space:normal">Erfrierungen, Verätzungen</td><td>➜ Erfrierung besonders gefährlich bei Kälte + Druck (enge Schuhe) und Kälte + Nässe. Ausmaß einer Verätzung abhängig von pH, Konzentration, Menge, Art und Dauer des Kontakts, Eindringtiefe.</td></tr>
+    <tr><td style="white-space:normal">Übrige Inhalte</td><td>✔ Definition Wunde, Einteilung, Verbrennungsgrade, Kolonisationsgrade, Entzündungszeichen, Heilungsarten, Mechanismen, Phasen und Komplikationen decken sich mit dem Heft.</td></tr>
+  </tbody>
+</table></div>
+<p class="merke"><b>Schlüsselprinzipien der Wundheilung (Foliensatz):</b> saubere Wunde (Exsudationsphase reinigt) · feucht-warmes Milieu (Zellteilung ab 28 °C) · gute Durchblutung · Schutz vor mechanischen Reizen, Austrocknung, Infektion · lokale und systemische Faktoren optimieren.</p>
 `
 });

@@ -9,20 +9,23 @@ Lern-App zur Prüfungsvorbereitung Wundmanager / Wundexperte. Die App läuft im 
 | Thema | Lernkarten | Quizfragen | Quelle |
 |---|---|---|---|
 | Prüfungsschwerpunkte Modul I (Mitschrift) | 29 | 27 | Mitschrift + murimed-Kurshefte |
-| Wunden: Arten, Heilung und Heilungsstörungen | 44 | 29 | murimed-Kursheft Wundexperte Modul I |
-| Erkrankungen der Haut | 44 | 29 | murimed-Kursheft Wundexperte Modul I |
-| Gefäßsysteme & Gefäßerkrankungen | 35 | 26 | murimed-Lernheft |
+| Wunden: Arten, Heilung und Heilungsstörungen | 51 | 36 | murimed-Kursheft Wundexperte Modul I |
+| Erkrankungen der Haut | 54 | 37 | murimed-Kursheft Wundexperte Modul I |
+| Gefäßsysteme & Gefäßerkrankungen | 45 | 33 | murimed-Lernheft |
 | Varikose – Krankheitsbild bei CVI | 13 | 14 | Zusatzskript „Krankheitsbild bei CVI – Varikose“ |
-| Dekubitus, Ulcus cruris, Diabetisches Fußulkus | 60 | 32 | murimed-Kursheft Wundexperte Modul I |
+| Dekubitus, Ulcus cruris, Diabetisches Fußulkus | 71 | 41 | murimed-Kursheft Wundexperte Modul I |
 | Wundbetreuung und Dokumentation | 50 | 30 | murimed-Kursheft Wundexperte Modul I |
 | Hygienemaßnahmen in der Wundversorgung | 50 | 30 | murimed-Kursheft Wundexperte Modul I |
-| **Gesamt** | **325** | **217** | |
+| **Gesamt** | **363** | **248** | |
 
 Die Lernkarten und Zusammenfassungen sind aus den PDF-Unterlagen
 `Lernkarten_*.pdf` und `Zusammenfassung_*.pdf` übernommen. Die Quizfragen
 sind aus den Zusammenfassungen abgeleitet. Jede Karte und Frage nennt die
 Seitenzahl im Heft. Inhalte, die nur aus handschriftlichen Notizen im Heft
 stammen, sind als „handschriftlich“ markiert.
+Inhalte aus den zusätzlich bereitgestellten Foliensätzen stehen in den Lernkarten
+im Kapitel „Folien“ und in den Zusammenfassungen im Abschnitt „Abgleich mit dem
+Foliensatz“; Abweichungen zwischen Heft und Folien sind dort mit ⚠ gekennzeichnet.
 
 ## Funktionen
 
