@@ -53,8 +53,8 @@ In der App:
 ## Funktionen
 
 - **Karten**: Karteikarten mit Lernfächern (Leitner-System). „Gewusst“ schiebt eine Karte ein Fach höher (Wiederholung nach 1, 3, 7, 14 Tagen), „Nicht gewusst“ holt sie zurück in Fach 1 und zeigt sie in derselben Runde noch einmal. Filter nach Thema und Kapitel.
-- **Quiz**: Multiple Choice mit Erklärung und Seitenangabe; falsch beantwortete Fragen lassen sich gezielt wiederholen. Im Antwortmodus „Wie in der Prüfung“ wird angekreuzt, ohne zu wissen, wie viele Antworten richtig sind (mindestens eine, nie alle).
-- **Prüfungssimulation**: 60 Fragen aus allen Themen in 90 Minuten mit Countdown, Auswertung erst nach der Abgabe – nach dem Prüfungsformat aus der Mitschrift.
+- **Quiz**: Multiple Choice mit Erklärung und Seitenangabe; falsch beantwortete Fragen lassen sich gezielt wiederholen. Im Antwortmodus „Wie in der Prüfung“ wird angekreuzt; wie im Prüfungsbogen steht hinter jeder Frage (1) = genau eine Antwort richtig oder (1+) = mehrere Antworten richtig (nie alle).
+- **Prüfungssimulation**: 60 Fragen aus allen Themen in 90 Minuten mit Countdown und (1)/(1+)-Kennzeichnung, Auswertung erst nach der Abgabe – nach dem Prüfungsformat aus der Mitschrift.
 - **Skript**: die Zusammenfassungen zum Nachlesen, mit Volltextsuche über alle Lernkarten.
 - **Themen**: eigene Karten anlegen, Themen als JSON importieren, Lernstand sichern und wiederherstellen.
 

@@ -767,7 +767,8 @@ window.Lernapp = {
 
   /* ================= QUIZ ================= */
   // Antwortmodus "einfach": eine Antwort antippen. Modus "pruefung": wie in der Prüfung –
-  // eine oder mehrere Antworten richtig (nie alle), ankreuzen und dann prüfen.
+  // ankreuzen und dann prüfen; wie im Prüfungsbogen steht hinter der Frage (1) = genau eine Antwort richtig,
+  // (1+) = mehrere Antworten richtig (nie alle).
   // In den Themen-Dateien gibt "r" an, wie viele der ersten Optionen richtig sind (Standard 1).
   const quizOpt = { anzahl: 10, nurFehler: false, modus: speicher.lesen("quizModus", "einfach"), sp: false };
   const SIM = { fragen: 60, minuten: 90 };
@@ -796,6 +797,9 @@ window.Lernapp = {
     return Object.assign({ fragen: fragen.map(frageVorbereiten), i: 0, auswahl: new Set(), geprueft: false, richtig: 0, falsch: [], mehr: quizOpt.modus === "pruefung" }, extra || {});
   }
   const richtigeTexte = (q) => q.o.slice(0, q.r);
+  // Kennzeichnung wie im Prüfungsbogen
+  const kennung = (q) => (q.r > 1 ? "(1+)" : "(1)");
+  const kennungText = (q) => (q.r > 1 ? "(1+) Mehrere Antworten sind richtig." : "(1) Genau eine Antwort ist richtig.");
 
   render.quiz = function () {
     const p = $("#p-quiz");
@@ -816,7 +820,7 @@ window.Lernapp = {
             <button class="chip" type="button" data-m="pruefung" aria-pressed="${quizOpt.modus === "pruefung"}">Wie in der Prüfung: ankreuzen</button>
           </div>
           <span class="leise klein">${quizOpt.modus === "pruefung"
-            ? "Du weißt nicht, wie viele Antworten richtig sind – mindestens eine, nie alle. Kreuze an und tippe auf „Antwort prüfen“."
+            ? "Wie im Prüfungsbogen: (1) = genau eine Antwort richtig, (1+) = mehrere Antworten richtig (nie alle). Kreuze an und tippe auf „Antwort prüfen“."
             : "Fragen mit mehreren richtigen Antworten werden trotzdem zum Ankreuzen angezeigt und so gekennzeichnet."}</span>
         </div>
         <div class="stapel"><span class="eyebrow">Anzahl Fragen</span>
@@ -833,7 +837,7 @@ window.Lernapp = {
       <div class="panel sim-panel">
         <div class="stapel" style="gap:6px"><span class="eyebrow">Prüfungssimulation</span>
           <h2>${simAnz} Fragen · ${SIM.minuten} Minuten</h2>
-          <p class="leise" style="margin:0">Wie die Theorieprüfung laut deiner Mitschrift: Fragen aus allen ${themen.length} Themen, ankreuzen (eine oder mehrere richtig, nie alle), Uhr läuft. Die Auswertung kommt erst nach der Abgabe.</p></div>
+          <p class="leise" style="margin:0">Wie die Theorieprüfung laut deiner Mitschrift: Fragen aus allen ${themen.length} Themen, ankreuzen – (1) = eine Antwort richtig, (1+) = mehrere richtig –, Uhr läuft. Die Auswertung kommt erst nach der Abgabe.</p></div>
         <div><button class="btn primaer gross" id="sim-start" ${alle.length ? "" : "disabled"}>Simulation starten</button></div>
       </div>`;
     themenChips($("#q-themen"), () => render.quiz(), (t) => t.quiz.length);
@@ -876,7 +880,7 @@ window.Lernapp = {
     const { q } = f;
     const t = themaVon(q.thema);
     const mehr = s.mehr || q.r > 1;
-    const hinweis = s.mehr ? "Eine oder mehrere Antworten sind richtig." : (q.r > 1 ? "Mehrere Antworten sind richtig – kreuze alle an." : "");
+    const hinweis = s.mehr ? kennungText(q) : (q.r > 1 ? "Mehrere Antworten sind richtig – kreuze alle an." : "");
     const ok = s.geprueft && istRichtig(f, s.auswahl);
     p.innerHTML = `
       <div class="lernbereich">
@@ -887,7 +891,7 @@ window.Lernapp = {
         <div class="fortschritt"><i style="width:${(s.i / s.fragen.length) * 100}%"></i></div>
         <div class="panel">
           <div class="zeile"><span class="badge akzent">${esc(t ? t.kurz : "")}</span>${q.h ? `<span class="badge hand">handschriftlich</span>` : ""}${spBadge(q)}${hinweis ? `<span class="badge">${hinweis}</span>` : ""}</div>
-          <h2 style="font-size:1.25rem;font-weight:600">${esc(q.f)}</h2>
+          <h2 style="font-size:1.25rem;font-weight:600">${esc(q.f)} ${kennung(q)}</h2>
           <div class="optionen">${optionenHtml(f, s.auswahl, mehr, s.geprueft)}</div>
           ${!s.geprueft && mehr ? `<div class="zeile"><button class="btn primaer gross" id="q-pruefen" ${s.auswahl.size ? "" : "disabled"}>Antwort prüfen</button></div>` : ""}
           ${s.geprueft ? `
@@ -911,7 +915,9 @@ window.Lernapp = {
     const f = s.fragen[s.i];
     if (i < 0 || i >= f.opts.length) return;
     if (s.mehr || f.q.r > 1) {
-      if (s.auswahl.has(i)) s.auswahl.delete(i); else s.auswahl.add(i);
+      if (s.auswahl.has(i)) s.auswahl.delete(i);
+      else if (f.q.r === 1) s.auswahl = new Set([i]); // (1): nur ein Kreuz
+      else s.auswahl.add(i);
       quizZeigen($("#p-quiz"));
     } else {
       s.auswahl = new Set([i]);
@@ -993,8 +999,8 @@ window.Lernapp = {
         </div>
         <div class="fortschritt"><i style="width:${(beantwortet / s.fragen.length) * 100}%"></i></div>
         <div class="panel">
-          <div class="zeile"><span class="badge akzent">${esc(t ? t.kurz : "")}</span><span class="badge">Eine oder mehrere Antworten sind richtig.</span></div>
-          <h2 style="font-size:1.25rem;font-weight:600">${esc(f.q.f)}</h2>
+          <div class="zeile"><span class="badge akzent">${esc(t ? t.kurz : "")}</span><span class="badge">${kennungText(f.q)}</span></div>
+          <h2 style="font-size:1.25rem;font-weight:600">${esc(f.q.f)} ${kennung(f.q)}</h2>
           <div class="optionen">${optionenHtml(f, s.antworten[s.i], true, false)}</div>
           <div class="zeile-sb">
             <button class="btn" id="sim-zurueck" ${s.i ? "" : "disabled"}>Zurück</button>
@@ -1017,7 +1023,9 @@ window.Lernapp = {
   function simWaehlen(i) {
     const s = quizSitzung, a = s.antworten[s.i];
     if (i < 0 || i >= s.fragen[s.i].opts.length) return;
-    if (a.has(i)) a.delete(i); else a.add(i);
+    if (a.has(i)) a.delete(i);
+    else if (s.fragen[s.i].q.r === 1) { a.clear(); a.add(i); } // (1): nur ein Kreuz
+    else a.add(i);
     simZeigen($("#p-quiz"));
   }
   function simBlaettern(d) {
