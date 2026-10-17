@@ -4,7 +4,7 @@
  * Version (neue Themen erscheinen sofort), ohne Internet die zuletzt geladene.
  * Neue Themen-Dateien unten in DATEIEN ergänzen.
  */
-const CACHE = "wundtrainer-v7";
+const CACHE = "wundtrainer-v8";
 const DATEIEN = [
   "./",
   "./index.html",
