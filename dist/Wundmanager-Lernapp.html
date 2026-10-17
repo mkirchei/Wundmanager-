@@ -6611,6 +6611,14 @@ Lernapp.schwerpunkt({
   let fortschritt = speicher.lesen("fortschritt", {});
   let quizStat = speicher.lesen("quiz", {});      // { themaId: { r, g, letzte: {r,g,datum} } }
   let quizFehler = speicher.lesen("quizFehler", {}); // { frageId: true }
+  // Beantwortete Quizfragen { frageId: Zeitpunkt }. Gibt es den Eintrag noch nicht (ältere Version),
+  // zählen die zuletzt falsch beantworteten Fragen als schon bearbeitet.
+  let quizBeantwortet = speicher.lesen("quizBeantwortet", null);
+  if (!quizBeantwortet) {
+    quizBeantwortet = {};
+    Object.keys(quizFehler).forEach((id) => (quizBeantwortet[id] = 0));
+    speicher.schreiben("quizBeantwortet", quizBeantwortet);
+  }
   let auswahl = speicher.lesen("auswahl", null);   // ausgewählte Themen-IDs
 
   function stand(kartenId) { return fortschritt[kartenId] || { b: 0, d: 0, n: 0 }; }
@@ -6743,7 +6751,7 @@ Lernapp.schwerpunkt({
     return `<article class="panel themazeile">
       <div class="kopfzeile">
         <div><span class="eyebrow">${esc(t.quelle || (t.eingebaut ? "" : "Eigenes Thema"))}</span><h3>${esc(t.titel)}</h3></div>
-        <span class="leise klein">${t.karten.length} Karten · ${t.quiz.length} Quizfragen${qs && qs.g ? " · Quiz " + Math.round((qs.r / qs.g) * 100) + " % richtig" : ""}</span>
+        <span class="leise klein">${t.karten.length} Karten · ${t.quiz.length} Quizfragen${t.quiz.length ? " (" + t.quiz.filter((q) => q.id in quizBeantwortet).length + " bearbeitet)" : ""}${qs && qs.g ? " · Quiz " + Math.round((qs.r / qs.g) * 100) + " % richtig" : ""}</span>
       </div>
       <div class="faecher" role="img" aria-label="Verteilung der Karten auf die Lernfächer">${balken}</div>
       <div class="legende">${v.map((x, i) => `<span style="--c:var(--box${i})">${FACHNAMEN[i]}: ${x}</span>`).join("")}</div>
@@ -6901,7 +6909,7 @@ Lernapp.schwerpunkt({
   // ankreuzen und dann prüfen; wie im Prüfungsbogen steht hinter der Frage (1) = genau eine Antwort richtig,
   // (1+) = mehrere Antworten richtig (nie alle).
   // In den Themen-Dateien gibt "r" an, wie viele der ersten Optionen richtig sind (Standard 1).
-  const quizOpt = { anzahl: 10, nurFehler: false, modus: speicher.lesen("quizModus", "einfach"), sp: false };
+  const quizOpt = { anzahl: 10, nurFehler: false, nurNeu: false, modus: speicher.lesen("quizModus", "einfach"), sp: false };
   const SIM = { fragen: 60, minuten: 90 };
   let quizSitzung = null;
   let quizTimer = null;
@@ -6910,10 +6918,11 @@ Lernapp.schwerpunkt({
     const ids = new Set(aktiveThemen());
     let pool = themen.filter((t) => ids.has(t.id)).flatMap((t) => t.quiz);
     if (quizOpt.nurFehler) pool = pool.filter((q) => quizFehler[q.id]);
+    if (quizOpt.nurNeu) pool = pool.filter((q) => !(q.id in quizBeantwortet));
     return pool.filter((q) => spPasst(q, quizOpt.sp));
   }
   function frageVorbereiten(q) {
-    return { q, opts: mischen(q.o.map((t, i) => ({ t, richtig: i < q.r }))) };
+    return { q, opts: mischen(q.o.map((t, i) => ({ t, richtig: i < q.r, i }))) };
   }
   function istRichtig(f, auswahl) { return f.opts.every((o, i) => o.richtig === auswahl.has(i)); }
   function werten(q, ok) {
@@ -6921,13 +6930,45 @@ Lernapp.schwerpunkt({
     st.g++; if (ok) st.r++;
     quizStat[q.thema] = st;
     if (ok) delete quizFehler[q.id]; else quizFehler[q.id] = true;
+    quizBeantwortet[q.id] = Date.now();
     speicher.schreiben("quiz", quizStat);
     speicher.schreiben("quizFehler", quizFehler);
+    speicher.schreiben("quizBeantwortet", quizBeantwortet);
   }
   function neueSitzung(fragen, extra) {
     return Object.assign({ fragen: fragen.map(frageVorbereiten), i: 0, auswahl: new Set(), geprueft: false, richtig: 0, falsch: [], mehr: quizOpt.modus === "pruefung" }, extra || {});
   }
   const richtigeTexte = (q) => q.o.slice(0, q.r);
+
+  /* Angefangenes Quiz bzw. angefangene Simulation im Browser speichern, damit es nach dem
+     Schließen der App weitergehen kann. Gespeichert werden Fragen-IDs und Reihenfolge der Antworten. */
+  function sitzungSichern() {
+    const s = quizSitzung;
+    if (!s || s.abgabe || s.i >= s.fragen.length) return;
+    const fi = (f) => s.fragen.indexOf(f);
+    speicher.schreiben("quizSitzung", {
+      fragen: s.fragen.map((f) => ({ id: f.q.id, o: f.opts.map((o) => o.i) })),
+      i: s.i, auswahl: [...s.auswahl], geprueft: s.geprueft, richtig: s.richtig, falsch: s.falsch.map(fi),
+      mehr: s.mehr, sim: !!s.sim, antworten: s.antworten ? s.antworten.map((a) => [...a]) : null,
+      start: s.start || 0, ende: s.ende || 0, gespeichert: Date.now()
+    });
+  }
+  function sitzungVerwerfen() { speicher.schreiben("quizSitzung", null); }
+  function gespeicherteSitzung() {
+    const d = speicher.lesen("quizSitzung", null);
+    if (!d || !Array.isArray(d.fragen) || !d.fragen.length) return null;
+    const alle = new Map(themen.flatMap((t) => t.quiz).map((q) => [q.id, q]));
+    const fragen = [];
+    for (const x of d.fragen) {
+      const q = alle.get(x.id);
+      if (!q || !Array.isArray(x.o) || x.o.length !== q.o.length) return null; // Frage geändert oder entfernt
+      fragen.push({ q, opts: x.o.map((j) => ({ t: q.o[j], richtig: j < q.r, i: j })) });
+    }
+    return Object.assign({}, d, {
+      fragen, auswahl: new Set(d.auswahl || []), falsch: (d.falsch || []).map((j) => fragen[j]).filter(Boolean),
+      antworten: d.sim ? fragen.map((f, j) => new Set((d.antworten || [])[j] || [])) : undefined
+    });
+  }
   // Kennzeichnung wie im Prüfungsbogen
   const kennung = (q) => (q.r > 1 ? "(1+)" : "(1)");
   const kennungText = (q) => (q.r > 1 ? "(1+) Mehrere Antworten sind richtig." : "(1) Genau eine Antwort ist richtig.");
@@ -6939,9 +6980,19 @@ Lernapp.schwerpunkt({
     const alle = themen.flatMap((t) => t.quiz);
     const simAnz = Math.min(SIM.fragen, alle.length);
     const fehlerAnz = Object.keys(quizFehler).filter((id) => alle.some((q) => q.id === id)).length;
+    const aktivQuiz = themen.filter((t) => aktiveThemen().includes(t.id)).flatMap((t) => t.quiz);
+    const bearbeitet = aktivQuiz.filter((q) => q.id in quizBeantwortet).length;
+    const neuAnz = aktivQuiz.length - bearbeitet;
+    const offen = gespeicherteSitzung();
     p.innerHTML = `
       <div class="held"><span class="eyebrow">Quiz</span><h2>Multiple Choice wie in der Prüfung</h2>
         <p>Nach jeder Frage siehst du die Erklärung mit Seitenangabe aus dem Heft.</p></div>
+      ${offen ? `<div class="panel" style="border-color:var(--accent)">
+        <div class="stapel" style="gap:4px"><span class="eyebrow">${offen.sim ? "Angefangene Prüfungssimulation" : "Angefangenes Quiz"}</span>
+          <h3>${offen.sim ? `${offen.antworten.filter((a) => a.size).length} von ${offen.fragen.length} Fragen beantwortet` : `Frage ${Math.min(offen.i + 1, offen.fragen.length)} von ${offen.fragen.length} · ${offen.richtig} richtig`}</h3>
+          <span class="leise klein">Gespeichert am ${new Date(offen.gespeichert).toLocaleString("de-DE", { dateStyle: "short", timeStyle: "short" })}${offen.sim ? (offen.ende > Date.now() ? " · Restzeit " + dauerText(offen.ende - Date.now()) + " (die Uhr läuft weiter)" : " · Die Zeit ist abgelaufen – beim Fortsetzen wird abgegeben.") : ""}</span></div>
+        <div class="zeile"><button class="btn primaer gross" id="q-fortsetzen">Fortsetzen</button><button class="btn" id="q-verwerfen">Verwerfen</button></div>
+      </div>` : ""}
       <div class="panel">
         <div class="stapel"><span class="eyebrow">Themen</span><div class="chips" id="q-themen"></div></div>
         ${spFilterHtml("q-sp", quizOpt.sp, themen.filter((t) => aktiveThemen().includes(t.id)).flatMap((t) => t.quiz).filter((q) => q.sp.length).length)}
@@ -6958,7 +7009,9 @@ Lernapp.schwerpunkt({
           <div class="chips" id="q-anzahl">
             ${[10, 20, 0].map((n) => `<button class="chip" type="button" data-n="${n}" aria-pressed="${quizOpt.anzahl === n}">${n || "Alle"}</button>`).join("")}
           </div>
+          <label class="zeile klein"><input type="checkbox" id="q-neu" ${quizOpt.nurNeu ? "checked" : ""} ${neuAnz ? "" : "disabled"}> Nur Fragen, die ich noch nie beantwortet habe (${neuAnz})</label>
           <label class="zeile klein"><input type="checkbox" id="q-fehler" ${quizOpt.nurFehler ? "checked" : ""} ${fehlerAnz ? "" : "disabled"}> Nur Fragen, die ich zuletzt falsch hatte (${fehlerAnz})</label>
+          <span class="leise klein">${bearbeitet} von ${aktivQuiz.length} Fragen der gewählten Themen schon bearbeitet.</span>
         </div>
         <div class="zeile-sb">
           <span class="leise">${pool.length} Fragen verfügbar</span>
@@ -6975,7 +7028,16 @@ Lernapp.schwerpunkt({
     p.querySelectorAll("#q-modus .chip").forEach((c) => c.addEventListener("click", () => { quizOpt.modus = c.dataset.m; speicher.schreiben("quizModus", quizOpt.modus); render.quiz(); }));
     p.querySelectorAll("#q-sp .chip").forEach((c) => c.addEventListener("click", () => { quizOpt.sp = c.dataset.sp === "alle" ? false : true; render.quiz(); }));
     p.querySelectorAll("#q-anzahl .chip").forEach((c) => c.addEventListener("click", () => { quizOpt.anzahl = +c.dataset.n; render.quiz(); }));
-    $("#q-fehler").addEventListener("change", (e) => { quizOpt.nurFehler = e.target.checked; render.quiz(); });
+    $("#q-fehler").addEventListener("change", (e) => { quizOpt.nurFehler = e.target.checked; if (quizOpt.nurFehler) quizOpt.nurNeu = false; render.quiz(); });
+    $("#q-neu").addEventListener("change", (e) => { quizOpt.nurNeu = e.target.checked; if (quizOpt.nurNeu) quizOpt.nurFehler = false; render.quiz(); });
+    if (offen) {
+      $("#q-fortsetzen").addEventListener("click", () => {
+        quizSitzung = offen;
+        if (offen.sim) simUhrStarten();
+        render.quiz();
+      });
+      $("#q-verwerfen").addEventListener("click", (e) => bestaetigen(e.currentTarget, "Wirklich verwerfen?", () => { sitzungVerwerfen(); render.quiz(); }));
+    }
     $("#q-start").addEventListener("click", () => {
       let fragen = mischen(pool);
       if (quizOpt.anzahl) fragen = fragen.slice(0, quizOpt.anzahl);
@@ -7007,6 +7069,7 @@ Lernapp.schwerpunkt({
   function quizZeigen(p) {
     const s = quizSitzung;
     if (s.i >= s.fragen.length) return quizFertig(p);
+    sitzungSichern();
     const f = s.fragen[s.i];
     const { q } = f;
     const t = themaVon(q.thema);
@@ -7078,6 +7141,7 @@ Lernapp.schwerpunkt({
   }
   function quizFertig(p) {
     const s = quizSitzung;
+    sitzungVerwerfen();
     const n = s.fragen.length;
     const pz = n ? Math.round((s.richtig / n) * 100) : 0;
     p.innerHTML = `
@@ -7118,6 +7182,7 @@ Lernapp.schwerpunkt({
   function simZeigen(p) {
     const s = quizSitzung;
     if (s.abgabe) return quizFertig(p);
+    sitzungSichern();
     const f = s.fragen[s.i];
     const t = themaVon(f.q.thema);
     const beantwortet = s.antworten.filter((a) => a.size).length;
@@ -7291,7 +7356,7 @@ Lernapp.schwerpunkt({
     ziel.querySelectorAll("[data-sp-quiz]").forEach((b) => b.addEventListener("click", () => {
       const filter = b.dataset.spQuiz || true;
       setzeAuswahl(themenMit(alleFragen, filter));
-      quizOpt.sp = filter; quizOpt.nurFehler = false; quizSitzung = null; zeigeTab("quiz");
+      quizOpt.sp = filter; quizOpt.nurFehler = false; quizOpt.nurNeu = false; quizSitzung = null; zeigeTab("quiz");
     }));
     ziel.querySelectorAll("[data-sp-skript]").forEach((b) => b.addEventListener("click", () => { skriptThema = b.dataset.spSkript; render.skript(); }));
   }
@@ -7410,9 +7475,10 @@ Lernapp.schwerpunkt({
     p.querySelectorAll("[data-reset]").forEach((b) => b.addEventListener("click", () => bestaetigen(b, "Wirklich zurücksetzen?", () => {
       const t = themaVon(b.dataset.reset);
       t.karten.forEach((k) => delete fortschritt[k.id]);
-      t.quiz.forEach((q) => delete quizFehler[q.id]);
+      t.quiz.forEach((q) => { delete quizFehler[q.id]; delete quizBeantwortet[q.id]; });
       delete quizStat[t.id];
       speicher.schreiben("fortschritt", fortschritt); speicher.schreiben("quiz", quizStat); speicher.schreiben("quizFehler", quizFehler);
+      speicher.schreiben("quizBeantwortet", quizBeantwortet);
       themenMeldung = { ok: "Lernstand für „" + t.titel + "“ zurückgesetzt." }; render.themen();
     })));
     p.querySelectorAll("[data-del]").forEach((b) => b.addEventListener("click", () => bestaetigen(b, "Endgültig löschen?", () => {
@@ -7465,7 +7531,7 @@ Lernapp.schwerpunkt({
 
     // Sicherung
     $("#sich-kopieren").addEventListener("click", (e) => {
-      const daten = JSON.stringify({ app: "wundmanager-lernapp", version: 1, datum: new Date().toISOString(), fortschritt, quiz: quizStat, quizFehler, eigeneThemen: eigeneThemen() });
+      const daten = JSON.stringify({ app: "wundmanager-lernapp", version: 1, datum: new Date().toISOString(), fortschritt, quiz: quizStat, quizFehler, quizBeantwortet, eigeneThemen: eigeneThemen() });
       $("#sich-text").value = daten;
       kopieren(daten, e.currentTarget);
     });
@@ -7474,7 +7540,10 @@ Lernapp.schwerpunkt({
         const d = JSON.parse($("#sich-text").value);
         if (d.app !== "wundmanager-lernapp") throw new Error("keine Sicherung dieser App");
         fortschritt = d.fortschritt || {}; quizStat = d.quiz || {}; quizFehler = d.quizFehler || {};
+        quizBeantwortet = d.quizBeantwortet || {};
+        if (!d.quizBeantwortet) Object.keys(quizFehler).forEach((id) => (quizBeantwortet[id] = 0));
         speicher.schreiben("fortschritt", fortschritt); speicher.schreiben("quiz", quizStat); speicher.schreiben("quizFehler", quizFehler);
+        speicher.schreiben("quizBeantwortet", quizBeantwortet);
         eigeneSpeichern(d.eigeneThemen || []);
         themenMeldung = { ok: "Sicherung vom " + new Date(d.datum).toLocaleDateString("de-DE") + " geladen." };
       } catch (err) {
