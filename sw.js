@@ -4,7 +4,7 @@
  * Version (neue Themen erscheinen sofort), ohne Internet die zuletzt geladene.
  * Neue Themen-Dateien unten in DATEIEN ergänzen.
  */
-const CACHE = "wundtrainer-v5";
+const CACHE = "wundtrainer-v6";
 const DATEIEN = [
   "./",
   "./index.html",
@@ -17,6 +17,14 @@ const DATEIEN = [
   "./themen/dekubitus.js",
   "./themen/dokumentation.js",
   "./themen/hygiene.js",
+  "./themen/einflussfaktoren.js",
+  "./themen/ernaehrung.js",
+  "./themen/schmerz.js",
+  "./themen/kompression.js",
+  "./themen/hautintegritaet.js",
+  "./themen/wundreinigung.js",
+  "./themen/verbandstoffe.js",
+  "./themen/dekubitusprophylaxe.js",
   "./icons/icon-192.png",
   "./icons/icon-512.png",
   "./icons/apple-touch-icon.png"
