@@ -18,45 +18,45 @@ Lernapp.thema({
 
   karten: [
     { k: "Chron. Wunde", f: "Wann gilt eine Wunde als chronisch?",
-      a: "Wenn sie innerhalb von 4–12 Wochen trotz fachgerechter Therapie keine Heilungstendenz zeigt.\nVon Beginn an chronisch, wenn die Ursache eine chronische Erkrankung ist (Dekubitus, Ulcus cruris, Diabetisches Fußulkus).", s: "S. 2–4" },
+      a: "Wenn sie innerhalb von 4–12 Wochen trotz fachgerechter Therapie keine Heilungstendenz zeigt.\nVon Beginn an chronisch, wenn die Ursache eine chronische Erkrankung ist (Dekubitus, Ulcus cruris, Diabetisches Fußulkus).", s: "S. 2–4", sp: ["dekubitus: Def. chronische Wunde", "chronwunden: Basiswissen chronische Wunden"] },
     { k: "Chron. Wunde", f: "Akute vs. chronische Wunde?",
-      a: "Akut: Wundheilungsphasen regelrecht durchlaufen, Heilung innerhalb von 4 Wochen.\nChronisch: Phasen nicht regelrecht durchlaufen, keine Heilungstendenz nach 4–12 Wochen.", s: "S. 4" },
+      a: "Akut: Wundheilungsphasen regelrecht durchlaufen, Heilung innerhalb von 4 Wochen.\nChronisch: Phasen nicht regelrecht durchlaufen, keine Heilungstendenz nach 4–12 Wochen.", s: "S. 4", sp: ["dekubitus: Def. chronische Wunde"] },
     { k: "Chron. Wunde", f: "Was sind „Hard-to-heal“-Wunden?",
       a: "Ulcera > 6 cm², älter als 6 Monate, bei denen ein Ansprechen auf Kompressionstherapie innerhalb von 6 Monaten unwahrscheinlich ist.", s: "S. 4" },
     { k: "Dekubitus", f: "Definiere den Dekubitus (NPUAP 2014).",
-      a: "Lokal begrenzte Schädigung der Haut und/oder des darunter liegenden Gewebes, typischerweise über knöchernen Vorsprüngen, infolge von Druck oder von Druck in Verbindung mit Scherkräften.", s: "S. 5" },
+      a: "Lokal begrenzte Schädigung der Haut und/oder des darunter liegenden Gewebes, typischerweise über knöchernen Vorsprüngen, infolge von Druck oder von Druck in Verbindung mit Scherkräften.", s: "S. 5", sp: ["dekubitus: Def. Dekubitus"] },
     { k: "Dekubitus", f: "Scherkräfte vs. Reibung?",
-      a: "Scherkräfte verformen tieferliegendes Gewebe.\nReibung wirkt nur oberflächlich (Haut gegen Bettlaken).", s: "S. 5" },
+      a: "Scherkräfte verformen tieferliegendes Gewebe.\nReibung wirkt nur oberflächlich (Haut gegen Bettlaken).", s: "S. 5", sp: ["dekubitus: Def. Dekubitus – Entstehung"] },
     { k: "Dekubitus", f: "Welche Mechanismen führen zum druckbedingten Zelltod?",
-      a: "Direkte Deformation des Gewebes und Verschluss von Blut- und Lymphgefäßen → O₂-Mangel, kein Abtransport von Stoffwechselprodukten.\nMuskelzellen sind besonders empfindlich: Nekrosen innerhalb von Minuten möglich.", s: "S. 5–6" },
+      a: "Direkte Deformation des Gewebes und Verschluss von Blut- und Lymphgefäßen → O₂-Mangel, kein Abtransport von Stoffwechselprodukten.\nMuskelzellen sind besonders empfindlich: Nekrosen innerhalb von Minuten möglich.", s: "S. 5–6", sp: ["dekubitus: Def. Dekubitus – Entstehung"] },
     { k: "Dekubitus", f: "Beschreibe die Entstehungskaskade des Dekubitus.",
-      a: "Immobilität → Druck → Zellverformung, Gefäßkompression → lokale Ischämie → gestörter Zellstoffwechsel (Hypoxie, Nekrose, Giftstoffe) → Azidose → Vasodilatation → Flüssigkeitsaustritt → Ödem/Blasen, Thrombosen → Absterben.", s: "S. 7" },
+      a: "Immobilität → Druck → Zellverformung, Gefäßkompression → lokale Ischämie → gestörter Zellstoffwechsel (Hypoxie, Nekrose, Giftstoffe) → Azidose → Vasodilatation → Flüssigkeitsaustritt → Ödem/Blasen, Thrombosen → Absterben.", s: "S. 7", sp: ["dekubitus: Def. Dekubitus – Entstehung"] },
     { k: "Dekubitus", f: "Nenne Prädilektionsstellen in Rückenlage.",
       a: "Hinterhaupt, Schulterblätter, Dornfortsätze, Kreuzbein, Fersen.\nHandschriftlich: auch an Hilfsmitteln (Brille, O₂-Brille, Zahnprothese).", s: "Lösung S. 35", h: true },
     { k: "Dekubitus", f: "Prädilektionsstellen im Sitzen und in Seitenlage?",
       a: "Sitzen: Hinterhaupt, Schulterblatt, Dornfortsätze, Ellenbogen, Sitzhöcker, Fersen.\nSeitenlage: Ohrmuschel, Jochbein, Schulter, Ellenbogen, Rippen, großer Rollhügel, Knie/Wadenbein, seitliche Knöchel.", s: "S. 35" },
     { k: "Dekubitus", f: "Was sind die drei wichtigsten Risikofaktoren für einen Dekubitus?",
-      a: "1. Beeinträchtigung der Mobilität\n2. Störung der Durchblutung\n3. beeinträchtigter Hautzustand bzw. bereits vorhandener Dekubitus", s: "S. 8" },
+      a: "1. Beeinträchtigung der Mobilität\n2. Störung der Durchblutung\n3. beeinträchtigter Hautzustand bzw. bereits vorhandener Dekubitus", s: "S. 8", sp: ["dekubitus: Def. Dekubitus – Risikofaktoren"] },
     { k: "Dekubitus", f: "Dekubitus Kategorie I und II?",
-      a: "I: intakte Haut, nicht wegdrückbare Rötung über knöchernem Vorsprung.\nII: Teilverlust der Haut – flaches Geschwür mit rosa Wundbett ohne Beläge oder serumgefüllte Blase.", s: "S. 9" },
+      a: "I: intakte Haut, nicht wegdrückbare Rötung über knöchernem Vorsprung.\nII: Teilverlust der Haut – flaches Geschwür mit rosa Wundbett ohne Beläge oder serumgefüllte Blase.", s: "S. 9", sp: ["dekubitus: Def. Dekubitus – Klassifikation"] },
     { k: "Dekubitus", f: "Dekubitus Kategorie III und IV?",
-      a: "III: vollständiger Hautverlust, Subcutis kann sichtbar sein; Knochen, Sehnen, Muskeln nicht offen.\nIV: vollständiger Gewebeverlust mit freiliegenden Knochen, Sehnen oder Muskeln; Osteomyelitis möglich.", s: "S. 9" },
+      a: "III: vollständiger Hautverlust, Subcutis kann sichtbar sein; Knochen, Sehnen, Muskeln nicht offen.\nIV: vollständiger Gewebeverlust mit freiliegenden Knochen, Sehnen oder Muskeln; Osteomyelitis möglich.", s: "S. 9", sp: ["dekubitus: Def. Dekubitus – Klassifikation"] },
     { k: "Dekubitus", f: "Welche zwei Zusatzkategorien gibt es?",
-      a: "Keiner Kategorie zuordenbar (Tiefe unbekannt, Wundbett durch Beläge/Schorf bedeckt).\nVermutete tiefe Gewebeschädigung (livider/rötlich-brauner Bereich intakter Haut oder blutgefüllte Blase).", s: "S. 10" },
+      a: "Keiner Kategorie zuordenbar (Tiefe unbekannt, Wundbett durch Beläge/Schorf bedeckt).\nVermutete tiefe Gewebeschädigung (livider/rötlich-brauner Bereich intakter Haut oder blutgefüllte Blase).", s: "S. 10", sp: ["dekubitus: Def. Dekubitus – Klassifikation"] },
     { k: "Dekubitus", f: "Beschreibe den Fingertest. (Übung II)",
       a: "Leichter Fingerdruck auf die Rötung.\nWeißfärbung → Test negativ → kein Dekubitus.\nBleibt rot → Test positiv → Dekubitus Kategorie I.", s: "S. 35" },
     { k: "Dekubitus", f: "Dekubitus vs. Feuchtigkeitswunde (IAD, Intertrigo)?",
       a: "Dekubitus: scharf begrenzt, Ursprung in der Tiefe, über knöchernen Vorsprüngen.\nFeuchtigkeitswunden: Ursprung an der Epidermis, in Hautfalten und Vertiefungen (z. B. Gesäßfalte).", s: "S. 10" },
     { k: "Prophylaxe", f: "Was ist die beste Form der Dekubitusprophylaxe?",
-      a: "Regelmäßige Druckentlastung gefährdeter Körperstellen.\nProphylaxe muss vorausschauend, konsequent, regelmäßig erfolgen – bevor Rötungen auftreten.", s: "S. 11–12" },
+      a: "Regelmäßige Druckentlastung gefährdeter Körperstellen.\nProphylaxe muss vorausschauend, konsequent, regelmäßig erfolgen – bevor Rötungen auftreten.", s: "S. 11–12", sp: ["dekubitus: Def. Dekubitus – Prophylaxe"] },
     { k: "Prophylaxe", f: "Bestandteile der Dekubitusprophylaxe?",
-      a: "Risikoeinschätzung, Förderung der Eigenbewegung, Hautbeobachtung, Hautpflege, Beratung, Positionswechsel, Freilage, Vermeidung therapiebedingten Drucks, Ernährung und Flüssigkeit, Kontinuität und Evaluation.", s: "S. 11–12" },
+      a: "Risikoeinschätzung, Förderung der Eigenbewegung, Hautbeobachtung, Hautpflege, Beratung, Positionswechsel, Freilage, Vermeidung therapiebedingten Drucks, Ernährung und Flüssigkeit, Kontinuität und Evaluation.", s: "S. 11–12", sp: ["dekubitus: Def. Dekubitus – Prophylaxe"] },
     { k: "Prophylaxe", f: "Energie- und Proteinbedarf bei Dekubitus?",
-      a: "Energie 35–40 kcal/kg KG, Protein 2 g/kg KG; eiweißreich, ggf. hochkalorisch, Vitamine A, B, C, K und Mineralstoffe.", s: "S. 12" },
+      a: "Energie 35–40 kcal/kg KG, Protein 2 g/kg KG; eiweißreich, ggf. hochkalorisch, Vitamine A, B, C, K und Mineralstoffe.", s: "S. 12", sp: ["dekubitus: Def. Dekubitus – Prophylaxe"] },
     { k: "Prophylaxe", f: "Welche Hilfsmittel sind ungeeignet?",
-      a: "Luftringe, Lochkissen, Gelkissen, Fellfersenschoner, Lagerungsfell, Wasserkissen, Wassermatratzen, wassergefüllte Handschuhe.", s: "S. 12" },
+      a: "Luftringe, Lochkissen, Gelkissen, Fellfersenschoner, Lagerungsfell, Wasserkissen, Wassermatratzen, wassergefüllte Handschuhe.", s: "S. 12", sp: ["dekubitus: Def. Dekubitus – Prophylaxe"] },
     { k: "Prophylaxe", f: "Welche Hilfsmittel sind geeignet bzw. bedingt geeignet?",
-      a: "Geeignet: Kissen, Decken, Still-/Bananenkissen, Luftkammerkissen, Fersenfreilagerungsbandagen, grobporiger PU-Schaum, Schaumstoffmatratzen.\nBedingt: Weichlagerungs-, Wechseldruckmatratzen.", s: "S. 12" },
+      a: "Geeignet: Kissen, Decken, Still-/Bananenkissen, Luftkammerkissen, Fersenfreilagerungsbandagen, grobporiger PU-Schaum, Schaumstoffmatratzen.\nBedingt: Weichlagerungs-, Wechseldruckmatratzen.", s: "S. 12", sp: ["dekubitus: Def. Dekubitus – Prophylaxe"] },
     { k: "Wundphasen", f: "Versorgung einer schwarzen, trockenen Nekrose?",
       a: "Débridement, Feuchtigkeitszufuhr, Aufweichen → Hydrogele + Deckverband oder Feuchtverbände.\nAusnahme bei arterieller Ursache: nicht einweichen (S. 33).", s: "S. 13, 33" },
     { k: "Wundphasen", f: "Versorgung in der Granulationsphase?",
@@ -64,99 +64,99 @@ Lernapp.thema({
     { k: "Ulcus cruris", f: "Verteilung der Ursachen des Ulcus cruris?",
       a: "60–70 % venös, ca. 10 % arteriell, ca. 10 % gemischt (mixtum), ca. 10 % andere (Infektionen, Mykosen, Malignome, Kalziphylaxie, Medikamente).", s: "S. 14" },
     { k: "Ulcus cruris", f: "Was bedeutet „Ulcera crurum“?",
-      a: "Mehrere Ulzerationen an beiden Unterschenkeln.\nUlcus cruris = ein Geschwür; Ulcera cruris = mehrere an einem Unterschenkel.", s: "S. 14" },
+      a: "Mehrere Ulzerationen an beiden Unterschenkeln.\nUlcus cruris = ein Geschwür; Ulcera cruris = mehrere an einem Unterschenkel.", s: "S. 14", sp: ["dekubitus: Def. Ulcus cruris"] },
     { k: "Venosum", f: "Wie entsteht ein Ulcus cruris venosum?",
-      a: "Komplikation der CVI: gestörter Rückfluss → Druck bis in die Kapillaren → Ödem → Lymphsystem überlastet → Dermatoliposklerose → längere Diffusionsstrecke → Minderversorgung → Ulcus.", s: "S. 14–15" },
+      a: "Komplikation der CVI: gestörter Rückfluss → Druck bis in die Kapillaren → Ödem → Lymphsystem überlastet → Dermatoliposklerose → längere Diffusionsstrecke → Minderversorgung → Ulcus.", s: "S. 14–15", sp: ["dekubitus: Def. Ulcus cruris venosum – Entstehung"] },
     { k: "Venosum", f: "Wie verteilt sich der venöse Abfluss und was ist die Hauptkraft?",
       a: "Ca. 10 % oberflächlich (epifaszial), ca. 90 % tief (subfaszial).\nHauptkraft: Wadenmuskelpumpe; Venenklappen als Volumenventile.", s: "S. 14" },
     { k: "Venosum", f: "Widmer-Klassifikation der CVI?",
-      a: "I Corona phlebectatica, Phlebödem\nII Ödem, Dermatoliposklerose, Atrophie blanche, Purpura jaune d’ocre, Stauungsekzem IIIa abgeheiltes Ulcus\nIIIb florides Ulcus", s: "S. 15" },
+      a: "I Corona phlebectatica, Phlebödem\nII Ödem, Dermatoliposklerose, Atrophie blanche, Purpura jaune d’ocre, Stauungsekzem IIIa abgeheiltes Ulcus\nIIIb florides Ulcus", s: "S. 15", sp: ["dekubitus: Def. Ulcus cruris venosum – Klassifikation"] },
     { k: "Venosum", f: "Wann gilt ein Ulcus cruris venosum als therapieresistent?",
       a: "Keine Heilungstendenz innerhalb von 3 Monaten unter adäquater phlebologischer Therapie oder nicht abgeheilt innerhalb von 12 Monaten.", s: "S. 15" },
     { k: "Venosum", f: "Konservative Therapie des Ulcus cruris venosum?",
-      a: "Phasengerechte Wundtherapie, Kompression, Hautpflege, Gehtraining (Sprunggelenk), Gewichtsreduktion, Ernährung, Flüssigkeit, manuelle Lymphdrainage, Wechselbäder bzw. kaltes Abduschen 2× tägl. 5–10 min.", s: "S. 17" },
+      a: "Phasengerechte Wundtherapie, Kompression, Hautpflege, Gehtraining (Sprunggelenk), Gewichtsreduktion, Ernährung, Flüssigkeit, manuelle Lymphdrainage, Wechselbäder bzw. kaltes Abduschen 2× tägl. 5–10 min.", s: "S. 17", sp: ["dekubitus: Def. Ulcus cruris venosum – Therapie"] },
     { k: "Venosum", f: "Operative/endovaskuläre Verfahren beim Ulcus cruris venosum?",
-      a: "Sklerotherapie, Radiofrequenzablation, endovenöse Lasertherapie, Crossektomie, Perforansligatur, Phlebektomie, Varizenstripping.", s: "S. 17" },
+      a: "Sklerotherapie, Radiofrequenzablation, endovenöse Lasertherapie, Crossektomie, Perforansligatur, Phlebektomie, Varizenstripping.", s: "S. 17", sp: ["dekubitus: Def. Ulcus cruris venosum – Therapie"] },
     { k: "Kompression", f: "Wie wirkt die Kompressionstherapie?",
-      a: "Verkleinert den Venendurchmesser → fast doppelte Fließgeschwindigkeit, weniger transmuraler Druck, Venenklappen schließen wieder; venöser und lymphatischer Rückfluss ↑, Ödem ↓.", s: "S. 18" },
+      a: "Verkleinert den Venendurchmesser → fast doppelte Fließgeschwindigkeit, weniger transmuraler Druck, Venenklappen schließen wieder; venöser und lymphatischer Rückfluss ↑, Ödem ↓.", s: "S. 18", sp: ["dekubitus: Def. Ulcus cruris venosum – Therapie"] },
     { k: "Kompression", f: "Drei Phasen der Kompressionstherapie bei CVI?",
-      a: "Entstauung: PKV oder MAK\nErhaltung: MKS, Ulcus-Strumpfsysteme\nPrävention: nach Abheilung, meist MKS der KKL II", s: "S. 19" },
+      a: "Entstauung: PKV oder MAK\nErhaltung: MKS, Ulcus-Strumpfsysteme\nPrävention: nach Abheilung, meist MKS der KKL II", s: "S. 19", sp: ["dekubitus: Def. Ulcus cruris venosum – Therapie"] },
     { k: "Kompression", f: "Was bedeuten PKV, MKS, MAK, IPK?",
-      a: "PKV – phlebologischer Kompressionsverband (Binden)\nMKS – medizinischer Kompressionsstrumpf\nMAK – medizinisches adaptives Kompressionssystem (Klett/Wrap)\nIPK – intermittierende pneumatische Kompression (nur unterstützend)", s: "S. 19" },
+      a: "PKV – phlebologischer Kompressionsverband (Binden)\nMKS – medizinischer Kompressionsstrumpf\nMAK – medizinisches adaptives Kompressionssystem (Klett/Wrap)\nIPK – intermittierende pneumatische Kompression (nur unterstützend)", s: "S. 19", sp: ["dekubitus: Def. Ulcus cruris venosum – Therapie"] },
     { k: "Kompression", f: "Welche Rolle spielt Bewegung bei der Kompressionstherapie?",
-      a: "Eigenbewegung ist stets Bestandteil – Wirkung nur bei aktivierter Muskelpumpe und beweglichem Sprunggelenk (Fußkreisen, Fußwippen, Nordic Walking, Drainagebeutel bei Bettlägerigen).", s: "S. 20" },
+      a: "Eigenbewegung ist stets Bestandteil – Wirkung nur bei aktivierter Muskelpumpe und beweglichem Sprunggelenk (Fußkreisen, Fußwippen, Nordic Walking, Drainagebeutel bei Bettlägerigen).", s: "S. 20", sp: ["dekubitus: Def. Ulcus cruris venosum – Therapie"] },
     { k: "Kompression", f: "Was besagt die 3S-3L-Regel?",
       a: "„Sitzen und Stehen ist Schlecht, Lieber Laufen und Liegen!“", s: "S. 21" },
     { k: "Kompression", f: "Nenne Beratungsinhalte bei CVI/Ulcus cruris venosum.",
       a: "Flache Schuhe, keine einschnürende Kleidung, Beine hochlegen (20–30°), nicht übereinanderschlagen, Bettende hoch, Kneipp/kalte Güsse, Wärme > 28 °C meiden, Venensport, Gewicht reduzieren, trinken, Kompressionsstrümpfe lebenslang.", s: "S. 20–21" },
     { k: "Kompression", f: "Hautpflege unter Kompression?",
-      a: "Täglich, am besten abends; Creme vor dem Anziehen eingezogen; W/O mit Urea/Glyzin; ohne Alkohol, Allergene (Parabene, Perubalsam, Wollwachs, Propylenglykol, Ringelblume, Rosskastanie) und Duftstoffe.", s: "S. 21" },
+      a: "Täglich, am besten abends; Creme vor dem Anziehen eingezogen; W/O mit Urea/Glyzin; ohne Alkohol, Allergene (Parabene, Perubalsam, Wollwachs, Propylenglykol, Ringelblume, Rosskastanie) und Duftstoffe.", s: "S. 21", sp: ["dekubitus: Def. Ulcus cruris venosum – Therapie"] },
     { k: "Arteriosum", f: "Ursache und Risikofaktoren des Ulcus cruris arteriosum?",
-      a: "pAVK, in ca. 95 % Atherosklerose.\nNikotin, Hypertonie, Diabetes, Dyslipidämie, Adipositas, Bewegungsmangel, Hyperfibrinogenämie, Homocysteinämie, Polyarthritis.", s: "S. 22–23" },
+      a: "pAVK, in ca. 95 % Atherosklerose.\nNikotin, Hypertonie, Diabetes, Dyslipidämie, Adipositas, Bewegungsmangel, Hyperfibrinogenämie, Homocysteinämie, Polyarthritis.", s: "S. 22–23", sp: ["dekubitus: Def. Ulcus cruris arteriosum – Entstehung"] },
     { k: "Arteriosum", f: "Klinisches Bild des Ulcus cruris arteriosum?",
-      a: "Äußere Fußränder, Unterschenkel-Außenseite, Außenknöchel; scharf begrenzt, wie ausgestanzt; Haut blass, marmoriert oder livide, glänzend, haarlos; verdickte Nägel; tiefe Wunden.", s: "S. 24" },
+      a: "Äußere Fußränder, Unterschenkel-Außenseite, Außenknöchel; scharf begrenzt, wie ausgestanzt; Haut blass, marmoriert oder livide, glänzend, haarlos; verdickte Nägel; tiefe Wunden.", s: "S. 24", sp: ["dekubitus: Def. Ulcus cruris arteriosum – Klinisches Erscheinungsbild"] },
     { k: "Arteriosum", f: "Was ist bei der ABI-Messung zu beachten?",
-      a: "Bei Mönckeberg-Sklerose (Mediaverkalkung) falsch hohe Werte.\nWichtig: periphere Dopplerdrücke < 70 mmHg → fehlende Wundheilung.", s: "S. 24" },
+      a: "Bei Mönckeberg-Sklerose (Mediaverkalkung) falsch hohe Werte.\nWichtig: periphere Dopplerdrücke < 70 mmHg → fehlende Wundheilung.", s: "S. 24", sp: ["dekubitus: Def. Ulcus cruris arteriosum – Diagnostik"] },
     { k: "Arteriosum", f: "Fontaine und Rutherford im Vergleich?",
-      a: "I = Rutherford 0\nIIa = I/1\nIIb = I/2–3\nIII Ruheschmerz = II/4\nIV Ulcus, Gangrän = III/5–6", s: "S. 24" },
+      a: "I = Rutherford 0\nIIa = I/1\nIIb = I/2–3\nIII Ruheschmerz = II/4\nIV Ulcus, Gangrän = III/5–6", s: "S. 24", sp: ["dekubitus: Def. Ulcus cruris arteriosum – Klassifikation"] },
     { k: "Arteriosum", f: "Was bedeutet das IRAN-Prinzip?",
-      a: "Infektionskontrolle, Mumifizierung der Gangrän\nRevaskularisation\nAmputation bzw. Nekroseentfernung im infektionsfreien Stadium\nNachsorge", s: "S. 25" },
+      a: "Infektionskontrolle, Mumifizierung der Gangrän\nRevaskularisation\nAmputation bzw. Nekroseentfernung im infektionsfreien Stadium\nNachsorge", s: "S. 25", sp: ["dekubitus: Def. Ulcus cruris arteriosum – Therapie"] },
     { k: "Arteriosum", f: "Wann ist Kompression beim arteriellen Ulcus verboten?",
-      a: "Bei kritischer Ischämie (absoluter systolischer Knöchelarteriendruck < 50 mmHg): keine Kompressionstherapie!", s: "S. 25" },
+      a: "Bei kritischer Ischämie (absoluter systolischer Knöchelarteriendruck < 50 mmHg): keine Kompressionstherapie!", s: "S. 25", sp: ["dekubitus: Def. Ulcus cruris arteriosum – Therapie"] },
     { k: "Arteriosum", f: "Therapie ohne Möglichkeit zur Revaskularisation?",
-      a: "Mumifizierte trockene Nekrose → nach Austrocknen des Randsaums trocken behandeln.\nFeuchte Wunde → lokal antiseptisch, Infektionsprophylaxe, engmaschige Kontrolle.", s: "S. 26" },
+      a: "Mumifizierte trockene Nekrose → nach Austrocknen des Randsaums trocken behandeln.\nFeuchte Wunde → lokal antiseptisch, Infektionsprophylaxe, engmaschige Kontrolle.", s: "S. 26", sp: ["dekubitus: Def. Ulcus cruris arteriosum – Therapie"] },
     { k: "Arteriosum", f: "Wie lagert man die Beine bei pAVK – und bei CVI?",
-      a: "pAVK: Beine nachts tief lagern, Füße warmhalten (S. 26).\nCVI: Beine hochlegen, Bettende hochstellen (S. 20).", s: "S. 20, 26" },
+      a: "pAVK: Beine nachts tief lagern, Füße warmhalten (S. 26).\nCVI: Beine hochlegen, Bettende hochstellen (S. 20).", s: "S. 20, 26", sp: ["dekubitus: Def. Ulcus cruris arteriosum – Therapie"] },
     { k: "Vergleich", f: "Venosum vs. arteriosum: Lokalisation, Wundrand, Tiefe?",
-      a: "Venosum: Innenknöchel/Vorderseite; Rand diffus, flach; bis Subcutis.\nArteriosum: Außenknöchel/Außenseite, Fußrand; Rand wie ausgestanzt; tief, Sehnen/Knochen sichtbar.", s: "S. 27, 36" },
+      a: "Venosum: Innenknöchel/Vorderseite; Rand diffus, flach; bis Subcutis.\nArteriosum: Außenknöchel/Außenseite, Fußrand; Rand wie ausgestanzt; tief, Sehnen/Knochen sichtbar.", s: "S. 27, 36", sp: ["dekubitus: Def. Ulcus cruris venosum – Klinisches Erscheinungsbild", "dekubitus: Def. Ulcus cruris arteriosum – Klinisches Erscheinungsbild"] },
     { k: "Vergleich", f: "Venosum vs. arteriosum: Schmerz, Ödem, Temperatur, Pulse?",
-      a: "Venosum: mäßig, Linderung durch Hochlagern; Ödeme; warm; Pulse tastbar.\nArteriosum: stark, Ruheschmerz, Linderung durch Herabhängen; keine Ödeme; kalt; Pulse kaum tastbar.", s: "S. 27" },
+      a: "Venosum: mäßig, Linderung durch Hochlagern; Ödeme; warm; Pulse tastbar.\nArteriosum: stark, Ruheschmerz, Linderung durch Herabhängen; keine Ödeme; kalt; Pulse kaum tastbar.", s: "S. 27", sp: ["dekubitus: Def. Ulcus cruris venosum – Klinisches Erscheinungsbild", "dekubitus: Def. Ulcus cruris arteriosum – Klinisches Erscheinungsbild"] },
     { k: "Vergleich", f: "Venosum vs. arteriosum: Wundbeschaffenheit?",
-      a: "Venosum: feucht-glänzend, viel Exsudat, schmierig-fibrinöse Beläge (Nekrosen → an pAVK denken).\nArteriosum: wenig Exsudat, trocken, ggf. freiliegende Sehnen und Knochen, Nekrosen.", s: "S. 27" },
+      a: "Venosum: feucht-glänzend, viel Exsudat, schmierig-fibrinöse Beläge (Nekrosen → an pAVK denken).\nArteriosum: wenig Exsudat, trocken, ggf. freiliegende Sehnen und Knochen, Nekrosen.", s: "S. 27", sp: ["dekubitus: Def. Ulcus cruris venosum – Klinisches Erscheinungsbild", "dekubitus: Def. Ulcus cruris arteriosum – Klinisches Erscheinungsbild"] },
     { k: "Mixtum", f: "Was ist beim Ulcus cruris mixtum zu beachten?",
-      a: "Arterielle und venöse Ursache; Schmerz meist führend; Kompression stark eingeschränkt oder kontraindiziert → pAVK früh behandeln, um wieder komprimieren zu können.", s: "S. 28" },
+      a: "Arterielle und venöse Ursache; Schmerz meist führend; Kompression stark eingeschränkt oder kontraindiziert → pAVK früh behandeln, um wieder komprimieren zu können.", s: "S. 28", sp: ["dekubitus: Def. Ulcus cruris mixtum"] },
     { k: "Diab. Fuß", f: "Was ist das Diabetische Fußsyndrom?",
-      a: "Schleichende Spätkomplikation durch Makro- und Mikroangiopathie, Neuropathie und Chondroarthropathie; umfasst alle pathologischen Veränderungen am Fuß (Ulkus, Nagelbett, Infektion, Deformität).", s: "S. 28" },
+      a: "Schleichende Spätkomplikation durch Makro- und Mikroangiopathie, Neuropathie und Chondroarthropathie; umfasst alle pathologischen Veränderungen am Fuß (Ulkus, Nagelbett, Infektion, Deformität).", s: "S. 28", sp: ["dekubitus: Def. Diabetisches Fußulcus"] },
     { k: "Diab. Fuß", f: "Ursachenverteilung diabetischer Fußulcera?",
-      a: "Ca. 50 % Polyneuropathie, ca. 15 % pAVK, ca. 35 % Zusammenwirken von PNP und Gefäßerkrankung.", s: "S. 29" },
+      a: "Ca. 50 % Polyneuropathie, ca. 15 % pAVK, ca. 35 % Zusammenwirken von PNP und Gefäßerkrankung.", s: "S. 29", sp: ["dekubitus: Def. Diabetisches Fußulcus – Entstehung"] },
     { k: "Diab. Fuß", f: "Welche Formen der Polyneuropathie gibt es?",
       a: "Sensibel: Kribbeln, Brennen, Taubheit, schmerzlose Wunden.\nMotorisch: Faszikulationen, Krämpfe, Schwäche, Parese der Zehenspreizung.\nAutonom: Hypo-/Anhidrosis, Ödem, Ulcus, Osteoarthropathie, Tachykardie, Gastroparese.", s: "S. 29" },
     { k: "Diab. Fuß", f: "Neuropathischer vs. ischämischer diabetischer Fuß?",
-      a: "Neuropathisch: trocken, warm, rosig, Pulse tastbar, schmerzlos (Malum perforans).\nIschämisch: kühl, blass/livide, Pulse vermindert, Schmerzen, akrale Nekrosen.", s: "S. 30" },
+      a: "Neuropathisch: trocken, warm, rosig, Pulse tastbar, schmerzlos (Malum perforans).\nIschämisch: kühl, blass/livide, Pulse vermindert, Schmerzen, akrale Nekrosen.", s: "S. 30", sp: ["dekubitus: Def. Diabetisches Fußulcus – Klinisches Erscheinungsbild"] },
     { k: "Diab. Fuß", f: "Was ist der Charcot-Fuß (DNOAP)?",
-      a: "Diabetische Neuro-Osteoarthropathie: meist einseitige, schmerzlose Destruktion des Fußskeletts nach unbemerkten Traumata; Überwärmung > 1 °C (oft > 2 °C) gegenüber der Gegenseite.", s: "S. 30" },
+      a: "Diabetische Neuro-Osteoarthropathie: meist einseitige, schmerzlose Destruktion des Fußskeletts nach unbemerkten Traumata; Überwärmung > 1 °C (oft > 2 °C) gegenüber der Gegenseite.", s: "S. 30", sp: ["dekubitus: Def. Diabetisches Fußulcus – Klinisches Erscheinungsbild"] },
     { k: "Diab. Fuß", f: "Klassifikation nach Wagner und Armstrong?",
-      a: "Wagner 0 keine Läsion · 1 oberflächlich · 2 bis Sehne/Kapsel · 3 bis Knochen · 4 Nekrose von Fußteilen · 5 Nekrose des ganzen Fußes.\nArmstrong: A ohne · B Infektion · C Ischämie · D beides.", s: "S. 29" },
+      a: "Wagner 0 keine Läsion · 1 oberflächlich · 2 bis Sehne/Kapsel · 3 bis Knochen · 4 Nekrose von Fußteilen · 5 Nekrose des ganzen Fußes.\nArmstrong: A ohne · B Infektion · C Ischämie · D beides.", s: "S. 29", sp: ["dekubitus: Def. Diabetisches Fußulcus – Klassifikation"] },
     { k: "Diab. Fuß", f: "Wie prüft man die Sensibilität beim diabetischen Fuß?",
-      a: "Monofilament nach Semmes-Weinstein, Stimmgabel nach Rydel-Seiffer, Tip Therm.", s: "S. 32" },
+      a: "Monofilament nach Semmes-Weinstein, Stimmgabel nach Rydel-Seiffer, Tip Therm.", s: "S. 32", sp: ["dekubitus: Def. Diabetisches Fußulcus – Diagnostik"] },
     { k: "Diab. Fuß", f: "Was bedeutet die IRAS-Regel?",
-      a: "Infektsanierung\nRevaskularisation\nAmputation, wenn unumgänglich\nSchulung, Beratung, Information", s: "S. 32" },
+      a: "Infektsanierung\nRevaskularisation\nAmputation, wenn unumgänglich\nSchulung, Beratung, Information", s: "S. 32", sp: ["dekubitus: Def. Diabetisches Fußulcus – Therapie"] },
     { k: "Diab. Fuß", f: "Wesentliche Therapiebestandteile beim diabetischen Fußulkus?",
-      a: "Blutzucker optimieren, Infektionskontrolle, Débridement, konsequente vollständige Druckentlastung (Orthesen, Total Contact Cast, Rollstuhl, Bettruhe), phasengerechte Wundversorgung, Gefäßtherapie, Schulung.", s: "S. 32" },
+      a: "Blutzucker optimieren, Infektionskontrolle, Débridement, konsequente vollständige Druckentlastung (Orthesen, Total Contact Cast, Rollstuhl, Bettruhe), phasengerechte Wundversorgung, Gefäßtherapie, Schulung.", s: "S. 32", sp: ["dekubitus: Def. Diabetisches Fußulcus – Therapie"] },
     { k: "Diab. Fuß", f: "Was ist bei der Hautpflege des diabetischen Fußes zu beachten?",
       a: "W/O-Cremes oder Schäume mit Urea (Hornhaut, Rhagaden, Juckreiz).\nZehenzwischenräume nicht eincremen → Mazeration und Pilzbefall vermeiden.", s: "S. 33" },
     { k: "Diab. Fuß", f: "Warum Hydrokolloide beim diabetischen Fuß nur mit Vorsicht?",
-      a: "Bei PNP fehlen oft Entzündungszeichen; durch den eingeschränkten Gasaustausch kann sich eine Infektion unbemerkt ausbreiten.\nKI: Infektion, freiliegende Muskeln/Sehnen/Knochen, ischämische Ulcera (pAVK IV).", s: "S. 33" },
+      a: "Bei PNP fehlen oft Entzündungszeichen; durch den eingeschränkten Gasaustausch kann sich eine Infektion unbemerkt ausbreiten.\nKI: Infektion, freiliegende Muskeln/Sehnen/Knochen, ischämische Ulcera (pAVK IV).", s: "S. 33", sp: ["dekubitus: Def. Diabetisches Fußulcus – Therapie"] },
     { k: "Folien", f: "Wagner-Klassifikation laut Foliensatz?",
-      a: "0 intakte Haut, Risikofuß · 1 oberflächlich · 2 tief bis Sehnen/Knochen · 3 tief mit Abszess/Osteomyelitis · 4 begrenzte Gangrän (Vorfuß) · 5 ausgedehnte Gangrän.\nAchtung: Grad 2/3 im Heft anders formuliert.", s: "Foliensatz" },
+      a: "0 intakte Haut, Risikofuß · 1 oberflächlich · 2 tief bis Sehnen/Knochen · 3 tief mit Abszess/Osteomyelitis · 4 begrenzte Gangrän (Vorfuß) · 5 ausgedehnte Gangrän.\nAchtung: Grad 2/3 im Heft anders formuliert.", s: "Foliensatz", sp: ["dekubitus: Def. Diabetisches Fußulcus – Klassifikation"] },
     { k: "Folien", f: "Was ist die Armstrong-Klassifikation (University of Texas)?",
-      a: "4×3-System: Grade 0 epithelisiert · 1 oberflächlich · 2 bis Sehne/Kapsel/Knochen · 3 Abszess/Osteomyelitis; kombiniert mit Stadien A ohne · B Infektion · C Ischämie · D beides.", s: "Foliensatz" },
+      a: "4×3-System: Grade 0 epithelisiert · 1 oberflächlich · 2 bis Sehne/Kapsel/Knochen · 3 Abszess/Osteomyelitis; kombiniert mit Stadien A ohne · B Infektion · C Ischämie · D beides.", s: "Foliensatz", sp: ["dekubitus: Def. Diabetisches Fußulcus – Klassifikation"] },
     { k: "Folien", f: "Welche Form des diabetischen Fußulkus ist am häufigsten – welche am problematischsten?",
       a: "Neuropathisch: häufigste Form (60–70 % laut Folien).\nNeuro-ischämisch: häufigste komplizierte Form, schlechte Prognose, da meist schmerzlos.", s: "Foliensatz" },
     { k: "Folien", f: "Wo liegen neuropathische und ischämische Fußulcera typischerweise?",
-      a: "Neuropathisch: Druckstellen – Fußsohle, Zehen.\nIschämisch: Akren, Zehen, Ferse; Nekrosegefahr.", s: "Foliensatz" },
+      a: "Neuropathisch: Druckstellen – Fußsohle, Zehen.\nIschämisch: Akren, Zehen, Ferse; Nekrosegefahr.", s: "Foliensatz", sp: ["dekubitus: Def. Diabetisches Fußulcus – Klinisches Erscheinungsbild"] },
     { k: "Folien", f: "Welcher HbA1c-Zielwert wird beim diabetischen Fußulkus genannt?",
-      a: "HbA1c < 7 % (Blutzuckeroptimierung im multidisziplinären Ansatz).", s: "Foliensatz" },
+      a: "HbA1c < 7 % (Blutzuckeroptimierung im multidisziplinären Ansatz).", s: "Foliensatz", sp: ["dekubitus: Def. Diabetisches Fußulcus – Therapie"] },
     { k: "Folien", f: "Wofür steht das S im IRAS-Prinzip laut Foliensatz?",
-      a: "Schutz vor Rezidiven (Druckentlastung, Schulung). Im Heft: Schulung, Beratung, Information.", s: "Foliensatz" },
+      a: "Schutz vor Rezidiven (Druckentlastung, Schulung). Im Heft: Schulung, Beratung, Information.", s: "Foliensatz", sp: ["dekubitus: Def. Diabetisches Fußulcus – Therapie"] },
     { k: "Folien", f: "Woher stammt der Begriff Dekubitus und wie lautet die Mehrzahl?",
       a: "Von lat. decumbere = niederliegen. Mehrzahl ebenfalls „Dekubitus“. Synonym: Druckgeschwür, Druckverletzung.", s: "Foliensatz" },
     { k: "Folien", f: "Muss bei „keiner Kategorie zuordenbar“ jeder Belag entfernt werden?",
-      a: "Nein – stabiler Schorf kann schützend wirken. Die Kategorie gilt, bis die wirkliche Tiefe beurteilt werden kann.", s: "Foliensatz" },
+      a: "Nein – stabiler Schorf kann schützend wirken. Die Kategorie gilt, bis die wirkliche Tiefe beurteilt werden kann.", s: "Foliensatz", sp: ["dekubitus: Def. Dekubitus – Klassifikation"] },
     { k: "Folien", f: "Welche Risikofaktoren wirken direkt, welche indirekt auf das Dekubitusrisiko?",
-      a: "Direkt: beeinträchtigte Mobilität (mehr Druck und Scherkräfte).\nIndirekt: Durchblutungsstörungen (schwächen die Gewebetoleranz).", s: "Foliensatz" },
+      a: "Direkt: beeinträchtigte Mobilität (mehr Druck und Scherkräfte).\nIndirekt: Durchblutungsstörungen (schwächen die Gewebetoleranz).", s: "Foliensatz", sp: ["dekubitus: Def. Dekubitus – Risikofaktoren"] },
     { k: "Folien", f: "Ursachen der arteriellen Minderdurchblutung laut Foliensatz?",
-      a: "Atherosklerose · arterielle Embolie (Herzrhythmusstörungen, Aneurysmen) · Entzündungen (Vaskulitis) · Gerinnungsstörungen · Trauma (selten alleinige Ursache).", s: "Foliensatz" },
+      a: "Atherosklerose · arterielle Embolie (Herzrhythmusstörungen, Aneurysmen) · Entzündungen (Vaskulitis) · Gerinnungsstörungen · Trauma (selten alleinige Ursache).", s: "Foliensatz", sp: ["dekubitus: Def. Ulcus cruris arteriosum – Entstehung"] },
     { k: "Folien", f: "Welche Sportarten und Wärmequellen sollen Menschen mit Ulcus cruris venosum meiden?",
       a: "Kein Kraftsport, keine Sportarten mit abrupten Bewegungswechseln; Wärme über 28 °C meiden: Wärmflaschen, heißes Baden, Sauna, Solarium.", s: "Foliensatz" }
   ],
@@ -164,31 +164,31 @@ Lernapp.thema({
   quiz: [
     { f: "Ab wann gilt eine Wunde laut Expertenstandard als chronisch?",
       o: ["Wenn sie nach 4–12 Wochen trotz fachgerechter Therapie keine Heilungstendenz zeigt", "Wenn sie nach 7 Tagen noch nicht verschlossen ist", "Erst wenn sie länger als 1 Jahr besteht", "Wenn sie größer als 6 cm² ist"],
-      e: "Chronisch = keine Heilungstendenz nach 4–12 Wochen trotz fachgerechter Therapie. Dekubitus, Ulcus cruris und Diabetisches Fußulkus sind von Beginn an chronisch.", s: "S. 2–4" },
+      e: "Chronisch = keine Heilungstendenz nach 4–12 Wochen trotz fachgerechter Therapie. Dekubitus, Ulcus cruris und Diabetisches Fußulkus sind von Beginn an chronisch.", s: "S. 2–4", sp: ["dekubitus: Def. chronische Wunde", "chronwunden: Basiswissen chronische Wunden"] },
     { f: "Was beschreibt Dekubitus Kategorie II?",
       o: ["Teilverlust der Haut: flaches Geschwür mit rosa Wundbett ohne Beläge oder serumgefüllte Blase", "Intakte Haut mit nicht wegdrückbarer Rötung", "Vollständiger Hautverlust, Subcutis sichtbar, Knochen nicht offen", "Vollständiger Gewebeverlust mit freiliegendem Knochen"],
-      e: "I: nicht wegdrückbare Rötung · II: Teilverlust der Haut/Blase · III: vollständiger Hautverlust · IV: freiliegende Knochen, Sehnen oder Muskeln.", s: "S. 9" },
+      e: "I: nicht wegdrückbare Rötung · II: Teilverlust der Haut/Blase · III: vollständiger Hautverlust · IV: freiliegende Knochen, Sehnen oder Muskeln.", s: "S. 9", sp: ["dekubitus: Def. Dekubitus – Klassifikation"] },
     { f: "Welche Dekubitus-Kategorie liegt bei freiliegenden Sehnen vor?",
       o: ["Kategorie IV", "Kategorie III", "Kategorie II", "Keiner Kategorie zuordenbar"],
-      e: "IV: vollständiger Gewebeverlust mit freiliegenden Knochen, Sehnen oder Muskeln; Osteomyelitis möglich.", s: "S. 9" },
+      e: "IV: vollständiger Gewebeverlust mit freiliegenden Knochen, Sehnen oder Muskeln; Osteomyelitis möglich.", s: "S. 9", sp: ["dekubitus: Def. Dekubitus – Klassifikation"] },
     { f: "Beim Fingertest bleibt die gerötete Stelle rot. Was bedeutet das?",
       o: ["Test positiv – Dekubitus Kategorie I", "Test negativ – kein Dekubitus", "Hinweis auf eine Feuchtigkeitswunde", "Hinweis auf ein Erysipel"],
       e: "Weißfärbung → Test negativ, kein Dekubitus. Bleibt rot → Test positiv, Dekubitus Kategorie I.", s: "S. 35" },
     { f: "Was gilt für die Dekubitus-Klassifikation nach EPUAP/NPUAP?",
       o: ["Sie ist keine Reihenfolge – aus Kategorie I kann ohne Gegenmaßnahmen direkt Kategorie IV werden", "Jede Kategorie wird nacheinander durchlaufen", "Kategorie II wird auch für Skin Tears verwendet", "Sie gilt nur für Dekubitus an der Ferse"],
-      e: "Die Klassifikation ist keine Reihenfolge. Kategorie II nicht für Skin Tears oder Pflasterschäden verwenden.", s: "S. 9–10" },
+      e: "Die Klassifikation ist keine Reihenfolge. Kategorie II nicht für Skin Tears oder Pflasterschäden verwenden.", s: "S. 9–10", sp: ["dekubitus: Def. Dekubitus – Klassifikation"] },
     { f: "Wo entsteht ein Dekubitus?",
       o: ["In der Tiefe – Muskelzellen sind besonders druckempfindlich", "In der Epidermis – die Hornschicht ist am empfindlichsten", "Nur in Hautfalten durch Feuchtigkeit", "Ausschließlich durch Reibung an der Oberfläche"],
-      e: "Muskelnekrosen sind innerhalb von Minuten möglich, Hautzellen sind widerstandsfähiger. Dekubitus entsteht in der Tiefe, nicht in der Epidermis.", s: "S. 5–6" },
+      e: "Muskelnekrosen sind innerhalb von Minuten möglich, Hautzellen sind widerstandsfähiger. Dekubitus entsteht in der Tiefe, nicht in der Epidermis.", s: "S. 5–6", sp: ["dekubitus: Def. Dekubitus – Entstehung"] },
     { f: "Was ist die beste Form der Dekubitusprophylaxe?",
       o: ["Regelmäßige Druckentlastung gefährdeter Körperstellen", "Eine Wechseldruckmatratze für alle Patient:innen", "Massage geröteter Hautstellen", "Ein Luftring unter dem Gesäß"],
-      e: "Regelmäßige Druckentlastung gefährdeter Körperstellen ist die beste Form der Dekubitusprophylaxe – vorausschauend, konsequent, regelmäßig.", s: "S. 11–12" },
+      e: "Regelmäßige Druckentlastung gefährdeter Körperstellen ist die beste Form der Dekubitusprophylaxe – vorausschauend, konsequent, regelmäßig.", s: "S. 11–12", sp: ["dekubitus: Def. Dekubitus – Prophylaxe"] },
     { f: "Welches Hilfsmittel ist zur Dekubitusprophylaxe ungeeignet?",
       o: ["Luftring", "Fersenfreilagerungsbandage", "Luftkammerkissen", "Schaumstoffmatratze"],
-      e: "Ungeeignet: Luftringe, Lochkissen, Gelkissen, Fellfersenschoner, Lagerungsfell, Wasserkissen, Wassermatratzen, wassergefüllte Handschuhe.", s: "S. 12" },
+      e: "Ungeeignet: Luftringe, Lochkissen, Gelkissen, Fellfersenschoner, Lagerungsfell, Wasserkissen, Wassermatratzen, wassergefüllte Handschuhe.", s: "S. 12", sp: ["dekubitus: Def. Dekubitus – Prophylaxe"] },
     { f: "Welcher Energie- und Proteinbedarf wird bei Dekubitus angegeben?",
       o: ["35–40 kcal/kg KG und 2 g Protein/kg KG", "20 kcal/kg KG und 0,5 g Protein/kg KG", "50–60 kcal/kg KG und 4 g Protein/kg KG", "25 kcal/kg KG und 1 g Protein/kg KG"],
-      e: "Bei Dekubitus: Energie 35–40 kcal/kg KG, Protein 2 g/kg KG; eiweißreich, Vitamine A, B, C, K und Mineralstoffe.", s: "S. 12" },
+      e: "Bei Dekubitus: Energie 35–40 kcal/kg KG, Protein 2 g/kg KG; eiweißreich, Vitamine A, B, C, K und Mineralstoffe.", s: "S. 12", sp: ["dekubitus: Def. Dekubitus – Prophylaxe"] },
     { f: "Wie verteilen sich die Ursachen des Ulcus cruris?",
       o: ["60–70 % venös, je ca. 10 % arteriell, gemischt und andere", "60–70 % arteriell, ca. 20 % venös, ca. 10 % andere", "Je ein Drittel venös, arteriell und gemischt", "Ca. 95 % venös"],
       e: "60–70 % venös, ca. 10 % arteriell, ca. 10 % mixtum, ca. 10 % andere (Infektionen, Mykosen, Malignome, Kalziphylaxie, Medikamente).", s: "S. 14" },
@@ -200,88 +200,88 @@ Lernapp.thema({
       e: "Therapieresistent: keine Heilungstendenz binnen 3 Monaten unter adäquater phlebologischer Therapie oder nach 12 Monaten nicht abgeheilt.", s: "S. 15" },
     { f: "Was wird in der Entstauungsphase der Kompressionstherapie eingesetzt?",
       o: ["Phlebologischer Kompressionsverband (PKV) oder MAK", "Nur medizinische Kompressionsstrümpfe (MKS)", "Nur intermittierende pneumatische Kompression (IPK)", "Keine Kompression, nur Hochlagern"],
-      e: "Entstauung: PKV oder MAK · Erhaltung: MKS, Ulcus-Strumpfsysteme · Prävention: meist MKS der KKL II.", s: "S. 19" },
+      e: "Entstauung: PKV oder MAK · Erhaltung: MKS, Ulcus-Strumpfsysteme · Prävention: meist MKS der KKL II.", s: "S. 19", sp: ["dekubitus: Def. Ulcus cruris venosum – Therapie"] },
     { f: "Welche Rolle hat die intermittierende pneumatische Kompression (IPK)?",
       o: ["Nur unterstützend, kein Ersatz", "Sie ersetzt den Kompressionsverband in der Entstauungsphase", "Sie ist die Methode der Wahl in der Prävention", "Sie ist bei Ulcus cruris verboten"],
-      e: "IPK ist nur unterstützend, kein Ersatz.", s: "S. 19" },
+      e: "IPK ist nur unterstützend, kein Ersatz.", s: "S. 19", sp: ["dekubitus: Def. Ulcus cruris venosum – Therapie"] },
     { f: "Was besagt die 3S-3L-Regel?",
       o: ["Sitzen und Stehen ist Schlecht, Lieber Laufen und Liegen", "Salbe, Spülen, Schützen – Lagern, Lockern, Lüften", "Schmerz, Schwellung, Schorf – Licht, Luft, Lagerung", "Strümpfe, Schuhe, Sport – Liegen, Laufen, Lymphdrainage"],
       e: "„Sitzen und Stehen ist Schlecht, Lieber Laufen und Liegen!“", s: "S. 21" },
     { f: "Ab welchem Knöchelarteriendruck ist eine Kompressionstherapie verboten?",
       o: ["Unter 50 mmHg (kritische Ischämie)", "Unter 120 mmHg", "Über 70 mmHg", "Unter 90 mmHg"],
-      e: "Bei kritischer Ischämie (absoluter systolischer Knöchelarteriendruck < 50 mmHg) keine Kompressionstherapie!", s: "S. 25" },
+      e: "Bei kritischer Ischämie (absoluter systolischer Knöchelarteriendruck < 50 mmHg) keine Kompressionstherapie!", s: "S. 25", sp: ["dekubitus: Def. Ulcus cruris arteriosum – Therapie"] },
     { f: "Was ist bei der ABI-Messung bei Mönckeberg-Sklerose zu beachten?",
       o: ["Es werden falsch hohe Werte gemessen", "Es werden falsch niedrige Werte gemessen", "Die Messung ist besonders genau", "Der ABI ist dann immer genau 1,0"],
-      e: "Mönckeberg-Sklerose (Mediaverkalkung) → falsch hohe Werte. Periphere Dopplerdrücke < 70 mmHg → fehlende Wundheilung.", s: "S. 24" },
+      e: "Mönckeberg-Sklerose (Mediaverkalkung) → falsch hohe Werte. Periphere Dopplerdrücke < 70 mmHg → fehlende Wundheilung.", s: "S. 24", sp: ["dekubitus: Def. Ulcus cruris arteriosum – Diagnostik"] },
     { f: "Wo liegt ein Ulcus cruris arteriosum typischerweise und wie sieht der Rand aus?",
       o: ["Außenknöchel, Unterschenkel-Außenseite, äußere Fußränder – wie ausgestanzt", "Innenknöchel – Rand diffus und flach", "Gamaschenartig am ganzen Unterschenkel – Rand eingerollt", "Fußsohle – Rand hyperkeratotisch"],
-      e: "Arteriosum: äußere Fußränder, Außenseite, Außenknöchel; scharf begrenzt, wie ausgestanzt. Venosum: Innenknöchel/Vorderseite, Rand diffus, flach.", s: "S. 24, 27" },
+      e: "Arteriosum: äußere Fußränder, Außenseite, Außenknöchel; scharf begrenzt, wie ausgestanzt. Venosum: Innenknöchel/Vorderseite, Rand diffus, flach.", s: "S. 24, 27", sp: ["dekubitus: Def. Ulcus cruris arteriosum – Klinisches Erscheinungsbild"] },
     { f: "Wodurch wird der Schmerz beim Ulcus cruris arteriosum gelindert?",
       o: ["Durch Herabhängen des Beins", "Durch Hochlagern des Beins", "Durch Kompression", "Durch Wärmflaschen am Fuß"],
-      e: "Arteriosum: starker Schmerz, Ruheschmerz nachts → Linderung durch Herabhängen. Venosum: Linderung durch Hochlagern.", s: "S. 27" },
+      e: "Arteriosum: starker Schmerz, Ruheschmerz nachts → Linderung durch Herabhängen. Venosum: Linderung durch Hochlagern.", s: "S. 27", sp: ["dekubitus: Def. Ulcus cruris arteriosum – Klinisches Erscheinungsbild"] },
     { f: "Welche Befundkombination passt zum Ulcus cruris venosum?",
       o: ["Ödeme, warme Haut, tastbare Fußpulse, viel Exsudat", "Keine Ödeme, kalte Haut, kaum tastbare Pulse, trockene Wunde", "Haarlose, glänzende Haut und Ruheschmerz nachts", "Schmerzloses Ulcus an der Fußsohle mit Hornhautrand"],
-      e: "Venosum: Ödeme, warm, Pulse tastbar, feucht-glänzend mit viel Exsudat. Arteriosum: keine Ödeme, kalt, Pulse kaum tastbar, wenig Exsudat.", s: "S. 27" },
+      e: "Venosum: Ödeme, warm, Pulse tastbar, feucht-glänzend mit viel Exsudat. Arteriosum: keine Ödeme, kalt, Pulse kaum tastbar, wenig Exsudat.", s: "S. 27", sp: ["dekubitus: Def. Ulcus cruris venosum – Klinisches Erscheinungsbild"] },
     { f: "Wofür steht das „R“ im IRAN-Prinzip?",
       o: ["Revaskularisation", "Rehabilitation", "Ruhigstellung", "Rezidivprophylaxe"],
-      e: "IRAN: Infektionskontrolle/Mumifizierung · Revaskularisation · Amputation bzw. Nekroseentfernung im infektionsfreien Stadium · Nachsorge.", s: "S. 25" },
+      e: "IRAN: Infektionskontrolle/Mumifizierung · Revaskularisation · Amputation bzw. Nekroseentfernung im infektionsfreien Stadium · Nachsorge.", s: "S. 25", sp: ["dekubitus: Def. Ulcus cruris arteriosum – Therapie"] },
     { f: "Wie werden die Beine bei pAVK gelagert?",
       o: ["Nachts tief lagern, Füße warmhalten", "Hochlagern und Bettende hochstellen", "Mit Kompressionsverband hochlagern", "Mit Kühlakkus flach lagern"],
-      e: "pAVK: Beine nachts tief lagern, Füße warmhalten (S. 26). CVI: Beine hochlegen, Bettende hochstellen (S. 20).", s: "S. 20, 26" },
+      e: "pAVK: Beine nachts tief lagern, Füße warmhalten (S. 26). CVI: Beine hochlegen, Bettende hochstellen (S. 20).", s: "S. 20, 26", sp: ["dekubitus: Def. Ulcus cruris arteriosum – Therapie"] },
     { f: "Was ist beim Ulcus cruris mixtum typisch?",
       o: ["Schmerz ist meist führend; Kompression stark eingeschränkt oder kontraindiziert", "Es ist schmerzlos und wird immer voll komprimiert", "Es liegt immer einzeln am Innenknöchel", "Es entsteht nur durch Polyneuropathie"],
-      e: "Arterielle und venöse Ursache; meist mehrere Ulcera, Schmerz meist führend; pAVK früh behandeln, um wieder komprimieren zu können.", s: "S. 28" },
+      e: "Arterielle und venöse Ursache; meist mehrere Ulcera, Schmerz meist führend; pAVK früh behandeln, um wieder komprimieren zu können.", s: "S. 28", sp: ["dekubitus: Def. Ulcus cruris mixtum"] },
     { f: "Was ist laut Kursheft die häufigste Ursache diabetischer Fußulcera?",
       o: ["Polyneuropathie allein (ca. 50 %)", "pAVK allein (ca. 50 %)", "Venöse Insuffizienz (ca. 35 %)", "Pilzinfektionen (ca. 15 %)"],
-      e: "Ca. 50 % Polyneuropathie, ca. 15 % pAVK, ca. 35 % Kombination aus PNP und Gefäßerkrankung. Der Foliensatz nennt für das neuropathische Ulkus 60–70 %.", s: "S. 29" },
+      e: "Ca. 50 % Polyneuropathie, ca. 15 % pAVK, ca. 35 % Kombination aus PNP und Gefäßerkrankung. Der Foliensatz nennt für das neuropathische Ulkus 60–70 %.", s: "S. 29", sp: ["dekubitus: Def. Diabetisches Fußulcus – Entstehung"] },
     { f: "Woran erkennt man einen neuropathischen diabetischen Fuß?",
       o: ["Trocken, warm, rosig, Pulse tastbar, schmerzlose Ulcera", "Kühl, blass, Pulse fehlend, starke Schmerzen", "Livide, mit akralen Nekrosen und Ruheschmerz", "Ödematös, mit Stauungsekzem"],
-      e: "Neuropathisch: trocken, warm, rosig, Pulse tastbar, schmerzlos (Malum perforans). Ischämisch: kühl, blass/livide, Pulse vermindert, Schmerzen.", s: "S. 30" },
+      e: "Neuropathisch: trocken, warm, rosig, Pulse tastbar, schmerzlos (Malum perforans). Ischämisch: kühl, blass/livide, Pulse vermindert, Schmerzen.", s: "S. 30", sp: ["dekubitus: Def. Diabetisches Fußulcus – Klinisches Erscheinungsbild"] },
     { f: "Welcher Temperaturunterschied ist typisch für den Charcot-Fuß (DNOAP)?",
       o: ["Überwärmung > 1 °C (oft > 2 °C) gegenüber der Gegenseite", "Der Fuß ist mindestens 2 °C kälter als die Gegenseite", "Kein Unterschied zur Gegenseite", "Überwärmung von mindestens 5 °C"],
-      e: "DNOAP: meist einseitige, schmerzlose Destruktion des Fußskeletts; Überwärmung > 1 °C (oft > 2 °C) gegenüber der Gegenseite.", s: "S. 30" },
+      e: "DNOAP: meist einseitige, schmerzlose Destruktion des Fußskeletts; Überwärmung > 1 °C (oft > 2 °C) gegenüber der Gegenseite.", s: "S. 30", sp: ["dekubitus: Def. Diabetisches Fußulcus – Klinisches Erscheinungsbild"] },
     { f: "Was bedeutet Wagner-Grad 3 laut Kursheft?",
       o: ["Tiefes Ulcus bis Knochen und/oder Sehnen", "Oberflächliches Ulcus", "Nekrose von Fußteilen", "Keine Läsion, evtl. Fußdeformation"],
-      e: "Wagner laut Heft: 0 keine Läsion · 1 oberflächlich · 2 bis Sehne/Kapsel · 3 bis Knochen · 4 Nekrose von Fußteilen · 5 Nekrose des gesamten Fußes. Achtung: Der Foliensatz formuliert Grad 3 als Abszess/Osteomyelitis.", s: "S. 29" },
+      e: "Wagner laut Heft: 0 keine Läsion · 1 oberflächlich · 2 bis Sehne/Kapsel · 3 bis Knochen · 4 Nekrose von Fußteilen · 5 Nekrose des gesamten Fußes. Achtung: Der Foliensatz formuliert Grad 3 als Abszess/Osteomyelitis.", s: "S. 29", sp: ["dekubitus: Def. Diabetisches Fußulcus – Klassifikation"] },
     { f: "Was bedeutet Armstrong-Stadium C?",
       o: ["Mit Ischämie", "Mit Infektion", "Mit Infektion und Ischämie", "Ohne Infektion und Ischämie"],
-      e: "Armstrong: A ohne · B mit Infektion · C mit Ischämie · D mit Infektion und Ischämie.", s: "S. 29" },
+      e: "Armstrong: A ohne · B mit Infektion · C mit Ischämie · D mit Infektion und Ischämie.", s: "S. 29", sp: ["dekubitus: Def. Diabetisches Fußulcus – Klassifikation"] },
     { f: "Womit prüft man die Sensibilität beim diabetischen Fuß?",
       o: ["Monofilament nach Semmes-Weinstein, Stimmgabel nach Rydel-Seiffer, Tip Therm", "Stemmer-Zeichen und Turgor-Test", "ABI-Messung allein", "Ratschow-Lagerungsprobe"],
-      e: "Sensibilitätsprüfung: Monofilament nach Semmes-Weinstein, Stimmgabel nach Rydel-Seiffer, Tip Therm.", s: "S. 32" },
+      e: "Sensibilitätsprüfung: Monofilament nach Semmes-Weinstein, Stimmgabel nach Rydel-Seiffer, Tip Therm.", s: "S. 32", sp: ["dekubitus: Def. Diabetisches Fußulcus – Diagnostik"] },
     { f: "Wofür steht das „S“ in der IRAS-Regel?",
       o: ["Schulung, Beratung, Information", "Sanierung der Infektion", "Schmerztherapie", "Stenteinlage"],
-      e: "IRAS: Infektsanierung · Revaskularisation · Amputation, wenn unumgänglich · Schulung, Beratung, Information.", s: "S. 32" },
+      e: "IRAS: Infektsanierung · Revaskularisation · Amputation, wenn unumgänglich · Schulung, Beratung, Information.", s: "S. 32", sp: ["dekubitus: Def. Diabetisches Fußulcus – Therapie"] },
     { f: "Was ist bei der Hautpflege des diabetischen Fußes zu beachten?",
       o: ["Zehenzwischenräume nicht eincremen", "Zehenzwischenräume besonders dick eincremen", "Nur alkoholische Lösungen verwenden", "Hornhaut mit Zinkpaste abdecken"],
       e: "W/O-Cremes oder Schäume mit Urea; Zehenzwischenräume nicht eincremen → Mazeration und Pilzbefall vermeiden.", s: "S. 33" },
     { f: "Warum dürfen Hydrokolloide beim diabetischen Fußulkus nur mit engmaschiger Kontrolle verwendet werden?",
       o: ["Bei Polyneuropathie bleibt eine Infektion oft unbemerkt", "Hydrokolloide lösen immer eine Allergie aus", "Sie trocknen die Wunde zu stark aus", "Sie sind zu teuer für die Dauertherapie"],
-      e: "Bei PNP fehlen oft Entzündungszeichen; durch den eingeschränkten Gasaustausch kann sich eine Infektion unbemerkt ausbreiten. KI: klinische Infektion, freiliegende Muskeln/Sehnen/Knochen, ischämische Ulcera (pAVK IV).", s: "S. 33" },
+      e: "Bei PNP fehlen oft Entzündungszeichen; durch den eingeschränkten Gasaustausch kann sich eine Infektion unbemerkt ausbreiten. KI: klinische Infektion, freiliegende Muskeln/Sehnen/Knochen, ischämische Ulcera (pAVK IV).", s: "S. 33", sp: ["dekubitus: Def. Diabetisches Fußulcus – Therapie"] },
     { f: "Was bedeutet Wagner-Grad 3 laut Foliensatz?",
       o: ["Tiefe Wunde mit Abszess/Osteomyelitis", "Tiefes Ulcus bis Knochen und/oder Sehnen", "Begrenzte Gangrän (Vorfuß)", "Oberflächliche Wunde"],
-      e: "Achtung: Das Kursheft (S. 29) formuliert Grad 3 als „tiefes Ulcus bis Knochen und/oder Sehnen“. Bitte klären, welche Fassung in der Prüfung gilt.", s: "Foliensatz; Heft S. 29" },
+      e: "Achtung: Das Kursheft (S. 29) formuliert Grad 3 als „tiefes Ulcus bis Knochen und/oder Sehnen“. Bitte klären, welche Fassung in der Prüfung gilt.", s: "Foliensatz; Heft S. 29", sp: ["dekubitus: Def. Diabetisches Fußulcus – Klassifikation"] },
     { f: "Was trifft auf die Armstrong-Klassifikation (University of Texas) laut Foliensatz zu?",
       o: ["Sie ist ein 4×3-System aus Graden und Stadien", "Stadium C bedeutet Ischämie", "Grad 0 ist eine epithelisierte Wunde", "Stadium A bedeutet Infektion und Ischämie"], r: 3,
-      e: "Grade 0 epithelisiert · 1 oberflächlich · 2 bis Sehne/Kapsel/Knochen · 3 Abszess/Osteomyelitis; Stadien A ohne · B Infektion · C Ischämie · D beides.", s: "Foliensatz" },
+      e: "Grade 0 epithelisiert · 1 oberflächlich · 2 bis Sehne/Kapsel/Knochen · 3 Abszess/Osteomyelitis; Stadien A ohne · B Infektion · C Ischämie · D beides.", s: "Foliensatz", sp: ["dekubitus: Def. Diabetisches Fußulcus – Klassifikation"] },
     { f: "Welche Form des diabetischen Fußulkus ist laut Foliensatz die häufigste komplizierte Form?",
       o: ["Neuro-ischämisch – schlechte Prognose, da meist schmerzlos", "Rein neuropathisch", "Rein ischämisch", "Charcot-Fuß"],
       e: "Neuropathisch ist die häufigste Form (60–70 % laut Folien); neuro-ischämisch die häufigste komplizierte Form.", s: "Foliensatz" },
     { f: "Welcher HbA1c-Zielwert wird beim diabetischen Fußulkus genannt?",
       o: ["HbA1c < 7 %", "HbA1c < 12 %", "HbA1c > 9 %", "HbA1c < 3 %"],
-      e: "Blutzuckeroptimierung im multidisziplinären Ansatz (Diabetologie, Chirurgie, Podologie).", s: "Foliensatz" },
+      e: "Blutzuckeroptimierung im multidisziplinären Ansatz (Diabetologie, Chirurgie, Podologie).", s: "Foliensatz", sp: ["dekubitus: Def. Diabetisches Fußulcus – Therapie"] },
     { f: "Wofür steht das „S“ im IRAS-Prinzip laut Foliensatz?",
       o: ["Schutz vor Rezidiven (Druckentlastung, Schulung)", "Sepsis-Therapie", "Stentimplantation", "Sofortige Amputation"],
-      e: "Im Heft: Schulung, Beratung, Information – deckt sich mit deiner Randnotiz.", s: "Foliensatz; Heft S. 32" },
+      e: "Im Heft: Schulung, Beratung, Information – deckt sich mit deiner Randnotiz.", s: "Foliensatz; Heft S. 32", sp: ["dekubitus: Def. Diabetisches Fußulcus – Therapie"] },
     { f: "Woher stammt der Begriff „Dekubitus“?",
       o: ["Von lat. decumbere = niederliegen", "Von lat. decubitus = Druckstelle am Knochen", "Von griech. dekas = zehn", "Von lat. cubitus = Ellenbogen"],
       e: "Mehrzahl ebenfalls „Dekubitus“; synonym: Druckgeschwür, Druckverletzung.", s: "Foliensatz" },
     { f: "Muss bei der Kategorie „keiner Kategorie zuordenbar“ jeder Belag entfernt werden?",
       o: ["Nein – stabiler Schorf kann schützend wirken", "Ja, immer sofort chirurgisch", "Ja, aber nur mit Hydrogel", "Nein, Beläge werden nie entfernt"],
-      e: "Die Kategorie gilt, bis die wirkliche Tiefe beurteilt werden kann.", s: "Foliensatz" },
+      e: "Die Kategorie gilt, bis die wirkliche Tiefe beurteilt werden kann.", s: "Foliensatz", sp: ["dekubitus: Def. Dekubitus – Klassifikation"] },
     { f: "Welcher Risikofaktor wirkt laut Foliensatz direkt auf das Dekubitusrisiko?",
       o: ["Beeinträchtigte Mobilität", "Durchblutungsstörung", "Mangelernährung", "Hautfeuchtigkeit"],
-      e: "Mobilität wirkt direkt (mehr Druck und Scherkräfte); Durchblutungsstörungen wirken indirekt (schwächen die Gewebetoleranz).", s: "Foliensatz" },
+      e: "Mobilität wirkt direkt (mehr Druck und Scherkräfte); Durchblutungsstörungen wirken indirekt (schwächen die Gewebetoleranz).", s: "Foliensatz", sp: ["dekubitus: Def. Dekubitus – Risikofaktoren"] },
     { f: "Was sollen Menschen mit Ulcus cruris venosum laut Foliensatz meiden?",
       o: ["Sauna", "Wärmflaschen", "Kraftsport", "Spazierengehen"], r: 3,
       e: "Kein Kraftsport, keine Sportarten mit abrupten Bewegungswechseln; Wärme über 28 °C meiden: Wärmflaschen, heißes Baden, Sauna, Solarium.", s: "Foliensatz" }
@@ -291,19 +291,19 @@ Lernapp.thema({
 <h3>1. Chronische Wunden <span class="seite">S. 2–4</span></h3>
 <ul>
   <li>Ca. 1,2 Mio. Menschen in Deutschland haben eine chronische Wunde, meist &gt; 70 Jahre und multimorbid. Im Schnitt dauert es 4 Jahre bis zur ursachengerechten Behandlung; vom ersten Symptom der Grunderkrankung bis zur Wunde ca. 11 Jahre (S. 2).</li>
-  <li><b>Chronisch</b> = keine Heilungstendenz nach 4–12 Wochen trotz fachgerechter Therapie (Expertenstandard). <b>Akut</b> = Wundheilungsphasen regelrecht durchlaufen, Heilung innerhalb von 4 Wochen (S. 3–4).</li>
+  <li><span class="sp" data-sp="dekubitus: Def. chronische Wunde|chronwunden: Basiswissen chronische Wunden">Schwerpunkt</span><b>Chronisch</b> = keine Heilungstendenz nach 4–12 Wochen trotz fachgerechter Therapie (Expertenstandard). <b>Akut</b> = Wundheilungsphasen regelrecht durchlaufen, Heilung innerhalb von 4 Wochen (S. 3–4).</li>
   <li>Von Beginn an chronisch, wenn die Ursache eine chronische Erkrankung ist: Dekubitus, Ulcus cruris (venosum, arteriosum, mixtum), Diabetisches Fußulkus – zugleich die häufigsten chronischen Wundarten (S. 2, 4).</li>
   <li><b>Hard-to-heal:</b> Ulcera &gt; 6 cm², älter als 6 Monate, Ansprechen auf Kompression innerhalb von 6 Monaten unwahrscheinlich. Pathomechanismus: pathologische Entzündung, kein Übergang von der Exsudations- in die Granulationsphase (S. 4).</li>
 </ul>
 
 <h3>2. Dekubitus <span class="stern" title="im Heft als prüfungsrelevant markiert">★</span> <span class="seite">S. 5–13</span></h3>
-<p class="merke"><b>Definition (NPUAP 2014):</b> „Ein Dekubitus ist eine lokal begrenzte Schädigung der Haut und/oder des darunter liegenden Gewebes, typischerweise über knöchernen Vorsprüngen, infolge von Druck oder von Druck in Verbindung mit Scherkräften.“ (S. 5)</p>
+<p class="merke"><span class="sp" data-sp="dekubitus: Def. Dekubitus">Schwerpunkt</span><b>Definition (NPUAP 2014):</b> „Ein Dekubitus ist eine lokal begrenzte Schädigung der Haut und/oder des darunter liegenden Gewebes, typischerweise über knöchernen Vorsprüngen, infolge von Druck oder von Druck in Verbindung mit Scherkräften.“ (S. 5)</p>
 <ul>
-  <li>Scherkräfte verformen tieferliegendes Gewebe; nicht gleichbedeutend mit Reibung (nur oberflächlich, Haut gegen Bettlaken). Es gibt keinen Schwellenwert für schädlichen Druck (S. 5).</li>
-  <li><b>Mechanismen:</b> direkte Deformation des Gewebes und Verschluss von Blut- und Lymphgefäßen → Minderversorgung mit O₂, Stoffwechselprodukte nicht abtransportiert. Muskelzellen sind besonders empfindlich: Muskelnekrosen innerhalb von Minuten möglich; Hautzellen widerstandsfähiger. Dekubitus entsteht in der Tiefe, nicht in der Epidermis (S. 5–6).</li>
-  <li><b>Kaskade (S. 7):</b> eingeschränkte Mobilität → Druck → Zellverformung, Gefäßkompression → lokale Ischämie → gestörter Zellstoffwechsel (Hypoxie, Muskelnekrose, keine Giftstoff-Abfuhr) → Azidose → Vasodilatation → Flüssigkeitsaustritt → Ödem/Blasen bzw. Gefäßthrombosen → irreversibles Absterben. Mikroklima (Temperatur, Feuchtigkeit) und Scherkräfte verstärken.</li>
+  <li><span class="sp" data-sp="dekubitus: Def. Dekubitus – Entstehung">Schwerpunkt</span>Scherkräfte verformen tieferliegendes Gewebe; nicht gleichbedeutend mit Reibung (nur oberflächlich, Haut gegen Bettlaken). Es gibt keinen Schwellenwert für schädlichen Druck (S. 5).</li>
+  <li><span class="sp" data-sp="dekubitus: Def. Dekubitus – Entstehung">Schwerpunkt</span><b>Mechanismen:</b> direkte Deformation des Gewebes und Verschluss von Blut- und Lymphgefäßen → Minderversorgung mit O₂, Stoffwechselprodukte nicht abtransportiert. Muskelzellen sind besonders empfindlich: Muskelnekrosen innerhalb von Minuten möglich; Hautzellen widerstandsfähiger. Dekubitus entsteht in der Tiefe, nicht in der Epidermis (S. 5–6).</li>
+  <li><span class="sp" data-sp="dekubitus: Def. Dekubitus – Entstehung">Schwerpunkt</span><b>Kaskade (S. 7):</b> eingeschränkte Mobilität → Druck → Zellverformung, Gefäßkompression → lokale Ischämie → gestörter Zellstoffwechsel (Hypoxie, Muskelnekrose, keine Giftstoff-Abfuhr) → Azidose → Vasodilatation → Flüssigkeitsaustritt → Ödem/Blasen bzw. Gefäßthrombosen → irreversibles Absterben. Mikroklima (Temperatur, Feuchtigkeit) und Scherkräfte verstärken.</li>
   <li><b>Prädilektionsstellen:</b> Knochen mit geringer Weichteildeckung – Kreuz- und Steißbein, Trochanter major, Fersen, Hinterhaupt, Schulterblätter, Dornfortsätze, Ellenbogen, Ohrmuschel, Jochbein, seitliche Knöchel u. a.; außerdem unter Prothesen, Gipsverbänden, engen Schuhen (S. 6, Lösung S. 35). <span class="hand-inline">Handschriftlich: auch Hilfsmittel wie Brille, O₂-Brille, Zahnprothese.</span></li>
-  <li><b>Risikofaktoren</b> (&gt; 100 bekannt): die wichtigsten sind Beeinträchtigung der Mobilität, Störung der Durchblutung und beeinträchtigter Hautzustand bzw. vorhandener Dekubitus. Je höher der Unterstützungsbedarf, desto höher das Risiko (S. 8).</li>
+  <li><span class="sp" data-sp="dekubitus: Def. Dekubitus – Risikofaktoren">Schwerpunkt</span><b>Risikofaktoren</b> (&gt; 100 bekannt): die wichtigsten sind Beeinträchtigung der Mobilität, Störung der Durchblutung und beeinträchtigter Hautzustand bzw. vorhandener Dekubitus. Je höher der Unterstützungsbedarf, desto höher das Risiko (S. 8).</li>
 </ul>
 <div class="tabelle"><table>
   <caption>Klassifikation nach EPUAP/NPUAP/PPPIA ★ (S. 9–10)</caption>
@@ -318,11 +318,11 @@ Lernapp.thema({
   </tbody>
 </table></div>
 <ul>
-  <li>Die Klassifikation ist keine Reihenfolge: Aus Kategorie I kann ohne Gegenmaßnahmen direkt Kategorie IV werden (S. 10).</li>
+  <li><span class="sp" data-sp="dekubitus: Def. Dekubitus – Klassifikation">Schwerpunkt</span>Die Klassifikation ist keine Reihenfolge: Aus Kategorie I kann ohne Gegenmaßnahmen direkt Kategorie IV werden (S. 10).</li>
   <li>Abgrenzung zu Feuchtigkeitswunden (IAD, Mazeration, Intertrigo): Dekubitus ist scharf begrenzt, entsteht in der Tiefe, über knöchernen Vorsprüngen; Feuchtigkeitswunden in Hautfalten (z. B. Gesäßfalte). Kategorie II nicht für Skin Tears oder Pflasterschäden verwenden (S. 9–10).</li>
   <li><b>Fingertest</b> (Übung II, S. 35): Leichter Druck mit dem Finger auf die Rötung. Weißfärbung → Test negativ, kein Dekubitus. Bleibt die Stelle rot → Test positiv, Dekubitus Kategorie I.</li>
 </ul>
-<h4>Dekubitusprophylaxe (S. 11–12)</h4>
+<h4><span class="sp" data-sp="dekubitus: Def. Dekubitus – Prophylaxe">Schwerpunkt</span>Dekubitusprophylaxe (S. 11–12)</h4>
 <ul>
   <li>Muss vorausschauend, konsequent und regelmäßig erfolgen – bevor Rötungen auftreten. Abweichungen (z. B. Ablehnung) mit Begründung dokumentieren. Schätzungsweise jeder 3. Mensch mit höhergradigem Dekubitus stirbt an Sepsis (S. 11).</li>
   <li>Bestandteile: Risikoeinschätzung · Förderung der Eigenbewegung · Hautbeobachtung · Hautpflege (sauber, trocken, pH-neutrale Syndets, W/O mit Urea) · Beratung · Positionswechsel (30°-Seitenlage, 135°, schiefe Ebene, Bobath, Weichlagerung, Mikropositionierung als Ergänzung) · Vermeidung therapiebedingten Drucks (Zu- und Ableitungen) · Ernährung · Kontinuität und Evaluation (S. 11–12).</li>
@@ -351,7 +351,7 @@ Lernapp.thema({
 </table></div>
 <p>Infektionen mit Antiseptika oder NaCl-/Ringerlösung spülen; bei Stuhlinkontinenz im Sakralbereich Analtampons; Schmerztherapie mit Analgetika.</p>
 
-<h3>3. Ulcus cruris – Überblick <span class="seite">S. 14</span></h3>
+<h3>3. Ulcus cruris – Überblick <span class="sp" data-sp="dekubitus: Def. Ulcus cruris">Schwerpunkt</span> <span class="seite">S. 14</span></h3>
 <ul>
   <li>Mindestens bis in die Dermis reichender Substanzdefekt, meist am distalen Unterschenkel. 60–70 % venös, ca. 10 % arteriell, ca. 10 % gemischt (mixtum), ca. 10 % andere Ursachen (Infektionen, Mykosen, Malignome, Kalziphylaxie, Medikamente).</li>
   <li>Ein Geschwür = Ulcus cruris; mehrere an einem Bein = Ulcera cruris; an beiden Beinen mehrere = Ulcera crurum.</li>
@@ -359,28 +359,28 @@ Lernapp.thema({
 
 <h3>4. Ulcus cruris venosum <span class="stern" title="im Heft als prüfungsrelevant markiert">★</span> <span class="seite">S. 14–22</span></h3>
 <ul>
-  <li>Venöses Beingeschwür infolge einer CVI – Komplikation der CVI. Ursachen: primäre Varikosis, Phlebothrombose, Thrombophlebitis, posttraumatische Verletzungen, Angiodysplasien (S. 14).</li>
+  <li><span class="sp" data-sp="dekubitus: Def. Ulcus cruris venosum">Schwerpunkt</span>Venöses Beingeschwür infolge einer CVI – Komplikation der CVI. Ursachen: primäre Varikosis, Phlebothrombose, Thrombophlebitis, posttraumatische Verletzungen, Angiodysplasien (S. 14).</li>
   <li>Venöser Rückfluss: ca. 10 % oberflächlich (epifaszial), ca. 90 % tief (subfaszial); Hauptkraft ist die Wadenmuskelpumpe; Venenklappen = Volumenventile (S. 14).</li>
-  <li><b>Pathogenese (S. 15):</b> gestörter Rückfluss (Phlebothrombose, postthrombotisches Syndrom, Varikosis) → Privatkreislauf, Druckerhöhung bis in die Kapillaren → Ödem → Lymphsystem überlastet → Dermatoliposklerose → längere Diffusionsstrecke → Minderversorgung → Ulcus.</li>
+  <li><span class="sp" data-sp="dekubitus: Def. Ulcus cruris venosum – Entstehung">Schwerpunkt</span><b>Pathogenese (S. 15):</b> gestörter Rückfluss (Phlebothrombose, postthrombotisches Syndrom, Varikosis) → Privatkreislauf, Druckerhöhung bis in die Kapillaren → Ödem → Lymphsystem überlastet → Dermatoliposklerose → längere Diffusionsstrecke → Minderversorgung → Ulcus.</li>
   <li><b>Therapieresistent:</b> keine Heilungstendenz binnen 3 Monaten unter adäquater phlebologischer Therapie oder nach 12 Monaten nicht abgeheilt (S. 15).</li>
-  <li><b>Klinik:</b> typischerweise an der Knöchelinnenseite; rund, oval, zackig oder gamaschenartig; Wundgrund schmierig-fibrinös bis eitrig; Umgebung oft ekzematös. Komplikationen: Stauungsdermatitis, Infektion, Erysipel, Kontaktallergien, Karzinom (S. 15–16).</li>
-  <li><b>Diagnostik (S. 16):</b> Anamnese, Inspektion, Palpation, Wundabstrich, Umfangsmessung, Gangbild, neurologische Untersuchung, Doppler-/Farbduplexsonografie, ABI/KADI (arterielle Mitbeteiligung ausschließen), ggf. Phlebografie, Histologie, Ausschluss von Diabetes, Polyneuropathie, pAVK, Blutuntersuchung.</li>
+  <li><span class="sp" data-sp="dekubitus: Def. Ulcus cruris venosum – Klinisches Erscheinungsbild">Schwerpunkt</span><b>Klinik:</b> typischerweise an der Knöchelinnenseite; rund, oval, zackig oder gamaschenartig; Wundgrund schmierig-fibrinös bis eitrig; Umgebung oft ekzematös. Komplikationen: Stauungsdermatitis, Infektion, Erysipel, Kontaktallergien, Karzinom (S. 15–16).</li>
+  <li><span class="sp" data-sp="dekubitus: Def. Ulcus cruris venosum – Diagnostik">Schwerpunkt</span><b>Diagnostik (S. 16):</b> Anamnese, Inspektion, Palpation, Wundabstrich, Umfangsmessung, Gangbild, neurologische Untersuchung, Doppler-/Farbduplexsonografie, ABI/KADI (arterielle Mitbeteiligung ausschließen), ggf. Phlebografie, Histologie, Ausschluss von Diabetes, Polyneuropathie, pAVK, Blutuntersuchung.</li>
 </ul>
 <div class="tabelle"><table>
   <caption>CVI nach Widmer (mod. nach Marshall/Wüstenberg) (S. 15)</caption>
   <thead><tr><th>Grad</th><th>Klinisches Bild</th></tr></thead>
   <tbody>
-    <tr><td>I</td><td>Corona phlebectatica (Fußrand), Phlebödem</td></tr>
+    <tr><td><span class="sp" data-sp="dekubitus: Def. Ulcus cruris venosum – Klassifikation">Schwerpunkt</span>I</td><td>Corona phlebectatica (Fußrand), Phlebödem</td></tr>
     <tr><td>II</td><td>Ödem, Dermatoliposklerose, Atrophie blanche, Purpura jaune d’ocre, Stauungsekzem</td></tr>
     <tr><td>IIIa</td><td>abgeheiltes Ulcus (Ulcusnarbe)</td></tr>
     <tr><td>IIIb</td><td>florides Ulcus</td></tr>
   </tbody>
 </table></div>
 <ul>
-  <li><b>Therapie (S. 17):</b> zuerst Kausaltherapie. Endovaskulär/operativ: Sklerotherapie, Radiofrequenzablation, endovenöse Lasertherapie, Crossektomie, Perforansligatur, Phlebektomie, Varizenstripping. Konservativ: phasengerechte Wundtherapie, Kompression, Hautpflege, Gehtraining (Sprunggelenk), Gewichtsreduktion, Ernährung, Flüssigkeit, MLD, Wechselbäder/kaltes Abduschen. Varikosis und postthrombotisches Syndrom sind nicht heilbar.</li>
-  <li><b>Lokaltherapie (S. 18):</b> erst Wundreinigung/Débridement; Antiseptika bei kritischer Kolonisation oder Infektion, systemische Antibiotika kritisch; Umgebungshaut mit Acrylat-Copolymer schützen; anfangs Superabsorber/Hydrokapillarverbände, danach feinporige PU-Schäume; Wundauflagen ohne Kleberand.</li>
+  <li><span class="sp" data-sp="dekubitus: Def. Ulcus cruris venosum – Therapie">Schwerpunkt</span><b>Therapie (S. 17):</b> zuerst Kausaltherapie. Endovaskulär/operativ: Sklerotherapie, Radiofrequenzablation, endovenöse Lasertherapie, Crossektomie, Perforansligatur, Phlebektomie, Varizenstripping. Konservativ: phasengerechte Wundtherapie, Kompression, Hautpflege, Gehtraining (Sprunggelenk), Gewichtsreduktion, Ernährung, Flüssigkeit, MLD, Wechselbäder/kaltes Abduschen. Varikosis und postthrombotisches Syndrom sind nicht heilbar.</li>
+  <li><span class="sp" data-sp="dekubitus: Def. Ulcus cruris venosum – Therapie">Schwerpunkt</span><b>Lokaltherapie (S. 18):</b> erst Wundreinigung/Débridement; Antiseptika bei kritischer Kolonisation oder Infektion, systemische Antibiotika kritisch; Umgebungshaut mit Acrylat-Copolymer schützen; anfangs Superabsorber/Hydrokapillarverbände, danach feinporige PU-Schäume; Wundauflagen ohne Kleberand.</li>
 </ul>
-<h4>Kompressionstherapie (S. 18–20)</h4>
+<h4><span class="sp" data-sp="dekubitus: Def. Ulcus cruris venosum – Therapie">Schwerpunkt</span>Kompressionstherapie (S. 18–20)</h4>
 <ul>
   <li>Steigert venösen und lymphatischen Rückfluss, verkleinert den Venendurchmesser → fast doppelte Fließgeschwindigkeit, weniger transmuraler Druck, Venenklappen schließen wieder.</li>
   <li>Drei Phasen: Entstauungsphase (PKV mit Kurzzugbinden/Mehrkomponentensystemen oder MAK) → Erhaltungsphase (MKS, Ulcus-Strumpfsysteme) → Prävention nach Abheilung (meist MKS der KKL II).</li>
@@ -395,35 +395,35 @@ Lernapp.thema({
 
 <h3>5. Ulcus cruris arteriosum <span class="stern" title="im Heft als prüfungsrelevant markiert">★</span> <span class="seite">S. 22–27</span></h3>
 <ul>
-  <li>Substanzdefekt infolge der pAVK; Ursache in ca. 95 % Atherosklerose. In Deutschland ca. 4,5 Mio. Betroffene (S. 22).</li>
-  <li>Ursachen der Minderdurchblutung: Atherosklerose, arterielle Embolie, Vaskulitis, Gerinnungsstörungen, Veranlagung, Trauma. Risikofaktoren: Nikotin, Hypertonie, Diabetes, Dyslipidämie, abdominale Adipositas, Ernährung, Bewegungsmangel, Hyperfibrinogenämie, Homocysteinämie (&gt; 15 µmol/l), Polyarthritis (S. 23).</li>
-  <li><b>Klinik (S. 24):</b> an äußeren Fußrändern, Außenseiten der Unterschenkel, Außenknöcheln; scharf begrenzt, wie ausgestanzt; Haut blass, weiß, marmoriert oder livide, glänzend, haarlos; verdickte Zehennägel; distale Hypothermie; tiefe Wunden mit freiliegenden Sehnen und Knochen.</li>
-  <li><b>Diagnostik (S. 24–25):</b> Inspektion, Pulse, KADI/ABI – Achtung: bei Mönckeberg-Sklerose falsch hohe Werte (wichtig: periphere Dopplerdrücke &lt; 70 mmHg → fehlende Wundheilung); Doppler/Duplex, tcpO₂, Labor, Laufband, EKG, Wundabstrich, Angiografie, DSA (Nierenfunktion beachten).</li>
+  <li><span class="sp" data-sp="dekubitus: Def. Ulcus cruris arteriosum">Schwerpunkt</span>Substanzdefekt infolge der pAVK; Ursache in ca. 95 % Atherosklerose. In Deutschland ca. 4,5 Mio. Betroffene (S. 22).</li>
+  <li><span class="sp" data-sp="dekubitus: Def. Ulcus cruris arteriosum – Entstehung">Schwerpunkt</span>Ursachen der Minderdurchblutung: Atherosklerose, arterielle Embolie, Vaskulitis, Gerinnungsstörungen, Veranlagung, Trauma. Risikofaktoren: Nikotin, Hypertonie, Diabetes, Dyslipidämie, abdominale Adipositas, Ernährung, Bewegungsmangel, Hyperfibrinogenämie, Homocysteinämie (&gt; 15 µmol/l), Polyarthritis (S. 23).</li>
+  <li><span class="sp" data-sp="dekubitus: Def. Ulcus cruris arteriosum – Klinisches Erscheinungsbild">Schwerpunkt</span><b>Klinik (S. 24):</b> an äußeren Fußrändern, Außenseiten der Unterschenkel, Außenknöcheln; scharf begrenzt, wie ausgestanzt; Haut blass, weiß, marmoriert oder livide, glänzend, haarlos; verdickte Zehennägel; distale Hypothermie; tiefe Wunden mit freiliegenden Sehnen und Knochen.</li>
+  <li><span class="sp" data-sp="dekubitus: Def. Ulcus cruris arteriosum – Diagnostik">Schwerpunkt</span><b>Diagnostik (S. 24–25):</b> Inspektion, Pulse, KADI/ABI – Achtung: bei Mönckeberg-Sklerose falsch hohe Werte (wichtig: periphere Dopplerdrücke &lt; 70 mmHg → fehlende Wundheilung); Doppler/Duplex, tcpO₂, Labor, Laufband, EKG, Wundabstrich, Angiografie, DSA (Nierenfunktion beachten).</li>
 </ul>
 <div class="tabelle"><table>
   <caption>Klassifikation der pAVK (S. 24)</caption>
   <thead><tr><th>Fontaine</th><th>Klinik</th><th>Rutherford</th></tr></thead>
   <tbody>
-    <tr><td>I</td><td>asymptomatisch</td><td>Grad 0 / Kat. 0</td></tr>
+    <tr><td><span class="sp" data-sp="dekubitus: Def. Ulcus cruris arteriosum – Klassifikation">Schwerpunkt</span>I</td><td>asymptomatisch</td><td>Grad 0 / Kat. 0</td></tr>
     <tr><td>IIa</td><td>Gehstrecke &gt; 200 m</td><td>Grad I / Kat. 1 (leichte Claudicatio)</td></tr>
     <tr><td>IIb</td><td>Gehstrecke &lt; 200 m</td><td>Grad I / Kat. 2–3 (mäßige bis schwere Claudicatio)</td></tr>
     <tr><td>III</td><td>ischämischer Ruheschmerz</td><td>Grad II / Kat. 4</td></tr>
     <tr><td>IV</td><td>Ulcus, Gangrän</td><td>Grad III / Kat. 5 (kleinflächige) bzw. 6 (großflächige Nekrose)</td></tr>
   </tbody>
 </table></div>
-<p class="merke"><b>IRAN-Prinzip ★ (S. 25):</b> Infektionskontrolle, Mumifizierung der Gangrän · Revaskularisation · Amputation bzw. Nekroseentfernung im infektionsfreien Stadium · Nachsorge (Wundbehandlung, Schuhwerk, Gefäßsport, Risikofaktoren).</p>
+<p class="merke"><span class="sp" data-sp="dekubitus: Def. Ulcus cruris arteriosum – Therapie">Schwerpunkt</span><b>IRAN-Prinzip ★ (S. 25):</b> Infektionskontrolle, Mumifizierung der Gangrän · Revaskularisation · Amputation bzw. Nekroseentfernung im infektionsfreien Stadium · Nachsorge (Wundbehandlung, Schuhwerk, Gefäßsport, Risikofaktoren).</p>
 <p class="warnung">Ohne Abklärung des Gefäßstatus und ohne Zweitmeinung keine Amputation!</p>
 <ul>
-  <li><b>Bei möglicher Revaskularisation (S. 25):</b> invasiv (PTA, Stent, Bypass, Patch; danach Débridement); systemisch (Durchblutung verbessern, Infusionen, ggf. Antibiotika, Risikofaktoren, Gehtraining im Stadium IIa); lokal (Wundreinigung, Nekrosen abtragen, Abszesse entlasten, phasengerechte Auflagen, Druckreduzierung). <b>Bei kritischer Ischämie (Knöchelarteriendruck &lt; 50 mmHg) keine Kompressionstherapie!</b></li>
-  <li><b>Ohne Revaskularisationsmöglichkeit (S. 26):</b> mumifizierte trockene Nekrose → trocken behandeln; feuchte Wunde → lokal antiseptisch, Infektionsprophylaxe.</li>
-  <li><b>Unterstützend (S. 26):</b> engmaschige Nachsorge, Thrombozytenfunktionshemmer/ggf. Antikoagulation, Gehtraining 2–3×/Woche, Rauchstopp, orthopädisches Schuhwerk, Fußpflege, keine einengende Kleidung, Beine nachts tief lagern, Füße warmhalten, regelmäßige Puls- und Hautkontrolle.</li>
+  <li><span class="sp" data-sp="dekubitus: Def. Ulcus cruris arteriosum – Therapie">Schwerpunkt</span><b>Bei möglicher Revaskularisation (S. 25):</b> invasiv (PTA, Stent, Bypass, Patch; danach Débridement); systemisch (Durchblutung verbessern, Infusionen, ggf. Antibiotika, Risikofaktoren, Gehtraining im Stadium IIa); lokal (Wundreinigung, Nekrosen abtragen, Abszesse entlasten, phasengerechte Auflagen, Druckreduzierung). <b>Bei kritischer Ischämie (Knöchelarteriendruck &lt; 50 mmHg) keine Kompressionstherapie!</b></li>
+  <li><span class="sp" data-sp="dekubitus: Def. Ulcus cruris arteriosum – Therapie">Schwerpunkt</span><b>Ohne Revaskularisationsmöglichkeit (S. 26):</b> mumifizierte trockene Nekrose → trocken behandeln; feuchte Wunde → lokal antiseptisch, Infektionsprophylaxe.</li>
+  <li><span class="sp" data-sp="dekubitus: Def. Ulcus cruris arteriosum – Therapie">Schwerpunkt</span><b>Unterstützend (S. 26):</b> engmaschige Nachsorge, Thrombozytenfunktionshemmer/ggf. Antikoagulation, Gehtraining 2–3×/Woche, Rauchstopp, orthopädisches Schuhwerk, Fußpflege, keine einengende Kleidung, Beine nachts tief lagern, Füße warmhalten, regelmäßige Puls- und Hautkontrolle.</li>
 </ul>
 <div class="tabelle"><table>
   <caption>Ulcus cruris venosum vs. arteriosum ★ (Übung III, S. 27, Lösung S. 36)</caption>
   <thead><tr><th>Kriterium</th><th>venosum</th><th>arteriosum</th></tr></thead>
   <tbody>
     <tr><td>Grunderkrankung</td><td>CVI</td><td>pAVK</td></tr>
-    <tr><td>Lokalisation</td><td>Unterschenkel-Vorderseite oder Innenknöchel; ggf. gamaschenartig</td><td>Unterschenkel-Außenseite, Außenknöchel, äußere Fußränder</td></tr>
+    <tr><td><span class="sp" data-sp="dekubitus: Def. Ulcus cruris venosum – Klinisches Erscheinungsbild|dekubitus: Def. Ulcus cruris arteriosum – Klinisches Erscheinungsbild">Schwerpunkt</span>Lokalisation</td><td>Unterschenkel-Vorderseite oder Innenknöchel; ggf. gamaschenartig</td><td>Unterschenkel-Außenseite, Außenknöchel, äußere Fußränder</td></tr>
     <tr><td>Schmerzen</td><td>unterschiedlich; Linderung durch Hochlagern</td><td>stark; Ruheschmerz nachts → Linderung durch Herabhängen des Beins; Claudicatio</td></tr>
     <tr><td>Haut</td><td>trocken, schuppig, Hyperpigmentierung, Atrophie blanche, Purpura jaune d’ocre, Dermatoliposklerose, Stauungsekzem</td><td>blass, weiß, marmoriert oder livide, glänzend, haarlos; Nekrosen/Gangrän an Zehen; verdickte Nägel</td></tr>
     <tr><td>Ödeme</td><td>Knöchel- und Unterschenkelödeme</td><td>keine</td></tr>
@@ -435,7 +435,7 @@ Lernapp.thema({
   </tbody>
 </table></div>
 
-<h3>6. Ulcus cruris mixtum <span class="seite">S. 28</span></h3>
+<h3>6. Ulcus cruris mixtum <span class="sp" data-sp="dekubitus: Def. Ulcus cruris mixtum">Schwerpunkt</span> <span class="seite">S. 28</span></h3>
 <ul>
   <li>Arterielle und venöse Ursache; meist mehrere Ulcera ohne typische Prädilektionsstellen; führendes Symptom ist meist der Schmerz. <span class="hand-inline">Handschriftlich: „arteriovenös“.</span></li>
   <li>Kompressionstherapie ist durch die arterielle Komponente stark eingeschränkt oder kontraindiziert → pAVK frühzeitig behandeln, um später wieder komprimieren zu können.</li>
@@ -443,15 +443,15 @@ Lernapp.thema({
 
 <h3>7. Diabetisches Fußulkus <span class="stern" title="im Heft als prüfungsrelevant markiert">★</span> <span class="seite">S. 28–34</span></h3>
 <ul>
-  <li>Ca. 6 Mio. Menschen mit Diabetes in Deutschland. Diabetisches Fußsyndrom = Spätkomplikation durch Makro- und Mikroangiopathie, Neuropathie und Chondroarthropathie; umfasst alle pathologischen Veränderungen am Fuß. 2–10 % aller Diabetiker entwickeln ein Fußulkus. Jährlich ca. 8.500 Major- (oberhalb des Sprunggelenks) und ca. 30.400 Minoramputationen (S. 28).</li>
-  <li>Ursachen: ca. 50 % Polyneuropathie, ca. 15 % pAVK, ca. 35 % Kombination (S. 29).</li>
+  <li><span class="sp" data-sp="dekubitus: Def. Diabetisches Fußulcus">Schwerpunkt</span>Ca. 6 Mio. Menschen mit Diabetes in Deutschland. Diabetisches Fußsyndrom = Spätkomplikation durch Makro- und Mikroangiopathie, Neuropathie und Chondroarthropathie; umfasst alle pathologischen Veränderungen am Fuß. 2–10 % aller Diabetiker entwickeln ein Fußulkus. Jährlich ca. 8.500 Major- (oberhalb des Sprunggelenks) und ca. 30.400 Minoramputationen (S. 28).</li>
+  <li><span class="sp" data-sp="dekubitus: Def. Diabetisches Fußulcus – Entstehung">Schwerpunkt</span>Ursachen: ca. 50 % Polyneuropathie, ca. 15 % pAVK, ca. 35 % Kombination (S. 29).</li>
   <li><b>Polyneuropathie (S. 29):</b> sensibel (Kribbeln, Ameisenlaufen, brennende Schmerzen, Taubheit, Watte-Gefühl, verminderte Temperaturempfindung, schmerzlose Wunden); motorisch (Faszikulationen, Krämpfe, Muskelschwäche, frühes Zeichen: Parese der Zehenspreizung); autonom (Hypo-/Anhidrosis, Ödem, Ulcus, Osteoarthropathie, Ruhetachykardie, Gastroparese, Blasenstörung u. a.).</li>
 </ul>
 <div class="tabelle"><table>
   <caption>Arten des Diabetischen Fußulkus (S. 30)</caption>
   <thead><tr><th>Form</th><th>Merkmale</th></tr></thead>
   <tbody>
-    <tr><td>neuropathisch</td><td>trockener, warmer, rosiger Fuß; Fußpulse tastbar; Sensibilitätsstörung (Vibration, Druck, Schmerz, Temperatur); schmerzlose Ulcera (Malum perforans)</td></tr>
+    <tr><td><span class="sp" data-sp="dekubitus: Def. Diabetisches Fußulcus – Klinisches Erscheinungsbild">Schwerpunkt</span>neuropathisch</td><td>trockener, warmer, rosiger Fuß; Fußpulse tastbar; Sensibilitätsstörung (Vibration, Druck, Schmerz, Temperatur); schmerzlose Ulcera (Malum perforans)</td></tr>
     <tr><td>ischämisch</td><td>kühler, blasser, ggf. livider Fuß; Pulse vermindert oder fehlend; krampfartige Schmerzen beim Gehen oder in Ruhe; akrale Nekrosen, Gangrän</td></tr>
     <tr><td style="white-space:normal">ischämisch + neuropathisch</td><td>Zeichen des ischämischen Fußes, jedoch ohne Schmerzen</td></tr>
     <tr><td style="white-space:normal">Sonderform DNOAP (Charcot-Fuß)</td><td>meist einseitige, schmerzlose Destruktion des Fußskeletts nach unbemerkten Traumata; Nekrosen an Fußgelenken; Lymphödem; Überwärmung &gt; 1 °C (oft &gt; 2 °C) gegenüber der Gegenseite</td></tr>
@@ -461,7 +461,7 @@ Lernapp.thema({
   <caption>Klassifikation nach Wagner und Armstrong ★ (S. 29)</caption>
   <thead><tr><th>Grad</th><th>Wagner (Stadium A = ohne Infektion/Ischämie)</th></tr></thead>
   <tbody>
-    <tr><td>0</td><td>keine Läsion, evtl. Fußdeformation, Cellulitis, Hyperkeratose</td></tr>
+    <tr><td><span class="sp" data-sp="dekubitus: Def. Diabetisches Fußulcus – Klassifikation">Schwerpunkt</span>0</td><td>keine Läsion, evtl. Fußdeformation, Cellulitis, Hyperkeratose</td></tr>
     <tr><td>1</td><td>oberflächliches Ulcus</td></tr>
     <tr><td>2</td><td>tiefes Ulcus bis Sehne oder Kapsel</td></tr>
     <tr><td>3</td><td>tiefes Ulcus bis Knochen und/oder Sehnen</td></tr>
@@ -469,17 +469,17 @@ Lernapp.thema({
     <tr><td>5</td><td>Nekrose des gesamten Fußes</td></tr>
   </tbody>
 </table></div>
-<p>Armstrong-Stadien: A ohne Zusatz · B mit Infektion · C mit Ischämie · D mit Infektion und Ischämie.</p>
+<p><span class="sp" data-sp="dekubitus: Def. Diabetisches Fußulcus – Klassifikation">Schwerpunkt</span>Armstrong-Stadien: A ohne Zusatz · B mit Infektion · C mit Ischämie · D mit Infektion und Ischämie.</p>
 <p class="hand">Als Prüfungshinweis vermerkt: Klassifikationen nach Fontaine, Widmer, Wagner.</p>
 <ul>
   <li><b>Risikofaktoren (S. 31):</b> u. a. Neuropathie, pAVK, Alter &gt; 60, Adipositas (BMI &gt; 35), Nikotin, Alkohol, Sehschwäche, Hornhaut, Fußdeformität, falsche Fußpflege, Barfußlaufen, ungeeignetes Schuhwerk, nicht bemerkte Bagatellverletzungen, eingeschränkte Gelenkbeweglichkeit, vorangegangene Amputation. Läsion meist im Vorfuß- und Zehenbereich.</li>
-  <li><b>Diagnostik (S. 32):</b> Untersuchung von Farbe, Temperatur, Puls- und Reflexstatus; tcpO₂; Podografie; KADI; Duplex; MR-Angiografie; Monofilament nach Semmes-Weinstein, Stimmgabel nach Rydel-Seiffer, Tip Therm; Röntgen/CT/MRT (Charcot).</li>
+  <li><span class="sp" data-sp="dekubitus: Def. Diabetisches Fußulcus – Diagnostik">Schwerpunkt</span><b>Diagnostik (S. 32):</b> Untersuchung von Farbe, Temperatur, Puls- und Reflexstatus; tcpO₂; Podografie; KADI; Duplex; MR-Angiografie; Monofilament nach Semmes-Weinstein, Stimmgabel nach Rydel-Seiffer, Tip Therm; Röntgen/CT/MRT (Charcot).</li>
 </ul>
-<p class="merke"><b>IRAS-Regel ★ (S. 32):</b> Infektsanierung · Revaskularisation · Amputation, wenn unumgänglich · Schulung, Beratung, Information. Ziele: Lebensqualität, Senkung des Amputationsrisikos, Funktionserhalt – nur multiprofessionell erreichbar.</p>
+<p class="merke"><span class="sp" data-sp="dekubitus: Def. Diabetisches Fußulcus – Therapie">Schwerpunkt</span><b>IRAS-Regel ★ (S. 32):</b> Infektsanierung · Revaskularisation · Amputation, wenn unumgänglich · Schulung, Beratung, Information. Ziele: Lebensqualität, Senkung des Amputationsrisikos, Funktionserhalt – nur multiprofessionell erreichbar.</p>
 <ul>
-  <li><b>Therapie (S. 32):</b> Blutzucker optimieren, Grunderkrankungen behandeln, Infektionskontrolle, Débridement, konsequente und vollständige Druckentlastung (Gehstützen, Orthesen, Rollstuhl, Total Contact Cast, Bettruhe), phasengerechte Wundversorgung, Gefäßtherapie, Fußchirurgie, ggf. Angioplastie/Amputation (Zweitmeinung!), Schulung.</li>
+  <li><span class="sp" data-sp="dekubitus: Def. Diabetisches Fußulcus – Therapie">Schwerpunkt</span><b>Therapie (S. 32):</b> Blutzucker optimieren, Grunderkrankungen behandeln, Infektionskontrolle, Débridement, konsequente und vollständige Druckentlastung (Gehstützen, Orthesen, Rollstuhl, Total Contact Cast, Bettruhe), phasengerechte Wundversorgung, Gefäßtherapie, Fußchirurgie, ggf. Angioplastie/Amputation (Zweitmeinung!), Schulung.</li>
   <li><b>Hautpflege (S. 33):</b> W/O-Cremes oder Schäume mit Urea; Zehenzwischenräume nicht eincremen (Mazeration, Pilze).</li>
-  <li><b>Wundversorgung (S. 33):</b> Verdacht auf Infektion → Antiseptika, Auflagen mit Polihexanid; systemische Antibiose nach Antibiogramm. Trockene Nekrosen bei arterieller/gemischter Ursache nicht einweichen und erst nach Revaskularisation entfernen. Standard: PU-Schaumverbände ohne Klebeflächen; Fixierung locker, an Zehen kein Druck durch Drehungen. Hydrokolloide nur mit engmaschiger Kontrolle (Infektion wird bei PNP nicht bemerkt); kontraindiziert bei klinischer Infektion, freiliegenden Muskeln/Sehnen/Knochen, ischämischen Ulcera (pAVK IV).</li>
+  <li><span class="sp" data-sp="dekubitus: Def. Diabetisches Fußulcus – Therapie">Schwerpunkt</span><b>Wundversorgung (S. 33):</b> Verdacht auf Infektion → Antiseptika, Auflagen mit Polihexanid; systemische Antibiose nach Antibiogramm. Trockene Nekrosen bei arterieller/gemischter Ursache nicht einweichen und erst nach Revaskularisation entfernen. Standard: PU-Schaumverbände ohne Klebeflächen; Fixierung locker, an Zehen kein Druck durch Drehungen. Hydrokolloide nur mit engmaschiger Kontrolle (Infektion wird bei PNP nicht bemerkt); kontraindiziert bei klinischer Infektion, freiliegenden Muskeln/Sehnen/Knochen, ischämischen Ulcera (pAVK IV).</li>
   <li><b>Prävention (S. 34):</b> tägliche Fußinspektion, Blutzuckerkontrolle, regelmäßige Fuß- und Nagelpflege, Hautpflege, Verletzungen vermeiden, geeignete Schuhe – nur wirksam bei aktiver Mitarbeit und regelmäßiger Schulung.</li>
 </ul>
 <h3>8. Abgleich mit dem Foliensatz „Ulcus cruris, Dekubitus, Diabetisches Fußsyndrom“ <span class="seite">48 Folien</span></h3>
@@ -496,21 +496,21 @@ Lernapp.thema({
     <tr><td>5</td><td>Nekrose des gesamten Fußes</td><td>ausgedehnte Gangrän (ganzer Fuß)</td></tr>
   </tbody>
 </table></div>
-<p><b>Armstrong (University of Texas) laut Folien:</b> 4×3-System – Grade 0 epithelisierte Wunde · 1 oberflächlich · 2 bis Sehne, Kapsel oder Knochen · 3 mit Abszess oder Osteomyelitis; kombiniert mit Stadien A ohne · B Infektion · C Ischämie · D beides. Das Heft kombiniert die Stadien A–D mit den Wagner-Graden 0–5.</p>
+<p><span class="sp" data-sp="dekubitus: Def. Diabetisches Fußulcus – Klassifikation">Schwerpunkt</span><b>Armstrong (University of Texas) laut Folien:</b> 4×3-System – Grade 0 epithelisierte Wunde · 1 oberflächlich · 2 bis Sehne, Kapsel oder Knochen · 3 mit Abszess oder Osteomyelitis; kombiniert mit Stadien A ohne · B Infektion · C Ischämie · D beides. Das Heft kombiniert die Stadien A–D mit den Wagner-Graden 0–5.</p>
 <div class="tabelle"><table>
   <thead><tr><th>Thema</th><th>Ergebnis</th></tr></thead>
   <tbody>
     <tr><td style="white-space:normal">Häufigkeit neuropathisch</td><td>⚠ F: neuropathisches Ulkus ist die häufigste Form (60–70 %) · Heft: ca. 50 % durch Polyneuropathie, 35 % Kombination, 15 % pAVK</td></tr>
-    <tr><td style="white-space:normal">Formen des DFU</td><td>➜ Lokalisation: neuropathisch an Druckstellen (Fußsohle, Zehen); ischämisch an Akren, Zehen, Ferse, Nekrosegefahr. Neuro-ischämisch = häufigste komplizierte Form, schlechte Prognose, da meist schmerzlos. Charcot: akute und chronische Phase.</td></tr>
+    <tr><td style="white-space:normal"><span class="sp" data-sp="dekubitus: Def. Diabetisches Fußulcus – Klinisches Erscheinungsbild">Schwerpunkt</span>Formen des DFU</td><td>➜ Lokalisation: neuropathisch an Druckstellen (Fußsohle, Zehen); ischämisch an Akren, Zehen, Ferse, Nekrosegefahr. Neuro-ischämisch = häufigste komplizierte Form, schlechte Prognose, da meist schmerzlos. Charcot: akute und chronische Phase.</td></tr>
     <tr><td style="white-space:normal">Polyneuropathie</td><td>➜ motorisch auch Fußdeformitäten, Gangstörungen; autonom auch gestörte Durchblutungsregulation, trockene Haut; Verlust von Vibrations- und Lageempfinden.</td></tr>
-    <tr><td style="white-space:normal">DFU – Diagnostik</td><td>➜ Anamnese mit Diabetesdauer und HbA1c; Röntgen/MRT bei Verdacht auf Osteomyelitis; Wundabstrich oder Gewebeprobe.</td></tr>
-    <tr><td style="white-space:normal">DFU – Therapie</td><td>➜ multidisziplinär (Diabetologie, Chirurgie, Podologie); Blutzuckerziel HbA1c &lt; 7 %; IRAS mit S = Schutz vor Rezidiven (Druckentlastung, Schulung) – deckt sich mit deiner Randnotiz; phasengerecht: Reinigung Débridement/Hydrogele · Granulation Alginate/Schäume · Epithelisierung Folien/dünne Hydrogele.</td></tr>
+    <tr><td style="white-space:normal"><span class="sp" data-sp="dekubitus: Def. Diabetisches Fußulcus – Diagnostik">Schwerpunkt</span>DFU – Diagnostik</td><td>➜ Anamnese mit Diabetesdauer und HbA1c; Röntgen/MRT bei Verdacht auf Osteomyelitis; Wundabstrich oder Gewebeprobe.</td></tr>
+    <tr><td style="white-space:normal"><span class="sp" data-sp="dekubitus: Def. Diabetisches Fußulcus – Therapie">Schwerpunkt</span>DFU – Therapie</td><td>➜ multidisziplinär (Diabetologie, Chirurgie, Podologie); Blutzuckerziel HbA1c &lt; 7 %; IRAS mit S = Schutz vor Rezidiven (Druckentlastung, Schulung) – deckt sich mit deiner Randnotiz; phasengerecht: Reinigung Débridement/Hydrogele · Granulation Alginate/Schäume · Epithelisierung Folien/dünne Hydrogele.</td></tr>
     <tr><td style="white-space:normal">Dekubitus – Begriff</td><td>➜ von lat. decumbere (niederliegen); Mehrzahl ebenfalls „Dekubitus“; synonym: Druckgeschwür, Druckverletzung.</td></tr>
-    <tr><td style="white-space:normal">Dekubitus – Kategorien</td><td>➜ Kat. I: Bereich kann schmerzhaft, verhärtet, weich, wärmer oder kälter sein; bei dunkler Haut Abblassen evtl. nicht sichtbar. Kat. III: Beläge möglich, verdecken die Tiefe aber nicht. Nicht zuordenbar: stabiler Schorf kann schützend wirken – nicht jeder Belag muss entfernt werden. Vermutete tiefe Schädigung: rascher Verlauf trotz optimaler Behandlung möglich.</td></tr>
-    <tr><td style="white-space:normal">Dekubitus – Risikofaktoren</td><td>➜ Mobilität = direkter, Durchblutung = indirekter Einfluss. Zwei Gruppen: Druck/Scherkräfte (Mobilität, Neurologie, medizinische Geräte, Reibung) und beeinträchtigte Gewebetoleranz (Mangelernährung, Durchblutung, Hautfeuchtigkeit).</td></tr>
-    <tr><td style="white-space:normal">Ulcus cruris venosum</td><td>➜ Wundumgebung gerötet, schuppig, sklerotisch, ekzematös, verhärtet oder mazeriert; Infektionszeichen: starker Geruch, entzündeter Rand, eitriges Exsudat. Diagnostik zusätzlich: Faszienlücken tasten, Umfang an Vorfuß, Knöchel, Wade.</td></tr>
+    <tr><td style="white-space:normal"><span class="sp" data-sp="dekubitus: Def. Dekubitus – Klassifikation">Schwerpunkt</span>Dekubitus – Kategorien</td><td>➜ Kat. I: Bereich kann schmerzhaft, verhärtet, weich, wärmer oder kälter sein; bei dunkler Haut Abblassen evtl. nicht sichtbar. Kat. III: Beläge möglich, verdecken die Tiefe aber nicht. Nicht zuordenbar: stabiler Schorf kann schützend wirken – nicht jeder Belag muss entfernt werden. Vermutete tiefe Schädigung: rascher Verlauf trotz optimaler Behandlung möglich.</td></tr>
+    <tr><td style="white-space:normal"><span class="sp" data-sp="dekubitus: Def. Dekubitus – Risikofaktoren">Schwerpunkt</span>Dekubitus – Risikofaktoren</td><td>➜ Mobilität = direkter, Durchblutung = indirekter Einfluss. Zwei Gruppen: Druck/Scherkräfte (Mobilität, Neurologie, medizinische Geräte, Reibung) und beeinträchtigte Gewebetoleranz (Mangelernährung, Durchblutung, Hautfeuchtigkeit).</td></tr>
+    <tr><td style="white-space:normal"><span class="sp" data-sp="dekubitus: Def. Ulcus cruris venosum – Klinisches Erscheinungsbild|dekubitus: Def. Ulcus cruris venosum – Diagnostik">Schwerpunkt</span>Ulcus cruris venosum</td><td>➜ Wundumgebung gerötet, schuppig, sklerotisch, ekzematös, verhärtet oder mazeriert; Infektionszeichen: starker Geruch, entzündeter Rand, eitriges Exsudat. Diagnostik zusätzlich: Faszienlücken tasten, Umfang an Vorfuß, Knöchel, Wade.</td></tr>
     <tr><td style="white-space:normal">Kompression / Beratung</td><td>➜ Erhaltungsphase beginnt, wenn Ödeme entstaut und Ulcera stabil sind. Kein Kraftsport, keine Sportarten mit abrupten Bewegungswechseln; Wärmflaschen, heißes Baden, Sauna, Solarium meiden.</td></tr>
-    <tr><td style="white-space:normal">Ulcus cruris arteriosum</td><td>➜ Ursachen: Atherosklerose · arterielle Embolie (Herzrhythmusstörungen, Aneurysmen) · Entzündung (Vaskulitis) · Gerinnungsstörungen · Trauma (selten allein). Nikotin = wichtigster beeinflussbarer Risikofaktor. Wunde sehr schmerzhaft.</td></tr>
+    <tr><td style="white-space:normal"><span class="sp" data-sp="dekubitus: Def. Ulcus cruris arteriosum – Entstehung">Schwerpunkt</span>Ulcus cruris arteriosum</td><td>➜ Ursachen: Atherosklerose · arterielle Embolie (Herzrhythmusstörungen, Aneurysmen) · Entzündung (Vaskulitis) · Gerinnungsstörungen · Trauma (selten allein). Nikotin = wichtigster beeinflussbarer Risikofaktor. Wunde sehr schmerzhaft.</td></tr>
     <tr><td style="white-space:normal">Übrige Inhalte</td><td>✔ Definitionen, Kategorien, Fingertest, Prophylaxe, Hilfsmittel, Widmer, Kompression, 3S-3L, IRAN, Vergleich venosum/arteriosum, Mixtum decken sich mit dem Heft.</td></tr>
   </tbody>
 </table></div>

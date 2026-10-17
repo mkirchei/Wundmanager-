@@ -18,13 +18,13 @@ Lernapp.thema({
 
   karten: [
     { k: "Wundarten", f: "Definiere den Begriff Wunde.",
-      a: "Unterbrechung des Zusammenhangs von Körpergeweben mit oder ohne Substanzverlust.", s: "S. 3" },
+      a: "Unterbrechung des Zusammenhangs von Körpergeweben mit oder ohne Substanzverlust.", s: "S. 3", sp: ["wunden: Def. Wunde"] },
     { k: "Wundarten", f: "Nach welchen Kriterien werden Wunden eingeteilt?",
-      a: "Entstehungshergang, Entstehungsart, Heilungsdauer, Keimbesiedelung (Kolonisationsgrad), Art und Tiefe der Gewebeschädigung.", s: "S. 3" },
+      a: "Entstehungshergang, Entstehungsart, Heilungsdauer, Keimbesiedelung (Kolonisationsgrad), Art und Tiefe der Gewebeschädigung.", s: "S. 3", sp: ["wunden: Nach welchen Kriterien werden Wunden unterschieden?"] },
     { k: "Wundarten", f: "Welche vier Entstehungshergänge gibt es?",
-      a: "Mechanisch, thermisch, chemisch, strahlenbedingt.", s: "S. 3" },
+      a: "Mechanisch, thermisch, chemisch, strahlenbedingt.", s: "S. 3", sp: ["wunden: Entstehungshergang von Wunden"] },
     { k: "Wundarten", f: "Was sind mechanische Wunden? Nenne Beispiele.",
-      a: "Folge von Gewalteinwirkung.\nSchnitt-, Stich-, Quetsch-, Riss-, Platz-, Schürf-, Kratz-, Bisswunden, Blasen, Ablederungen, Amputationen, Schuss-, Pfählungsverletzungen.", s: "S. 3" },
+      a: "Folge von Gewalteinwirkung.\nSchnitt-, Stich-, Quetsch-, Riss-, Platz-, Schürf-, Kratz-, Bisswunden, Blasen, Ablederungen, Amputationen, Schuss-, Pfählungsverletzungen.", s: "S. 3", sp: ["wunden: Beispiele für mechanische Wunden"] },
     { k: "Thermisch", f: "Nenne die Verbrennungsgrade 1 und 2a.",
       a: "1: Epidermis; Rötung, starke Schmerzen, Heilung ohne Narbe.\n2a: oberflächliche Dermis; Blasen, Haare fest, Wundgrund rosig, rekapillarisierend, starke Schmerzen; Heilung meist in 14 Tagen.", s: "S. 6" },
     { k: "Thermisch", f: "Nenne die Verbrennungsgrade 2b, 3 und 4.",
@@ -32,21 +32,21 @@ Lernapp.thema({
     { k: "Thermisch", f: "Ab wann droht ein Verbrennungsschock?",
       a: "Bei 2.–3.-gradiger Verbrennung ab 10 % verbrannter Körperoberfläche bei Erwachsenen, ab 5 % bei Kindern (hypovolämischer Schock).", s: "S. 7" },
     { k: "Chemisch", f: "Säure- vs. Laugenverätzung?",
-      a: "Säure: Koagulationsnekrose – fester, trockener Schorf, scharf begrenzt.\nLauge: Kolliquationsnekrose – glasig, weich, unscharf begrenzt, dunkelbrauner Grund; schwerwiegender.", s: "S. 8" },
+      a: "Säure: Koagulationsnekrose – fester, trockener Schorf, scharf begrenzt.\nLauge: Kolliquationsnekrose – glasig, weich, unscharf begrenzt, dunkelbrauner Grund; schwerwiegender.", s: "S. 8", sp: ["wunden: Beispiele für chemische Wunden"] },
     { k: "Strahlen", f: "Was kennzeichnet strahlenbedingte Wunden?",
       a: "Zuerst Stratum basale betroffen (hohe Mitoserate); Spätschäden: Fibrose, Gefäßveränderungen, Strahlenulzera – Entartung zum Plattenepithelkarzinom nach 4–40 Jahren möglich; Behandlung wie Verbrennung.", s: "S. 9" },
     { k: "Entstehung", f: "Traumatische, iatrogene und chronische Wunden?",
-      a: "Traumatisch: äußere Gewalt.\nIatrogen: durch ärztliche/therapeutische Maßnahmen (Inzision, Punktion, Amputation).\nChronisch: keine Heilungstendenz nach 4–12 Wochen trotz fachgerechter Therapie.", s: "S. 9" },
+      a: "Traumatisch: äußere Gewalt.\nIatrogen: durch ärztliche/therapeutische Maßnahmen (Inzision, Punktion, Amputation).\nChronisch: keine Heilungstendenz nach 4–12 Wochen trotz fachgerechter Therapie.", s: "S. 9", sp: ["wunden: Entstehungsart von Wunden"] },
     { k: "Entstehung", f: "Was bedeutet „Vulnerando sanamus“?",
       a: "„Heilen durch Verletzen“ – Grundsatz iatrogener Wunden.", s: "S. 9" },
     { k: "Entstehung", f: "Akute vs. chronische Wunde?",
-      a: "Akut: Phasen regelrecht durchlaufen, Heilung innerhalb von 4 Wochen.\nChronisch: Phasen nicht regelrecht, keine Heilungstendenz nach 4–12 Wochen; von Beginn an chronisch bei chronischer Grunderkrankung.", s: "S. 11, 13" },
+      a: "Akut: Phasen regelrecht durchlaufen, Heilung innerhalb von 4 Wochen.\nChronisch: Phasen nicht regelrecht, keine Heilungstendenz nach 4–12 Wochen; von Beginn an chronisch bei chronischer Grunderkrankung.", s: "S. 11, 13", sp: ["wunden: Dauer der Heilung", "chronwunden: Basiswissen chronische Wunden"] },
     { k: "Keime", f: "Nenne die sechs Kolonisationsgrade.",
-      a: "Aseptisch · kontaminiert · kolonisiert · kritisch kolonisiert · lokal infiziert · systemisch infiziert.\nKeine Wunde ist steril.", s: "S. 10" },
+      a: "Aseptisch · kontaminiert · kolonisiert · kritisch kolonisiert · lokal infiziert · systemisch infiziert.\nKeine Wunde ist steril.", s: "S. 10", sp: ["wunden: Einteilung nach Kolonisation"] },
     { k: "Keime", f: "Kontaminiert vs. kolonisiert vs. kritisch kolonisiert?",
-      a: "Kontaminiert: Keime vermehren sich nicht.\nKolonisiert: vermehrungsfähige Keime, Heilung nicht nachhaltig gestört.\nKritisch kolonisiert: erhöhte Besiedlung, infektgefährdet.", s: "S. 10" },
+      a: "Kontaminiert: Keime vermehren sich nicht.\nKolonisiert: vermehrungsfähige Keime, Heilung nicht nachhaltig gestört.\nKritisch kolonisiert: erhöhte Besiedlung, infektgefährdet.", s: "S. 10", sp: ["wunden: Einteilung nach Kolonisation"] },
     { k: "Keime", f: "Wann gilt eine Wunde als aseptisch?",
-      a: "Fast keimfrei, keine Entzündungszeichen; z. B. OP-Wunden oder frische Verletzungen (nicht älter als 4–6 h), primär verschlossen.", s: "S. 10" },
+      a: "Fast keimfrei, keine Entzündungszeichen; z. B. OP-Wunden oder frische Verletzungen (nicht älter als 4–6 h), primär verschlossen.", s: "S. 10", sp: ["wunden: Einteilung nach Kolonisation"] },
     { k: "Keime", f: "Nenne die klassischen Entzündungszeichen (deutsch und lateinisch).",
       a: "Rötung – rubor\nSchwellung – tumor\nÜberwärmung – calor\nSchmerz – dolor\nFunktionseinschränkung – functio laesa", s: "S. 10" },
     { k: "Keime", f: "Weitere Anzeichen einer Wundinfektion? (Übung I)",
@@ -54,41 +54,41 @@ Lernapp.thema({
     { k: "Keime", f: "Lokale vs. systemische Infektion?",
       a: "Lokal: Erreger bleiben in Wunde und naher Umgebung.\nSystemisch: Erreger verteilen sich über den Blutkreislauf im ganzen Organismus (Sepsis).", s: "S. 10–11" },
     { k: "Tiefe", f: "Geschlossene vs. offene Wunden?",
-      a: "Geschlossen: unter intakter Haut (Distorsion, Luxation, geschlossene Fraktur); nur Hämatom/Schwellung sichtbar.\nOffen: immer Verletzung von Haut oder Schleimhaut.", s: "S. 12–13" },
+      a: "Geschlossen: unter intakter Haut (Distorsion, Luxation, geschlossene Fraktur); nur Hämatom/Schwellung sichtbar.\nOffen: immer Verletzung von Haut oder Schleimhaut.", s: "S. 12–13", sp: ["wunden: Def. geschlossene Wunden", "wunden: Def. offene Wunden"] },
     { k: "Tiefe", f: "Welche offenen Wunden unterscheidet man nach der Tiefe?",
       a: "Oberflächlich: nur Epidermis, narbenfrei (Erosion, Exkoriation).\nPerforierend: alle Hautschichten (Messerstich).\nKompliziert: zusätzlich Gefäße, Nerven, Organe (offene Fraktur).", s: "S. 13" },
     { k: "Heilung", f: "Definiere Wundheilung.",
-      a: "Physiologische Vorgänge zur Regeneration zerstörten Gewebes, die insbesondere durch Neubildung von Bindegewebe und Kapillaren den Verschluss einer Wunde bewirken.", s: "S. 14" },
+      a: "Physiologische Vorgänge zur Regeneration zerstörten Gewebes, die insbesondere durch Neubildung von Bindegewebe und Kapillaren den Verschluss einer Wunde bewirken.", s: "S. 14", sp: ["wunden: Def. Wundheilung"] },
     { k: "Heilung", f: "Warum braucht die Wundheilung ein feucht-warmes Milieu?",
       a: "Zellteilung setzt erst ab ca. 28 °C ein; in feucht-warmer Umgebung wandern die Zellen schneller und ordnen sich an.", s: "S. 15" },
     { k: "Heilung", f: "Merkmale der primären Wundheilung?",
-      a: "Aseptische OP-Wunden oder frische Verletzungen (< 6 h); glatte, adaptierte Wundränder; Heilung in 6–10 Tagen mit minimaler Narbe.", s: "S. 14" },
+      a: "Aseptische OP-Wunden oder frische Verletzungen (< 6 h); glatte, adaptierte Wundränder; Heilung in 6–10 Tagen mit minimaler Narbe.", s: "S. 14", sp: ["wunden: Arten der Wundheilung"] },
     { k: "Heilung", f: "Was ist eine verzögerte Primärheilung?",
-      a: "Gleiche Voraussetzungen wie bei der Primärheilung, aber die Wunde wird wegen Kontaminationsverdacht nicht sofort verschlossen (z. B. Schnittverletzung > 6 h).", s: "S. 14" },
+      a: "Gleiche Voraussetzungen wie bei der Primärheilung, aber die Wunde wird wegen Kontaminationsverdacht nicht sofort verschlossen (z. B. Schnittverletzung > 6 h).", s: "S. 14", sp: ["wunden: Arten der Wundheilung"] },
     { k: "Heilung", f: "Merkmale der sekundären Wundheilung?",
-      a: "Bei infizierten, großflächigen Wunden (Verbrennung, Dekubitus, Ulcus cruris); Heilung Schicht um Schicht von unten nach oben und außen nach innen über Granulationsgewebe; großflächige Narbe; länger, infektionsgefährdet.", s: "S. 14" },
+      a: "Bei infizierten, großflächigen Wunden (Verbrennung, Dekubitus, Ulcus cruris); Heilung Schicht um Schicht von unten nach oben und außen nach innen über Granulationsgewebe; großflächige Narbe; länger, infektionsgefährdet.", s: "S. 14", sp: ["wunden: Arten der Wundheilung"] },
     { k: "Heilung", f: "Reparatur vs. Regeneration?",
-      a: "Reparatur: Ersatz durch Bindegewebe → Narbe (Primär-, verzögerte Primär-, Sekundärheilung).\nRegeneration: Ersatz durch identische Zellen, narbenfrei (oberflächliche Epidermis-, Schleimhautverletzungen).", s: "S. 15" },
+      a: "Reparatur: Ersatz durch Bindegewebe → Narbe (Primär-, verzögerte Primär-, Sekundärheilung).\nRegeneration: Ersatz durch identische Zellen, narbenfrei (oberflächliche Epidermis-, Schleimhautverletzungen).", s: "S. 15", sp: ["wunden: Welche Wundheilungsmechanismen gibt es?"] },
     { k: "Heilung", f: "Was sind Narben?",
       a: "Faserreiches, qualitativ weniger hochwertiges Reparaturgewebe mit paralleler Kollagenanordnung – weniger elastisch, ohne Talg- und Schweißdrüsen.", s: "S. 16" },
     { k: "Heilung", f: "Warum gelten analnahe Wunden nicht als chronisch?",
       a: "Die Sekundärheilung ist nach proktologischen Eingriffen geplant und die Wunden sind gut durchblutet – trotz wochenlanger Heilung.", s: "S. 15" },
     { k: "Phasen", f: "Nenne die fünf Wundheilungsphasen in der richtigen Reihenfolge.",
-      a: "1. Hämostase\n2. Exsudation\n3. Granulation\n4. Epithelisierung\n5. Remodulierung\nPraxis: oft 3 Phasen – Exsudation, Granulation, Epithelisierung.", s: "S. 16" },
+      a: "1. Hämostase\n2. Exsudation\n3. Granulation\n4. Epithelisierung\n5. Remodulierung\nPraxis: oft 3 Phasen – Exsudation, Granulation, Epithelisierung.", s: "S. 16", sp: ["wunden: Phasen der Wundheilung"] },
     { k: "Phasen", f: "Was passiert in der Hämostase?",
-      a: "Kapillaren ziehen sich zusammen, Vasokonstriktion; Blut und Plasma füllen den Wundspalt; Thrombozyten und Erythrozyten bilden einen Thrombus, der die Wunde verschließt.", s: "S. 16, 20" },
+      a: "Kapillaren ziehen sich zusammen, Vasokonstriktion; Blut und Plasma füllen den Wundspalt; Thrombozyten und Erythrozyten bilden einen Thrombus, der die Wunde verschließt.", s: "S. 16, 20", sp: ["wunden: Phasen der Wundheilung"] },
     { k: "Phasen", f: "Was passiert in der Exsudationsphase?",
-      a: "Reinigungsphase: starke Exsudation, Makrophagen und Granulozyten beginnen die Wundreinigung, lokale Entzündung (≠ Infektion), Abtransport von Zelltrümmern; bei akuten Wunden nach ca. 3 Tagen abgeschlossen.", s: "S. 17" },
+      a: "Reinigungsphase: starke Exsudation, Makrophagen und Granulozyten beginnen die Wundreinigung, lokale Entzündung (≠ Infektion), Abtransport von Zelltrümmern; bei akuten Wunden nach ca. 3 Tagen abgeschlossen.", s: "S. 17", sp: ["wunden: Phasen der Wundheilung"] },
     { k: "Phasen", f: "Was passiert in der Granulationsphase?",
-      a: "Ab ca. Tag 2, bis 14 Tage: Fibroblasten bilden Kollagen → Granulationsgewebe (tiefrot, gekörnt, feucht glänzend), neue Kapillarschleifen (Neoangiogenese), Wundkontraktion, Exsudat nimmt ab.", s: "S. 17–18" },
+      a: "Ab ca. Tag 2, bis 14 Tage: Fibroblasten bilden Kollagen → Granulationsgewebe (tiefrot, gekörnt, feucht glänzend), neue Kapillarschleifen (Neoangiogenese), Wundkontraktion, Exsudat nimmt ab.", s: "S. 17–18", sp: ["wunden: Phasen der Wundheilung"] },
     { k: "Phasen", f: "Was passiert in der Epithelisierungsphase?",
-      a: "Ab ca. Tag 4, bis 21 Tage: Granulationsgewebe verliert Gewebewasser; Epithelzellen wandern vom Rand ein („Überhäutung“); erstes Narbengewebe; Epidermis verdickt durch Keratin.", s: "S. 18–19" },
+      a: "Ab ca. Tag 4, bis 21 Tage: Granulationsgewebe verliert Gewebewasser; Epithelzellen wandern vom Rand ein („Überhäutung“); erstes Narbengewebe; Epidermis verdickt durch Keratin.", s: "S. 18–19", sp: ["wunden: Phasen der Wundheilung"] },
     { k: "Phasen", f: "Was passiert in der Remodulierungsphase?",
-      a: "Über Monate: Kollagenfasern richten sich nach Zuglinien aus, Kapillaren bilden sich zurück; weißliche, zell- und gefäßarme Narbe mit max. ca. 80 % der ursprünglichen Belastbarkeit.", s: "S. 19–20" },
+      a: "Über Monate: Kollagenfasern richten sich nach Zuglinien aus, Kapillaren bilden sich zurück; weißliche, zell- und gefäßarme Narbe mit max. ca. 80 % der ursprünglichen Belastbarkeit.", s: "S. 19–20", sp: ["wunden: Phasen der Wundheilung"] },
     { k: "Phasen", f: "Ordne zu (Übung II): Kapillarschleifen, Wundreinigung, Gewebewasser, Wundspalt, Narbengewebe.",
-      a: "Hämostase – Blut und Plasma füllen Wundspalt\nExsudation – Beginn der Wundreinigung\nGranulation – neue Kapillarschleifen\nEpithelisierung – Granulationsgewebe verliert Gewebewasser\nRemodulierung – Narbengewebe", s: "S. 25" },
+      a: "Hämostase – Blut und Plasma füllen Wundspalt\nExsudation – Beginn der Wundreinigung\nGranulation – neue Kapillarschleifen\nEpithelisierung – Granulationsgewebe verliert Gewebewasser\nRemodulierung – Narbengewebe", s: "S. 25", sp: ["wunden: Phasen der Wundheilung"] },
     { k: "Störungen", f: "Nenne die Wundkomplikationen nach dem Heft.",
-      a: "Serom, Wundhämatom, Wundrandnekrose, Wundinfektion, Wunddehiszenz, Fremdkörperreaktion, hypertrophe Narbe und Keloid, Narbenkarzinom.", s: "S. 21" },
+      a: "Serom, Wundhämatom, Wundrandnekrose, Wundinfektion, Wunddehiszenz, Fremdkörperreaktion, hypertrophe Narbe und Keloid, Narbenkarzinom.", s: "S. 21", sp: ["wunden: Arten der Wundheilungsstörungen"] },
     { k: "Störungen", f: "Was ist ein Serom und wie wird es behandelt?",
       a: "Ansammlung von serösem Exsudat (Lymphe, Serum) in Wundhohlräumen, meist postoperativ.\nKlein: Resorption; groß: steril abpunktieren + leichter Kompressionsverband; infiziert: wie Abszess.", s: "S. 21" },
     { k: "Störungen", f: "Transsudat vs. Exsudat?",
@@ -106,7 +106,7 @@ Lernapp.thema({
     { k: "Störungen", f: "Was ist ein Narbenkarzinom?",
       a: "Seltene maligne Entartung auf chronisch irritierten Narben (v. a. Brandnarben), meist Plattenepithelkarzinom; Risiko nach Brandverletzung 1–2 %. Therapie: weite Exzision, plastische Deckung, ggf. Amputation.", s: "S. 24" },
     { k: "Folien", f: "Beschreibe die Hämostase in sechs Schritten.",
-      a: "1. Kapillaren ziehen sich zusammen\n2. Vasokonstriktion der nächstgrößeren Gefäße\n3. Blut und Plasma füllen den Wundspalt\n4. Thrombozyten haften an Kollagenfasern\n5. Thrombus mit Erythrozyten\n6. erste Reinigungszellen wandern ein", s: "Foliensatz" },
+      a: "1. Kapillaren ziehen sich zusammen\n2. Vasokonstriktion der nächstgrößeren Gefäße\n3. Blut und Plasma füllen den Wundspalt\n4. Thrombozyten haften an Kollagenfasern\n5. Thrombus mit Erythrozyten\n6. erste Reinigungszellen wandern ein", s: "Foliensatz", sp: ["wunden: Phasen der Wundheilung"] },
     { k: "Folien", f: "Nenne lokale und allgemeine Einflussfaktoren auf die Wundheilung.",
       a: "Lokal: Fremdkörper, Infektion, Naht/Spannung, Durchblutungsstörung, mechanische Belastung, ungeeignete Versorgung.\nAllgemein: Alter, Ernährung, Stoffwechsel, Immunschwäche, Medikamente, Grunderkrankungen.", s: "Foliensatz" },
     { k: "Folien", f: "Was sind nutritive Gefäße?",
@@ -124,10 +124,10 @@ Lernapp.thema({
   quiz: [
     { f: "Wie ist eine Wunde laut Kursheft definiert?",
       o: ["Unterbrechung des Zusammenhangs von Körpergeweben mit oder ohne Substanzverlust", "Jeder Gewebeverlust, der länger als 4 Wochen besteht", "Eine Entzündung der Haut mit Rötung und Schwellung", "Nur eine Verletzung, die genäht werden muss"],
-      e: "Wunde = Unterbrechung des Zusammenhangs von Körpergeweben mit oder ohne Substanzverlust (Pfitzmann 2020).", s: "S. 3" },
+      e: "Wunde = Unterbrechung des Zusammenhangs von Körpergeweben mit oder ohne Substanzverlust (Pfitzmann 2020).", s: "S. 3", sp: ["wunden: Def. Wunde"] },
     { f: "Welche vier Entstehungshergänge von Wunden unterscheidet das Heft?",
       o: ["Mechanisch, thermisch, chemisch, strahlenbedingt", "Akut, chronisch, iatrogen, traumatisch", "Aseptisch, kontaminiert, kolonisiert, infiziert", "Oberflächlich, perforierend, kompliziert, geschlossen"],
-      e: "Vier Ursachen: mechanisch, thermisch, chemisch, strahlenbedingt.", s: "S. 3" },
+      e: "Vier Ursachen: mechanisch, thermisch, chemisch, strahlenbedingt.", s: "S. 3", sp: ["wunden: Entstehungshergang von Wunden"] },
     { f: "Blasen, fest verankerte Haare, rosiger rekapillarisierender Wundgrund, starke Schmerzen – welcher Verbrennungsgrad?",
       o: ["Grad 2a", "Grad 2b", "Grad 1", "Grad 3"],
       e: "2a: oberflächliche Dermis, Haare fest, rosig, rekapillarisierend, starke Schmerzen. 2b: Haare leicht zu entfernen, blasser, reduzierter Schmerz.", s: "S. 6" },
@@ -148,10 +148,10 @@ Lernapp.thema({
       e: "„Vulnerando sanamus“ – Heilen durch Verletzen: Grundsatz iatrogener Wunden.", s: "S. 9" },
     { f: "Eine Wunde enthält Keime, die sich aber nicht vermehren. Welcher Kolonisationsgrad liegt vor?",
       o: ["Kontaminiert", "Kolonisiert", "Kritisch kolonisiert", "Lokal infiziert"],
-      e: "Kontaminiert: Keime vermehren sich nicht. Kolonisiert: vermehrungsfähige Keime, Heilung nicht nachhaltig gestört.", s: "S. 10" },
+      e: "Kontaminiert: Keime vermehren sich nicht. Kolonisiert: vermehrungsfähige Keime, Heilung nicht nachhaltig gestört.", s: "S. 10", sp: ["wunden: Einteilung nach Kolonisation"] },
     { f: "Was kennzeichnet eine kritisch kolonisierte Wunde?",
       o: ["Erhöhte Besiedlung, infektgefährdet", "Fast keimfrei, keine Entzündungszeichen", "Erreger im Blutkreislauf (Sepsis)", "Keime vorhanden, vermehren sich nicht"],
-      e: "Kritisch kolonisiert: erhöhte Besiedlung; infektgefährdet, Übergang auf den Körper droht.", s: "S. 10" },
+      e: "Kritisch kolonisiert: erhöhte Besiedlung; infektgefährdet, Übergang auf den Körper droht.", s: "S. 10", sp: ["wunden: Einteilung nach Kolonisation"] },
     { f: "Was bedeutet „calor“?",
       o: ["Überwärmung", "Rötung", "Schwellung", "Schmerz"],
       e: "Rötung (rubor) · Schwellung (tumor) · Überwärmung (calor) · Schmerz (dolor) · Funktionseinschränkung (functio laesa).", s: "S. 10" },
@@ -160,31 +160,31 @@ Lernapp.thema({
       e: "Offene Wunden: oberflächlich (nur Epidermis) · perforierend (alle Hautschichten) · kompliziert (zusätzlich Gefäße, Nerven, Organe).", s: "S. 12–13" },
     { f: "In welchem Zeitraum heilt eine Wunde bei primärer Wundheilung?",
       o: ["6–10 Tage, minimale Narbe", "4–12 Wochen", "Über mehrere Monate", "Innerhalb von 24 Stunden"],
-      e: "Primäre Wundheilung: aseptische OP-Wunden oder frische Verletzungen (< 6 h), glatte adaptierte Ränder, 6–10 Tage, minimale Narbe.", s: "S. 14" },
+      e: "Primäre Wundheilung: aseptische OP-Wunden oder frische Verletzungen (< 6 h), glatte adaptierte Ränder, 6–10 Tage, minimale Narbe.", s: "S. 14", sp: ["wunden: Arten der Wundheilung"] },
     { f: "Was ist eine verzögerte Primärheilung?",
       o: ["Gleiche Voraussetzungen wie bei Primärheilung, aber wegen Kontaminationsverdacht nicht sofort verschlossen", "Heilung von unten nach oben über Granulationsgewebe", "Eine Primärheilung, die länger als 12 Wochen dauert", "Heilung durch identische Zellen ohne Narbe"],
-      e: "Z. B. Schnittverletzung > 6 h alt. Handschriftlich: z. B. ca. 4 Tage offen, dann verschlossen.", s: "S. 14" },
+      e: "Z. B. Schnittverletzung > 6 h alt. Handschriftlich: z. B. ca. 4 Tage offen, dann verschlossen.", s: "S. 14", sp: ["wunden: Arten der Wundheilung"] },
     { f: "Was bedeutet Regeneration?",
       o: ["Ersatz durch identische Zellen, narbenfrei", "Ersatz durch Bindegewebe mit Narbenbildung", "Heilung durch Wundkontraktion", "Ein anderes Wort für Sekundärheilung"],
-      e: "Regeneration: identische Zellen, narbenfrei (oberflächliche Epidermis-, Schleimhautverletzungen). Reparatur: Bindegewebe → Narbe.", s: "S. 15" },
+      e: "Regeneration: identische Zellen, narbenfrei (oberflächliche Epidermis-, Schleimhautverletzungen). Reparatur: Bindegewebe → Narbe.", s: "S. 15", sp: ["wunden: Welche Wundheilungsmechanismen gibt es?"] },
     { f: "Ab welcher Temperatur setzt die Zellteilung in der Wunde ein?",
       o: ["Ab ca. 28 °C", "Ab ca. 20 °C", "Ab ca. 37 °C", "Ab ca. 42 °C"],
       e: "Optimal ist ein feucht-warmes Milieu: Zellteilung erst ab 28 °C, Zellen wandern schneller.", s: "S. 15" },
     { f: "Welche Reihenfolge der Wundheilungsphasen ist richtig?",
       o: ["Hämostase → Exsudation → Granulation → Epithelisierung → Remodulierung", "Exsudation → Hämostase → Epithelisierung → Granulation → Remodulierung", "Granulation → Exsudation → Hämostase → Remodulierung → Epithelisierung", "Hämostase → Granulation → Exsudation → Remodulierung → Epithelisierung"],
-      e: "1 Hämostase · 2 Exsudation · 3 Granulation · 4 Epithelisierung · 5 Remodulierung. In der Praxis oft 3 Phasen.", s: "S. 16" },
+      e: "1 Hämostase · 2 Exsudation · 3 Granulation · 4 Epithelisierung · 5 Remodulierung. In der Praxis oft 3 Phasen.", s: "S. 16", sp: ["wunden: Phasen der Wundheilung"] },
     { f: "Wann ist die Exsudationsphase bei akuten Wunden ungefähr abgeschlossen?",
       o: ["Nach ca. 3 Tagen", "Nach ca. 21 Tagen", "Nach mehreren Monaten", "Nach wenigen Minuten"],
-      e: "Exsudation (Reinigung): bis ca. Tag 3; Entzündung (≠ Infektion) mit Makrophagen und Granulozyten.", s: "S. 17" },
+      e: "Exsudation (Reinigung): bis ca. Tag 3; Entzündung (≠ Infektion) mit Makrophagen und Granulozyten.", s: "S. 17", sp: ["wunden: Phasen der Wundheilung"] },
     { f: "Welche Phase: Fibroblasten bilden Kollagen, neue Kapillarschleifen entstehen?",
       o: ["Granulationsphase", "Hämostase", "Exsudationsphase", "Remodulierungsphase"],
-      e: "Granulation: ab ca. Tag 2 bis 14 Tage; Fibroblasten bilden Kollagen → tiefrotes, gekörntes Granulationsgewebe, Neoangiogenese.", s: "S. 17–18" },
+      e: "Granulation: ab ca. Tag 2 bis 14 Tage; Fibroblasten bilden Kollagen → tiefrotes, gekörntes Granulationsgewebe, Neoangiogenese.", s: "S. 17–18", sp: ["wunden: Phasen der Wundheilung"] },
     { f: "In welcher Phase verliert das Granulationsgewebe Gewebewasser?",
       o: ["Epithelisierung", "Granulation", "Hämostase", "Exsudation"],
-      e: "Epithelisierung: ab ca. Tag 4 bis 21 Tage; Granulationsgewebe verliert Gewebewasser, Epithelzellen wandern vom Rand ein.", s: "S. 18–19" },
+      e: "Epithelisierung: ab ca. Tag 4 bis 21 Tage; Granulationsgewebe verliert Gewebewasser, Epithelzellen wandern vom Rand ein.", s: "S. 18–19", sp: ["wunden: Phasen der Wundheilung"] },
     { f: "Welche Belastbarkeit erreicht eine Narbe nach der Remodulierung maximal?",
       o: ["Ca. 80 % der ursprünglichen Belastbarkeit", "100 %", "Ca. 30 %", "Ca. 120 %"],
-      e: "Remodulierung über Monate: Kollagen richtet sich an Zuglinien aus; max. ca. 80 % der ursprünglichen Belastbarkeit.", s: "S. 19–20" },
+      e: "Remodulierung über Monate: Kollagen richtet sich an Zuglinien aus; max. ca. 80 % der ursprünglichen Belastbarkeit.", s: "S. 19–20", sp: ["wunden: Phasen der Wundheilung"] },
     { f: "Warum gelten analnahe Wunden nicht als chronisch?",
       o: ["Die Sekundärheilung ist geplant und die Wunden sind gut durchblutet", "Weil sie immer innerhalb von 4 Wochen heilen", "Weil sie nie infiziert sind", "Weil sie primär genäht werden"],
       e: "Analnahe Wunden gelten trotz wochenlanger Heilung nicht als chronisch (geplante Sekundärheilung, gut durchblutet).", s: "S. 15" },
@@ -211,7 +211,7 @@ Lernapp.thema({
       e: "Wunddehiszenz: sekundäres Auseinanderweichen genähter Wundränder; Sonderformen Narbenhernie und Platzbauch.", s: "S. 22–23" },
     { f: "Was geschieht laut Foliensatz als erster Schritt der Hämostase?",
       o: ["Die Kapillaren ziehen sich zusammen", "Thrombozyten haften an Kollagenfasern", "Erste Reinigungszellen wandern ein", "Blut und Plasma füllen den Wundspalt"],
-      e: "1 Kapillaren ziehen sich zusammen · 2 Vasokonstriktion der nächstgrößeren Gefäße · 3 Blut und Plasma füllen den Wundspalt · 4 Thrombozyten haften an Kollagenfasern · 5 Thrombus mit Erythrozyten · 6 erste Reinigungszellen wandern ein.", s: "Foliensatz" },
+      e: "1 Kapillaren ziehen sich zusammen · 2 Vasokonstriktion der nächstgrößeren Gefäße · 3 Blut und Plasma füllen den Wundspalt · 4 Thrombozyten haften an Kollagenfasern · 5 Thrombus mit Erythrozyten · 6 erste Reinigungszellen wandern ein.", s: "Foliensatz", sp: ["wunden: Phasen der Wundheilung"] },
     { f: "Welche sind lokale Einflussfaktoren auf die Wundheilung?",
       o: ["Fremdkörper", "Durchblutungsstörung", "Mechanische Belastung", "Lebensalter"], r: 3,
       e: "Lokal: Fremdkörper, Infektion, Naht/Spannung, Durchblutungsstörung, mechanische Belastung, ungeeignete Versorgung. Allgemein: Alter, Ernährung, Stoffwechsel, Immunschwäche, Medikamente, Grunderkrankungen.", s: "Foliensatz" },
@@ -234,17 +234,17 @@ Lernapp.thema({
 
   zusammenfassung: `
 <h3>1. Wunde – Definition und Einteilung <span class="stern" title="im Heft als prüfungsrelevant markiert">★</span> <span class="seite">S. 3</span></h3>
-<p class="merke"><b>Wunde</b> = Unterbrechung des Zusammenhangs von Körpergeweben mit oder ohne Substanzverlust (Pfitzmann 2020).</p>
+<p class="merke"><span class="sp" data-sp="wunden: Def. Wunde">Schwerpunkt</span><b>Wunde</b> = Unterbrechung des Zusammenhangs von Körpergeweben mit oder ohne Substanzverlust (Pfitzmann 2020).</p>
 <ul>
   <li>Wunden sind oft, aber nicht zwangsläufig mit Gewebeverlust und Funktionseinschränkung verbunden.</li>
-  <li>Einteilungskriterien: Entstehungshergang · Entstehungsart · Heilungsdauer · Keimbesiedelung (Kolonisationsgrad) · Art und Tiefe der Gewebeschädigung.</li>
+  <li><span class="sp" data-sp="wunden: Nach welchen Kriterien werden Wunden unterschieden?">Schwerpunkt</span>Einteilungskriterien: Entstehungshergang · Entstehungsart · Heilungsdauer · Keimbesiedelung (Kolonisationsgrad) · Art und Tiefe der Gewebeschädigung.</li>
 </ul>
 
-<h3>2. Entstehungshergang <span class="stern" title="im Heft als prüfungsrelevant markiert">★</span> <span class="seite">S. 3–9</span></h3>
+<h3>2. Entstehungshergang <span class="sp" data-sp="wunden: Entstehungshergang von Wunden">Schwerpunkt</span> <span class="stern" title="im Heft als prüfungsrelevant markiert">★</span> <span class="seite">S. 3–9</span></h3>
 <ul>
   <li>Vier Ursachen: mechanisch, thermisch, chemisch, strahlenbedingt.</li>
-  <li><b>Mechanische Wunden</b> = Folge von Gewalteinwirkung: Schnitt-, Stich-, Quetsch-, Riss-, Platz-, Schürf-, Kratz- und Bisswunden, Blasen, Ablederungen, Amputationen, Schuss- und Pfählungsverletzungen. <span class="hand-inline">Die Detailtabelle (S. 4–5) ist handschriftlich als „kein Prüfungsstoff“ markiert.</span> Merkpunkte: Stichwunden neigen zur Infektion (Keimverschleppung in die Tiefe); Bisswunden – kleine Einstiche, große Kavernen, Keimübertragung; Schürfwunde – nur Epidermis, punktförmige Blutungen aus dem Stratum papillare, sehr schmerzhaft.</li>
-  <li><b>Thermische Wunden:</b> Verbrennungen/Verbrühungen, Erfrierungen, Stromverletzungen (S. 6).</li>
+  <li><span class="sp" data-sp="wunden: Beispiele für mechanische Wunden">Schwerpunkt</span><b>Mechanische Wunden</b> = Folge von Gewalteinwirkung: Schnitt-, Stich-, Quetsch-, Riss-, Platz-, Schürf-, Kratz- und Bisswunden, Blasen, Ablederungen, Amputationen, Schuss- und Pfählungsverletzungen. <span class="hand-inline">Die Detailtabelle (S. 4–5) ist handschriftlich als „kein Prüfungsstoff“ markiert.</span> Merkpunkte: Stichwunden neigen zur Infektion (Keimverschleppung in die Tiefe); Bisswunden – kleine Einstiche, große Kavernen, Keimübertragung; Schürfwunde – nur Epidermis, punktförmige Blutungen aus dem Stratum papillare, sehr schmerzhaft.</li>
+  <li><span class="sp" data-sp="wunden: Beispiele für thermische Wunden">Schwerpunkt</span><b>Thermische Wunden:</b> Verbrennungen/Verbrühungen, Erfrierungen, Stromverletzungen (S. 6).</li>
 </ul>
 <div class="tabelle"><table>
   <caption>Schweregrade von Verbrennungen (S. 6)</caption>
@@ -260,7 +260,7 @@ Lernapp.thema({
 <p class="warnung">Verbrennungsschock (hypovolämisch): bei 2.–3.-gradiger Verbrennung ab 10 % KOF bei Erwachsenen, ab 5 % bei Kindern (S. 7).</p>
 <p class="hand">Kein Prüfungsstoff: Stromverletzungen (Nieder- &lt; 1000 V, Hochspannung &gt; 1000 V, Blitzschlag mit Blitzfiguren) und Erfrierungen (Grad 1 Congelatio erythematosa, 2 bullosa, 3 gangraenosa; gefährdet sind Akren; Nässegangrän auch über 0 °C möglich) (S. 7–8).</p>
 <ul>
-  <li><b>Chemische Wunden (S. 8):</b> Verätzung durch Säuren oder Laugen; Laugen sind schwerwiegender als Säuren.</li>
+  <li><span class="sp" data-sp="wunden: Beispiele für chemische Wunden">Schwerpunkt</span><b>Chemische Wunden (S. 8):</b> Verätzung durch Säuren oder Laugen; Laugen sind schwerwiegender als Säuren.</li>
 </ul>
 <div class="tabelle"><table>
   <caption>Säure- vs. Laugenverätzung (S. 8)</caption>
@@ -276,7 +276,7 @@ Lernapp.thema({
   <li><b>Strahlenbedingte Wunden (S. 9):</b> ionisierende Wirkung; zuerst das Stratum basale betroffen (hohe Mitoserate). Früh: akuter Strahlenschaden; spät: Gefäßveränderungen, Fibrose, Strahlenulzera – maligne Transformation (Plattenepithelkarzinom) nach 4–40 Jahren möglich. 4 Schweregrade; Behandlung wie bei Verbrennungen.</li>
 </ul>
 
-<h3>3. Entstehungsart und Heilungsdauer <span class="stern" title="im Heft als prüfungsrelevant markiert">★</span> <span class="seite">S. 9–13</span></h3>
+<h3>3. Entstehungsart und Heilungsdauer <span class="sp" data-sp="wunden: Entstehungsart von Wunden|wunden: Dauer der Heilung">Schwerpunkt</span> <span class="stern" title="im Heft als prüfungsrelevant markiert">★</span> <span class="seite">S. 9–13</span></h3>
 <ul>
   <li><b>Traumatisch</b> – äußere Gewalteinwirkung (Schnitt, Biss, Platzwunde).</li>
   <li><b>Iatrogen</b> – durch ärztliche/therapeutische Maßnahmen (Inzision, Punktion, Laser, Spalthautentnahme, Amputation); Grundsatz „Vulnerando sanamus“ – Heilen durch Verletzen.</li>
@@ -284,7 +284,7 @@ Lernapp.thema({
   <li><b>Akut:</b> Wundheilungsphasen regelrecht durchlaufen, Heilung innerhalb von 4 Wochen. Chronische Wunden entstehen meist nicht auf gesunder Haut; WHS: kein geordneter, zeitgerechter Ablauf. Hard-to-heal: Ulcera &gt; 6 cm², älter als 6 Monate (S. 11–13).</li>
 </ul>
 
-<h3>4. Kolonisationsgrad <span class="stern" title="im Heft als prüfungsrelevant markiert">★</span> <span class="seite">S. 10–11</span></h3>
+<h3>4. Kolonisationsgrad <span class="sp" data-sp="wunden: Einteilung nach Kolonisation">Schwerpunkt</span> <span class="stern" title="im Heft als prüfungsrelevant markiert">★</span> <span class="seite">S. 10–11</span></h3>
 <div class="tabelle"><table>
   <thead><tr><th>Grad</th><th>Merkmale</th></tr></thead>
   <tbody>
@@ -304,12 +304,12 @@ Lernapp.thema({
 
 <h3>5. Tiefe und Ausdehnung <span class="seite">S. 12–13</span></h3>
 <ul>
-  <li><b>Geschlossene Wunden:</b> unter intakter Haut (Distorsion, Luxation, geschlossene Fraktur, Muskel-/Sehnenriss); außen nur Hämatom und Schwellung sichtbar, oft sehr schmerzhaft.</li>
-  <li><b>Offene Wunden:</b> oberflächlich (nur Epidermis, heilt narbenfrei; Erosion, Exkoriation) · perforierend (alle Hautschichten; Messerstich, Ablederung, Verätzung) · kompliziert (zusätzlich Gefäße, Nerven, ggf. Organe; offene Fraktur, traumatische Amputation).</li>
+  <li><span class="sp" data-sp="wunden: Def. geschlossene Wunden">Schwerpunkt</span><b>Geschlossene Wunden:</b> unter intakter Haut (Distorsion, Luxation, geschlossene Fraktur, Muskel-/Sehnenriss); außen nur Hämatom und Schwellung sichtbar, oft sehr schmerzhaft.</li>
+  <li><span class="sp" data-sp="wunden: Def. offene Wunden">Schwerpunkt</span><b>Offene Wunden:</b> oberflächlich (nur Epidermis, heilt narbenfrei; Erosion, Exkoriation) · perforierend (alle Hautschichten; Messerstich, Ablederung, Verätzung) · kompliziert (zusätzlich Gefäße, Nerven, ggf. Organe; offene Fraktur, traumatische Amputation).</li>
 </ul>
 
-<h3>6. Arten und Mechanismen der Wundheilung <span class="stern" title="im Heft als prüfungsrelevant markiert">★</span> <span class="seite">S. 13–16</span></h3>
-<p class="merke"><b>Wundheilung</b> = „physiologische Vorgänge zur Regeneration zerstörten Gewebes, die insbesondere durch Neubildung von Bindegewebe und Kapillaren den Verschluss einer Wunde bewirken“ (Pfitzmann 2020). Ziel: Wunde verschließen, Verlust von Blut, Lymphe und Wärme vermeiden, Austrocknung und äußere Einflüsse verhindern.</p>
+<h3>6. Arten und Mechanismen der Wundheilung <span class="sp" data-sp="wunden: Arten der Wundheilung|wunden: Welche Wundheilungsmechanismen gibt es?">Schwerpunkt</span> <span class="stern" title="im Heft als prüfungsrelevant markiert">★</span> <span class="seite">S. 13–16</span></h3>
+<p class="merke"><span class="sp" data-sp="wunden: Def. Wundheilung">Schwerpunkt</span><b>Wundheilung</b> = „physiologische Vorgänge zur Regeneration zerstörten Gewebes, die insbesondere durch Neubildung von Bindegewebe und Kapillaren den Verschluss einer Wunde bewirken“ (Pfitzmann 2020). Ziel: Wunde verschließen, Verlust von Blut, Lymphe und Wärme vermeiden, Austrocknung und äußere Einflüsse verhindern.</p>
 <ul>
   <li>Optimal ist ein feucht-warmes Milieu: Zellteilung erst ab 28 °C, Zellen wandern schneller (S. 15).</li>
   <li>Analnahe Wunden gelten trotz wochenlanger Heilung nicht als chronisch (geplante Sekundärheilung, gut durchblutet); Wundumgebung vor Überfeuchtung schützen (S. 15).</li>
@@ -334,7 +334,7 @@ Lernapp.thema({
 </table></div>
 <p>Narben sind faserreiches, qualitativ weniger hochwertiges Reparaturgewebe mit paralleler Kollagenanordnung – weniger elastisch, ohne Talg- und Schweißdrüsen (S. 16).</p>
 
-<h3>7. Phasen der Wundheilung <span class="stern" title="im Heft als prüfungsrelevant markiert">★</span> <span class="seite">S. 16–20</span></h3>
+<h3>7. Phasen der Wundheilung <span class="sp" data-sp="wunden: Phasen der Wundheilung">Schwerpunkt</span> <span class="stern" title="im Heft als prüfungsrelevant markiert">★</span> <span class="seite">S. 16–20</span></h3>
 <div class="tabelle"><table>
   <thead><tr><th>Phase</th><th>Zeit (akute Wunde)</th><th>Vorgänge</th></tr></thead>
   <tbody>
@@ -348,7 +348,7 @@ Lernapp.thema({
 <p>Die Phasen überlappen. In der Praxis oft 3 Phasen: Exsudation, Granulation, Epithelisierung. Bei immungeschwächten Menschen ist die Entzündung abgeschwächt oder verzögert → Infektionsrisiko, Heilungsstillstand. Chronische Wunden: Wochen bis Jahre.</p>
 <p class="merke"><b>Übung II (Lösung S. 25):</b> Hämostase → Blut und Plasma füllen Wundspalt · Exsudation → Beginn der Wundreinigung · Granulation → Bildung neuer Kapillarschleifen · Epithelisierung → Granulationsgewebe verliert Gewebewasser · Remodulierung → Entstehung von Narbengewebe.</p>
 
-<h3>8. Wundheilungsstörungen <span class="seite">S. 21–24</span></h3>
+<h3>8. Wundheilungsstörungen <span class="sp" data-sp="wunden: Arten der Wundheilungsstörungen">Schwerpunkt</span> <span class="seite">S. 21–24</span></h3>
 <ul>
   <li>Ursachen: lokal (Fremdkörper, Infektion, Naht- und Spannungsprobleme) und allgemein (Alter, Ernährung, Stoffwechselstörungen).</li>
   <li>Komplikationen: Serom · Wundhämatom · Wundrandnekrose · Wundinfektion · Wunddehiszenz · Fremdkörperreaktion · hypertrophe Narbe und Keloid · Narbenkarzinom.</li>
@@ -379,7 +379,7 @@ Lernapp.thema({
 <div class="tabelle"><table>
   <thead><tr><th>Thema</th><th>Ergebnis</th></tr></thead>
   <tbody>
-    <tr><td style="white-space:normal">Definition chronische Wunde</td><td>⚠ Die Folie „Entstehungsart“ nennt 4–6 Wochen, die Folie „Akut vs. chronisch“ 4–12 Wochen. Heft und Expertenstandard: 4–12 Wochen – diese Angabe lernen.</td></tr>
+    <tr><td style="white-space:normal"><span class="sp" data-sp="chronwunden: Basiswissen chronische Wunden">Schwerpunkt</span>Definition chronische Wunde</td><td>⚠ Die Folie „Entstehungsart“ nennt 4–6 Wochen, die Folie „Akut vs. chronisch“ 4–12 Wochen. Heft und Expertenstandard: 4–12 Wochen – diese Angabe lernen.</td></tr>
     <tr><td style="white-space:normal">Hämostase</td><td>➜ Ablauf in 6 Schritten: Kapillaren ziehen sich zusammen → Vasokonstriktion der nächstgrößeren Gefäße → Blut und Plasma füllen den Wundspalt → Thrombozyten haften an Kollagenfasern → Thrombus mit Erythrozyten → erste Blutzellen zur Reinigung wandern ein.</td></tr>
     <tr><td style="white-space:normal">Remodulierung</td><td>➜ Bei Menschen ab 60 Jahren verschlechtert sich die Zugbelastung des Narbengewebes deutlich (so auch im Heft S. 19).</td></tr>
     <tr><td style="white-space:normal">Einflussfaktoren</td><td>➜ Lokal: Fremdkörper, lokale Infektion, Naht/Spannung, Durchblutungsstörung, mechanische Belastung, ungeeignete Wundversorgung. Allgemein: Lebensalter, Ernährungszustand, Stoffwechselstörungen, Immunschwäche, Medikamente, Grunderkrankungen.</td></tr>

@@ -21,23 +21,23 @@ Lernapp.thema({
     { k: "Grundlagen", f: "Wie definiert das Heft Kompressionstherapie?",
       a: "„Therapeutische Maßnahmen, die unter Anwendung von Druck zur Behandlung von Venenleiden, Lymphödem und Kombinationsleiden, bei traumatischen Indikationen wie postoperativen Ödemen oder Angiodysplasien dienen.“ (Möller-Woltemade 2020) Basis jeder phlebologischen Therapie.", s: "S. 4" },
     { k: "Indikation", f: "Wann ist Kompressionstherapie grundsätzlich indiziert? ★",
-      a: "Bei allen venösen und lymphatischen Erkrankungen, die Ödeme der Beine nach sich ziehen. Gruppen: chronische Venenkrankheiten, thromboembolische Venenkrankheiten, Ödeme, andere (z. B. Z. n. Verbrennungen, Narben).", s: "S. 3" },
+      a: "Bei allen venösen und lymphatischen Erkrankungen, die Ödeme der Beine nach sich ziehen. Gruppen: chronische Venenkrankheiten, thromboembolische Venenkrankheiten, Ödeme, andere (z. B. Z. n. Verbrennungen, Narben).", s: "S. 3", sp: ["kompression: Indikation der medizinischen Kompressionstherapie"] },
     { k: "Indikation", f: "Indikationen bei chronischen Venenkrankheiten?",
-      a: "Venöse Symptome, Lebensqualität, venöse Ödeme/Hautveränderungen, Ulcus cruris venosum + Rezidivprävention, Schmerzreduktion, gemischtes Ulcus (KI beachten!), Varikose, Ekzem, Dermatoliposklerose, Atrophie blanche, nach Varikosetherapie, funktionelle venöse Insuffizienz.", s: "S. 3" },
+      a: "Venöse Symptome, Lebensqualität, venöse Ödeme/Hautveränderungen, Ulcus cruris venosum + Rezidivprävention, Schmerzreduktion, gemischtes Ulcus (KI beachten!), Varikose, Ekzem, Dermatoliposklerose, Atrophie blanche, nach Varikosetherapie, funktionelle venöse Insuffizienz.", s: "S. 3", sp: ["kompression: Indikation der medizinischen Kompressionstherapie"] },
     { k: "Indikation", f: "Thromboembolische und ödematöse Indikationen?",
-      a: "Thrombose: oberflächliche/tiefe Beinvenen-, Armvenenthrombose, Z. n. Thrombose, PTS, Prophylaxe bei Mobilen.\nÖdeme: Lymphödem, Lipödem ab Stadium II, Immobilität, medikamentös, Schwangerschaft, posttraumatisch/postoperativ, idiopathisch, berufsbedingt.", s: "S. 3" },
+      a: "Thrombose: oberflächliche/tiefe Beinvenen-, Armvenenthrombose, Z. n. Thrombose, PTS, Prophylaxe bei Mobilen.\nÖdeme: Lymphödem, Lipödem ab Stadium II, Immobilität, medikamentös, Schwangerschaft, posttraumatisch/postoperativ, idiopathisch, berufsbedingt.", s: "S. 3", sp: ["kompression: Indikation der medizinischen Kompressionstherapie"] },
     { k: "Kontraindikation", f: "Nenne die Kontraindikationen der Kompressionstherapie. ★",
-      a: "Fortgeschrittene pAVK · dekompensierte Herzinsuffizienz (NYHA III + IV) · septische Phlebitis · Phlegmasia coerulea dolens. Handschr. Prüfungsfrage: Herzinsuffizienz, septische Phlebitis, pAVK, Dermatosen.", s: "S. 4", h: true },
+      a: "Fortgeschrittene pAVK · dekompensierte Herzinsuffizienz (NYHA III + IV) · septische Phlebitis · Phlegmasia coerulea dolens. Handschr. Prüfungsfrage: Herzinsuffizienz, septische Phlebitis, pAVK, Dermatosen.", s: "S. 4", h: true, sp: ["kompression: Kontraindikation der medizinischen Kompressionstherapie"] },
     { k: "Kontraindikation", f: "Ab welchen Werten ist die pAVK eine Kontraindikation?",
-      a: "Wenn einer zutrifft: ABPI < 0,5 · Knöchelarteriendruck < 60 mmHg · Zehendruck < 30 mmHg oder TcPO₂ < 20 mmHg am Fußrücken. Mit unelastischem Material ggf. noch bei 50–60 mmHg unter engmaschiger Kontrolle.", s: "S. 4" },
+      a: "Wenn einer zutrifft: ABPI < 0,5 · Knöchelarteriendruck < 60 mmHg · Zehendruck < 30 mmHg oder TcPO₂ < 20 mmHg am Fußrücken. Mit unelastischem Material ggf. noch bei 50–60 mmHg unter engmaschiger Kontrolle.", s: "S. 4", sp: ["kompression: Kontraindikation der medizinischen Kompressionstherapie"] },
     { k: "Kontraindikation", f: "Ulcus cruris mixtum – Kompression ja oder nein? ★",
-      a: "Handschr. („Prüfung“): abhängig vom Gefäßstatus → ABI-Messung (RR an beiden Armen und beiden Beinen); < 0,5 kritischer Wert → keine Kompressionstherapie. Laut Druck: gemischtes Ulcus ist Indikation unter Berücksichtigung der KI.", s: "S. 2–4", h: true },
+      a: "Handschr. („Prüfung“): abhängig vom Gefäßstatus → ABI-Messung (RR an beiden Armen und beiden Beinen); < 0,5 kritischer Wert → keine Kompressionstherapie. Laut Druck: gemischtes Ulcus ist Indikation unter Berücksichtigung der KI.", s: "S. 2–4", h: true, sp: ["kompression: Kontraindikation der medizinischen Kompressionstherapie"] },
     { k: "Kontraindikation", f: "Welche Risikofaktoren erfordern eine Abwägung?",
-      a: "Ausgeprägte nässende Dermatosen, Unverträglichkeit auf Material, schwere Sensibilitätsstörungen, fortgeschrittene periphere Neuropathie (z. B. Diabetes), primär chronische Polyarthritis → interdisziplinäre Nutzen-Risiko-Entscheidung.", s: "S. 4" },
+      a: "Ausgeprägte nässende Dermatosen, Unverträglichkeit auf Material, schwere Sensibilitätsstörungen, fortgeschrittene periphere Neuropathie (z. B. Diabetes), primär chronische Polyarthritis → interdisziplinäre Nutzen-Risiko-Entscheidung.", s: "S. 4", sp: ["kompression: Kontraindikation der medizinischen Kompressionstherapie"] },
     { k: "Wirkung", f: "Wie wirkt Kompression auf die Venen? ★",
       a: "Gefäßdurchmesser ↓ → Fließgeschwindigkeit zum Herzen fast verdoppelt, transmuraler Druck ↓; dilatierte (nicht zerstörte) Venenklappen schließen wieder – schon in Ruhe durch den Ruhedruck.", s: "S. 4" },
     { k: "Wirkung", f: "Ruhedruck vs. Arbeitsdruck?",
-      a: "Ruhedruck = Anlagedruck in Ruhe im Liegen, beschreibt Kompressionsstärke, sinkt durch Bewegung/Ödemreduktion.\nArbeitsdruck = Widerstand des Verbandes gegen die Muskelausdehnung bei Bewegung; umso höher, je weniger dehnbar das Material.", s: "S. 5" },
+      a: "Ruhedruck = Anlagedruck in Ruhe im Liegen, beschreibt Kompressionsstärke, sinkt durch Bewegung/Ödemreduktion.\nArbeitsdruck = Widerstand des Verbandes gegen die Muskelausdehnung bei Bewegung; umso höher, je weniger dehnbar das Material.", s: "S. 5", sp: ["kompression: Def. Ruhedruck", "kompression: Def. Arbeitsdruck"] },
     { k: "Wirkung", f: "Was bedeutet Stiffness?",
       a: "Steifigkeit: wie stark das Kompressionsmittel einer Umfangszunahme (Bewegung, Ödem, Aufstehen) widersteht. Langzug → geringer Druckanstieg; Zinkleim → sehr hoher. Je weniger das Material nachgibt, desto höher die Stiffness.", s: "S. 5" },
     { k: "Wirkung", f: "Welche Muskelpumpen gibt es? ★",
@@ -45,13 +45,13 @@ Lernapp.thema({
     { k: "Wirkung", f: "In welche Richtung soll der Druck abnehmen – und warum?",
       a: "Von distal nach proximal, damit dem Rückfluss wenig Widerstand entgegensteht. Laplace: bei größerem Umfang sinkt der Druck bei gleichem Zug → am normal geformten Unterschenkel entsteht das Gefälle von selbst; nicht zuerst stark, dann schwach wickeln.", s: "S. 5–6" },
     { k: "Wirkung", f: "Nenne Wirkungen der Kompressionstherapie.",
-      a: "Rückfluss bis in tiefe Gefäße ↑, Venendruck ↓, Thromboseprophylaxe, Gerinnselabbau, Abtransport von Schlackenstoffen, Schließen dilatierter Klappen, Ödemreduktion, Lymphdrainage ↑, rasche Entstauung, Ulcusabheilung.", s: "S. 6" },
+      a: "Rückfluss bis in tiefe Gefäße ↑, Venendruck ↓, Thromboseprophylaxe, Gerinnselabbau, Abtransport von Schlackenstoffen, Schließen dilatierter Klappen, Ödemreduktion, Lymphdrainage ↑, rasche Entstauung, Ulcusabheilung.", s: "S. 6", sp: ["kompression: Wirkweise der Kompressionstherapie (Seite 6 oben)"] },
     { k: "Phasen", f: "Phasen der Kompressionstherapie bei CVI? ★",
-      a: "1. Entstauung: Ödemreduktion → PKV (Kurzzug, Mehrkomponenten) oder MAK.\n2. Erhaltung: stabiler Zustand → MKS oder Ulcus-Strumpfsysteme.\n3. Prävention: nach Abheilung → MKS, meist KKL II.", s: "S. 6" },
+      a: "1. Entstauung: Ödemreduktion → PKV (Kurzzug, Mehrkomponenten) oder MAK.\n2. Erhaltung: stabiler Zustand → MKS oder Ulcus-Strumpfsysteme.\n3. Prävention: nach Abheilung → MKS, meist KKL II.", s: "S. 6", sp: ["kompression: Unterschied Entstauungsphase / Erhaltungsphase / Prävention"] },
     { k: "Risiken", f: "Risiken und Nebenwirkungen der Kompression?",
       a: "Unsachgemäß (zu hoher Druck, Strangulation): Schmerzen, Gewebeschäden, Nekrosen, Nervenschäden an Knochenvorsprüngen (Fibulaköpfchen). MKS falsch gehandhabt: Hautnekrosen, Nervenschäden. Empfindliche Haut: Juckreiz, Schuppung, Entzündung → Hautpflege.", s: "S. 7" },
     { k: "Methoden", f: "Welche vier Methoden gibt es?",
-      a: "PKV (Binden; Entstauung) · MKS (Strümpfe; Erhaltung, Prävention) · MAK (Klett-/Wrap-Systeme; Entstauung) · IPK (apparativ, nur unterstützend, kein Ersatz).", s: "S. 7" },
+      a: "PKV (Binden; Entstauung) · MKS (Strümpfe; Erhaltung, Prävention) · MAK (Klett-/Wrap-Systeme; Entstauung) · IPK (apparativ, nur unterstützend, kein Ersatz).", s: "S. 7", sp: ["kompression: Methoden der Kompressionstherapie"] },
     { k: "PKV", f: "Wechsel- vs. Dauerverband?",
       a: "Wechselverband: täglich neu, optimal über Nacht belassen.\nDauerverband (z. B. Mehrkomponentensystem): mehrere Tage, auch nachts. PKV schließt Fuß und Sprunggelenk ein, bis Fibulaköpfchen oder proximalen Oberschenkel.", s: "S. 8" },
     { k: "PKV", f: "Kurzzug- vs. Langzugbinde? ★",
@@ -111,13 +111,13 @@ Lernapp.thema({
     { k: "IPK", f: "Kontraindikationen der IPK?",
       a: "Dekompensierte Herzinsuffizienz, ausgedehnte Thrombophlebitis/Thrombose(-verdacht), akutes Erysipel, akute Phlegmone, Kompartmentsyndrom, schwere Hypertonie, okkludierende Lymphabstromprozesse, Weichteiltrauma, ausgeprägte Neuropathie, blasenbildende Dermatosen.", s: "S. 22" },
     { k: "Bewegung", f: "Warum ist Bewegung Teil der Kompressionstherapie?",
-      a: "Eigenbewegung ist stets Bestandteil einer effektiven Kompressionstherapie. Wirkung nur bei Sprunggelenksbeweglichkeit und normalem Abrollen. Übungen: Fußkreisen, Fußwippen, Zehenkrallen; Gehtraining, Nordic Walking; Bettlägerige: Drainagebeutel.", s: "S. 24" },
+      a: "Eigenbewegung ist stets Bestandteil einer effektiven Kompressionstherapie. Wirkung nur bei Sprunggelenksbeweglichkeit und normalem Abrollen. Übungen: Fußkreisen, Fußwippen, Zehenkrallen; Gehtraining, Nordic Walking; Bettlägerige: Drainagebeutel.", s: "S. 24", sp: ["kompression: Bewegung und Kompressionstherapie"] },
     { k: "Übungen", f: "Welche Binden für mobile Menschen mit UCV in der Entstauung? (Übung I)",
       a: "Kurzzugbinden und Mehrkomponentensysteme (hoher Arbeits-, niedriger Ruhedruck).\nMehrkomponenten: effektiver, einfacher, Druck bis zum Wechsel, aber voluminös. Kurzzug: Druck sinkt rasch, verrutscht, aber wiederverwendbar.", s: "S. 30" },
     { k: "Übungen", f: "Erhaltungsphase bei stabilem UCV – was beraten? (Übung I)",
-      a: "Kompressionsstrümpfe oder Ulcus-Strumpfsysteme.\nBeratung: Kompression bleibt auch nach Abheilung nötig – Gefäße dehnen sich wieder, Klappen schließen nicht → Rezidive; danach meist KKL II, lebenslang.", s: "S. 30" },
+      a: "Kompressionsstrümpfe oder Ulcus-Strumpfsysteme.\nBeratung: Kompression bleibt auch nach Abheilung nötig – Gefäße dehnen sich wieder, Klappen schließen nicht → Rezidive; danach meist KKL II, lebenslang.", s: "S. 30", sp: ["kompression: Unterschied Entstauungsphase / Erhaltungsphase / Prävention"] },
     { k: "Übungen", f: "Phasengerechte Kompression bei UCV? (Übung II)",
-      a: "Entstauung: Kurzzug, Mehrkomponenten, MAK – ja; Strümpfe nein.\nErhaltung: Kompressionsstrümpfe und Ulcus-Strumpfsysteme – ja.\nPrävention: nur Kompressionsstrümpfe. Beim Lymphödem: Entstauung und Erhaltung analog.", s: "S. 30" },
+      a: "Entstauung: Kurzzug, Mehrkomponenten, MAK – ja; Strümpfe nein.\nErhaltung: Kompressionsstrümpfe und Ulcus-Strumpfsysteme – ja.\nPrävention: nur Kompressionsstrümpfe. Beim Lymphödem: Entstauung und Erhaltung analog.", s: "S. 30", sp: ["kompression: Unterschied Entstauungsphase / Erhaltungsphase / Prävention"] },
     { k: "Leitlinie", f: "Was gehört auf das Rezept für MKS?",
       a: "Anzahl, Strumpflänge (A-D, A-F, A-G, A-T), KKL, Indikation/Diagnose, Hilfsmittelnummer, ggf. Maßanfertigung, Fußspitze offen/geschlossen; ggf. Zusätze, flachgestrickt, Stiffness, Befestigung, Wechselversorgung.", s: "S. 26" },
     { k: "Leitlinie", f: "Nutzungsdauer von MKS und Kompression nach TVT?",
@@ -129,34 +129,34 @@ Lernapp.thema({
   quiz: [
     { f: "Wann ist Kompressionstherapie laut Heft grundsätzlich indiziert?",
       o: ["Bei allen venösen und lymphatischen Erkrankungen, die Ödeme der Beine nach sich ziehen", "Ausschließlich bei arteriellen Durchblutungsstörungen", "Nur bei dekompensierter Herzinsuffizienz", "Nur unmittelbar nach Operationen"],
-      e: "Indikationsgruppen (nach Rabe 2018): chronische Venenkrankheiten, thromboembolische Venenkrankheiten, Ödeme, andere (z. B. Z. n. Verbrennungen, Narbenbehandlung).", s: "S. 3" },
+      e: "Indikationsgruppen (nach Rabe 2018): chronische Venenkrankheiten, thromboembolische Venenkrankheiten, Ödeme, andere (z. B. Z. n. Verbrennungen, Narbenbehandlung).", s: "S. 3", sp: ["kompression: Indikation der medizinischen Kompressionstherapie"] },
     { f: "Ab welchem Stadium ist das Lipödem laut Heft eine Indikation für Kompression?",
       o: ["Ab Stadium II", "Das Lipödem ist eine absolute Kontraindikation", "Nur im Stadium 0", "Gar nicht – Kompression wirkt nur bei Venenleiden"],
-      e: "Unter „Ödeme“: Lymphödem, Lipödem ab Stadium II, Stauung bei Immobilität, medikamentös bedingte Ödeme, Schwangerschaft u. a.", s: "S. 3" },
+      e: "Unter „Ödeme“: Lymphödem, Lipödem ab Stadium II, Stauung bei Immobilität, medikamentös bedingte Ödeme, Schwangerschaft u. a.", s: "S. 3", sp: ["kompression: Indikation der medizinischen Kompressionstherapie"] },
     { f: "Welche zählen zu den absoluten Kontraindikationen der Kompressionstherapie?",
       o: ["Dekompensierte Herzinsuffizienz (NYHA III + IV)", "Septische Phlebitis", "Ulcus cruris venosum", "Postthrombotisches Syndrom"], r: 2,
-      e: "Absolute KI: fortgeschrittene pAVK, dekompensierte Herzinsuffizienz (NYHA III + IV), septische Phlebitis, Phlegmasia coerulea dolens. UCV und PTS sind Indikationen.", s: "S. 3–4" },
+      e: "Absolute KI: fortgeschrittene pAVK, dekompensierte Herzinsuffizienz (NYHA III + IV), septische Phlebitis, Phlegmasia coerulea dolens. UCV und PTS sind Indikationen.", s: "S. 3–4", sp: ["kompression: Kontraindikation der medizinischen Kompressionstherapie"] },
     { f: "Welcher ABPI-Wert kennzeichnet laut Heft eine fortgeschrittene pAVK als Kontraindikation?",
       o: ["ABPI < 0,5", "ABPI > 0,5", "ABPI > 1,0", "ABPI zwischen 0,9 und 1,3"],
-      e: "Fortgeschrittene pAVK, wenn einer zutrifft: ABPI < 0,5 · Knöchelarteriendruck < 60 mmHg · Zehendruck < 30 mmHg oder TcPO₂ < 20 mmHg am Fußrücken.", s: "S. 4" },
+      e: "Fortgeschrittene pAVK, wenn einer zutrifft: ABPI < 0,5 · Knöchelarteriendruck < 60 mmHg · Zehendruck < 30 mmHg oder TcPO₂ < 20 mmHg am Fußrücken.", s: "S. 4", sp: ["kompression: Kontraindikation der medizinischen Kompressionstherapie"] },
     { f: "Welche Messwerte sprechen laut Heft für eine fortgeschrittene pAVK (Kontraindikation)?",
       o: ["Knöchelarteriendruck < 60 mmHg", "Zehendruck < 30 mmHg", "Knöchelarteriendruck > 100 mmHg", "TcPO₂ > 40 mmHg am Fußrücken"], r: 2,
-      e: "ABPI < 0,5 · Knöchelarteriendruck < 60 mmHg · Zehendruck < 30 mmHg oder TcPO₂ < 20 mmHg am Fußrücken; mit unelastischem Material ggf. noch bei 50–60 mmHg unter engmaschiger Kontrolle.", s: "S. 4" },
+      e: "ABPI < 0,5 · Knöchelarteriendruck < 60 mmHg · Zehendruck < 30 mmHg oder TcPO₂ < 20 mmHg am Fußrücken; mit unelastischem Material ggf. noch bei 50–60 mmHg unter engmaschiger Kontrolle.", s: "S. 4", sp: ["kompression: Kontraindikation der medizinischen Kompressionstherapie"] },
     { f: "Ulcus cruris mixtum – wovon hängt laut handschriftlicher Notiz ab, ob komprimiert wird?",
       o: ["Vom Gefäßstatus (ABI-Messung); unter 0,5 keine Kompression", "Kompression ist bei gemischtem Ulcus immer verboten", "Allein von der Exsudatmenge", "Vom Alter der Wunde"],
-      e: "Handschr. („Prüfung“): ABI-Messung (RR an beiden Armen und beiden Beinen); < 0,5 kritischer Wert → keine Kompressionstherapie. Laut Druck ist das gemischte Ulcus Indikation unter Beachtung der KI.", s: "S. 2–4", h: true },
+      e: "Handschr. („Prüfung“): ABI-Messung (RR an beiden Armen und beiden Beinen); < 0,5 kritischer Wert → keine Kompressionstherapie. Laut Druck ist das gemischte Ulcus Indikation unter Beachtung der KI.", s: "S. 2–4", h: true, sp: ["kompression: Kontraindikation der medizinischen Kompressionstherapie"] },
     { f: "Welche Faktoren erfordern laut Heft eine interdisziplinäre Nutzen-Risiko-Abwägung (Risikofaktoren, keine absolute KI)?",
       o: ["Ausgeprägte nässende Dermatosen", "Primär chronische Polyarthritis", "Phlegmasia coerulea dolens", "Dekompensierte Herzinsuffizienz (NYHA III + IV)"], r: 2,
-      e: "Risikofaktoren: nässende Dermatosen, Materialunverträglichkeit, schwere Sensibilitätsstörungen, fortgeschrittene periphere Neuropathie, primär chronische Polyarthritis. Phlegmasia coerulea dolens und dekompensierte Herzinsuffizienz sind absolute KI.", s: "S. 4" },
+      e: "Risikofaktoren: nässende Dermatosen, Materialunverträglichkeit, schwere Sensibilitätsstörungen, fortgeschrittene periphere Neuropathie, primär chronische Polyarthritis. Phlegmasia coerulea dolens und dekompensierte Herzinsuffizienz sind absolute KI.", s: "S. 4", sp: ["kompression: Kontraindikation der medizinischen Kompressionstherapie"] },
     { f: "Wie wirkt Kompression auf die Venen?",
       o: ["Gefäßdurchmesser sinkt, Fließgeschwindigkeit zum Herzen fast verdoppelt", "Gefäßdurchmesser steigt, Blut fließt langsamer", "Transmuraler Druck steigt, Venenklappen öffnen sich", "Sie wirkt nur bei Bewegung, nie in Ruhe"],
       e: "Gefäßdurchmesser ↓ → Fließgeschwindigkeit fast verdoppelt, transmuraler Druck ↓; dilatierte (nicht zerstörte) Klappen schließen wieder – bereits in Ruhe durch den Ruhedruck.", s: "S. 4" },
     { f: "Was beschreibt der Ruhedruck?",
       o: ["Den Anlagedruck in Ruhe im Liegen; er beschreibt die Kompressionsstärke", "Den Widerstand des Verbandes gegen die Muskelausdehnung beim Gehen", "Den Druck in den Luftkammern der IPK", "Einen Druck, der durch Bewegung und Ödemreduktion ansteigt"],
-      e: "Ruhedruck = Anlagedruck; nimmt durch Bewegung und Ödemreduktion innerhalb weniger Stunden ab. Der Widerstand gegen die Muskelausdehnung ist der Arbeitsdruck.", s: "S. 5" },
+      e: "Ruhedruck = Anlagedruck; nimmt durch Bewegung und Ödemreduktion innerhalb weniger Stunden ab. Der Widerstand gegen die Muskelausdehnung ist der Arbeitsdruck.", s: "S. 5", sp: ["kompression: Def. Ruhedruck"] },
     { f: "Wann ist der Arbeitsdruck eines Verbandes höher?",
       o: ["Je weniger dehnbar das Material ist", "Je dehnbarer das Material ist", "Je länger der Patient liegt", "Je stärker die Binde vorgedehnt im Schrank lagert"],
-      e: "Arbeitsdruck entsteht beim Aufstehen und bei Muskelaktivität durch den Widerstand des Verbandes gegen die Muskelausdehnung – umso höher, je weniger dehnbar das Material.", s: "S. 5" },
+      e: "Arbeitsdruck entsteht beim Aufstehen und bei Muskelaktivität durch den Widerstand des Verbandes gegen die Muskelausdehnung – umso höher, je weniger dehnbar das Material.", s: "S. 5", sp: ["kompression: Def. Arbeitsdruck"] },
     { f: "Welches Material zeigt laut Heft den stärksten Druckanstieg bei Umfangszunahme (Stiffness)?",
       o: ["Zinkleimbinde", "Langzugbinde", "Rundgestrickter Kompressionsstrumpf", "Baumwoll-Schlauchverband"],
       e: "Stiffness = wie stark das Material der Umfangszunahme widersteht: Langzug → geringer, Zinkleim → sehr hoher Druckanstieg; rundgestrickte Strümpfe haben geringe Stiffness.", s: "S. 5, 16" },
@@ -168,16 +168,16 @@ Lernapp.thema({
       e: "Laplace: größerer Umfang → geringerer Druck bei gleichem Zug; am normal geformten Bein entsteht das Gefälle von selbst. Nicht zuerst stark und zum Knie hin schwächer wickeln.", s: "S. 5–6" },
     { f: "In welcher Reihenfolge verlaufen die Phasen der Kompressionstherapie bei CVI?",
       o: ["Entstauung – Erhaltung – Prävention", "Prävention – Entstauung – Erhaltung", "Erhaltung – Entstauung – Prävention", "Entstauung – Prävention – Erhaltung"],
-      e: "1 Entstauungsphase (PKV oder MAK) · 2 Erhaltungsphase (MKS oder Ulcus-Strumpfsysteme) · 3 Prävention (MKS, i. d. R. KKL II).", s: "S. 6" },
+      e: "1 Entstauungsphase (PKV oder MAK) · 2 Erhaltungsphase (MKS oder Ulcus-Strumpfsysteme) · 3 Prävention (MKS, i. d. R. KKL II).", s: "S. 6", sp: ["kompression: Unterschied Entstauungsphase / Erhaltungsphase / Prävention"] },
     { f: "Welche Mittel sind in der Entstauungsphase bei Ulcus cruris venosum geeignet (Übung II)?",
       o: ["Kurzzugbinden bzw. Mehrkomponentensysteme", "Medizinische adaptive Kompressionssysteme (MAK)", "Medizinische Kompressionsstrümpfe", "Ulcus-Strumpfsysteme"], r: 2,
-      e: "Entstauung: Kurzzug, Mehrkomponenten, MAK – ja; Kompressionsstrumpf und Ulcus-Strumpf – nein (Lösung Übung II).", s: "S. 6, 30" },
+      e: "Entstauung: Kurzzug, Mehrkomponenten, MAK – ja; Kompressionsstrumpf und Ulcus-Strumpf – nein (Lösung Übung II).", s: "S. 6, 30", sp: ["kompression: Unterschied Entstauungsphase / Erhaltungsphase / Prävention"] },
     { f: "Womit wird nach Abheilung eines Ulcus cruris venosum Rezidiven vorgebeugt?",
       o: ["Mit medizinischen Kompressionsstrümpfen, meist KKL II, lebenslang", "Mit Zinkleimverbänden für 7 Tage", "Gar nicht mehr – nach Abheilung ist keine Kompression nötig", "Ausschließlich mit IPK als Ersatz der Kompression"],
-      e: "Gefäße dehnen sich wieder aus und Klappen schließen nicht → Rezidive; daher nach Abheilung MKS meist KKL II lebenslang.", s: "S. 6, 15, 30" },
+      e: "Gefäße dehnen sich wieder aus und Klappen schließen nicht → Rezidive; daher nach Abheilung MKS meist KKL II lebenslang.", s: "S. 6, 15, 30", sp: ["kompression: Unterschied Entstauungsphase / Erhaltungsphase / Prävention"] },
     { f: "Welche Rolle hat die intermittierende pneumatische Kompression (IPK)?",
       o: ["Nur unterstützend – sie ersetzt weder Lymphdrainage noch Kompression", "Sie ersetzt den Kompressionsverband vollständig", "Sie ist die Standardmethode der Erhaltungsphase", "Sie ist vor allem für mobile, sportliche Menschen gedacht"],
-      e: "IPK: apparative Wechseldrücke in Luftkammern, sequenziell distal → proximal; v. a. für teil-/immobile Menschen; 30–60 min, 1–3× täglich.", s: "S. 7, 21–23" },
+      e: "IPK: apparative Wechseldrücke in Luftkammern, sequenziell distal → proximal; v. a. für teil-/immobile Menschen; 30–60 min, 1–3× täglich.", s: "S. 7, 21–23", sp: ["kompression: Methoden der Kompressionstherapie"] },
     { f: "Welche Dehnbarkeit hat eine Kurzzugbinde?",
       o: ["40–90 %", "100–200 %", "< 10 %", "250–300 %"],
       e: "Kurzzug 40–90 % · Langzug 100–200 % · Zinkleim < 10 %.", s: "S. 8–9" },
@@ -255,14 +255,14 @@ Lernapp.thema({
       e: "Bei TVT sofort Kompression, mind. 6 Monate fortsetzen. MKS-Nutzungsdauer in der Regel 6 Monate, Erstversorgung mit Zweitverordnung.", s: "S. 27–29" },
     { f: "Warum gehört Bewegung zur Kompressionstherapie?",
       o: ["Die Wirkung setzt Sprunggelenksbeweglichkeit und normales Abrollen voraus", "Bewegung ist unter Kompression verboten", "Bewegung ersetzt die Kompression", "Nur Bettruhe sichert den Therapieerfolg"],
-      e: "Eigenbewegung ist stets Bestandteil einer effektiven Kompressionstherapie; Übungen: Fußkreisen, Fußwippen, Zehenkrallen, Gehtraining, Nordic Walking.", s: "S. 24" }
+      e: "Eigenbewegung ist stets Bestandteil einer effektiven Kompressionstherapie; Übungen: Fußkreisen, Fußwippen, Zehenkrallen, Gehtraining, Nordic Walking.", s: "S. 24", sp: ["kompression: Bewegung und Kompressionstherapie"] }
   ],
 
   zusammenfassung: `
 <p class="merke">„Kompression ist nicht alles, aber ohne Kompression kann nichts erreicht werden!“ (Kerstin Protz, S. 2) · Grundlegende, nebenwirkungsarme Basis bei chronischen Venenerkrankungen; unerlässlich bei venösen Ödemen und Ulcus cruris venosum. Eigennamen von Techniken: Pütter, Sigg, Fischer, Unna (S. 2).</p>
 <p class="hand">Handschr. Prüfungsthemen (S. 2): Indikation, Kontraindikation, Wirkungsweise, Phasen (Entstauung …).</p>
 
-<h3>1. Indikationen <span class="stern" title="im Heft als prüfungsrelevant markiert">★</span> <span class="seite">S. 3</span></h3>
+<h3>1. Indikationen <span class="sp" data-sp="kompression: Indikation der medizinischen Kompressionstherapie">Schwerpunkt</span> <span class="stern" title="im Heft als prüfungsrelevant markiert">★</span> <span class="seite">S. 3</span></h3>
 <p>Bei allen venösen und lymphatischen Erkrankungen, die Ödeme der Beine nach sich ziehen.</p>
 <div class="tabelle"><table>
   <thead><tr><th>Gruppe</th><th>Indikationen (Heft, nach Rabe 2018)</th></tr></thead>
@@ -274,7 +274,7 @@ Lernapp.thema({
   </tbody>
 </table></div>
 
-<h3>2. Kontraindikationen <span class="stern" title="im Heft als prüfungsrelevant markiert">★</span> <span class="seite">S. 4</span></h3>
+<h3>2. Kontraindikationen <span class="sp" data-sp="kompression: Kontraindikation der medizinischen Kompressionstherapie">Schwerpunkt</span> <span class="stern" title="im Heft als prüfungsrelevant markiert">★</span> <span class="seite">S. 4</span></h3>
 <div class="tabelle"><table>
   <thead><tr><th>Absolute Kontraindikationen (Heft)</th><th>Risikofaktoren (Nutzen-Risiko-Abwägung, interdisziplinär)</th></tr></thead>
   <tbody>
@@ -292,18 +292,18 @@ Lernapp.thema({
 <div class="tabelle"><table>
   <thead><tr><th>Begriff</th><th>Definition (Heft)</th></tr></thead>
   <tbody>
-    <tr><td>Ruhedruck</td><td>= Anlagedruck; Druck in Ruhe im Liegen; beschreibt die Kompressionsstärke; nimmt durch Bewegung und Ödemreduktion innerhalb weniger Stunden ab</td></tr>
-    <tr><td>Arbeitsdruck</td><td>entsteht beim Aufstehen und bei Muskelaktivität (Gehen) durch den Widerstand des Verbandes gegen die Muskelausdehnung; umso höher, je weniger dehnbar das Material</td></tr>
+    <tr><td><span class="sp" data-sp="kompression: Def. Ruhedruck">Schwerpunkt</span>Ruhedruck</td><td>= Anlagedruck; Druck in Ruhe im Liegen; beschreibt die Kompressionsstärke; nimmt durch Bewegung und Ödemreduktion innerhalb weniger Stunden ab</td></tr>
+    <tr><td><span class="sp" data-sp="kompression: Def. Arbeitsdruck">Schwerpunkt</span>Arbeitsdruck</td><td>entsteht beim Aufstehen und bei Muskelaktivität (Gehen) durch den Widerstand des Verbandes gegen die Muskelausdehnung; umso höher, je weniger dehnbar das Material</td></tr>
     <tr><td>Stiffness</td><td>Steifigkeit: wie stark das Material der Umfangszunahme widersteht; Langzug → geringer, Zinkleim → sehr hoher Druckanstieg</td></tr>
   </tbody>
 </table></div>
 <ul>
   <li>Kompression steigert die Effizienz der <b>Muskelpumpen</b>, v. a. Sprunggelenk- und Wadenmuskelpumpe; Druck verteilt sich nach dem <b>Pascal-Gesetz</b> im ganzen Bein (S. 5). <span class="hand-inline">Handschr. „Prüfung: Welche Pumpen gibt es?“ – Fußsohlenpumpe, Sprunggelenkspumpe, Wadenmuskelpumpe, Kniekehlenpumpe, Leisten-/Oberschenkelpumpe.</span></li>
   <li><b>Druck soll von distal nach proximal abnehmen</b> (Laplace: größerer Umfang → geringerer Druck bei gleichem Zug); daher nicht zuerst stark und zum Knie hin schwächer wickeln. Bei normal geformten Beinen entsteht das Druckgefälle von selbst (S. 5–6).</li>
-  <li><b>Wirkungen</b> (S. 6): Rückfluss bis in tiefe Gefäße ↑, Venendruck ↓, Thromboseprophylaxe, Abbau bestehender Gerinnsel, Abtransport von Schlackenstoffen, Schließen dilatierter Klappen, Ödemreduktion, Lymphdrainage ↑ (Mikrozirkulation), rasche Entstauung, Abheilung von Ulzerationen.</li>
+  <li><span class="sp" data-sp="kompression: Wirkweise der Kompressionstherapie (Seite 6 oben)">Schwerpunkt</span><b>Wirkungen</b> (S. 6): Rückfluss bis in tiefe Gefäße ↑, Venendruck ↓, Thromboseprophylaxe, Abbau bestehender Gerinnsel, Abtransport von Schlackenstoffen, Schließen dilatierter Klappen, Ödemreduktion, Lymphdrainage ↑ (Mikrozirkulation), rasche Entstauung, Abheilung von Ulzerationen.</li>
 </ul>
 
-<h3>4. Phasen der Kompressionstherapie bei CVI <span class="stern" title="im Heft als prüfungsrelevant markiert">★</span> <span class="seite">S. 6</span></h3>
+<h3>4. Phasen der Kompressionstherapie bei CVI <span class="sp" data-sp="kompression: Unterschied Entstauungsphase / Erhaltungsphase / Prävention">Schwerpunkt</span> <span class="stern" title="im Heft als prüfungsrelevant markiert">★</span> <span class="seite">S. 6</span></h3>
 <div class="tabelle"><table>
   <thead><tr><th>Phase</th><th>Ziel</th><th>Mittel</th></tr></thead>
   <tbody>
@@ -314,7 +314,7 @@ Lernapp.thema({
 </table></div>
 <p class="warnung"><b>Risiken</b> (S. 7): unsachgemäßes Bandagieren (zu hoher Druck, Strangulation) → Schmerzen, Gewebeschäden, Nekrosen, Nervenschäden v. a. an Knochenvorsprüngen (Fibulaköpfchen); MKS bei falscher Handhabung → Hautnekrosen, Nervenschäden; Juckreiz, Schuppung, Entzündung → Hautpflege.</p>
 
-<h3>5. Methoden – Übersicht <span class="seite">S. 7</span></h3>
+<h3>5. Methoden – Übersicht <span class="sp" data-sp="kompression: Methoden der Kompressionstherapie">Schwerpunkt</span> <span class="seite">S. 7</span></h3>
 <div class="tabelle"><table>
   <thead><tr><th>PKV</th><th>MKS</th><th>MAK</th><th>IPK</th></tr></thead>
   <tbody>
@@ -395,7 +395,7 @@ Lernapp.thema({
 </table></div>
 
 <h3>9. Bewegung, Übungen, Leitlinienempfehlungen <span class="seite">S. 11, 23–30</span></h3>
-<p class="merke"><b>Eigenbewegung ist stets Bestandteil einer effektiven Kompressionstherapie</b> – Wirkung nur bei Sprunggelenksbeweglichkeit und normalem Abrollen (S. 24). Übungen: Fußkreisen, Fußwippen, Zehenkrallen; kontrolliertes Gehtraining, Nordic Walking; Bettlägerige: Drainagebeutel/Luftballon-Konstruktion am Bettende.</p>
+<p class="merke"><span class="sp" data-sp="kompression: Bewegung und Kompressionstherapie">Schwerpunkt</span><b>Eigenbewegung ist stets Bestandteil einer effektiven Kompressionstherapie</b> – Wirkung nur bei Sprunggelenksbeweglichkeit und normalem Abrollen (S. 24). Übungen: Fußkreisen, Fußwippen, Zehenkrallen; kontrolliertes Gehtraining, Nordic Walking; Bettlägerige: Drainagebeutel/Luftballon-Konstruktion am Bettende.</p>
 <div class="tabelle"><table>
   <caption>Übung II (Lösung S. 30)</caption>
   <thead><tr><th></th><th>Kurzzug</th><th>Mehrkomp.</th><th>Kompr.-strumpf</th><th>Ulcus-Strumpf</th><th>MAK</th></tr></thead>

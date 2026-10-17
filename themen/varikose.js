@@ -17,64 +17,64 @@ Lernapp.thema({
 
   karten: [
     { k: "Varikose", f: "Was versteht man unter einer Varikose?",
-      a: "Sackartig erweiterte und geschlängelte oberflächliche Venen, meist an den unteren Extremitäten; unterteilt in primäre und sekundäre Varikose.", s: "Skript S. 1" },
+      a: "Sackartig erweiterte und geschlängelte oberflächliche Venen, meist an den unteren Extremitäten; unterteilt in primäre und sekundäre Varikose.", s: "Skript S. 1", sp: ["gefaesse: Venöse Gefäßerkrankungen – Varikosis"] },
     { k: "Varikose", f: "Wie häufig ist die primäre Varikose und worauf beruht sie?",
-      a: "80–90 % der Fälle; genetisch oder konstitutionell veranlagt.", s: "Skript S. 1" },
+      a: "80–90 % der Fälle; genetisch oder konstitutionell veranlagt.", s: "Skript S. 1", sp: ["gefaesse: Venöse Gefäßerkrankungen – Varikosis"] },
     { k: "Varikose", f: "Beschreibe die Pathophysiologie der primären Varikose.",
-      a: "Elastische Fasern nehmen ab, Venenwandmuskulatur atrophiert → Erweiterung, Aussackung, Schlängelung → insuffiziente Venenklappen → hydrostatischer Druck steigt.", s: "Skript S. 1" },
+      a: "Elastische Fasern nehmen ab, Venenwandmuskulatur atrophiert → Erweiterung, Aussackung, Schlängelung → insuffiziente Venenklappen → hydrostatischer Druck steigt.", s: "Skript S. 1", sp: ["gefaesse: Venöse Gefäßerkrankungen – Varikosis"] },
     { k: "Varikose", f: "Welche Ursachen der primären Varikose nennt das Skript?",
-      a: "Stehende Tätigkeiten, Adipositas, Rechtsherzinsuffizienz, Schwangerschaft.", s: "Skript S. 1" },
+      a: "Stehende Tätigkeiten, Adipositas, Rechtsherzinsuffizienz, Schwangerschaft.", s: "Skript S. 1", sp: ["gefaesse: Venöse Gefäßerkrankungen – Varikosis"] },
     { k: "Varikose", f: "Wie entsteht eine sekundäre Varikose?",
-      a: "Als Folge einer Venenerkrankung, meist beim postthrombotischen Syndrom: Phlebothrombose mit Abflussstörung, venöse Hypertension, Klappeninsuffizienz (CVI).", s: "Skript S. 1" },
+      a: "Als Folge einer Venenerkrankung, meist beim postthrombotischen Syndrom: Phlebothrombose mit Abflussstörung, venöse Hypertension, Klappeninsuffizienz (CVI).", s: "Skript S. 1", sp: ["gefaesse: Venöse Gefäßerkrankungen – Varikosis"] },
     { k: "Varikose", f: "Welche Symptome verursacht eine Varikose?",
-      a: "Ähnlich CVI: Ödemneigung, Schwere- und Spannungsgefühl, nächtliche Wadenkrämpfe; Beschwerden abends, bei Wärme und nach langem Stehen.", s: "Skript S. 1–2" },
+      a: "Ähnlich CVI: Ödemneigung, Schwere- und Spannungsgefühl, nächtliche Wadenkrämpfe; Beschwerden abends, bei Wärme und nach langem Stehen.", s: "Skript S. 1–2", sp: ["gefaesse: Venöse Gefäßerkrankungen – Varikosis"] },
     { k: "Varikose", f: "Komplikationen einer unbehandelten schweren Varikose?",
-      a: "Mikrozirkulationsstörung mit Gewebshypoxie, ekzemartige Hautveränderungen, Induration, Atrophie blanche, Ulzeration, Thrombosen.", s: "Skript S. 2" },
+      a: "Mikrozirkulationsstörung mit Gewebshypoxie, ekzemartige Hautveränderungen, Induration, Atrophie blanche, Ulzeration, Thrombosen.", s: "Skript S. 2", sp: ["gefaesse: Venöse Gefäßerkrankungen – Varikosis"] },
     { k: "Varikose", f: "Was ist eine Stammvarikose und welche Vene ist meist betroffen?",
-      a: "Befall des Hauptstamms des oberflächlichen Venensystems am Bein; vorwiegend die V. saphena magna. Einteilung nach Hach in 4 Stadien.", s: "Skript S. 2" },
+      a: "Befall des Hauptstamms des oberflächlichen Venensystems am Bein; vorwiegend die V. saphena magna. Einteilung nach Hach in 4 Stadien.", s: "Skript S. 2", sp: ["gefaesse: Venöse Gefäßerkrankungen – Varikosis"] },
     { k: "Varikose", f: "Nenne die Stadien der Varikose nach Hach.",
-      a: "1 – nur die Venenklappe betroffen\n2 – Klappen bis Mitte Oberschenkel defekt\n3 – Insuffizienz bis unter das Kniegelenk\n4 – gesamte Länge bis zum Sprunggelenk", s: "Skript S. 2" },
+      a: "1 – nur die Venenklappe betroffen\n2 – Klappen bis Mitte Oberschenkel defekt\n3 – Insuffizienz bis unter das Kniegelenk\n4 – gesamte Länge bis zum Sprunggelenk", s: "Skript S. 2", sp: ["gefaesse: Venöse Gefäßerkrankungen – Varikosis"] },
     { k: "PTS", f: "Was ist das postthrombotische Syndrom?",
       a: "Folge einer zu spät erkannten/behandelten Thrombose: Abflussbehinderung und veränderte Klappen → Blutstau im tiefen System → Druckerhöhung → Umleitung über Perforansvenen nach außen → sekundäre Varizen.", s: "Skript S. 3" },
     { k: "PTS", f: "Über welche Venen wird das Blut beim PTS ins oberflächliche System umgeleitet?",
       a: "Über die Perforansvenen.", s: "Skript S. 3" },
     { k: "CVI", f: "Wie führen Varikose und PTS zur CVI?",
-      a: "Erhöhter Venendruck → Reflux, Kapillarerweiterung → Austritt von Plasmaproteinen, Erythrozyten, Wasser → Eiweißlast im Interstitium ↑ → Lymphe überlastet → Stau in Haut/Unterhaut → Fibrose, Fett → Ödemverhärtung.", s: "Skript S. 3" },
+      a: "Erhöhter Venendruck → Reflux, Kapillarerweiterung → Austritt von Plasmaproteinen, Erythrozyten, Wasser → Eiweißlast im Interstitium ↑ → Lymphe überlastet → Stau in Haut/Unterhaut → Fibrose, Fett → Ödemverhärtung.", s: "Skript S. 3", sp: ["gefaesse: Venöse Gefäßerkrankungen – CVI"] },
     { k: "CVI", f: "Was passiert, wenn die Transportkapazität des Lymphsystems erreicht ist?",
-      a: "Die Flüssigkeit staut sich in Haut und Unterhaut; durch Fibrosierung und Fettablagerung kommt es zu Ödemverhärtung und vermindertem Gasaustausch → entzündliche, degenerative Gewebsveränderungen.", s: "Skript S. 3" }
+      a: "Die Flüssigkeit staut sich in Haut und Unterhaut; durch Fibrosierung und Fettablagerung kommt es zu Ödemverhärtung und vermindertem Gasaustausch → entzündliche, degenerative Gewebsveränderungen.", s: "Skript S. 3", sp: ["gefaesse: Venöse Gefäßerkrankungen – CVI"] }
   ],
 
   quiz: [
     { f: "Was trifft auf die Varikose zu?",
       o: ["Sackartig erweiterte und geschlängelte oberflächliche Venen", "Meist an den unteren Extremitäten", "Erweiterte tiefe Arterien", "Kommt ausschließlich an den Armen vor"], r: 2,
-      e: "Varikose: sackartig erweiterte und geschlängelte oberflächliche Venen, meist an den unteren Extremitäten; unterteilt in primäre und sekundäre Varikose.", s: "Skript S. 1" },
+      e: "Varikose: sackartig erweiterte und geschlängelte oberflächliche Venen, meist an den unteren Extremitäten; unterteilt in primäre und sekundäre Varikose.", s: "Skript S. 1", sp: ["gefaesse: Venöse Gefäßerkrankungen – Varikosis"] },
     { f: "Wie hoch ist der Anteil der primären Varikose?",
       o: ["80–90 %", "10–20 %", "Ca. 50 %", "Unter 5 %"],
-      e: "Primäre Varikose: 80–90 %, genetisch oder konstitutionell veranlagt.", s: "Skript S. 1" },
+      e: "Primäre Varikose: 80–90 %, genetisch oder konstitutionell veranlagt.", s: "Skript S. 1", sp: ["gefaesse: Venöse Gefäßerkrankungen – Varikosis"] },
     { f: "Welche Ursachen der primären Varikose nennt das Skript?",
       o: ["Stehende Tätigkeiten", "Adipositas", "Schwangerschaft", "Polyneuropathie"], r: 3,
-      e: "Ursachen laut Skript: stehende Tätigkeiten, Adipositas, Rechtsherzinsuffizienz, Schwangerschaft.", s: "Skript S. 1" },
+      e: "Ursachen laut Skript: stehende Tätigkeiten, Adipositas, Rechtsherzinsuffizienz, Schwangerschaft.", s: "Skript S. 1", sp: ["gefaesse: Venöse Gefäßerkrankungen – Varikosis"] },
     { f: "Was geschieht bei der Entstehung der primären Varikose?",
       o: ["Elastische Fasern nehmen ab", "Die Muskulatur der Venenwand atrophiert", "Die Venenklappen werden insuffizient", "Der hydrostatische Druck sinkt"], r: 3,
-      e: "Elastische Fasern ↓, Venenwandmuskulatur atrophiert → Erweiterung, Aussackung, Schlängelung → insuffiziente Venenklappen → hydrostatischer Druck steigt.", s: "Skript S. 1" },
+      e: "Elastische Fasern ↓, Venenwandmuskulatur atrophiert → Erweiterung, Aussackung, Schlängelung → insuffiziente Venenklappen → hydrostatischer Druck steigt.", s: "Skript S. 1", sp: ["gefaesse: Venöse Gefäßerkrankungen – Varikosis"] },
     { f: "Was trifft auf die sekundäre Varikose zu?",
       o: ["Sie entsteht meist beim postthrombotischen Syndrom", "Venöse Hypertension und Klappeninsuffizienz spielen eine Rolle", "Sie ist mit 80–90 % die häufigste Form", "Sie ist rein genetisch bedingt"], r: 2,
-      e: "Sekundäre Varikose: Folge einer Venenerkrankung, meist beim PTS – Phlebothrombose mit Abflussstörung, venöse Hypertension, Klappeninsuffizienz (CVI).", s: "Skript S. 1" },
+      e: "Sekundäre Varikose: Folge einer Venenerkrankung, meist beim PTS – Phlebothrombose mit Abflussstörung, venöse Hypertension, Klappeninsuffizienz (CVI).", s: "Skript S. 1", sp: ["gefaesse: Venöse Gefäßerkrankungen – Varikosis"] },
     { f: "Welche Symptome sind typisch für eine Varikose?",
       o: ["Schwere- und Spannungsgefühl in den Beinen", "Nächtliche Wadenkrämpfe", "Beschwerden abends und bei Wärme", "Besserung nach längerem Stehen"], r: 3,
-      e: "Ähnlich CVI: Ödemneigung, Schwere- und Spannungsgefühl, nächtliche Wadenkrämpfe; Beschwerden abends, bei Wärme und nach längerem Stehen.", s: "Skript S. 1–2" },
+      e: "Ähnlich CVI: Ödemneigung, Schwere- und Spannungsgefühl, nächtliche Wadenkrämpfe; Beschwerden abends, bei Wärme und nach längerem Stehen.", s: "Skript S. 1–2", sp: ["gefaesse: Venöse Gefäßerkrankungen – Varikosis"] },
     { f: "Welche Komplikationen drohen bei unbehandelter schwerer Varikose?",
       o: ["Atrophie blanche", "Ulzeration", "Thrombosen", "Lipödem"], r: 3,
-      e: "Mikrozirkulationsstörung mit Gewebshypoxie, ekzemartige Hautveränderungen, Induration, Atrophie blanche, Ulzeration, Thrombosen.", s: "Skript S. 2" },
+      e: "Mikrozirkulationsstörung mit Gewebshypoxie, ekzemartige Hautveränderungen, Induration, Atrophie blanche, Ulzeration, Thrombosen.", s: "Skript S. 2", sp: ["gefaesse: Venöse Gefäßerkrankungen – Varikosis"] },
     { f: "Welche Vene ist bei einer Stammvarikose vorwiegend betroffen?",
       o: ["V. saphena magna", "V. subclavia", "V. portae", "V. cava superior"],
-      e: "Stammvarikose: Hauptstamm des oberflächlichen Venensystems, vorwiegend die V. saphena magna (größte oberflächliche Hautvene des Beins).", s: "Skript S. 2" },
+      e: "Stammvarikose: Hauptstamm des oberflächlichen Venensystems, vorwiegend die V. saphena magna (größte oberflächliche Hautvene des Beins).", s: "Skript S. 2", sp: ["gefaesse: Venöse Gefäßerkrankungen – Varikosis"] },
     { f: "Was bedeutet Hach-Stadium 3?",
       o: ["Klappeninsuffizienz bis unter das Kniegelenk", "Nur die Venenklappe ist betroffen", "Klappen bis in Höhe des mittleren Oberschenkels defekt", "Vene über die gesamte Länge bis zum Sprunggelenk erkrankt"],
-      e: "1 nur die Venenklappe · 2 bis mittlerer Oberschenkel · 3 bis unter das Kniegelenk · 4 bis zum Sprunggelenk. Merkhilfe: Die Insuffizienz wandert von oben nach unten.", s: "Skript S. 2" },
+      e: "1 nur die Venenklappe · 2 bis mittlerer Oberschenkel · 3 bis unter das Kniegelenk · 4 bis zum Sprunggelenk. Merkhilfe: Die Insuffizienz wandert von oben nach unten.", s: "Skript S. 2", sp: ["gefaesse: Venöse Gefäßerkrankungen – Varikosis"] },
     { f: "Was bedeutet Hach-Stadium 2?",
       o: ["Klappen bis in Höhe des mittleren Oberschenkels defekt", "Vene über die gesamte Länge bis zum Sprunggelenk erkrankt", "Klappeninsuffizienz bis unter das Kniegelenk", "Nur die Venenklappe ist betroffen"],
-      e: "Merkhilfe: Klappe → Oberschenkelmitte → unter dem Knie → Sprunggelenk.", s: "Skript S. 2" },
+      e: "Merkhilfe: Klappe → Oberschenkelmitte → unter dem Knie → Sprunggelenk.", s: "Skript S. 2", sp: ["gefaesse: Venöse Gefäßerkrankungen – Varikosis"] },
     { f: "Über welche Venen wird das Blut beim postthrombotischen Syndrom ins oberflächliche System umgeleitet?",
       o: ["Über die Perforansvenen", "Über die Pfortader", "Über den Ductus thoracicus", "Über die Lungenvenen"],
       e: "Blutstau im tiefen Venensystem → Druckerhöhung → Umleitung über die Perforansvenen ins oberflächliche System → dort sekundäre Varizen.", s: "Skript S. 3" },
@@ -83,17 +83,17 @@ Lernapp.thema({
       e: "Fortbestehende Abflussbehinderung und veränderte Venenklappen → insuffizienter Klappenschluss → Blutstau im tiefen System → Umleitung über Perforansvenen → sekundäre Varizen.", s: "Skript S. 3" },
     { f: "Wie führen Varikose und PTS zur CVI?",
       o: ["Kapillarwände werden durchlässig für Plasmaproteine, rote Blutzellen und Wasser", "Die lymphpflichtige Eiweißlast im Interstitium steigt", "Fibrosierung und Fettablagerung führen zur Ödemverhärtung", "Der Gasaustausch im Gewebe verbessert sich"], r: 3,
-      e: "Erhöhter Venendruck → Reflux, Kapillarerweiterung → Eiweißlast ↑ → Lymphe überlastet → Stau in Haut/Unterhaut → Fibrose, Fett → Ödemverhärtung und verminderter Gasaustausch.", s: "Skript S. 3" },
+      e: "Erhöhter Venendruck → Reflux, Kapillarerweiterung → Eiweißlast ↑ → Lymphe überlastet → Stau in Haut/Unterhaut → Fibrose, Fett → Ödemverhärtung und verminderter Gasaustausch.", s: "Skript S. 3", sp: ["gefaesse: Venöse Gefäßerkrankungen – CVI"] },
     { f: "Zu welchem Widmer-Grad der CVI gehört die Atrophie blanche?",
       o: ["Grad II", "Grad I", "Grad IIIa", "Grad IIIb"],
-      e: "Atrophie blanche ist im Skript eine Komplikation der Varikose und in Widmer Grad II enthalten.", s: "Skript S. 2; G S. 16; M S. 15" }
+      e: "Atrophie blanche ist im Skript eine Komplikation der Varikose und in Widmer Grad II enthalten.", s: "Skript S. 2; G S. 16; M S. 15", sp: ["gefaesse: Venöse Gefäßerkrankungen – CVI"] }
   ],
 
   zusammenfassung: `
-<h3>1. Definition <span class="seite">Skript S. 1</span></h3>
+<h3>1. Definition<span class="sp" data-sp="gefaesse: Venöse Gefäßerkrankungen – Varikosis">Schwerpunkt</span> <span class="seite">Skript S. 1</span></h3>
 <p class="merke"><b>Varikose:</b> sackartig erweiterte und geschlängelte oberflächliche Venen, meist an den unteren Extremitäten. Unterteilt in primäre und sekundäre Varikose.</p>
 
-<h3>2. Primäre vs. sekundäre Varikose <span class="seite">Skript S. 1</span></h3>
+<h3>2. Primäre vs. sekundäre Varikose<span class="sp" data-sp="gefaesse: Venöse Gefäßerkrankungen – Varikosis">Schwerpunkt</span> <span class="seite">Skript S. 1</span></h3>
 <div class="tabelle"><table>
   <thead><tr><th></th><th>Primäre Varikose</th><th>Sekundäre Varikose</th></tr></thead>
   <tbody>
@@ -103,7 +103,7 @@ Lernapp.thema({
   </tbody>
 </table></div>
 
-<h3>3. Klinik <span class="seite">Skript S. 1–2</span></h3>
+<h3>3. Klinik<span class="sp" data-sp="gefaesse: Venöse Gefäßerkrankungen – Varikosis">Schwerpunkt</span> <span class="seite">Skript S. 1–2</span></h3>
 <ul>
   <li><b>Symptome</b> (ähnlich CVI): Ödemneigung, Schwere- und Spannungsgefühl in den Beinen, nächtliche Wadenkrämpfe; Beschwerden abends, bei Wärme und nach längerem Stehen.</li>
   <li><b>Komplikationen</b> bei unbehandelter schwerer Varikose: Mikrozirkulationsstörung mit Gewebshypoxie, ekzemartige Hautveränderungen, Induration (Verhärtung), Atrophie blanche, Ulzeration, Thrombosen.</li>
@@ -128,7 +128,7 @@ Lernapp.thema({
   <li><b>Ablauf:</b> fortbestehende Abflussbehinderung und veränderte Venenklappen → insuffizienter Klappenschluss → Blutstau im tiefen Venensystem → Druckerhöhung → Umleitung über die Perforansvenen ins oberflächliche System → dort Klappeninsuffizienz und sekundäre Varizen.</li>
 </ul>
 
-<h3>5. Von Varikose und PTS zur CVI <span class="seite">Skript S. 3</span></h3>
+<h3>5. Von Varikose und PTS zur CVI<span class="sp" data-sp="gefaesse: Venöse Gefäßerkrankungen – CVI">Schwerpunkt</span> <span class="seite">Skript S. 3</span></h3>
 <p class="merke">Anhaltend erhöhter venöser Druck → Reflux und Erweiterung der Kapillaren → Kapillarwände durchlässig für Plasmaproteine, rote Blutzellen und Wasser → lymphpflichtige Eiweißlast im Interstitium steigt → Transportkapazität der Lymphe erreicht → Flüssigkeitsstau in Haut und Unterhaut → Fibrosierung und Fettablagerung → Ödemverhärtung und verminderter Gasaustausch. <b>Folge:</b> entzündliche, degenerative Gewebsveränderungen.</p>
 
 <h3>6. Abgleich mit den Kursheften</h3>

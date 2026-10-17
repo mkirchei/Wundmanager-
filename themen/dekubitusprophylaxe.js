@@ -24,31 +24,31 @@ Lernapp.thema({
     { k: "Grundlagen", f: "Welche rechtliche Bedeutung haben Expertenstandards?",
       a: "Sie haben den Charakter vorweggenommener Sachverständigengutachten und dienen vor Gericht als Maßstab bei Verletzung der Sorgfaltspflicht. Der MDK prüft den Standard als Transparenzkriterium.", s: "S. 2" },
     { k: "Basiswissen", f: "Wie ist ein Dekubitus definiert?",
-      a: "„Eine lokal begrenzte Schädigung der Haut und/oder des darunter liegenden Gewebes, typischerweise über knöchernen Vorsprüngen, infolge von Druck oder von Druck in Verbindung mit Scherkräften.“ (NPUAP 2014)", s: "S. 3" },
+      a: "„Eine lokal begrenzte Schädigung der Haut und/oder des darunter liegenden Gewebes, typischerweise über knöchernen Vorsprüngen, infolge von Druck oder von Druck in Verbindung mit Scherkräften.“ (NPUAP 2014)", s: "S. 3", sp: ["dekubitus: Def. Dekubitus"] },
     { k: "Basiswissen", f: "Scherkräfte vs. Reibung?",
-      a: "Scherkräfte verformen tieferliegendes Gewebe. Reibung wirkt oberflächlich, meist zwischen Haut und Bettlaken – nicht gleichbedeutend. Einen Schwellenwert für schädlichen Druck gibt es nicht.", s: "S. 3" },
+      a: "Scherkräfte verformen tieferliegendes Gewebe. Reibung wirkt oberflächlich, meist zwischen Haut und Bettlaken – nicht gleichbedeutend. Einen Schwellenwert für schädlichen Druck gibt es nicht.", s: "S. 3", sp: ["dekubitus: Def. Dekubitus – Entstehung"] },
     { k: "Basiswissen", f: "Welche Mechanismen führen zum druckbedingten Zelltod?",
-      a: "1. Direkte mechanische Deformation des Gewebes (Muskelzellen besonders anfällig – Nekrose in Minuten).\n2. Verschluss von Blut- und Lymphgefäßen → O₂-/Nährstoffmangel, Stoffwechselprodukte bleiben. Beide verstärken sich.", s: "S. 4" },
+      a: "1. Direkte mechanische Deformation des Gewebes (Muskelzellen besonders anfällig – Nekrose in Minuten).\n2. Verschluss von Blut- und Lymphgefäßen → O₂-/Nährstoffmangel, Stoffwechselprodukte bleiben. Beide verstärken sich.", s: "S. 4", sp: ["dekubitus: Def. Dekubitus – Entstehung"] },
     { k: "Basiswissen", f: "Warum kann ein Dekubitus unter intakter Haut liegen?",
-      a: "Druckgeschwüre entwickeln sich zuerst in anfälligem Gewebe wie der Muskulatur; die darüberliegende Haut kann intakt sein. Tiefe Schädigungen müssen nicht zwangsläufig ein offener Dekubitus sein.", s: "S. 4" },
+      a: "Druckgeschwüre entwickeln sich zuerst in anfälligem Gewebe wie der Muskulatur; die darüberliegende Haut kann intakt sein. Tiefe Schädigungen müssen nicht zwangsläufig ein offener Dekubitus sein.", s: "S. 4", sp: ["dekubitus: Def. Dekubitus – Entstehung"] },
     { k: "Risikofaktoren", f: "Welche drei Risikofaktoren sind am wichtigsten?",
-      a: "1. Beeinträchtigung der Mobilität (direkt mehr Druck/Scherkraft)\n2. Störung der Durchblutung (schwächt Gewebetoleranz)\n3. Beeinträchtigter Hautzustand bzw. vorhandener Dekubitus. Rahmenmodell der Einschätzung.", s: "S. 4–5" },
+      a: "1. Beeinträchtigung der Mobilität (direkt mehr Druck/Scherkraft)\n2. Störung der Durchblutung (schwächt Gewebetoleranz)\n3. Beeinträchtigter Hautzustand bzw. vorhandener Dekubitus. Rahmenmodell der Einschätzung.", s: "S. 4–5", sp: ["dekubitus: Def. Dekubitus – Risikofaktoren"] },
     { k: "Risikofaktoren", f: "Weitere Risikofaktoren – zwei Gruppen?",
-      a: "Druck/Scherkräfte ↑: eingeschränkte Eigenmobilität, neurologische Störungen, Dauer/Intensität, Reibung, medizinische Geräte (Zu-/Ableitungen).\nGewebetoleranz ↓: Mangelernährung, Durchblutung/O₂, Hautfeuchtigkeit, Hauttoleranz/Auflageflächen.", s: "S. 5" },
+      a: "Druck/Scherkräfte ↑: eingeschränkte Eigenmobilität, neurologische Störungen, Dauer/Intensität, Reibung, medizinische Geräte (Zu-/Ableitungen).\nGewebetoleranz ↓: Mangelernährung, Durchblutung/O₂, Hautfeuchtigkeit, Hauttoleranz/Auflageflächen.", s: "S. 5", sp: ["dekubitus: Def. Dekubitus – Risikofaktoren"] },
     { k: "Risikofaktoren", f: "Wie hängen Gesundheitsprobleme und Risiko zusammen?",
-      a: "Je komplexer und schwerwiegender die Gesundheitsprobleme, desto höher der Unterstützungsbedarf. Je höher der Unterstützungsbedarf, desto höher kann das Dekubitusrisiko sein. Faktoren treten meist gemeinsam auf.", s: "S. 5" },
+      a: "Je komplexer und schwerwiegender die Gesundheitsprobleme, desto höher der Unterstützungsbedarf. Je höher der Unterstützungsbedarf, desto höher kann das Dekubitusrisiko sein. Faktoren treten meist gemeinsam auf.", s: "S. 5", sp: ["dekubitus: Def. Dekubitus – Risikofaktoren"] },
     { k: "Klassifikation", f: "Dekubitus Kategorie I?",
-      a: "Intakte Haut mit nicht wegdrückbarer Rötung, meist über einem Knochenvorsprung; Bereich ggf. schmerzhaft, härter, wärmer oder kälter. (EPUAP/NPUAP/PPPIA; ICD-10: Druckzone mit nicht wegdrückbarer Rötung)", s: "S. 5" },
+      a: "Intakte Haut mit nicht wegdrückbarer Rötung, meist über einem Knochenvorsprung; Bereich ggf. schmerzhaft, härter, wärmer oder kälter. (EPUAP/NPUAP/PPPIA; ICD-10: Druckzone mit nicht wegdrückbarer Rötung)", s: "S. 5", sp: ["dekubitus: Def. Dekubitus – Klassifikation"] },
     { k: "Klassifikation", f: "Dekubitus Kategorie II?",
-      a: "Teilzerstörung der Haut (Epidermis/Dermis): flaches, offenes Geschwür, rot-rosa Wundbett ohne Beläge; auch intakte/offene serumgefüllte Blase. Nicht für Skin Tears, Pflasterschäden oder Mazeration verwenden.", s: "S. 5–6" },
+      a: "Teilzerstörung der Haut (Epidermis/Dermis): flaches, offenes Geschwür, rot-rosa Wundbett ohne Beläge; auch intakte/offene serumgefüllte Blase. Nicht für Skin Tears, Pflasterschäden oder Mazeration verwenden.", s: "S. 5–6", sp: ["dekubitus: Def. Dekubitus – Klassifikation"] },
     { k: "Klassifikation", f: "Dekubitus Kategorie III und IV?",
-      a: "III: vollständiger Hautverlust, Subcutis sichtbar, Knochen/Sehnen/Muskeln nicht offen; Beläge, Taschen möglich.\nIV: vollständiger Gewebeverlust mit freiliegenden Knochen, Sehnen, Muskeln; Osteomyelitis, Nekrosen, hohes Infektionsrisiko.", s: "S. 6" },
+      a: "III: vollständiger Hautverlust, Subcutis sichtbar, Knochen/Sehnen/Muskeln nicht offen; Beläge, Taschen möglich.\nIV: vollständiger Gewebeverlust mit freiliegenden Knochen, Sehnen, Muskeln; Osteomyelitis, Nekrosen, hohes Infektionsrisiko.", s: "S. 6", sp: ["dekubitus: Def. Dekubitus – Klassifikation"] },
     { k: "Klassifikation", f: "Unbekannte Tiefe vs. vermutete tiefe Gewebeschädigung?",
-      a: "Unbekannte Tiefe: vollständiger Gewebeverlust, Wundbett durch Beläge/Schorf verdeckt. Vermutete tiefe Schädigung: intakte Haut, livide oder rötlich-braun, ggf. blutgefüllte Blase; Gewebe schmerzhaft, fest, breiig, wärmer/kälter.", s: "S. 6" },
+      a: "Unbekannte Tiefe: vollständiger Gewebeverlust, Wundbett durch Beläge/Schorf verdeckt. Vermutete tiefe Schädigung: intakte Haut, livide oder rötlich-braun, ggf. blutgefüllte Blase; Gewebe schmerzhaft, fest, breiig, wärmer/kälter.", s: "S. 6", sp: ["dekubitus: Def. Dekubitus – Klassifikation"] },
     { k: "Aufbau", f: "Welches Ziel hat der Expertenstandard?",
-      a: "Jeder dekubitusgefährdete Mensch erhält eine Prophylaxe, die die Entstehung eines Dekubitus verhindert. Im Vordergrund stehen Interventionen, v. a. Bewegungsförderung, zur Druckentlastung und -verteilung.", s: "S. 7" },
+      a: "Jeder dekubitusgefährdete Mensch erhält eine Prophylaxe, die die Entstehung eines Dekubitus verhindert. Im Vordergrund stehen Interventionen, v. a. Bewegungsförderung, zur Druckentlastung und -verteilung.", s: "S. 7", sp: ["dekubitus: Def. Dekubitus – Prophylaxe"] },
     { k: "Aufbau", f: "Was muss das Pflegefachpersonal gewährleisten?",
-      a: "Systematische Risikoeinschätzung · Information, Schulung, Beratung (auch Angehörige) · Bewegungsförderung · Druckentlastung und -verteilung · Kontinuität und Evaluation prophylaktischer Maßnahmen.", s: "S. 7" },
+      a: "Systematische Risikoeinschätzung · Information, Schulung, Beratung (auch Angehörige) · Bewegungsförderung · Druckentlastung und -verteilung · Kontinuität und Evaluation prophylaktischer Maßnahmen.", s: "S. 7", sp: ["dekubitus: Def. Dekubitus – Prophylaxe"] },
     { k: "Aufbau", f: "Gilt das Ziel auch in der Sterbephase?",
       a: "Bei lebensbedrohlichen Zuständen oder anderer Prioritätensetzung (Sterbephase) ist das Ziel ggf. nicht erreichbar. Das entbindet aber nicht von Risikoeinschätzung, Information und gemeinsamer Entscheidung über passende Maßnahmen.", s: "S. 7" },
     { k: "Aufbau", f: "Anwender und Zielgruppe?",
@@ -80,27 +80,27 @@ Lernapp.thema({
     { k: "Phase 4", f: "Was fordern S4, P4 und E4?",
       a: "S4: Wissen zu druckentlastenden, bewegungsfördernden Maßnahmen; haut-/gewebeschonende Techniken · P4: fördert Eigenbewegung; sonst sofortige Druckentlastung und vollständige Freilage · E4: Eigenbewegung gefördert, Stellen entlastet.", s: "S. 15" },
     { k: "Phase 4", f: "Nenne die vier Interventionskategorien.",
-      a: "1. Förderung der Eigenbewegung\n2. angemessene Positionen und regelmäßige Positionswechsel (Wechselpositionierung)\n3. vollständige Entlastung stark gefährdeter Stellen (Freilage)\n4. Reduktion therapiebedingter Druck-/Scherkräfte (Zu- und Ableitungen).", s: "S. 16" },
+      a: "1. Förderung der Eigenbewegung\n2. angemessene Positionen und regelmäßige Positionswechsel (Wechselpositionierung)\n3. vollständige Entlastung stark gefährdeter Stellen (Freilage)\n4. Reduktion therapiebedingter Druck-/Scherkräfte (Zu- und Ableitungen).", s: "S. 16", sp: ["dekubitus: Def. Dekubitus – Prophylaxe"] },
     { k: "Phase 4", f: "Aktive vs. passive Bewegung?",
-      a: "Passiv sind alle Maßnahmen, die eine pflegerisch durchgeführte Wechselpositionierung oder Freilage beinhalten. Während der Positionierung Hautzustand kontrollieren und Schmerzen/Unbehagen erfassen; Angehörige anleiten.", s: "S. 16" },
+      a: "Passiv sind alle Maßnahmen, die eine pflegerisch durchgeführte Wechselpositionierung oder Freilage beinhalten. Während der Positionierung Hautzustand kontrollieren und Schmerzen/Unbehagen erfassen; Angehörige anleiten.", s: "S. 16", sp: ["dekubitus: Def. Dekubitus – Prophylaxe"] },
     { k: "Phase 4", f: "Was gehört in den Bewegungsförderungsplan?",
-      a: "Nicht nur Rechts-Links-Rücken, sondern z. B. 30–40° Seitenlage, Oberkörperhochlage max. 30°, Mobilisierung; individuelle Bewegungsintervalle und deren Auswertung; Hautkontrolle (Fingertest) und Ergebnisse.", s: "S. 16–17" },
+      a: "Nicht nur Rechts-Links-Rücken, sondern z. B. 30–40° Seitenlage, Oberkörperhochlage max. 30°, Mobilisierung; individuelle Bewegungsintervalle und deren Auswertung; Hautkontrolle (Fingertest) und Ergebnisse.", s: "S. 16–17", sp: ["dekubitus: Def. Dekubitus – Prophylaxe"] },
     { k: "Phase 4", f: "Welche Haltung gilt gegenüber den Wünschen der Betroffenen?",
       a: "Der Wille des dekubitusgefährdeten Menschen und seiner Angehörigen ist stets zu respektieren; ihnen obliegt die freie Entscheidung über den Umfang der Mitwirkung. Ablehnung wird dokumentiert.", s: "S. 15, 19" },
     { k: "Hilfsmittel", f: "Was fordern S5a, S5b, P5 und E5?",
       a: "S5a: Kompetenz zu Notwendigkeit und Eignung von Hilfsmitteln · S5b: Wechseldruck-/Weichlagerungssysteme unverzüglich zugänglich · P5: Hilfsmittel, wenn Bewegungsförderung nicht ausreicht · E5: unverzüglich auf geeignetem Hilfsmittel.", s: "S. 17" },
     { k: "Hilfsmittel", f: "Braucht jeder gefährdete Mensch eine Spezialmatratze?",
-      a: "Nein. Hilfsmittel unterstützen, ersetzen aber nicht die Förderung der Eigenbewegung. Es gibt nicht „ein richtiges“ Hilfsmittel – die Wahl richtet sich nach dem individuellen Nutzen.", s: "S. 17–18" },
+      a: "Nein. Hilfsmittel unterstützen, ersetzen aber nicht die Förderung der Eigenbewegung. Es gibt nicht „ein richtiges“ Hilfsmittel – die Wahl richtet sich nach dem individuellen Nutzen.", s: "S. 17–18", sp: ["dekubitus: Def. Dekubitus – Prophylaxe"] },
     { k: "Hilfsmittel", f: "Kriterien für die Hilfsmittelauswahl?",
-      a: "Ressourcen der Eigenbewegung · vorrangige Pflege-/Therapieziele (z. B. Schmerzreduktion) · Möglichkeiten der Eigenbewegung · gefährdete Körperpartien · Gewicht · Kosten/Nutzen · Präferenzen · Praktikabilität · Nachteile.", s: "S. 18" },
+      a: "Ressourcen der Eigenbewegung · vorrangige Pflege-/Therapieziele (z. B. Schmerzreduktion) · Möglichkeiten der Eigenbewegung · gefährdete Körperpartien · Gewicht · Kosten/Nutzen · Präferenzen · Praktikabilität · Nachteile.", s: "S. 18", sp: ["dekubitus: Def. Dekubitus – Prophylaxe"] },
     { k: "Hilfsmittel", f: "Welche Hilfsmittel sind geeignet?",
-      a: "Weichlagerungskissen, Weichlagerungsmatratzen, Wechseldruckauflagen/-matratzen, Spezialbetten (z. B. Luftkissenbetten).", s: "S. 18" },
+      a: "Weichlagerungskissen, Weichlagerungsmatratzen, Wechseldruckauflagen/-matratzen, Spezialbetten (z. B. Luftkissenbetten).", s: "S. 18", sp: ["dekubitus: Def. Dekubitus – Prophylaxe"] },
     { k: "Hilfsmittel", f: "Welche Hilfsmittel sind ungeeignet – und warum?",
-      a: "Lagerungsringe (Druckerhöhung an den Rändern) · Felle, Watteverbände, Wassermatratzen (fehlende Wirksamkeit) · reibungskraftreduzierte Hydrokolloid-Pflaster (Ferse).", s: "S. 18" },
+      a: "Lagerungsringe (Druckerhöhung an den Rändern) · Felle, Watteverbände, Wassermatratzen (fehlende Wirksamkeit) · reibungskraftreduzierte Hydrokolloid-Pflaster (Ferse).", s: "S. 18", sp: ["dekubitus: Def. Dekubitus – Prophylaxe"] },
     { k: "Hilfsmittel", f: "Wie schnell muss Druck entlastet werden?",
-      a: "Bereits 10–20 Minuten erhöhter Druck/Scherkraft können zu Dekubitus führen → unverzüglich Druckverteilung/-entlastung; bis Hilfsmittel eintreffen, individuell angepasste Positionierung.", s: "S. 18" },
+      a: "Bereits 10–20 Minuten erhöhter Druck/Scherkraft können zu Dekubitus führen → unverzüglich Druckverteilung/-entlastung; bis Hilfsmittel eintreffen, individuell angepasste Positionierung.", s: "S. 18", sp: ["dekubitus: Def. Dekubitus – Prophylaxe"] },
     { k: "Hilfsmittel", f: "Wann sind Hilfsmittel unverzüglich einzusetzen (P5)?",
-      a: "Wenn eine ausreichende Bewegungsförderung nicht möglich ist, z. B. bei Kachexie, fehlender Eigenbeweglichkeit oder krankheits-/therapiebedingten Kontraindikationen. Sonst bleibt Bewegungsförderung oberstes Gebot.", s: "S. 19" },
+      a: "Wenn eine ausreichende Bewegungsförderung nicht möglich ist, z. B. bei Kachexie, fehlender Eigenbeweglichkeit oder krankheits-/therapiebedingten Kontraindikationen. Sonst bleibt Bewegungsförderung oberstes Gebot.", s: "S. 19", sp: ["dekubitus: Def. Dekubitus – Prophylaxe"] },
     { k: "Hilfsmittel", f: "Hilfsmittelversorgung ambulant – was tun?",
       a: "Versorgung meist über die Pflegekassen → Pflegekasse bzw. Ärzte über Notwendigkeit und Dringlichkeit informieren, Verordnung anregen. Ablehnung durch Kostenträger oder Betroffene dokumentieren.", s: "S. 18–19" },
     { k: "Phase 5", f: "Was fordern S6a, S6b, P6, E6a und E6b?",
@@ -126,53 +126,53 @@ Lernapp.thema({
       e: "Expertenstandards haben juristisch den Charakter vorweggenommener Sachverständigengutachten; der MDK prüft den Standard als Transparenzkriterium.", s: "S. 2" },
     { f: "Wie definiert die NPUAP (2014) einen Dekubitus?",
       o: ["Lokal begrenzte Schädigung der Haut und/oder des darunter liegenden Gewebes, typischerweise über knöchernen Vorsprüngen, infolge von Druck oder von Druck in Verbindung mit Scherkräften", "Hautschaden, der ausschließlich durch Feuchtigkeit und Inkontinenz entsteht", "Infektion der Haut durch Bakterien bei bettlägerigen Menschen", "Oberflächliche Hautabschürfung durch Reibung am Bettlaken"],
-      e: "Definition NPUAP 2014: Schädigung infolge von Druck oder von Druck in Verbindung mit Scherkräften, typischerweise über knöchernen Vorsprüngen.", s: "S. 3" },
+      e: "Definition NPUAP 2014: Schädigung infolge von Druck oder von Druck in Verbindung mit Scherkräften, typischerweise über knöchernen Vorsprüngen.", s: "S. 3", sp: ["dekubitus: Def. Dekubitus"] },
     { f: "Was unterscheidet Scherkräfte von Reibung?",
       o: ["Scherkräfte verformen tieferliegendes Gewebe, Reibung wirkt oberflächlich", "Beide Begriffe sind gleichbedeutend", "Reibung verformt tieferliegendes Gewebe, Scherkräfte wirken nur oberflächlich", "Scherkräfte entstehen nur bei Wassermatratzen"],
-      e: "Scherkräfte verformen tieferes Gewebe; Reibung wirkt oberflächlich, meist zwischen Haut und Bettlaken – nicht gleichbedeutend.", s: "S. 3" },
+      e: "Scherkräfte verformen tieferes Gewebe; Reibung wirkt oberflächlich, meist zwischen Haut und Bettlaken – nicht gleichbedeutend.", s: "S. 3", sp: ["dekubitus: Def. Dekubitus – Entstehung"] },
     { f: "Ab welchem Druck bzw. welcher Druckdauer entsteht sicher ein Dekubitus?",
       o: ["Ein Schwellenwert ist nicht bekannt – der Schaden hängt von Dauer, Stärke und weiteren Risikofaktoren ab", "Erst nach genau 2 Stunden Druck", "Erst ab einem Auflagedruck von 100 mmHg", "Nur wenn bereits eine offene Wunde besteht"],
-      e: "Der Schaden ist abhängig von Dauer und Stärke; ein Schwellenwert ist nicht bekannt; zusätzlich spielen weitere Risikofaktoren eine Rolle.", s: "S. 3" },
+      e: "Der Schaden ist abhängig von Dauer und Stärke; ein Schwellenwert ist nicht bekannt; zusätzlich spielen weitere Risikofaktoren eine Rolle.", s: "S. 3", sp: ["dekubitus: Def. Dekubitus – Entstehung"] },
     { f: "Welche beiden Mechanismen führen zum druckbedingten Zelltod?",
       o: ["Direkte mechanische Deformation des Gewebes", "Verschluss von Blut- und Lymphgefäßen mit Minderversorgung", "Allergische Reaktion auf Inkontinenzmaterial", "Austrocknung der Haut durch Raumluft"],
       r: 2,
-      e: "Ursachen: direkte mechanische Deformation → Zelltod und Verschluss von Blut- und Lymphgefäßen → O₂-/Nährstoffmangel. Beide verstärken sich gegenseitig.", s: "S. 4" },
+      e: "Ursachen: direkte mechanische Deformation → Zelltod und Verschluss von Blut- und Lymphgefäßen → O₂-/Nährstoffmangel. Beide verstärken sich gegenseitig.", s: "S. 4", sp: ["dekubitus: Def. Dekubitus – Entstehung"] },
     { f: "Welches Gewebe gilt als besonders anfällig für druckbedingte Schäden?",
       o: ["Muskulatur – Muskelnekrosen können in wenigen Minuten entstehen", "Die Hautzellen – sie sind am wenigsten widerstandsfähig", "Keines – alle Gewebe sind gleich widerstandsfähig", "Nur das Gewebe an Händen und Unterarmen"],
-      e: "Muskelzellen sind besonders anfällig; Hautzellen sind widerstandsfähiger. Druckgeschwüre entstehen zuerst in anfälligem Gewebe wie der Muskulatur.", s: "S. 4" },
+      e: "Muskelzellen sind besonders anfällig; Hautzellen sind widerstandsfähiger. Druckgeschwüre entstehen zuerst in anfälligem Gewebe wie der Muskulatur.", s: "S. 4", sp: ["dekubitus: Def. Dekubitus – Entstehung"] },
     { f: "Kann eine tiefe Dekubitusschädigung unter intakter Haut liegen?",
       o: ["Ja – die darüberliegende Haut kann intakt sein; tiefe Schädigungen müssen nicht zwangsläufig ein offener Dekubitus sein", "Nein – ein Dekubitus ist immer eine offene Wunde", "Nein – tiefe Schäden entstehen immer erst nach einer offenen Hautwunde", "Nur bei Kategorie II"],
-      e: "Druckgeschwüre entwickeln sich zuerst in anfälligem Gewebe wie der Muskulatur; die darüberliegende Haut kann intakt sein.", s: "S. 4" },
+      e: "Druckgeschwüre entwickeln sich zuerst in anfälligem Gewebe wie der Muskulatur; die darüberliegende Haut kann intakt sein.", s: "S. 4", sp: ["dekubitus: Def. Dekubitus – Entstehung"] },
     { f: "Welche Risikofaktoren gelten als die wichtigsten (Rahmenmodell der Einschätzung)?",
       o: ["Beeinträchtigung der Mobilität", "Störung der Durchblutung", "Beeinträchtigter Hautzustand bzw. vorhandener Dekubitus", "Hohe Raumtemperatur"],
       r: 3,
-      e: "Die drei wichtigsten Risikofaktoren: Beeinträchtigung der Mobilität, Störung der Durchblutung, beeinträchtigter Hautzustand bzw. vorhandener Dekubitus.", s: "S. 4–5" },
+      e: "Die drei wichtigsten Risikofaktoren: Beeinträchtigung der Mobilität, Störung der Durchblutung, beeinträchtigter Hautzustand bzw. vorhandener Dekubitus.", s: "S. 4–5", sp: ["dekubitus: Def. Dekubitus – Risikofaktoren"] },
     { f: "Welche Faktoren ordnet das Heft der beeinträchtigten Gewebetoleranz zu?",
       o: ["Mangelernährung", "Hautfeuchtigkeit", "Medizinische Geräte (Zu- und Ableitungen)", "Neurologische Einschränkungen"],
       r: 2,
-      e: "Gewebetoleranz ↓: Mangelernährung, Durchblutung/O₂, Hautfeuchtigkeit, Hauttoleranz/Auflageflächen. Medizinische Geräte und neurologische Einschränkungen gehören zu den verlängerten/verstärkten Druck- und Scherkräften.", s: "S. 5" },
+      e: "Gewebetoleranz ↓: Mangelernährung, Durchblutung/O₂, Hautfeuchtigkeit, Hauttoleranz/Auflageflächen. Medizinische Geräte und neurologische Einschränkungen gehören zu den verlängerten/verstärkten Druck- und Scherkräften.", s: "S. 5", sp: ["dekubitus: Def. Dekubitus – Risikofaktoren"] },
     { f: "Welcher Merksatz zu Risikofaktoren steht im Heft?",
       o: ["Je höher der Unterstützungsbedarf, desto höher kann das Dekubitusrisiko sein", "Risikofaktoren treten meist einzeln auf", "Unterstützungsbedarf und Dekubitusrisiko hängen nicht zusammen", "Je komplexer die Gesundheitsprobleme, desto geringer der Unterstützungsbedarf"],
-      e: "Risikofaktoren treten meist gemeinsam auf: je komplexer die Gesundheitsprobleme, desto höher der Unterstützungsbedarf – je höher der Unterstützungsbedarf, desto höher kann das Dekubitusrisiko sein.", s: "S. 5" },
+      e: "Risikofaktoren treten meist gemeinsam auf: je komplexer die Gesundheitsprobleme, desto höher der Unterstützungsbedarf – je höher der Unterstützungsbedarf, desto höher kann das Dekubitusrisiko sein.", s: "S. 5", sp: ["dekubitus: Def. Dekubitus – Risikofaktoren"] },
     { f: "Was kennzeichnet einen Dekubitus der Kategorie I?",
       o: ["Intakte Haut mit nicht wegdrückbarer Rötung, meist über einem Knochenvorsprung", "Flaches, offenes Geschwür mit rot-rosa Wundbett ohne Beläge", "Vollständiger Hautverlust, Subcutis sichtbar", "Freiliegende Knochen, Sehnen oder Muskeln"],
-      e: "Kategorie I: intakte Haut mit nicht wegdrückbarer Rötung; Bereich ggf. schmerzhaft, härter, wärmer oder kälter.", s: "S. 5" },
+      e: "Kategorie I: intakte Haut mit nicht wegdrückbarer Rötung; Bereich ggf. schmerzhaft, härter, wärmer oder kälter.", s: "S. 5", sp: ["dekubitus: Def. Dekubitus – Klassifikation"] },
     { f: "Für welche Hautschäden soll die Kategorie II laut Heft NICHT verwendet werden?",
       o: ["Skin Tears", "Pflasterschäden", "Mazeration", "Intakte oder offene serumgefüllte Blase"],
       r: 3,
-      e: "Kategorie II umfasst auch die intakte/offene serumgefüllte Blase, soll aber nicht für Skin Tears, Pflasterschäden oder Mazeration verwendet werden.", s: "S. 5–6" },
+      e: "Kategorie II umfasst auch die intakte/offene serumgefüllte Blase, soll aber nicht für Skin Tears, Pflasterschäden oder Mazeration verwendet werden.", s: "S. 5–6", sp: ["dekubitus: Def. Dekubitus – Klassifikation"] },
     { f: "Was unterscheidet Kategorie IV von Kategorie III?",
       o: ["Bei IV liegen Knochen, Sehnen oder Muskeln frei; bei III sind sie nicht offen", "Bei IV ist die Haut intakt, bei III offen", "Bei IV ist nur die Epidermis betroffen", "Es gibt keinen Unterschied – beide Begriffe sind gleichbedeutend"],
-      e: "III: vollständiger Hautverlust, Subcutis sichtbar, Knochen/Sehnen/Muskeln nicht offen. IV: vollständiger Gewebeverlust mit freiliegenden Knochen, Sehnen oder Muskeln; Osteomyelitis möglich.", s: "S. 6" },
+      e: "III: vollständiger Hautverlust, Subcutis sichtbar, Knochen/Sehnen/Muskeln nicht offen. IV: vollständiger Gewebeverlust mit freiliegenden Knochen, Sehnen oder Muskeln; Osteomyelitis möglich.", s: "S. 6", sp: ["dekubitus: Def. Dekubitus – Klassifikation"] },
     { f: "Was beschreibt die Kategorie „Unbekannte Tiefe“?",
       o: ["Vollständiger Gewebeverlust, Wundbett durch Beläge/stabilen Schorf verdeckt", "Intakte Haut, livide oder rötlich-braun verfärbt", "Nicht wegdrückbare Rötung bei intakter Haut", "Serumgefüllte Blase ohne Gewebeverlust"],
-      e: "Unbekannte Tiefe: vollständiger Gewebeverlust, das Wundbett ist durch Beläge/stabilen Schorf verdeckt – bis die Tiefe beurteilbar ist.", s: "S. 6" },
+      e: "Unbekannte Tiefe: vollständiger Gewebeverlust, das Wundbett ist durch Beläge/stabilen Schorf verdeckt – bis die Tiefe beurteilbar ist.", s: "S. 6", sp: ["dekubitus: Def. Dekubitus – Klassifikation"] },
     { f: "Was kennzeichnet eine vermutete tiefe Gewebeschädigung?",
       o: ["Intakte Haut, livide oder rötlich-braun verfärbt oder blutgefüllte Blase", "Freiliegende Knochen mit Osteomyelitis", "Flaches Geschwür mit rot-rosa Wundbett", "Vollständiger Hautverlust mit sichtbarer Subcutis"],
-      e: "Vermutete tiefe Gewebeschädigung: intakte Haut, livide oder rötlich-braun verfärbt oder blutgefüllte Blase; Gewebe schmerzhaft, fest, breiig, matschig, wärmer/kälter.", s: "S. 6" },
+      e: "Vermutete tiefe Gewebeschädigung: intakte Haut, livide oder rötlich-braun verfärbt oder blutgefüllte Blase; Gewebe schmerzhaft, fest, breiig, matschig, wärmer/kälter.", s: "S. 6", sp: ["dekubitus: Def. Dekubitus – Klassifikation"] },
     { f: "Welches Ziel verfolgt der Expertenstandard Dekubitusprophylaxe?",
       o: ["Jeder dekubitusgefährdete Mensch erhält eine Prophylaxe, die die Entstehung eines Dekubitus verhindert", "Jeder Mensch über 65 erhält eine Spezialmatratze", "Bestehende Dekubitus sollen innerhalb von zwei Wochen abheilen", "Die Risikoeinschätzung soll durch Hilfsmittel ersetzt werden"],
-      e: "Ziel: jeder dekubitusgefährdete Mensch erhält eine Prophylaxe, die einen Dekubitus verhindert; im Vordergrund steht v. a. Bewegungsförderung zur Druckentlastung und -verteilung.", s: "S. 7" },
+      e: "Ziel: jeder dekubitusgefährdete Mensch erhält eine Prophylaxe, die einen Dekubitus verhindert; im Vordergrund steht v. a. Bewegungsförderung zur Druckentlastung und -verteilung.", s: "S. 7", sp: ["dekubitus: Def. Dekubitus – Prophylaxe"] },
     { f: "Was gilt in der Sterbephase?",
       o: ["Das Ziel ist ggf. nicht erreichbar – das entbindet aber nicht von Risikoeinschätzung, Information und gemeinsamer Entscheidung", "Der Standard gilt nicht; Risikoeinschätzung und Information entfallen", "Das Ziel muss auch gegen den Willen des Betroffenen erreicht werden", "Es werden ausschließlich Hilfsmittel eingesetzt, Gespräche entfallen"],
       e: "Bei lebensbedrohlichen Zuständen oder anderer Prioritätensetzung (Sterbephase) ist das Ziel ggf. nicht erreichbar; Risikoeinschätzung, Information und gemeinsame Entscheidung bleiben Pflicht.", s: "S. 7" },
@@ -207,29 +207,29 @@ Lernapp.thema({
     { f: "Welche gehören zu den vier Interventionskategorien der Maßnahmendurchführung?",
       o: ["Förderung der Eigenbewegung", "Vollständige Entlastung stark gefährdeter Stellen (Freilage)", "Einsatz von Lagerungsringen unter gefährdeten Stellen", "Vollständige Ruhigstellung zur Schonung der Haut"],
       r: 2,
-      e: "Vier Kategorien: Eigenbewegung fördern · angemessene Positionen und regelmäßige Positionswechsel (Wechselpositionierung) · Freilage · Reduktion therapiebedingter Druck-/Scherkräfte (Zu- und Ableitungen). Lagerungsringe sind ungeeignet.", s: "S. 16, 18" },
+      e: "Vier Kategorien: Eigenbewegung fördern · angemessene Positionen und regelmäßige Positionswechsel (Wechselpositionierung) · Freilage · Reduktion therapiebedingter Druck-/Scherkräfte (Zu- und Ableitungen). Lagerungsringe sind ungeeignet.", s: "S. 16, 18", sp: ["dekubitus: Def. Dekubitus – Prophylaxe"] },
     { f: "Was versteht das Heft unter passiver Bewegung?",
       o: ["Alle Maßnahmen, die eine pflegerisch durchgeführte Wechselpositionierung oder Freilage beinhalten", "Selbstständige Positionswechsel des Betroffenen", "Die Beratung der Angehörigen", "Das Liegen auf einem Hilfsmittel ohne Positionswechsel"],
-      e: "Passiv sind alle Maßnahmen, die eine pflegerisch durchgeführte Wechselpositionierung oder Freilage beinhalten; dabei Hautzustand und Unbehagen kontrollieren.", s: "S. 16" },
+      e: "Passiv sind alle Maßnahmen, die eine pflegerisch durchgeführte Wechselpositionierung oder Freilage beinhalten; dabei Hautzustand und Unbehagen kontrollieren.", s: "S. 16", sp: ["dekubitus: Def. Dekubitus – Prophylaxe"] },
     { f: "Welche Positionierungsangaben nennt das Heft für den Bewegungsförderungsplan?",
       o: ["30–40° Seitenlage, Oberkörperhochlage max. 30°", "90° Seitenlage, Oberkörperhochlage mindestens 60°", "Ausschließlich Rechts-Links-Rücken ohne Gradangabe", "Dauerhafte Flachlage ohne Positionswechsel"],
-      e: "Der Plan dokumentiert nicht nur Rechts-Links-Rücken, sondern z. B. 30–40° Seitenlage, Oberkörperhochlage max. 30°, Mobilisierung, Bewegungsintervalle und Hautkontrolle (Fingertest).", s: "S. 16–17" },
+      e: "Der Plan dokumentiert nicht nur Rechts-Links-Rücken, sondern z. B. 30–40° Seitenlage, Oberkörperhochlage max. 30°, Mobilisierung, Bewegungsintervalle und Hautkontrolle (Fingertest).", s: "S. 16–17", sp: ["dekubitus: Def. Dekubitus – Prophylaxe"] },
     { f: "Braucht jeder dekubitusgefährdete Mensch eine Spezialmatratze?",
       o: ["Nein – Hilfsmittel unterstützen, ersetzen aber nicht die Förderung der Eigenbewegung", "Ja, ab dem ersten Tag der Versorgung", "Ja, sobald das Screening durchgeführt wurde", "Nur Menschen ohne Risiko"],
-      e: "Nicht jeder dekubitusgefährdete Mensch benötigt eine Spezialmatratze; es gibt nicht „ein richtiges“ Hilfsmittel.", s: "S. 17–18" },
+      e: "Nicht jeder dekubitusgefährdete Mensch benötigt eine Spezialmatratze; es gibt nicht „ein richtiges“ Hilfsmittel.", s: "S. 17–18", sp: ["dekubitus: Def. Dekubitus – Prophylaxe"] },
     { f: "Welche Hilfsmittel nennt das Heft als geeignet?",
       o: ["Weichlagerungskissen", "Wechseldruckauflagen/-matratzen", "Lagerungsringe", "Wassermatratzen"],
       r: 2,
-      e: "Geeignet: Weichlagerungskissen, Weichlagerungsmatratzen, Wechseldruckauflagen/-matratzen, Spezialbetten. Ungeeignet: Lagerungsringe, Felle, Watteverbände, Wassermatratzen, reibungskraftreduzierte Hydrokolloid-Pflaster (Ferse).", s: "S. 18" },
+      e: "Geeignet: Weichlagerungskissen, Weichlagerungsmatratzen, Wechseldruckauflagen/-matratzen, Spezialbetten. Ungeeignet: Lagerungsringe, Felle, Watteverbände, Wassermatratzen, reibungskraftreduzierte Hydrokolloid-Pflaster (Ferse).", s: "S. 18", sp: ["dekubitus: Def. Dekubitus – Prophylaxe"] },
     { f: "Warum sind Lagerungsringe ungeeignet?",
       o: ["Sie erhöhen den Druck an den Rändern", "Sie sind zu teuer", "Sie sind nur ambulant verordnungsfähig", "Sie verursachen Mazeration durch Feuchtigkeit"],
-      e: "Lagerungsringe: Druckerhöhung an den Rändern. Felle, Watteverbände, Wassermatratzen: fehlende Wirksamkeit.", s: "S. 18" },
+      e: "Lagerungsringe: Druckerhöhung an den Rändern. Felle, Watteverbände, Wassermatratzen: fehlende Wirksamkeit.", s: "S. 18", sp: ["dekubitus: Def. Dekubitus – Prophylaxe"] },
     { f: "Nach welcher Zeit erhöhten Drucks bzw. erhöhter Scherkraft kann bereits ein Dekubitus entstehen?",
       o: ["Bereits nach 10–20 Minuten", "Frühestens nach 6 Stunden", "Frühestens nach 24 Stunden", "Erst nach mehreren Tagen"],
-      e: "Bereits 10–20 Minuten erhöhter Druck/Scherkraft können zu Dekubitus führen → Druckentlastung unverzüglich; bis Hilfsmittel da sind, angepasste Positionierung.", s: "S. 18" },
+      e: "Bereits 10–20 Minuten erhöhter Druck/Scherkraft können zu Dekubitus führen → Druckentlastung unverzüglich; bis Hilfsmittel da sind, angepasste Positionierung.", s: "S. 18", sp: ["dekubitus: Def. Dekubitus – Entstehung"] },
     { f: "Wann sind Hilfsmittel nach P5 unverzüglich einzusetzen?",
       o: ["Wenn eine ausreichende Bewegungsförderung nicht möglich ist, z. B. bei Kachexie oder fehlender Eigenbeweglichkeit", "Grundsätzlich bei jedem Menschen mit Risiko, statt Bewegungsförderung", "Erst wenn ein Dekubitus Kategorie III vorliegt", "Nur auf ausdrücklichen Wunsch der Angehörigen"],
-      e: "P5: Hilfsmittel unverzüglich, wenn Bewegungsförderung nicht möglich (Kachexie, fehlende Eigenbeweglichkeit, Kontraindikationen); sonst bleibt Bewegungsförderung oberstes Gebot.", s: "S. 19" },
+      e: "P5: Hilfsmittel unverzüglich, wenn Bewegungsförderung nicht möglich (Kachexie, fehlende Eigenbeweglichkeit, Kontraindikationen); sonst bleibt Bewegungsförderung oberstes Gebot.", s: "S. 19", sp: ["dekubitus: Def. Dekubitus – Prophylaxe"] },
     { f: "Was ist in der ambulanten Pflege zur Hilfsmittelversorgung zu tun?",
       o: ["Pflegekasse bzw. Ärzte über Notwendigkeit und Dringlichkeit informieren und eine Verordnung anregen", "Abwarten, bis sich die Betroffenen selbst um ein Hilfsmittel kümmern", "Bis zur Lieferung des Hilfsmittels keine Positionierung durchführen", "Hilfsmittel nur bei Ablehnung durch die Kostenträger beantragen"],
       e: "Ambulant: Pflegekasse/Ärzte über Notwendigkeit und Dringlichkeit informieren, Verordnung anregen; bis dahin angepasste Positionierung. Ablehnung durch Kostenträger dokumentieren.", s: "S. 18–19" },
@@ -263,16 +263,16 @@ Lernapp.thema({
 </ul>
 
 <h3>2. Basiswissen Dekubitus <span class="seite">S. 3–6</span></h3>
-<p class="merke"><b>Dekubitus</b> (NPUAP 2014): „eine lokal begrenzte Schädigung der Haut und/oder des darunter liegenden Gewebes, typischerweise über knöchernen Vorsprüngen, infolge von <b>Druck oder von Druck in Verbindung mit Scherkräften</b>.“</p>
+<p class="merke"><span class="sp" data-sp="dekubitus: Def. Dekubitus">Schwerpunkt</span> <b>Dekubitus</b> (NPUAP 2014): „eine lokal begrenzte Schädigung der Haut und/oder des darunter liegenden Gewebes, typischerweise über knöchernen Vorsprüngen, infolge von <b>Druck oder von Druck in Verbindung mit Scherkräften</b>.“</p>
 <ul>
-  <li>Druck auf weiches Gewebe zwischen harter Unterlage und Knochenvorsprung; Scherkräfte verformen tieferes Gewebe (≠ Reibung, die oberflächlich wirkt). Schaden abhängig von Dauer und Stärke; <b>kein Schwellenwert</b> bekannt; zusätzlich von weiteren Risikofaktoren abhängig (S. 3).</li>
-  <li><b>Ursachen</b> (S. 4): direkte mechanische <b>Deformation</b> → Zelltod (Muskelzellen besonders anfällig, Muskelnekrosen in wenigen Minuten; Hautzellen widerstandsfähiger) und <b>Verschluss von Blut- und Lymphgefäßen</b> → Minderversorgung mit O₂/Nährstoffen, Stoffwechselprodukte bleiben; bei Druckentlastung Entzündung. Beide Mechanismen verstärken sich gegenseitig.</li>
-  <li>Druckgeschwüre entstehen zuerst in anfälligem Gewebe wie der Muskulatur – die darüberliegende Haut kann intakt sein: <b>Tiefe Schädigungen müssen nicht zwangsläufig ein offener Dekubitus sein</b> (S. 4).</li>
+  <li><span class="sp" data-sp="dekubitus: Def. Dekubitus – Entstehung">Schwerpunkt</span> Druck auf weiches Gewebe zwischen harter Unterlage und Knochenvorsprung; Scherkräfte verformen tieferes Gewebe (≠ Reibung, die oberflächlich wirkt). Schaden abhängig von Dauer und Stärke; <b>kein Schwellenwert</b> bekannt; zusätzlich von weiteren Risikofaktoren abhängig (S. 3).</li>
+  <li><span class="sp" data-sp="dekubitus: Def. Dekubitus – Entstehung">Schwerpunkt</span> <b>Ursachen</b> (S. 4): direkte mechanische <b>Deformation</b> → Zelltod (Muskelzellen besonders anfällig, Muskelnekrosen in wenigen Minuten; Hautzellen widerstandsfähiger) und <b>Verschluss von Blut- und Lymphgefäßen</b> → Minderversorgung mit O₂/Nährstoffen, Stoffwechselprodukte bleiben; bei Druckentlastung Entzündung. Beide Mechanismen verstärken sich gegenseitig.</li>
+  <li><span class="sp" data-sp="dekubitus: Def. Dekubitus – Entstehung">Schwerpunkt</span> Druckgeschwüre entstehen zuerst in anfälligem Gewebe wie der Muskulatur – die darüberliegende Haut kann intakt sein: <b>Tiefe Schädigungen müssen nicht zwangsläufig ein offener Dekubitus sein</b> (S. 4).</li>
 </ul>
 <div class="tabelle"><table>
   <thead><tr><th colspan="2">Risikofaktoren <span class="seite">S. 4–5</span></th></tr></thead>
   <tbody>
-    <tr><td>Wichtigste (gesichert)</td><td><b>Beeinträchtigung der Mobilität</b> (mehr Druck/Scherkräfte, direkt) · <b>Störung der Durchblutung</b> (schwächt Gewebetoleranz, indirekt; lokal auch direkt auslösend) · <b>beeinträchtigter Hautzustand bzw. vorhandener Dekubitus</b> (Hinweis auf vorliegendes Risiko) → Rahmenmodell der Einschätzung</td></tr>
+    <tr><td><span class="sp" data-sp="dekubitus: Def. Dekubitus – Risikofaktoren">Schwerpunkt</span> Wichtigste (gesichert)</td><td><b>Beeinträchtigung der Mobilität</b> (mehr Druck/Scherkräfte, direkt) · <b>Störung der Durchblutung</b> (schwächt Gewebetoleranz, indirekt; lokal auch direkt auslösend) · <b>beeinträchtigter Hautzustand bzw. vorhandener Dekubitus</b> (Hinweis auf vorliegendes Risiko) → Rahmenmodell der Einschätzung</td></tr>
     <tr><td>Verlängerte/verstärkte Druck- und Scherkräfte</td><td>stark eingeschränkte (Eigen-)Mobilität, neurologische Einschränkungen, Intensität/Dauer des Drucks, Reibung und Scherkräfte, medizinische Geräte (Zu- und Ableitungen)</td></tr>
     <tr><td>Beeinträchtigte Gewebetoleranz</td><td>Mangelernährung, Durchblutung/Sauerstoffversorgung der Haut, Hautfeuchtigkeit, Hauttoleranz und Auflagenflächen</td></tr>
     <tr><td>Merksatz</td><td>Risikofaktoren treten meist gemeinsam auf: <b>je komplexer die Gesundheitsprobleme, desto höher der Unterstützungsbedarf – je höher der Unterstützungsbedarf, desto höher kann das Dekubitusrisiko sein</b></td></tr>
@@ -281,7 +281,7 @@ Lernapp.thema({
 <div class="tabelle"><table>
   <thead><tr><th>Kategorie (EPUAP/NPUAP/PPPIA)</th><th>Beschreibung <span class="seite">S. 5–6</span></th></tr></thead>
   <tbody>
-    <tr><td>I</td><td>intakte Haut mit <b>nicht wegdrückbarer Rötung</b>, meist über Knochenvorsprung; ggf. schmerzhaft, härter, wärmer oder kälter</td></tr>
+    <tr><td><span class="sp" data-sp="dekubitus: Def. Dekubitus – Klassifikation">Schwerpunkt</span> I</td><td>intakte Haut mit <b>nicht wegdrückbarer Rötung</b>, meist über Knochenvorsprung; ggf. schmerzhaft, härter, wärmer oder kälter</td></tr>
     <tr><td>II</td><td>Teilzerstörung der Haut (Epidermis/Dermis): flaches, offenes Geschwür, rot-rosa Wundbett <b>ohne Beläge</b>; auch intakte/offene serumgefüllte Blase. Nicht für Skin Tears, Pflasterschäden, Mazeration verwenden</td></tr>
     <tr><td>III</td><td><b>vollständiger Hautverlust</b>; Subcutis sichtbar, Knochen/Sehnen/Muskeln nicht offen; Beläge, Taschen, Unterminierungen möglich</td></tr>
     <tr><td>IV</td><td>vollständiger Gewebeverlust mit <b>freiliegenden Knochen, Sehnen oder Muskeln</b>; Beläge, Schorf, Taschen; Osteomyelitis möglich; häufig Nekrosen, hohes Infektionsrisiko</td></tr>
@@ -292,8 +292,8 @@ Lernapp.thema({
 
 <h3>3. Ziel, Anwender, Struktur <span class="seite">S. 7–9</span></h3>
 <ul>
-  <li>Interventionen v. a. <b>Bewegungsförderung</b> zur Druckentlastung und -verteilung. <b>Ziel:</b> jeder dekubitusgefährdete Mensch erhält eine Prophylaxe, die einen Dekubitus verhindert (S. 7).</li>
-  <li><b>Pflegefachpersonal gewährleistet:</b> systematische Risikoeinschätzung · Information, Schulung, Beratung (auch Angehörige) · Bewegungsförderung · Druckentlastung und -verteilung · Kontinuität und Evaluation (S. 7).</li>
+  <li><span class="sp" data-sp="dekubitus: Def. Dekubitus – Prophylaxe">Schwerpunkt</span> Interventionen v. a. <b>Bewegungsförderung</b> zur Druckentlastung und -verteilung. <b>Ziel:</b> jeder dekubitusgefährdete Mensch erhält eine Prophylaxe, die einen Dekubitus verhindert (S. 7).</li>
+  <li><span class="sp" data-sp="dekubitus: Def. Dekubitus – Prophylaxe">Schwerpunkt</span> <b>Pflegefachpersonal gewährleistet:</b> systematische Risikoeinschätzung · Information, Schulung, Beratung (auch Angehörige) · Bewegungsförderung · Druckentlastung und -verteilung · Kontinuität und Evaluation (S. 7).</li>
   <li>Wenn die gesundheitliche Situation dagegen spricht (lebensbedrohlich) oder andere Prioritäten gelten (Sterbephase), ist das Ziel ggf. nicht erreichbar – entbindet aber <b>nicht</b> von Risikoeinschätzung, Information und gemeinsamer Entscheidung (S. 7).</li>
   <li><b>Anwender:</b> Pflegefachkräfte (ambulant, stationäre Altenhilfe, Gesundheitsversorgung). <b>Zielgruppe:</b> Menschen jeden Alters mit erhöhtem Risiko; Angehörige/informelle Pflegende ausdrücklich eingeschlossen. Aktuelle Fassung umfasst auch Neugeborene, Säuglinge, Kinder; das Lernheft behandelt nur Erwachsene und Ältere (S. 7–8).</li>
   <li>Sechs zentrale Bereiche in <b>fünf Phasen</b>: Risikoeinschätzung · Maßnahmenplanung · Information, Beratung, Schulung · Maßnahmendurchführung (Bewegungsförderung + Hilfsmittel) · Evaluation; jeweils Struktur-, Prozess-, Ergebniskriterien (S. 8).</li>
@@ -322,7 +322,7 @@ Lernapp.thema({
 </ul>
 <p><b>Phase 2 – Maßnahmenplanung</b> (S. 12–13): Prophylaxe nur wirksam, wenn <b>kontinuierlich</b>; Verfahrensregelung (z. B. Ablaufdiagramm) für Informationsweitergabe; auch Personal von Arztpraxen und <b>Transportdiensten</b> informieren.</p>
 <p><b>Phase 3 – Information, Beratung, Schulung</b> (S. 13–14): Selbstbestimmungsrecht, gemeinsame Entscheidungsfindung. Ziele: Eigenbewegung fördern, Hautinspektion, druckentlastende Interventionen, sicherer Hilfsmitteleinsatz. In der Beratung: Alternativen, Vor-/Nachteile, Ziele, Folgen unterlassener Intervention, Bedeutung regelmäßiger Hautinspektion. <b>Der Beratungsprozess ist nie gänzlich abgeschlossen</b>, er erfolgt wiederholt im gesamten Pflegeprozess; dokumentieren.</p>
-<p><b>Phase 4 – Maßnahmendurchführung</b> (S. 15–19): Wille der Betroffenen stets respektieren (freie Entscheidung über Mitwirkung).</p>
+<p><span class="sp" data-sp="dekubitus: Def. Dekubitus – Prophylaxe">Schwerpunkt</span> <b>Phase 4 – Maßnahmendurchführung</b> (S. 15–19): Wille der Betroffenen stets respektieren (freie Entscheidung über Mitwirkung).</p>
 <ul>
   <li><b>Vier Interventionskategorien:</b> Eigenbewegung fördern · angemessene Körperpositionen und regelmäßige Positionswechsel („Wechselpositionierung“) · vollständige Entlastung stark gefährdeter Stellen („<b>Freilage</b>“) · Vermeidung therapiebedingter Druck-/Scherkräfte (Zu- und Ableitungen). Bezug zu den Standards Sturzprophylaxe und Mobilität (S. 16).</li>
   <li>Einschränkungen (z. B. Schmerzen) vorab klären; individueller <b>Bewegungsförderungsplan</b>; aktiv vs. passiv (passiv = pflegerisch durchgeführte Wechselpositionierung/Freilage); Hautzustand und Unbehagen regelmäßig kontrollieren; Angehörige anleiten (S. 16).</li>

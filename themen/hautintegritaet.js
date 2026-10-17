@@ -76,7 +76,7 @@ Lernapp.thema({
     { k: "Phase 2", f: "Was ist bei der Planung im ambulanten Bereich zu beachten?",
       a: "Pflegebedürftige tragen die Kosten für Hautpflegeprodukte selbst (oft nicht erstattungsfähig). Räumliche/materielle Gegebenheiten (Badewanne, Dusche) und vorhandene Mittel auf Angemessenheit prüfen.", s: "S. 18" },
     { k: "Phase 2", f: "Grundsatz bei Xerosis- oder Skin-Tear-Risiko für die Planung?",
-      a: "Wasser sparsam verwenden und Haut vorsichtig trockentupfen. Schädliche Gewohnheiten (z. B. häufiges heißes Baden) benennen und beraten; Präferenzen und Wissen der Betroffenen stärken Selbstmanagement und Akzeptanz.", s: "S. 18–19" },
+      a: "Wasser sparsam verwenden und Haut vorsichtig trockentupfen. Schädliche Gewohnheiten (z. B. häufiges heißes Baden) benennen und beraten; Präferenzen und Wissen der Betroffenen stärken Selbstmanagement und Akzeptanz.", s: "S. 18–19", sp: ["haut: Was sind empfohlene Hautschutz- und Hautpflegemaßnahmen?"] },
     { k: "Phase 3", f: "Informieren, Schulen, Beraten – Unterschiede?",
       a: "Informieren: Wissen zur Verfügung stellen.\nSchulen: Wissen, Fähigkeiten, Bewältigungsstrategien, Selbstmanagement, Pflegetechniken vermitteln.\nBeraten: auf Basis einer Problemanalyse gemeinsame Lösungen und Ziele erarbeiten.", s: "S. 20" },
     { k: "Phase 3", f: "Was fordern S3, P3a, P3b und E3?",
@@ -88,25 +88,25 @@ Lernapp.thema({
     { k: "Phase 4", f: "Was fordern S4a, S4b, P4 und E4?",
       a: "S4a: aktuelles zielgruppenspezifisches Wissen und Umsetzungskompetenz · S4b: Einrichtung stellt adäquate Hautmittel/Materialien · P4: Anwendung in Abstimmung mit Betroffenen · E4: Maßnahmen gemäß Planung und Bedarf durchgeführt.", s: "S. 23" },
     { k: "Phase 4", f: "Welche Produkteigenschaften sollen benannt werden?",
-      a: "Statt „Duschbad, Creme, Salbe, Lotion“: pH-Wert und ob hydrophil oder lipophil. Hinweise: „Fettsalbe“, W/O → lipophil; O/W → hydrophil; leicht mit Wasser abwischbar → eher hydrophil.", s: "S. 23" },
+      a: "Statt „Duschbad, Creme, Salbe, Lotion“: pH-Wert und ob hydrophil oder lipophil. Hinweise: „Fettsalbe“, W/O → lipophil; O/W → hydrophil; leicht mit Wasser abwischbar → eher hydrophil.", s: "S. 23", sp: ["haut: Was gibt es für Hautpflegeprodukte?"] },
     { k: "Phase 4", f: "Wie geht man mit Unverträglichkeiten um?",
       a: "Auf Duftstoffe, Feuchthaltefaktoren (z. B. Urea) achten; Juckreiz, Rötung, Entzündung möglich → bei Verdacht nicht mehr auftragen. Inhaltsstoffe per App COSMILE® (EAN-Barcode-Scan).", s: "S. 24" },
     { k: "Phase 4", f: "Hautreinigung bei Neugeborenen und Säuglingen?",
-      a: "Erstes Wannenbad frühestens ab Tag 2; Vernix caseosa nicht entfernen; Wannenbad ohne Waschlappen, 37 °C, 5–10 min, alle paar Tage; Zusätze sparsam, pH 5,5–7,0; trocken tupfen; tägliche Inspektion; Raum 26–28 °C.", s: "S. 24–25" },
+      a: "Erstes Wannenbad frühestens ab Tag 2; Vernix caseosa nicht entfernen; Wannenbad ohne Waschlappen, 37 °C, 5–10 min, alle paar Tage; Zusätze sparsam, pH 5,5–7,0; trocken tupfen; tägliche Inspektion; Raum 26–28 °C.", s: "S. 24–25", sp: ["haut: Was sind empfohlene Hautschutz- und Hautpflegemaßnahmen?"] },
     { k: "Phase 4", f: "Hautreinigung bei Erwachsenen mit Risiken?",
-      a: "Vollbäder vermeiden/begrenzen; lauwarm duschen; pH < 7; tupfen statt reiben; keine alkalischen Seifen; ggf. No-rinse-Tücher; Einmalwaschlappen; warmes Handtuch ohne Nutzen; lipophile Hautmittel mind. 1× täglich.", s: "S. 25" },
+      a: "Vollbäder vermeiden/begrenzen; lauwarm duschen; pH < 7; tupfen statt reiben; keine alkalischen Seifen; ggf. No-rinse-Tücher; Einmalwaschlappen; warmes Handtuch ohne Nutzen; lipophile Hautmittel mind. 1× täglich.", s: "S. 25", sp: ["haut: Was sind empfohlene Hautschutz- und Hautpflegemaßnahmen?"] },
     { k: "Phase 4", f: "Maßnahmen bei Xerosis cutis?",
-      a: "Wasser sparsam (selektiv Achseln, Falten, Genitalbereich); Reinigungsmittel sparsam; lipophile Hautmittel zum Verbleib, verstärkt durch Urea, Laktat; je trockener, desto häufiger. CVI: nach Ausziehen der MKS pH < 7 reinigen, lipophil pflegen.", s: "S. 25–26" },
+      a: "Wasser sparsam (selektiv Achseln, Falten, Genitalbereich); Reinigungsmittel sparsam; lipophile Hautmittel zum Verbleib, verstärkt durch Urea, Laktat; je trockener, desto häufiger. CVI: nach Ausziehen der MKS pH < 7 reinigen, lipophil pflegen.", s: "S. 25–26", sp: ["haut: Was sind empfohlene Hautschutz- und Hautpflegemaßnahmen?"] },
     { k: "Phase 4", f: "Fußpflege bei Diabetes mellitus?",
-      a: "pH-neutrale Hautmittel, tägliche Fußinspektion; Zehenzwischenräume sorgfältig trocknen; Fußbäder kritisch (Mazeration, Verbrennung, Infektion); lipophil mit Urea, Laktat oder Glycerin; Zehenzwischenräume beim Eincremen aussparen.", s: "S. 25–26" },
+      a: "pH-neutrale Hautmittel, tägliche Fußinspektion; Zehenzwischenräume sorgfältig trocknen; Fußbäder kritisch (Mazeration, Verbrennung, Infektion); lipophil mit Urea, Laktat oder Glycerin; Zehenzwischenräume beim Eincremen aussparen.", s: "S. 25–26", sp: ["haut: Was sind empfohlene Hautschutz- und Hautpflegemaßnahmen?"] },
     { k: "Phase 4", f: "Maßnahmen bei IAD-Risiko?",
-      a: "Weich, behutsam reinigen; Stuhlreste mit feuchtem Tuch rehydrieren; Inkontinenzmaterial mit Superabsorber regelmäßig wechseln; Hautschutz zum Verbleib; viskose Pasten (Zinkpaste) vermeiden; bei akuter Diarrhoe weiche Zinkpaste vorübergehend, sehr sparsam.", s: "S. 26" },
+      a: "Weich, behutsam reinigen; Stuhlreste mit feuchtem Tuch rehydrieren; Inkontinenzmaterial mit Superabsorber regelmäßig wechseln; Hautschutz zum Verbleib; viskose Pasten (Zinkpaste) vermeiden; bei akuter Diarrhoe weiche Zinkpaste vorübergehend, sehr sparsam.", s: "S. 26", sp: ["haut: Was sind empfohlene Hautschutz- und Hautpflegemaßnahmen?"] },
     { k: "Phase 4", f: "Maßnahmen bei Windeldermatitis-Risiko?",
-      a: "Behutsam reinigen; Windel bei Nässe, spätestens nach 3–4 Stunden wechseln; Superabsorber, gute Passform; möglichst lange ohne Windel liegen lassen; lipophile Schutzmittel für Säuglinge deklariert, erst dünn auftragen.", s: "S. 26" },
+      a: "Behutsam reinigen; Windel bei Nässe, spätestens nach 3–4 Stunden wechseln; Superabsorber, gute Passform; möglichst lange ohne Windel liegen lassen; lipophile Schutzmittel für Säuglinge deklariert, erst dünn auftragen.", s: "S. 26", sp: ["haut: Was sind empfohlene Hautschutz- und Hautpflegemaßnahmen?"] },
     { k: "Phase 4", f: "Maßnahmen bei Intertrigo-Risiko?",
-      a: "No-rinse-Produkte, lauwarmes Wasser; Reibung vermeiden, tupfen; keine eindeutige Empfehlung für Zinköl; Schutzmittel dünn, nicht bei Pilzbefall; Haut-zu-Haut-Kontakt vermeiden (Leinen/Baumwolle einlegen, 2× tgl. wechseln); atmungsaktive Kleidung.", s: "S. 26–27" },
+      a: "No-rinse-Produkte, lauwarmes Wasser; Reibung vermeiden, tupfen; keine eindeutige Empfehlung für Zinköl; Schutzmittel dünn, nicht bei Pilzbefall; Haut-zu-Haut-Kontakt vermeiden (Leinen/Baumwolle einlegen, 2× tgl. wechseln); atmungsaktive Kleidung.", s: "S. 26–27", sp: ["haut: Was sind empfohlene Hautschutz- und Hautpflegemaßnahmen?"] },
     { k: "Phase 4", f: "Maßnahmen bei Skin-Tear-Risiko?",
-      a: "Vorsichtig reinigen, tupfen; pH 5–7; ab > 75 Jahren mind. 2× täglich lipophile Pflege; keine klebenden Verbandmittel (Silikon, Schlauchverband, Mullbinden); Sturzprophylaxe, Schienbein-/Armschoner, lange Kleidung, kurze Nägel.", s: "S. 27" },
+      a: "Vorsichtig reinigen, tupfen; pH 5–7; ab > 75 Jahren mind. 2× täglich lipophile Pflege; keine klebenden Verbandmittel (Silikon, Schlauchverband, Mullbinden); Sturzprophylaxe, Schienbein-/Armschoner, lange Kleidung, kurze Nägel.", s: "S. 27", sp: ["haut: Was sind empfohlene Hautschutz- und Hautpflegemaßnahmen?"] },
     { k: "Phase 5", f: "Was fordern S5, P5 und E5?",
       a: "S5: Kompetenz, die Wirksamkeit zu beurteilen · P5: Beurteilung in individuellen Zeitabständen und anlassbezogen · E5: Die Hautintegrität ist gefördert und erhalten.", s: "S. 28" },
     { k: "Phase 5", f: "Was wird evaluiert – und was, wenn Ziele verfehlt werden?",
@@ -120,13 +120,13 @@ Lernapp.thema({
     { k: "Pflege", f: "Kosmetikum, Arzneimittel, Medizinprodukt?",
       a: "Kosmetikum (EU-VO 1223/2009): reinigen, schützen, pflegen, parfümieren.\nArzneimittel: Heilung/Linderung/Verhütung; pharmakologisch, immunologisch, metabolisch.\nMedizinprodukt: nicht pharmakologisch, kein Stoffwechseleingriff.", s: "S. 30" },
     { k: "Pflege", f: "O/W vs. W/O – Creme vs. Lotion?",
-      a: "Öl-in-Wasser: hydrophiler Anteil höher, mit Wasser mischbar, eher flüssig.\nWasser-in-Öl: lipophiler Anteil höher.\nHalbfeste Emulsion → Creme; flüssigere → Lotion.", s: "S. 30, 36–37" },
+      a: "Öl-in-Wasser: hydrophiler Anteil höher, mit Wasser mischbar, eher flüssig.\nWasser-in-Öl: lipophiler Anteil höher.\nHalbfeste Emulsion → Creme; flüssigere → Lotion.", s: "S. 30, 36–37", sp: ["haut: Was gibt es für Hautpflegeprodukte?"] },
     { k: "Pflege", f: "Wonach soll ein Hautmittel ausgewählt werden?",
-      a: "Nach Polarität und Verteilbarkeit statt Emulsionstyp: lipophil → trockene Haut · hydrophil → feuchte Haut · Urea, Laktat, Glycerin → sehr trockene Haut · großflächig → dünnflüssig · kleinflächig → dickflüssig.", s: "S. 31" },
+      a: "Nach Polarität und Verteilbarkeit statt Emulsionstyp: lipophil → trockene Haut · hydrophil → feuchte Haut · Urea, Laktat, Glycerin → sehr trockene Haut · großflächig → dünnflüssig · kleinflächig → dickflüssig.", s: "S. 31", sp: ["haut: Was gibt es für Hautpflegeprodukte?"] },
     { k: "Pflege", f: "Unerwünschte Wirkungen von Hautmitteln?",
       a: "Hydrophile Produkte → Überwässerung, Lipidschicht gestört · auf normaler Haut Irritationsanfälligkeit ↑ · Pflanzenöle reizen · Konservierungs- und Duftstoffe irritierend/allergisierend, schon in niedriger Konzentration; pH ↑.", s: "S. 32–33" },
     { k: "Pflege", f: "Produkte bei sebostatischer (trockener) Haut? (Übung II)",
-      a: "Tägliche Hautpflege · W/O-Produkte · Urea oder Kollagen (binden Feuchtigkeit) · Omega-3-6-9-Fettsäuren (Elastizität, Widerstandsfähigkeit) · Lipolotionen · Harnstoff lindert Juckreiz, reduziert Verhornung.", s: "S. 38" },
+      a: "Tägliche Hautpflege · W/O-Produkte · Urea oder Kollagen (binden Feuchtigkeit) · Omega-3-6-9-Fettsäuren (Elastizität, Widerstandsfähigkeit) · Lipolotionen · Harnstoff lindert Juckreiz, reduziert Verhornung.", s: "S. 38", sp: ["haut: Was gibt es für Hautpflegeprodukte?"] },
     { k: "Glossar", f: "Bulla, Vesikula, Papel, Plaque, Makula?",
       a: "Bulla: Flüssigkeit > 1 cm · Vesikula: ≤ 1 cm · Papel: erhaben, solide ≤ 1 cm · Plaque: tastbar > 1 cm · Makula: flach, nicht tastbar ≥ 1 cm · Nodus: fest > 1 cm in Dermis/Subcutis.", s: "S. 36–37" },
     { k: "Glossar", f: "Erosion, Exkoriation, Ulcus?",
@@ -195,34 +195,34 @@ Lernapp.thema({
       e: "Ambulant tragen Pflegebedürftige die Kosten selbst (oft nicht erstattungsfähig); Krankenhäuser stellen Hautmittel; in der Langzeitpflege/ambulant tragen Bewohner/Klienten die Kosten → Beratung zur Beschaffung wichtig.", s: "S. 18, 24" },
     { f: "Welcher Grundsatz gilt bei erhöhtem Risiko für Xerosis cutis oder Skin Tears?",
       o: ["Wasser sparsam verwenden und die Haut vorsichtig trockentupfen", "Häufiges heißes Baden", "Die Haut kräftig trockenreiben", "Täglich ein ausgiebiges Vollbad"],
-      e: "Wasser sparsam, vorsichtig trockentupfen; schädliche Gewohnheiten (z. B. häufiges heißes Baden) benennen und beraten.", s: "S. 18–19" },
+      e: "Wasser sparsam, vorsichtig trockentupfen; schädliche Gewohnheiten (z. B. häufiges heißes Baden) benennen und beraten.", s: "S. 18–19", sp: ["haut: Was sind empfohlene Hautschutz- und Hautpflegemaßnahmen?"] },
     { f: "Was bedeutet „Beraten“ im Sinne des Standards?",
       o: ["Auf Basis einer Problemanalyse gemeinsam Lösungswege und Ziele erarbeiten", "Informationen weitergeben, um Wissen zur Verfügung zu stellen", "Wissen, Fähigkeiten und Pflegetechniken für den Alltag vermitteln", "Arzneimittel verordnen"],
       e: "Informieren = Wissen zur Verfügung stellen · Schulen = Wissen, Fähigkeiten, Bewältigungsstrategien, Selbstmanagement, Pflegetechniken vermitteln · Beraten = auf Basis einer Problemanalyse gemeinsame Lösungswege und Ziele erarbeiten.", s: "S. 20" },
     { f: "Welche Angabe weist auf ein lipophiles Hautmittel hin?",
       o: ["„Fettsalbe“ bzw. „W/O“", "„O/W“", "Leicht mit Wasser abwischbar", "Hydrophiler Anteil überwiegt"],
-      e: "„Fettsalbe“, „W/O“ → lipophil; „O/W“ → hydrophil; leicht mit Wasser abwischbar → eher hydrophil.", s: "S. 23" },
+      e: "„Fettsalbe“, „W/O“ → lipophil; „O/W“ → hydrophil; leicht mit Wasser abwischbar → eher hydrophil.", s: "S. 23", sp: ["haut: Was gibt es für Hautpflegeprodukte?"] },
     { f: "Was gilt für die Hautreinigung bei Neugeborenen?",
       o: ["Erstes Wannenbad frühestens ab dem 2. Tag; 37 °C, 5–10 min; Vernix caseosa nicht entfernen", "Direkt nach der Geburt baden und Vernix caseosa gründlich abwaschen", "Tägliches Wannenbad über 30 min mit Waschlappen", "Badezusätze großzügig, pH-Wert über 8"],
-      e: "Erstes Wannenbad frühestens ab dem 2. Tag; Vernix caseosa nicht entfernen; Wannenbad ohne Waschlappen, 37 °C, 5–10 min, alle paar Tage; Zusätze sparsam, pH 5,5–7,0; Raum 26–28 °C.", s: "S. 24–25" },
+      e: "Erstes Wannenbad frühestens ab dem 2. Tag; Vernix caseosa nicht entfernen; Wannenbad ohne Waschlappen, 37 °C, 5–10 min, alle paar Tage; Zusätze sparsam, pH 5,5–7,0; Raum 26–28 °C.", s: "S. 24–25", sp: ["haut: Was sind empfohlene Hautschutz- und Hautpflegemaßnahmen?"] },
     { f: "Welche Empfehlungen gelten für die Hautreinigung bei Erwachsenen mit Risiken?",
       o: ["Lauwarm duschen, Vollbäder vermeiden/begrenzen", "Hautmittel pH-hautneutral bis sauer (pH < 7)", "Bevorzugt alkalische Seifen verwenden", "Kräftig trockenreiben statt tupfen"], r: 2,
-      e: "Vollbäder vermeiden/begrenzen; lauwarm duschen; pH < 7; tupfen statt reiben; möglichst keine alkalischen Seifen; lipophile Hautmittel mind. 1× täglich nach der Reinigung.", s: "S. 25" },
+      e: "Vollbäder vermeiden/begrenzen; lauwarm duschen; pH < 7; tupfen statt reiben; möglichst keine alkalischen Seifen; lipophile Hautmittel mind. 1× täglich nach der Reinigung.", s: "S. 25", sp: ["haut: Was sind empfohlene Hautschutz- und Hautpflegemaßnahmen?"] },
     { f: "Was gilt für die Fußpflege bei Diabetes mellitus?",
       o: ["Tägliche Fußinspektion; Zehenzwischenräume gut trocknen und beim Eincremen aussparen", "Tägliche ausgiebige Fußbäder sind empfohlen", "Zehenzwischenräume besonders dick eincremen", "Fußinspektion einmal im Monat genügt"],
-      e: "pH-neutrale Hautmittel, tägliche Fußinspektion; Zehenzwischenräume sorgfältig trocknen; Fußbäder kritisch (Mazeration, Verbrennung, Infektion); lipophil mit Urea, Laktat oder Glycerin; Zehenzwischenräume aussparen.", s: "S. 25–26" },
+      e: "pH-neutrale Hautmittel, tägliche Fußinspektion; Zehenzwischenräume sorgfältig trocknen; Fußbäder kritisch (Mazeration, Verbrennung, Infektion); lipophil mit Urea, Laktat oder Glycerin; Zehenzwischenräume aussparen.", s: "S. 25–26", sp: ["haut: Was sind empfohlene Hautschutz- und Hautpflegemaßnahmen?"] },
     { f: "Wie wird bei IAD-Risiko gereinigt bzw. geschützt?",
       o: ["Weich und behutsam reinigen; Stuhlreste mit feuchtem Tuch rehydrieren", "Stuhlreste trocken abreiben", "Mit alkalischer Seife kräftig reinigen", "Routinemäßig dick viskose Zinkpaste auftragen"],
-      e: "Weich, behutsam reinigen; Stuhlreste mit feuchtem Tuch rehydrieren; Superabsorber; Hautschutz zum Verbleib; viskose Pasten (Zinkpaste) vermeiden (erschweren Beurteilung, schwer entfernbar); nur bei akuter Diarrhoe weiche Zinkpaste vorübergehend, sehr sparsam.", s: "S. 26" },
+      e: "Weich, behutsam reinigen; Stuhlreste mit feuchtem Tuch rehydrieren; Superabsorber; Hautschutz zum Verbleib; viskose Pasten (Zinkpaste) vermeiden (erschweren Beurteilung, schwer entfernbar); nur bei akuter Diarrhoe weiche Zinkpaste vorübergehend, sehr sparsam.", s: "S. 26", sp: ["haut: Was sind empfohlene Hautschutz- und Hautpflegemaßnahmen?"] },
     { f: "Wann soll bei Windeldermatitis-Risiko die Windel gewechselt werden?",
       o: ["Bei Nässe, spätestens nach 3–4 Stunden", "Spätestens nach 8 Stunden", "Einmal täglich", "Nur bei Stuhlgang"],
-      e: "Windel bei Nässe, spätestens nach 3–4 Stunden wechseln; Superabsorber, gute Passform; möglichst lange ohne Windel liegen lassen.", s: "S. 26" },
+      e: "Windel bei Nässe, spätestens nach 3–4 Stunden wechseln; Superabsorber, gute Passform; möglichst lange ohne Windel liegen lassen.", s: "S. 26", sp: ["haut: Was sind empfohlene Hautschutz- und Hautpflegemaßnahmen?"] },
     { f: "Welche Maßnahme wird bei Intertrigo-Risiko empfohlen?",
       o: ["Haut-zu-Haut-Kontakt vermeiden, z. B. Leinen, Vlies oder Baumwolle einlegen", "Hautfalten kräftig trockenreiben", "Schutzmittel auch bei Pilzbefall dick auftragen", "Zinköl wird eindeutig empfohlen"],
-      e: "Reibung vermeiden, trocken tupfen; keine eindeutige Empfehlung für Zinköl; Schutzmittel dünn, nicht bei Pilzbefall; Haut-zu-Haut-Kontakt vermeiden (Einlagen bei Durchfeuchtung mind. 2× täglich wechseln).", s: "S. 26–27" },
+      e: "Reibung vermeiden, trocken tupfen; keine eindeutige Empfehlung für Zinköl; Schutzmittel dünn, nicht bei Pilzbefall; Haut-zu-Haut-Kontakt vermeiden (Einlagen bei Durchfeuchtung mind. 2× täglich wechseln).", s: "S. 26–27", sp: ["haut: Was sind empfohlene Hautschutz- und Hautpflegemaßnahmen?"] },
     { f: "Welche Maßnahmen gelten bei Skin-Tear-Risiko?",
       o: ["Keine klebenden Verbandmittel verwenden", "Sturzprophylaxe, z. B. Schienbein-/Armschoner, lange Kleidung, kurze Nägel", "Verbände großzügig mit Pflaster fixieren", "Haut kräftig trockenreiben"], r: 2,
-      e: "Vorsichtig reinigen, trocken tupfen; pH 5–7; bei > 75 Jahren mind. 2× täglich lipophile Pflege; keine klebenden Verbandmittel – Silikon, Schlauchverbände, elastische Mullbinden; Sturzprophylaxe.", s: "S. 27" },
+      e: "Vorsichtig reinigen, trocken tupfen; pH 5–7; bei > 75 Jahren mind. 2× täglich lipophile Pflege; keine klebenden Verbandmittel – Silikon, Schlauchverbände, elastische Mullbinden; Sturzprophylaxe.", s: "S. 27", sp: ["haut: Was sind empfohlene Hautschutz- und Hautpflegemaßnahmen?"] },
     { f: "Wann führt die Evaluation zurück zur vertieften Einschätzung?",
       o: ["Bei Veränderungen wie Diarrhoe, Schwitzen oder neuer Medikation bzw. wenn die Maßnahmen nicht positiv wirken", "Wenn alle Ziele erreicht sind", "Nie – die Einschätzung erfolgt einmalig", "Nur wenn die Maßnahmen nicht akzeptiert werden"],
       e: "Prozessablauf: Veränderungen wie Diarrhoe, Schwitzen, neue Medikation → vertiefte Einschätzung; keine positive Wirkung → vertiefte Einschätzung; keine Akzeptanz → erneut beraten.", s: "S. 34" },
@@ -237,10 +237,10 @@ Lernapp.thema({
       e: "Arzneimittel: pharmakologische, immunologische, metabolische Wirkung · Medizinprodukte: nicht pharmakologisch, kein Eingriff in den Stoffwechsel · Kosmetische Mittel: EU-VO Nr. 1223/2009.", s: "S. 30" },
     { f: "Was ist eine Öl-in-Wasser-Emulsion (O/W)?",
       o: ["Eine Emulsion mit höherem hydrophilem Anteil", "Eine Emulsion mit höherem lipophilem Anteil", "Eine reine Fettsalbe ohne Wasser", "Eine Emulsion ohne Emulgatoren"],
-      e: "Hydrophiler Anteil höher → Öl-in-Wasser; lipophiler Anteil höher → Wasser-in-Öl. Halbfest → Creme; flüssiger → Lotion.", s: "S. 30" },
+      e: "Hydrophiler Anteil höher → Öl-in-Wasser; lipophiler Anteil höher → Wasser-in-Öl. Halbfest → Creme; flüssiger → Lotion.", s: "S. 30", sp: ["haut: Was gibt es für Hautpflegeprodukte?"] },
     { f: "Wonach soll ein Hautmittel laut Heft ausgewählt werden?",
       o: ["Nach Polarität und Verteilbarkeit: lipophil bei trockener, hydrophil bei feuchter Haut", "Hydrophil bei trockener, lipophil bei feuchter Haut", "Großflächig dickflüssig, kleinflächig dünnflüssig", "Allein nach der Bezeichnung „Creme“ oder „Lotion“"],
-      e: "Emulsionstyp nicht alltagstauglich → nach Polarität und Verteilbarkeit: lipophil → trockene Haut · hydrophil → feuchte Haut · Urea, Laktat, Glycerin → sehr trockene Haut · großflächig → dünnflüssig · kleinflächig → dickflüssig.", s: "S. 31" },
+      e: "Emulsionstyp nicht alltagstauglich → nach Polarität und Verteilbarkeit: lipophil → trockene Haut · hydrophil → feuchte Haut · Urea, Laktat, Glycerin → sehr trockene Haut · großflächig → dünnflüssig · kleinflächig → dickflüssig.", s: "S. 31", sp: ["haut: Was gibt es für Hautpflegeprodukte?"] },
     { f: "Welche unerwünschten Wirkungen von Hautmitteln nennt das Heft?",
       o: ["Hydrophile Produkte können zu Überwässerung führen und die Lipidschicht beeinträchtigen", "Konservierungs- und Duftstoffe können schon in niedriger Konzentration sensibilisieren", "Pflanzenöle sind grundsätzlich reizfrei", "Duftstoffe senken den pH-Wert und schützen die Haut"], r: 2,
       e: "Hydrophile Produkte → Überwässerung, Lipidschicht beeinträchtigt · auf normaler Haut Irritationsanfälligkeit ↑ · Pflanzenöle reizen · Konservierungs- und Duftstoffe irritierend/allergisierend; schon niedrige Konzentrationen sensibilisieren, pH ↑.", s: "S. 32–33" }
@@ -321,7 +321,7 @@ Lernapp.thema({
   <li><b>Inhalt des Plans:</b> Reinigung und Pflege der Haut · ggf. Kooperation mit anderen Berufsgruppen · Informations-, Beratungs-, Schulungsangebote · individuelle Zeitintervalle für Evaluation (S. 17).</li>
   <li><b>Verfahrensregelung</b> enthält (S. 18): Vorgehen bei Risiken/Problemen · Beschreibung des Vorgehens (Leitfaden, Ablaufdiagramm) · Hinweise zum Dokumentationssystem · Einbeziehung weiterer Berufsgruppen · altersspezifische Reinigung, Hautmittel, Beratungs-/Schulungsangebote.</li>
   <li><b>Ambulant</b> tragen Pflegebedürftige die Kosten der Hautpflegeprodukte selbst (oft nicht erstattungsfähig) (S. 18). Räumliche/materielle Gegebenheiten beachten (Badewanne/Dusche).</li>
-  <li>Bei erhöhtem Risiko für Xerosis cutis oder Skin Tears: <b>Wasser sparsam</b>, vorsichtig trockentupfen. Schädliche Gewohnheiten (z. B. häufiges heißes Baden) benennen, beraten. Präferenzen, Wünsche, Wissen im Mittelpunkt → Selbstmanagement und Akzeptanz ↑ (S. 18–19).</li>
+  <li><span class="sp" data-sp="haut: Was sind empfohlene Hautschutz- und Hautpflegemaßnahmen?">Schwerpunkt</span> Bei erhöhtem Risiko für Xerosis cutis oder Skin Tears: <b>Wasser sparsam</b>, vorsichtig trockentupfen. Schädliche Gewohnheiten (z. B. häufiges heißes Baden) benennen, beraten. Präferenzen, Wünsche, Wissen im Mittelpunkt → Selbstmanagement und Akzeptanz ↑ (S. 18–19).</li>
   <li>Plan für alle einsehbar und handlungsleitend: empfohlene/nicht sinnvolle Produkte, Dauer und Häufigkeit; ggf. Wundversorger, Kontinenzberater, Ärzte (S. 19).</li>
 </ul>
 
@@ -341,7 +341,7 @@ Lernapp.thema({
   <li>Weitere Expertise: Arzt/Dermatologe bei anhaltender Xerosis, Verschlechterung, unklaren Läsionen; Stoma-/Kontinenzexperten, Wundversorger bei IAD/WD; Ernährungsberater bei Mangelernährung. Alles nachvollziehbar dokumentieren, ggf. übergeben („Familiale Pflege“) (S. 22).</li>
 </ul>
 
-<h3>6. Phase 4 – Durchführung und Koordination <span class="seite">S. 23–27</span></h3>
+<h3>6. Phase 4 – Durchführung und Koordination <span class="sp" data-sp="haut: Was sind empfohlene Hautschutz- und Hautpflegemaßnahmen?|haut: Was gibt es für Hautpflegeprodukte?">Schwerpunkt</span> <span class="seite">S. 23–27</span></h3>
 <ul>
   <li>Keine spezifische Weiterbildung erforderlich. Statt Begriffen wie „Duschbad, Creme, Salbe, Lotion“ grundlegende Eigenschaften benennen: <b>pH-Wert</b> und <b>hydrophil oder lipophil</b> (S. 23).</li>
   <li>Hinweise: „Fettsalbe“, „W/O“ → lipophil; „O/W“ → hydrophil; leicht mit Wasser abwischbar → eher hydrophil (S. 23).</li>
@@ -372,7 +372,7 @@ Lernapp.thema({
 <ul>
   <li><b>Hautreinigung</b> = Entfernung unerwünschter Substanzen (Staub, Schweiß, Korneozyten, organisches Material, Kosmetikreste). <b>Surfactants</b> verbinden lipophile und hydrophile Moleküle (umgangssprachlich „Seifen“) (S. 29).</li>
   <li>„Seifen“ entfernen den Hydro-Lipid-Film, schädigen Lipiddoppelschichten des Stratum corneum, lösen Entzündung aus und <b>erhöhen den pH-Wert</b>. Physiologischer pH der Hautoberfläche je nach Areal <b>4–6</b> (Glossar: 4,5–6) – <b>„Säureschutzmantel“</b> (Zusammenhalt, Mikrobiom). Zusätze (Duft-, Konservierungsstoffe) reizen zusätzlich. Langer Wasserkontakt entfernt Feuchtigkeitsfaktoren; Reiben und Kleidungsdruck belasten (S. 29).</li>
-  <li><b>Hautpflege</b> = Hautmittel, die auf der Haut verbleiben, teilweise resorbiert oder durch Abrieb verloren gehen. Bezeichnungen nach Format (Creme, Salbe), Applikation (Spray, Shampoo), Effekt (Hautschutz, feuchtigkeitsspendend) → erschweren Vergleich (S. 30).</li>
+  <li><span class="sp" data-sp="haut: Was gibt es für Hautpflegeprodukte?">Schwerpunkt</span> <b>Hautpflege</b> = Hautmittel, die auf der Haut verbleiben, teilweise resorbiert oder durch Abrieb verloren gehen. Bezeichnungen nach Format (Creme, Salbe), Applikation (Spray, Shampoo), Effekt (Hautschutz, feuchtigkeitsspendend) → erschweren Vergleich (S. 30).</li>
 </ul>
 <div class="tabelle"><table>
   <thead><tr><th>Kategorie</th><th>Definition (Heft)</th></tr></thead>
@@ -383,11 +383,11 @@ Lernapp.thema({
   </tbody>
 </table></div>
 <ul>
-  <li><b>Emulsionen</b>: lipophile (Öle, Vaseline, Wachse) + hydrophile (Wasser, Alkohole) Bestandteile mit Emulgatoren. Hydrophiler Anteil höher → <b>Öl-in-Wasser</b>; lipophiler höher → <b>Wasser-in-Öl</b>. Halbfest → Creme; flüssiger → Lotion (S. 30).</li>
-  <li>Emulsionstyp nicht alltagstauglich → nach <b>Polarität</b> („wässrig“ oder „fettig“) und <b>Verteilbarkeit</b> wählen (S. 31): lipophil → <b>trockene</b> Haut · hydrophil → <b>feuchte</b> Haut · Feuchthaltefaktoren (Urea, Laktat, Glycerin) → sehr trockene Haut · großflächig → dünnflüssig · kleinflächig → dickflüssig.</li>
+  <li><span class="sp" data-sp="haut: Was gibt es für Hautpflegeprodukte?">Schwerpunkt</span> <b>Emulsionen</b>: lipophile (Öle, Vaseline, Wachse) + hydrophile (Wasser, Alkohole) Bestandteile mit Emulgatoren. Hydrophiler Anteil höher → <b>Öl-in-Wasser</b>; lipophiler höher → <b>Wasser-in-Öl</b>. Halbfest → Creme; flüssiger → Lotion (S. 30).</li>
+  <li><span class="sp" data-sp="haut: Was gibt es für Hautpflegeprodukte?">Schwerpunkt</span> Emulsionstyp nicht alltagstauglich → nach <b>Polarität</b> („wässrig“ oder „fettig“) und <b>Verteilbarkeit</b> wählen (S. 31): lipophil → <b>trockene</b> Haut · hydrophil → <b>feuchte</b> Haut · Feuchthaltefaktoren (Urea, Laktat, Glycerin) → sehr trockene Haut · großflächig → dünnflüssig · kleinflächig → dickflüssig.</li>
   <li>Hautmittel zum Verbleib glätten, erhöhen Wassergehalt im Stratum corneum (Okklusion, Feuchthaltefaktoren), schützen (S. 31). Wirkung durch Mischung und Menge nach Verdunsten flüchtiger Stoffe (Wasser, Propylenglykol); Vaseline z. B. erweichend, schützend, konsistenzgebend (S. 32).</li>
   <li><b>Unerwünschte Wirkungen</b> (S. 32–33): hydrophile Produkte → Überwässerung, Lipidschicht beeinträchtigt · auf normaler Haut Irritationsanfälligkeit ↑ · Pflanzenöle reizen (v. a. nach dem Baden nicht entfernt) · Konservierungs- und Duftstoffe irritierend/allergisierend; schon niedrige Konzentrationen sensibilisieren, pH ↑.</li>
-  <li><b>Übung II</b> (Lösung S. 38) – sebostatische (trockene) Haut: tägliche Hautpflege, W/O-Produkte, Urea oder Kollagen (binden Feuchtigkeit), Omega-3-6-9-Fettsäuren, Lipolotionen, Harnstoff lindert Juckreiz und Verhornung.</li>
+  <li><span class="sp" data-sp="haut: Was gibt es für Hautpflegeprodukte?">Schwerpunkt</span> <b>Übung II</b> (Lösung S. 38) – sebostatische (trockene) Haut: tägliche Hautpflege, W/O-Produkte, Urea oder Kollagen (binden Feuchtigkeit), Omega-3-6-9-Fettsäuren, Lipolotionen, Harnstoff lindert Juckreiz und Verhornung.</li>
 </ul>
 <p class="merke"><b>Zusammenfassung</b> (S. 35): Der Standard setzt auf Maßnahmen und Mischverhältnisse statt auf viele Produkte – <b>„weniger ist mehr“</b>. Frühe Identifikation von Risiken, rechtzeitige Reinigungs-/Pflegemaßnahmen, regelmäßige Evaluation und Beratung verbessern oder vermeiden Hautprobleme.</p>
 

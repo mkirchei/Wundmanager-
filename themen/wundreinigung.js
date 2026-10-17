@@ -145,7 +145,7 @@ Lernapp.thema({
       e: "Handschr.: Granulationsgewebe muss immer dunkelrot sein = gesund. Grau-gelb/schmierig = feuchte Nekrose, dunkelbraun–schwarz = trockene Nekrose.", s: "S. 4–5", h: true },
     { f: "Welche Abstrichtechniken sind in den Notizen als Prüfungsfrage vermerkt?",
       o: ["Essener Kreisel und Levine-Technik", "Non-Touch-Technik und Saug-Spül-Prozess", "Bio-Bags und Freiläufer", "Kavitation und Quorum sensing"],
-      e: "Handschr.: Eiter leicht abwischbar, Wundabstrich – „Essener Kreisel, Levine-Technik (Prüfungsfrage)“.", s: "S. 4–5", h: true },
+      e: "Handschr.: Eiter leicht abwischbar, Wundabstrich – „Essener Kreisel, Levine-Technik (Prüfungsfrage)“.", s: "S. 4–5", h: true, sp: ["hygiene: Wundabstrichtechniken"] },
     { f: "Was spricht gegen eine Wundreinigung? ★",
       o: ["Sie ist häufig schmerzhaft", "Keine eindeutige Auswirkung auf den Endpunkt „Wundheilung“", "Sie erhöht das Entzündungsrisiko", "Sie verschlechtert die Beurteilbarkeit der Wunde"], r: 2,
       e: "Contra: häufig schmerzhaft (Schmerzgedächtnis → Schmerztherapie), Material- und Personalkosten, keine eindeutige Auswirkung auf den Endpunkt „Wundheilung“. Entzündungsrisiko ↓ und bessere Beurteilbarkeit sind Pro-Argumente.", s: "S. 6, 17" },

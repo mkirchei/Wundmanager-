@@ -22,7 +22,7 @@ Lernapp.thema({
     { k: "Grundlagen", f: "Welche Regelwerke sind für die Hygiene maßgeblich?",
       a: "Arbeitsschutzgesetz, Biostoffverordnung, TRBA, RKI-Richtlinien, Fachgesellschaften (z. B. DGKH); Hygienepläne z. B. des NLGA.", s: "S. 4" },
     { k: "Infektion", f: "Entzündung vs. Infektion? (Übung I)",
-      a: "Entzündung: Abwehrreaktion auf Reize (chemisch, physikalisch, Zellzerfall, Erreger); Teil der Wundheilung.\nInfektion: Eindringen und Vermehrung pathogener Erreger; anfangs unsichtbar, Nachweis per Wundabstrich.", s: "S. 6, 33" },
+      a: "Entzündung: Abwehrreaktion auf Reize (chemisch, physikalisch, Zellzerfall, Erreger); Teil der Wundheilung.\nInfektion: Eindringen und Vermehrung pathogener Erreger; anfangs unsichtbar, Nachweis per Wundabstrich.", s: "S. 6, 33", sp: ["hygiene: Unterschied zwischen Entzündung und Infektion"] },
     { k: "Infektion", f: "Nenne die Entzündungszeichen.",
       a: "Rubor – Rötung · Calor – Überwärmung · Tumor – Schwellung · Dolor – Schmerz · Functio laesa – Funktionseinschränkung.", s: "S. 33" },
     { k: "Infektion", f: "Wie wird eine Infektion nach Ausbreitung unterteilt?",
@@ -30,13 +30,13 @@ Lernapp.thema({
     { k: "Infektion", f: "Was ist bei Infektionszeichen an der Wunde zuerst zu tun?",
       a: "Immer zuerst einen Wundabstrich durchführen (nach Absprache mit dem Arzt), um den Erreger zu bestimmen.", s: "S. 6, 10" },
     { k: "Prävention", f: "Hygienische Präventionsmethoden? (Übung I)",
-      a: "Händedesinfektion, Non-Touch-Methode, Händewaschen, Ablauf von aseptisch zu systemisch infiziert („von sauber zu unrein“), Einmalschürze, Händehygiene (kein Schmuck, keine langen Nägel), sterile Materialien.", s: "S. 33" },
+      a: "Händedesinfektion, Non-Touch-Methode, Händewaschen, Ablauf von aseptisch zu systemisch infiziert („von sauber zu unrein“), Einmalschürze, Händehygiene (kein Schmuck, keine langen Nägel), sterile Materialien.", s: "S. 33", sp: ["hygiene: Generelle Hygienemaßnahmen"] },
     { k: "Ablauf", f: "Welche Grundregel gilt bei der Versorgung mehrerer Wunden?",
       a: "Von sauber zu unrein: zuerst keimfreie/keimarme, dann kontaminierte und kolonisierte, dann infizierte Wunden, zum Schluss Wunden mit MRE.", s: "S. 7" },
     { k: "Ablauf", f: "Nenne die Reihenfolge der Wundinspektionen.",
       a: "1. aseptisch\n2. kontaminiert\n3. kolonisiert\n4. kritisch kolonisiert\n5. lokal infiziert\n6. systemisch infiziert", s: "S. 7" },
     { k: "Ablauf", f: "Kontaminiert vs. kolonisiert vs. kritisch kolonisiert?",
-      a: "Kontaminiert: Keime vermehren sich nicht.\nKolonisiert: vermehrungsfähige Keime, Heilung nicht nachhaltig gestört.\nKritisch kolonisiert: erhöhte Besiedlung, infektgefährdet.", s: "S. 7" },
+      a: "Kontaminiert: Keime vermehren sich nicht.\nKolonisiert: vermehrungsfähige Keime, Heilung nicht nachhaltig gestört.\nKritisch kolonisiert: erhöhte Besiedlung, infektgefährdet.", s: "S. 7", sp: ["wunden: Einteilung nach Kolonisation"] },
     { k: "Ablauf", f: "Maßnahmen bei kritisch kolonisierter und lokal infizierter Wunde?",
       a: "Kritisch kolonisiert: aseptischer Verband + Wundabstrich.\nLokal infiziert: aseptischer Verband; je nach Abstrich Antiseptika/antimikrobielle Lokaltherapie.", s: "S. 8" },
     { k: "Ablauf", f: "Maßnahmen bei systemischer Infektion?",
@@ -44,39 +44,39 @@ Lernapp.thema({
     { k: "Risiko", f: "Welche Faktoren begünstigen eine Wundinfektion?",
       a: "Lokalisation (Anus, Sakralbereich, Füße, Inkontinenz), Umgebungsfaktoren (Hygiene, Haustiere), (Begleit-)Erkrankungen (Immunschwäche, Diabetes, Aids, terminale Phase), Wundart (Verbrennung, DFU, Tumorexulzeration).", s: "S. 9" },
     { k: "Risiko", f: "Anzeichen infektgefährdeter Wunden?",
-      a: "Entzündungszeichen, viel/trübes/zäh-eitriges Exsudat, Geruch, bröckeliges blutendes Granulationsgewebe, Verfärbung, Taschen, Vergrößerung, Erythem, Verhärtung, Ödem, Zellulitis, Leukozytose, Abszess.", s: "S. 10" },
+      a: "Entzündungszeichen, viel/trübes/zäh-eitriges Exsudat, Geruch, bröckeliges blutendes Granulationsgewebe, Verfärbung, Taschen, Vergrößerung, Erythem, Verhärtung, Ödem, Zellulitis, Leukozytose, Abszess.", s: "S. 10", sp: ["hygiene: Anzeichen infektgefährdeter Wunden"] },
     { k: "Risiko", f: "Infektionszeichen bei pAVK und diabetischer Neuropathie?",
-      a: "pAVK: Rötung kaum, Überwärmung eingeschränkt – Schmerz ist das aussagekräftigste Zeichen.\nNeuropathie: kaum Schmerz, Fieber höchstens subfebril.", s: "S. 10–11" },
+      a: "pAVK: Rötung kaum, Überwärmung eingeschränkt – Schmerz ist das aussagekräftigste Zeichen.\nNeuropathie: kaum Schmerz, Fieber höchstens subfebril.", s: "S. 10–11", sp: ["hygiene: Anzeichen infektgefährdeter Wunden"] },
     { k: "Risiko", f: "Was beschreibt die PEDIS-Klassifikation?",
       a: "Schwere der (diabetischen) Fußinfektion nach Lipsky 2006:\n1 nicht infiziert · 2 leicht (≤ 2 cm, oberflächlich) · 3 moderat (tief, Abszess, Knochen) · 4 schwer (systemische Zeichen).", s: "S. 11" },
     { k: "Keime", f: "Was ist eine nosokomiale Infektion?",
       a: "Infektion, die Patient:innen im Zusammenhang mit einer medizinischen Maßnahme erwerben – z. B. im Krankenhaus, in Pflegeeinrichtungen oder ambulanten Praxen (RKI).", s: "S. 12" },
     { k: "Keime", f: "Eiterbild von Staphylo-, Streptokokken und Pseudomonas?",
-      a: "Staphylokokken: rahmig, gelblich, geruchlos\nStreptokokken: gelbgrau, dünnflüssig\nPseudomonas: blau-grünlich, süßlich riechend", s: "S. 12" },
+      a: "Staphylokokken: rahmig, gelblich, geruchlos\nStreptokokken: gelbgrau, dünnflüssig\nPseudomonas: blau-grünlich, süßlich riechend", s: "S. 12", sp: ["hygiene: mögliche Keime in Wunden"] },
     { k: "Keime", f: "Was sind Mikroorganismen (BioStoffV)?",
       a: "Zelluläre oder nichtzelluläre mikroskopisch kleine biologische Einheiten, die sich vermehren oder genetisches Material weitergeben können: Bakterien, Viren, Protozoen, Pilze.", s: "S. 12" },
     { k: "MRE", f: "Was bedeutet „multiresistent“? (Übung II)",
-      a: "Keime haben eine Resistenz gegenüber mehreren Antibiotikagruppen entwickelt.", s: "S. 33" },
+      a: "Keime haben eine Resistenz gegenüber mehreren Antibiotikagruppen entwickelt.", s: "S. 33", sp: ["hygiene: Multiresistente Erreger"] },
     { k: "MRE", f: "Helfen Antiseptika und Händedesinfektion gegen MRE?",
-      a: "Ja. Resistenz bezieht sich nur auf Antibiotika. Händedesinfektion vernichtet alle MRE; Alkohol, PVP-Jod, Chlorhexidin, Polihexanid, Octenidin wirken. Ausnahme: H₂O₂ und Silber (Lücken; manche Pseudomonas silberresistent).", s: "S. 13–14" },
+      a: "Ja. Resistenz bezieht sich nur auf Antibiotika. Händedesinfektion vernichtet alle MRE; Alkohol, PVP-Jod, Chlorhexidin, Polihexanid, Octenidin wirken. Ausnahme: H₂O₂ und Silber (Lücken; manche Pseudomonas silberresistent).", s: "S. 13–14", sp: ["hygiene: Multiresistente Erreger"] },
     { k: "MRE", f: "Was ist MRSA und wie wird er übertragen?",
-      a: "Methicillin-resistenter Staphylococcus aureus; v. a. direkter Kontakt über die Hände, auch Niesen, Kleidung, Bettwäsche, Oberflächen; gefährlich bei Immunschwäche.", s: "S. 14" },
+      a: "Methicillin-resistenter Staphylococcus aureus; v. a. direkter Kontakt über die Hände, auch Niesen, Kleidung, Bettwäsche, Oberflächen; gefährlich bei Immunschwäche.", s: "S. 14", sp: ["hygiene: Multiresistente Erreger"] },
     { k: "MRE", f: "Was kennzeichnet VRE und MRGN/ESBL?",
-      a: "VRE: Vancomycin-resistente Enterokokken aus der Darmflora; bis 1 Woche außerhalb des Menschen überlebensfähig.\nMRGN/ESBL: gramnegative Erreger aus Darm/Umwelt; gefährlich für Abwehrgeschwächte.", s: "S. 14" },
+      a: "VRE: Vancomycin-resistente Enterokokken aus der Darmflora; bis 1 Woche außerhalb des Menschen überlebensfähig.\nMRGN/ESBL: gramnegative Erreger aus Darm/Umwelt; gefährlich für Abwehrgeschwächte.", s: "S. 14", sp: ["hygiene: Multiresistente Erreger"] },
     { k: "MRE", f: "Was ist das Besondere an Clostridium difficile?",
       a: "Anaerobes grampositives Stäbchen im Darm; unter Antibiotika Vermehrung mit Toxin- und Sporenbildung – Sporen werden durch gängige Desinfektionsmittel nicht abgetötet; starker Durchfall.", s: "S. 14" },
     { k: "MRE", f: "Wann sind MRE meldepflichtig, welche Maßnahmen bei MRSA/VRE?",
-      a: "Erst bei Nachweis in Blut oder Liquor.\nMRSA/VRE: Einzelisolierung, Mund-Nasen-Schutz, Schutzkittel, Handschuhe, Händedesinfektion vor und nach Kontakt.", s: "S. 15" },
+      a: "Erst bei Nachweis in Blut oder Liquor.\nMRSA/VRE: Einzelisolierung, Mund-Nasen-Schutz, Schutzkittel, Handschuhe, Händedesinfektion vor und nach Kontakt.", s: "S. 15", sp: ["hygiene: Multiresistente Erreger"] },
     { k: "MRE", f: "Was gehört zur Basishygiene? (Übung II)",
-      a: "Händedesinfektion, Flächendesinfektion, Schutzkleidung, Isolation.", s: "S. 33" },
+      a: "Händedesinfektion, Flächendesinfektion, Schutzkleidung, Isolation.", s: "S. 33", sp: ["hygiene: Generelle Hygienemaßnahmen"] },
     { k: "VW", f: "Was ist vor jedem Verbandwechsel rechtlich erforderlich?",
       a: "Schriftliche ärztliche Anordnung (Häufigkeit, Vorgehen, Medikamente, Wundauflage) und Einverständnis der aufgeklärten Person.", s: "S. 15" },
     { k: "VW", f: "Was ist das Remonstrationsrecht?",
-      a: "Recht und Pflicht, eine gefahrengeneigte Versorgung (z. B. veraltete oder gefährdende Verordnung) schriftlich und nachweislich anzuzeigen; Gespräch mit dem Arzt dokumentieren.", s: "S. 15" },
+      a: "Recht und Pflicht, eine gefahrengeneigte Versorgung (z. B. veraltete oder gefährdende Verordnung) schriftlich und nachweislich anzuzeigen; Gespräch mit dem Arzt dokumentieren.", s: "S. 15", sp: ["recht: Rechtsicheres Handeln – Remonstrationsrecht/-pflicht"] },
     { k: "VW", f: "Welche Ziele hat ein Verbandwechsel?",
       a: "Wundkontrolle, Wundbeurteilung und Therapieanpassung, Vorbeugung von Keimeinschleppung, Bekämpfung bestehender Infektion, Schmerzvermeidung, Unterstützung der Heilung.", s: "S. 16" },
     { k: "VW", f: "Welche Grundmaßnahmen und Schutzkleidung sind beim Verbandwechsel obligatorisch?",
-      a: "Uhren/Schmuck ab, Haare zurück, keine langen Ärmel; Einmalhandschuhe und Einmalschürze/-kittel, nach jedem Patientenkontakt wechseln; bei MRE/großflächigen Wunden zusätzlich MNS.", s: "S. 16" },
+      a: "Uhren/Schmuck ab, Haare zurück, keine langen Ärmel; Einmalhandschuhe und Einmalschürze/-kittel, nach jedem Patientenkontakt wechseln; bei MRE/großflächigen Wunden zusätzlich MNS.", s: "S. 16", sp: ["hygiene: Generelle Hygienemaßnahmen"] },
     { k: "VW", f: "Was gilt für Spüllösungen und festklebende Kompressen?",
       a: "Spüllösung steril, Haltbarkeit beachten (handschriftlich: Raumtemperatur, nicht kalt).\nFestklebende Kompressen mit steriler Pinzette entfernen.", s: "S. 17", h: true },
     { k: "Hände", f: "Warum ist die Händedesinfektion so wichtig?",
@@ -104,13 +104,13 @@ Lernapp.thema({
     { k: "Durchführung", f: "Wann erfolgen Handschuhwechsel und Händedesinfektion beim Verbandwechsel?",
       a: "Zu Beginn; nach Entfernen des alten Verbands; vor der Wundreinigung (nach ggf. Abstrich); nach der Inspektion vor dem neuen Verband; am Ende nach Entsorgung.", s: "S. 25" },
     { k: "Technik", f: "Was ist die Non-Touch-Technik?",
-      a: "Nur steriles Material berührt die Wunde: unsterile Handschuhe + sterile Instrumente, Wunde nie mit den Händen berühren; alternativ sterile Handschuhe oder sterile/unsterile Hand. Unsauberes Material nie zurück zur Wunde.", s: "S. 26" },
+      a: "Nur steriles Material berührt die Wunde: unsterile Handschuhe + sterile Instrumente, Wunde nie mit den Händen berühren; alternativ sterile Handschuhe oder sterile/unsterile Hand. Unsauberes Material nie zurück zur Wunde.", s: "S. 26", sp: ["hygiene: Def. Non-Touch-Technik"] },
     { k: "Abstrich", f: "Wie wird ein Wundabstrich vorbereitet?",
       a: "Aus der Wundtiefe; vorher mechanische Reinigung mit angefeuchteten Kompressen und/oder Spülung mit NaCl – keine Antiseptika.\nAusnahme: Verdacht auf MRE → ohne vorherige Säuberung.", s: "S. 26" },
     { k: "Abstrich", f: "Was ist beim Wundabstrich zu dokumentieren und zu beachten?",
       a: "Entnahmestelle, Wundart, Grunderkrankung, bisherige Antibiose; Begleitschein und Etikett vollständig; gewünschte Untersuchung; Lagerung bei Zimmertemperatur; zeitnaher Transport.", s: "S. 27" },
     { k: "Abstrich", f: "Essener Wundkreisel vs. Levine-Technik?",
-      a: "Essener Wundkreisel: kreisend von außen nach innen, großes Areal – MRE-Screening.\nLevine: ca. 1 cm² unter leichtem Druck – Erregersuche bei Infektverdacht, Taschen/Unterminierungen.", s: "S. 27" },
+      a: "Essener Wundkreisel: kreisend von außen nach innen, großes Areal – MRE-Screening.\nLevine: ca. 1 cm² unter leichtem Druck – Erregersuche bei Infektverdacht, Taschen/Unterminierungen.", s: "S. 27", sp: ["hygiene: Wundabstrichtechniken – Essener Wundkreisel", "hygiene: Wundabstrichtechniken – Levine-Technik"] },
     { k: "Nach", f: "Was gehört zur Nachbereitung des Verbandwechsels?",
       a: "Instrumente sicher entsorgen, Handschuhe/Kittel ab, Händedesinfektion inkl. Unterarme, Patient lagern, nach Beschwerden fragen, Flächen desinfizieren, Müll außerhalb entsorgen, Dokumentation, Wagen auffüllen.", s: "S. 28" },
     { k: "Nach", f: "Komplikationen mangelnder Hygiene beim Verbandwechsel? (Übung III)",
@@ -152,25 +152,25 @@ Lernapp.thema({
       e: "Keine Schmuckstücke, Ringe, Armbanduhren, Piercings, künstlichen Fingernägel oder Armbänder an Händen und Unterarmen; Nägel kurz und rund geschnitten.", s: "S. 19" },
     { f: "Helfen Antiseptika und Händedesinfektion gegen multiresistente Erreger (MRE)?",
       o: ["Ja – Resistenz bezieht sich nur auf Antibiotika", "Nein – MRE sind auch gegen Desinfektionsmittel resistent", "Nur Wasserstoffperoxid wirkt", "Nur Silber wirkt sicher"],
-      e: "Händedesinfektion vernichtet alle MRE; Alkohol, PVP-Jod, Chlorhexidin, Polihexanid, Octenidin wirken. Ausnahmen mit Lücken: H₂O₂ und Silber.", s: "S. 13–14" },
+      e: "Händedesinfektion vernichtet alle MRE; Alkohol, PVP-Jod, Chlorhexidin, Polihexanid, Octenidin wirken. Ausnahmen mit Lücken: H₂O₂ und Silber.", s: "S. 13–14", sp: ["hygiene: Multiresistente Erreger"] },
     { f: "Welche Wirkstoffe haben laut Heft Wirklücken bei MRE?",
       o: ["Wasserstoffperoxid und Silber", "Octenidin und Polihexanid", "Alkohol und Chlorhexidin", "Polyvidonjod und Alkohol"],
-      e: "Ausnahmen mit Wirklücken: Wasserstoffperoxid und Silber (manche Pseudomonas-Stämme sind silberresistent).", s: "S. 13–14" },
+      e: "Ausnahmen mit Wirklücken: Wasserstoffperoxid und Silber (manche Pseudomonas-Stämme sind silberresistent).", s: "S. 13–14", sp: ["hygiene: Multiresistente Erreger"] },
     { f: "Wie wird MRSA vor allem übertragen?",
       o: ["Durch direkten Kontakt über die Hände", "Nur über das Trinkwasser", "Nur durch Insektenstiche", "Ausschließlich über Blutprodukte"],
-      e: "MRSA: v. a. direkter Kontakt über die Hände, auch Niesen, Kleidung, Bettwäsche, Oberflächen; gefährlich bei Immunschwäche.", s: "S. 14" },
+      e: "MRSA: v. a. direkter Kontakt über die Hände, auch Niesen, Kleidung, Bettwäsche, Oberflächen; gefährlich bei Immunschwäche.", s: "S. 14", sp: ["hygiene: Multiresistente Erreger"] },
     { f: "Wie lange können VRE außerhalb des Menschen überleben?",
       o: ["Bis zu 1 Woche", "Nur wenige Minuten", "Maximal 1 Stunde", "Bis zu 10 Jahre"],
-      e: "VRE (Vancomycin-resistente Enterokokken) aus der Darmflora; bis zu 1 Woche außerhalb des Menschen überlebensfähig.", s: "S. 14" },
+      e: "VRE (Vancomycin-resistente Enterokokken) aus der Darmflora; bis zu 1 Woche außerhalb des Menschen überlebensfähig.", s: "S. 14", sp: ["hygiene: Multiresistente Erreger"] },
     { f: "Was ist das Besondere an Clostridium difficile?",
       o: ["Es bildet Sporen, die gängige Desinfektionsmittel nicht abtöten", "Es ist gegen alle Antiseptika resistent, aber nicht gegen Antibiotika", "Es kommt nur auf der Haut vor", "Es ist ein behülltes Virus"],
       e: "Anaerobes grampositives Stäbchen im Darm; unter Antibiotika Vermehrung mit Toxin- und Sporenbildung; starker Durchfall.", s: "S. 14" },
     { f: "Wann sind MRE meldepflichtig?",
       o: ["Erst bei Nachweis in Blut oder Liquor", "Bei jedem Nachweis in einer Wunde", "Nie", "Nur bei Kindern"],
-      e: "MRE sind erst bei Nachweis in Blut oder Liquor meldepflichtig; Nachweis in der Wunde nur per Abstrich.", s: "S. 15" },
+      e: "MRE sind erst bei Nachweis in Blut oder Liquor meldepflichtig; Nachweis in der Wunde nur per Abstrich.", s: "S. 15", sp: ["hygiene: Multiresistente Erreger"] },
     { f: "Welches Eiterbild passt zu Staphylokokken?",
       o: ["Rahmig, gelblich, geruchlos", "Gelbgrau, dünnflüssig", "Blau-grünlich, süßlich riechend", "Klar und bernsteinfarben"],
-      e: "Staphylokokken: rahmig, gelblich, geruchlos · Streptokokken: gelbgrau, dünnflüssig · Pseudomonas: blau-grünlich, süßlich.", s: "S. 12" },
+      e: "Staphylokokken: rahmig, gelblich, geruchlos · Streptokokken: gelbgrau, dünnflüssig · Pseudomonas: blau-grünlich, süßlich.", s: "S. 12", sp: ["hygiene: mögliche Keime in Wunden"] },
     { f: "Was ist eine nosokomiale Infektion?",
       o: ["Eine Infektion im Zusammenhang mit einer medizinischen Maßnahme", "Jede Infektion mit einem multiresistenten Erreger", "Eine Infektion, die nur zu Hause auftritt", "Eine angeborene Immunschwäche"],
       e: "Infektion, die Patient:innen im Zusammenhang mit einer medizinischen Maßnahme erwerben – z. B. im Krankenhaus, in Pflegeeinrichtungen oder ambulanten Praxen (RKI).", s: "S. 12" },
@@ -179,19 +179,19 @@ Lernapp.thema({
       e: "Schriftliche ärztliche Anordnung (Häufigkeit, Vorgehen, Medikamente, Wundauflage) und Einverständnis der aufgeklärten Person.", s: "S. 15" },
     { f: "Was beschreibt das Remonstrationsrecht?",
       o: ["Recht und Pflicht, eine gefahrengeneigte Versorgung schriftlich und nachweislich anzuzeigen", "Das Recht der Patient:innen, den Verbandwechsel abzulehnen", "Die Pflicht, MRE dem Gesundheitsamt zu melden", "Das Recht, Verbandmaterial selbst auszuwählen"],
-      e: "Entspricht die Verordnung nicht dem Wissensstand oder gefährdet sie Patient:innen → schriftlich anzeigen; Gespräch mit dem Arzt dokumentieren.", s: "S. 15" },
+      e: "Entspricht die Verordnung nicht dem Wissensstand oder gefährdet sie Patient:innen → schriftlich anzeigen; Gespräch mit dem Arzt dokumentieren.", s: "S. 15", sp: ["recht: Rechtsicheres Handeln – Remonstrationsrecht/-pflicht"] },
     { f: "Wie wird eine Wunde gereinigt?",
       o: ["Aseptisch mit sterilen Instrumenten; wischen, nicht tupfen; pro Wischgang ein neuer Tupfer", "Mit einem Tupfer kräftig hin und her reiben", "Mit den Fingern in Handschuhen ausstreichen", "Mit derselben Kompresse mehrfach wischen"],
       e: "Aseptisch mit sterilen Instrumenten und Tupfern/Kompressen; wischen, nicht tupfen; pro Wischgang ein neuer Tupfer bzw. eine neue Kompresse.", s: "S. 25" },
     { f: "Was bedeutet Non-Touch-Technik?",
       o: ["Nur steriles Material berührt die Wunde – nie die Hände", "Die Wunde wird gar nicht versorgt", "Der Verband wird ohne Handschuhe gewechselt", "Patient:innen dürfen den Verband nicht berühren"],
-      e: "Unsterile Handschuhe + sterile Instrumente; alternativ sterile Handschuhe oder sterile/unsterile Hand. Unsauberes Material nie zurück zur Wunde.", s: "S. 26" },
+      e: "Unsterile Handschuhe + sterile Instrumente; alternativ sterile Handschuhe oder sterile/unsterile Hand. Unsauberes Material nie zurück zur Wunde.", s: "S. 26", sp: ["hygiene: Def. Non-Touch-Technik"] },
     { f: "Was ist vor einem Wundabstrich zu beachten?",
       o: ["Mechanische Reinigung bzw. Spülung mit NaCl – keine Antiseptika", "Wunde vorher mit Octenidin desinfizieren", "Abstrich nur von der Wundoberfläche ohne Reinigung", "Vorher Zinkpaste auftragen"],
       e: "Abstrich aus der Wundtiefe; Antiseptika verfälschen das Ergebnis. Ausnahme: Verdacht auf MRE → ohne vorherige Säuberung.", s: "S. 26" },
     { f: "Wofür wird der Essener Wundkreisel eingesetzt?",
       o: ["Für das MRE-Screening – kreisend von außen nach innen über ein großes Areal", "Für die Erregersuche in Wundtaschen unter Druck", "Zur Messung der Wundtiefe", "Zur Händedesinfektion"],
-      e: "Essener Wundkreisel: MRE-Screening. Levine-Technik: ca. 1 cm² unter leichtem Druck bei Infektverdacht, Taschen/Unterminierungen.", s: "S. 27" },
+      e: "Essener Wundkreisel: MRE-Screening. Levine-Technik: ca. 1 cm² unter leichtem Druck bei Infektverdacht, Taschen/Unterminierungen.", s: "S. 27", sp: ["hygiene: Wundabstrichtechniken – Essener Wundkreisel"] },
     { f: "Wie wird ein Wundabstrich bis zum Transport gelagert?",
       o: ["Bei Zimmertemperatur, zeitnaher Transport", "Im Gefrierfach", "Im Brutschrank bei 37 °C", "In Desinfektionslösung"],
       e: "Dokumentieren: Entnahmestelle, Wundart, Grunderkrankung, bisherige Antibiose; Lagerung bei Zimmertemperatur; zeitnaher Transport.", s: "S. 27" },
@@ -225,7 +225,7 @@ Lernapp.thema({
 <div class="tabelle"><table>
   <thead><tr><th></th><th>Entzündung</th><th>Infektion</th></tr></thead>
   <tbody>
-    <tr><td>Definition</td><td>Abwehrreaktion des Körpers auf Reize; gehört zu den ersten Wundheilungsphasen</td><td>Eindringen und Vermehrung pathogener Erreger (Bakterien, Viren, Pilze)</td></tr>
+    <tr><td><span class="sp" data-sp="hygiene: Unterschied zwischen Entzündung und Infektion">Schwerpunkt</span>Definition</td><td>Abwehrreaktion des Körpers auf Reize; gehört zu den ersten Wundheilungsphasen</td><td>Eindringen und Vermehrung pathogener Erreger (Bakterien, Viren, Pilze)</td></tr>
     <tr><td>Auslöser</td><td>chemisch/physikalisch (Druck, Fremdkörper, Säuren, Reibung, Temperatur), Zellzerfall (Tumor), eingedrungene Mikroorganismen; in der Wunde durch die Gewebeschädigung selbst</td><td>Erreger bei herabgesetzter Immunität und erhöhter Pathogenität; anfangs nicht sichtbar</td></tr>
     <tr><td>Nachweis</td><td>Entzündungszeichen</td><td>erst nachfolgende Entzündungsreaktion und auffälliges Exsudat; Erreger nur per Wundabstrich</td></tr>
   </tbody>
@@ -234,13 +234,13 @@ Lernapp.thema({
 <p class="merke"><b>Entzündungszeichen:</b> Rubor (Rötung) · Calor (Überwärmung) · Tumor (Schwellung) · Dolor (Schmerz) · Functio laesa (Funktionseinschränkung).</p>
 <p class="hand">Calor fehlt bei pAVK, Dolor bei Polyneuropathie; Fieber bei Diabetes nur subfebril (so auch S. 10–11 im Druck).</p>
 <ul>
-  <li><b>Hygienische Präventionsmethoden</b> (Lösung S. 33): Händedesinfektion, Non-Touch-Methode, Händewaschen, Ablauf der Wundinspektionen von aseptisch zu systemisch infiziert, „von sauber zu unrein“, Einmalschürze, Händehygiene (Schmuck ablegen, keine langen Fingernägel), sterile Materialien. <span class="hand-inline">Handschriftlich: keine künstlichen Fingernägel, keine Tiere.</span></li>
+  <li><span class="sp" data-sp="hygiene: Generelle Hygienemaßnahmen">Schwerpunkt</span><b>Hygienische Präventionsmethoden</b> (Lösung S. 33): Händedesinfektion, Non-Touch-Methode, Händewaschen, Ablauf der Wundinspektionen von aseptisch zu systemisch infiziert, „von sauber zu unrein“, Einmalschürze, Händehygiene (Schmuck ablegen, keine langen Fingernägel), sterile Materialien. <span class="hand-inline">Handschriftlich: keine künstlichen Fingernägel, keine Tiere.</span></li>
 </ul>
 
 <h3>3. Hygienischer Ablauf der Wundinspektionen <span class="stern" title="im Heft als prüfungsrelevant markiert">★</span> <span class="seite">S. 7–8</span></h3>
 <p class="merke"><b>Grundregel: von sauber zu unrein.</b> Zuerst keimfreie/keimarme Wunden, dann kontaminierte und kolonisierte, dann infizierte/septische, zum Schluss Wunden mit multiresistenten Keimen (MRSA, MRGN, VRE).<br>Reihenfolge: 1 aseptisch · 2 kontaminiert · 3 kolonisiert · 4 kritisch kolonisiert · 5 lokal infiziert · 6 systemisch infiziert.</p>
 <ul>
-  <li><b>Aseptisch:</b> fast keimfrei, keine Entzündungszeichen; OP-Wunden oder frische Verletzungen (nicht älter als 4–6 h), primär verschlossen. <b>Kontaminiert:</b> Keime vorhanden, vermehren sich nicht. <b>Kolonisiert:</b> vermehrungsfähige Keime, Heilung nicht nachhaltig gestört (nur mikrobiologisch von kontaminiert unterscheidbar). <b>Kritisch kolonisiert:</b> erhöhte Besiedlung, infektgefährdet. <b>Infiziert:</b> bakterielles Wachstum mit immunologischer Reaktion → Entzündungszeichen; lokal oder systemisch über den Blutkreislauf.</li>
+  <li><span class="sp" data-sp="wunden: Einteilung nach Kolonisation">Schwerpunkt</span><b>Aseptisch:</b> fast keimfrei, keine Entzündungszeichen; OP-Wunden oder frische Verletzungen (nicht älter als 4–6 h), primär verschlossen. <b>Kontaminiert:</b> Keime vorhanden, vermehren sich nicht. <b>Kolonisiert:</b> vermehrungsfähige Keime, Heilung nicht nachhaltig gestört (nur mikrobiologisch von kontaminiert unterscheidbar). <b>Kritisch kolonisiert:</b> erhöhte Besiedlung, infektgefährdet. <b>Infiziert:</b> bakterielles Wachstum mit immunologischer Reaktion → Entzündungszeichen; lokal oder systemisch über den Blutkreislauf.</li>
 </ul>
 <div class="tabelle"><table>
   <caption>Kolonisationsstadien und Maßnahmen ★ (S. 8)</caption>
@@ -257,8 +257,8 @@ Lernapp.thema({
 <h3>4. Begünstigende Faktoren und Infektionsanzeichen <span class="stern" title="im Heft als prüfungsrelevant markiert">★</span> <span class="seite">S. 9–11</span></h3>
 <ul>
   <li><b>Faktoren:</b> Lokalisation (Anus-/Sakralbereich, Analfalte, Füße; Inkontinenz), Umgebungsfaktoren (mangelnde Hygiene durch Personal oder Umfeld, Haustiere), (Begleit-)Erkrankungen (geschwächte Abwehr, Diabetes, Aids, terminale Lebensphase), Wundart (Verbrennungen, diabetisches Fußulkus, Tumorexulzerationen besonders gefährdet).</li>
-  <li><b>Anzeichen infektgefährdeter Wunden ★ (S. 10):</b> Rubor, Dolor, Calor, Tumor, Functio laesa; viel Exsudat; trübes, zäh-eitriges, ggf. blutiges Exsudat; unangenehmer Geruch; bröckeliges, leicht blutendes Granulationsgewebe; Verfärbung; Taschenbildung; Vergrößerung/Zersetzung; Erythem und Verhärtung; Ödeme; Zellulitis; Leukozytose; Abszess. → nach Absprache mit dem Hausarzt Wundabstrich; mikrobiologischer Befund allein reicht nicht, holistische Beurteilung nötig.</li>
-  <li><b>pAVK:</b> Rötung kaum, Überwärmung eingeschränkt – Schmerz ist das aussagekräftigste Infektionszeichen. <b>Diabetische Neuropathie:</b> Schmerz kaum, Fieber höchstens subfebril. <b>Infektion in Wundtaschen:</b> geröteter, verhärteter, ödematöser, schmerzhafter Rand, starke eitrige Exsudation, Geruch, oft Auslöser systemischer Infektion (S. 10–11).</li>
+  <li><span class="sp" data-sp="hygiene: Anzeichen infektgefährdeter Wunden">Schwerpunkt</span><b>Anzeichen infektgefährdeter Wunden ★ (S. 10):</b> Rubor, Dolor, Calor, Tumor, Functio laesa; viel Exsudat; trübes, zäh-eitriges, ggf. blutiges Exsudat; unangenehmer Geruch; bröckeliges, leicht blutendes Granulationsgewebe; Verfärbung; Taschenbildung; Vergrößerung/Zersetzung; Erythem und Verhärtung; Ödeme; Zellulitis; Leukozytose; Abszess. → nach Absprache mit dem Hausarzt Wundabstrich; mikrobiologischer Befund allein reicht nicht, holistische Beurteilung nötig.</li>
+  <li><span class="sp" data-sp="hygiene: Anzeichen infektgefährdeter Wunden">Schwerpunkt</span><b>pAVK:</b> Rötung kaum, Überwärmung eingeschränkt – Schmerz ist das aussagekräftigste Infektionszeichen. <b>Diabetische Neuropathie:</b> Schmerz kaum, Fieber höchstens subfebril. <b>Infektion in Wundtaschen:</b> geröteter, verhärteter, ödematöser, schmerzhafter Rand, starke eitrige Exsudation, Geruch, oft Auslöser systemischer Infektion (S. 10–11).</li>
 </ul>
 <div class="tabelle"><table>
   <caption>PEDIS-Klassifikation der Fußinfektion (Lipsky 2006) (S. 11) – laut Experten auch bei pAVK oder CVI sinnvoll</caption>
@@ -278,24 +278,24 @@ Lernapp.thema({
   <li><b>Mikroorganismen</b> (BioStoffV § 2): zelluläre oder nichtzelluläre mikroskopisch kleine biologische Einheiten, die sich vermehren oder genetisches Material weitergeben können – Bakterien, Viren, Protozoen, Pilze.</li>
 </ul>
 <p class="merke"><b>Nosokomiale Infektion ★</b> (RKI 2020): Infektion, die Patient:innen im Zusammenhang mit einer medizinischen Maßnahme erwerben – z. B. in Krankenhaus, Pflegeeinrichtung oder ambulanter Praxis. Ältere Menschen besonders gefährdet.</p>
-<p class="merke"><b>Bakterienstämme ★ (S. 12):</b> Staphylokokken → rahmig, gelblicher Eiter, geruchlos · Streptokokken → gelbgrauer, dünnflüssiger Eiter · Pseudomonas → blau-grünlicher Eiter, süßlich riechend.</p>
+<p class="merke"><span class="sp" data-sp="hygiene: mögliche Keime in Wunden">Schwerpunkt</span><b>Bakterienstämme ★ (S. 12):</b> Staphylokokken → rahmig, gelblicher Eiter, geruchlos · Streptokokken → gelbgrauer, dünnflüssiger Eiter · Pseudomonas → blau-grünlicher Eiter, süßlich riechend.</p>
 <ul>
-  <li><b>Multiresistent</b> = Keime mit Resistenz gegen mehrere Antibiotikagruppen (Lösung S. 33). Resistenz bezieht sich immer nur auf Antibiotika, nie auf Antiseptika/Desinfektiva: hygienische Händedesinfektion vernichtet alle MRE; Alkohol, Polyvidonjod, Chlorhexidin, Polihexanid, Octenidin wirken. Ausnahmen mit Wirklücken: Wasserstoffperoxid und Silber (manche Pseudomonas-Stämme silberresistent) (S. 13–14).</li>
-  <li><b>MRSA ★</b> (Methicillin-resistenter Staphylococcus aureus): Übertragung v. a. durch direkten Kontakt über die Hände, auch über Niesen, Kleidung, Bettwäsche, Oberflächen; gefährlich bei Immunschwäche. (Im Heft „Methycilli-“ geschrieben.)</li>
-  <li><b>VRE</b> (Vancomycin-resistente Enterokokken): aus der Darmflora oder über Kontakt; besiedeln Wunden, Haut, Hände, Sonden, Katheter; bis zu 1 Woche außerhalb des Menschen überlebensfähig.</li>
-  <li><b>MRGN/ESBL-Bildner:</b> multiresistente gramnegative Erreger aus Darm oder Umwelt (z. B. Wasser); machen nicht zwingend krank, gefährlich für Abwehrgeschwächte (Harnwegs-, Wund-, Atemwegsinfektionen); Übertragung über Hände, Nahrung, Gegenstände.</li>
+  <li><span class="sp" data-sp="hygiene: Multiresistente Erreger">Schwerpunkt</span><b>Multiresistent</b> = Keime mit Resistenz gegen mehrere Antibiotikagruppen (Lösung S. 33). Resistenz bezieht sich immer nur auf Antibiotika, nie auf Antiseptika/Desinfektiva: hygienische Händedesinfektion vernichtet alle MRE; Alkohol, Polyvidonjod, Chlorhexidin, Polihexanid, Octenidin wirken. Ausnahmen mit Wirklücken: Wasserstoffperoxid und Silber (manche Pseudomonas-Stämme silberresistent) (S. 13–14).</li>
+  <li><span class="sp" data-sp="hygiene: Multiresistente Erreger">Schwerpunkt</span><b>MRSA ★</b> (Methicillin-resistenter Staphylococcus aureus): Übertragung v. a. durch direkten Kontakt über die Hände, auch über Niesen, Kleidung, Bettwäsche, Oberflächen; gefährlich bei Immunschwäche. (Im Heft „Methycilli-“ geschrieben.)</li>
+  <li><span class="sp" data-sp="hygiene: Multiresistente Erreger">Schwerpunkt</span><b>VRE</b> (Vancomycin-resistente Enterokokken): aus der Darmflora oder über Kontakt; besiedeln Wunden, Haut, Hände, Sonden, Katheter; bis zu 1 Woche außerhalb des Menschen überlebensfähig.</li>
+  <li><span class="sp" data-sp="hygiene: Multiresistente Erreger">Schwerpunkt</span><b>MRGN/ESBL-Bildner:</b> multiresistente gramnegative Erreger aus Darm oder Umwelt (z. B. Wasser); machen nicht zwingend krank, gefährlich für Abwehrgeschwächte (Harnwegs-, Wund-, Atemwegsinfektionen); Übertragung über Hände, Nahrung, Gegenstände.</li>
   <li><b>Clostridium difficile:</b> anaerobes grampositives Stäbchen im Darm; unter Antibiotika Vermehrung, Toxin- und Sporenbildung (umweltresistent, durch gängige Desinfektionsmittel nicht abgetötet) → starker Durchfall.</li>
-  <li>MRE sind erst bei Nachweis in Blut oder Liquor meldepflichtig; Nachweis in der Wunde nur per Abstrich. MRSA, VRE: Einzelisolierung, Mund-Nasen-Schutz, Schutzkittel, Handschuhe, Händedesinfektion vor und nach Patientenkontakt (S. 15).</li>
-  <li><b>Basishygiene</b> (Lösung S. 33): Händedesinfektion, Flächendesinfektion, Schutzkleidung, Isolation.</li>
+  <li><span class="sp" data-sp="hygiene: Multiresistente Erreger">Schwerpunkt</span>MRE sind erst bei Nachweis in Blut oder Liquor meldepflichtig; Nachweis in der Wunde nur per Abstrich. MRSA, VRE: Einzelisolierung, Mund-Nasen-Schutz, Schutzkittel, Handschuhe, Händedesinfektion vor und nach Patientenkontakt (S. 15).</li>
+  <li><span class="sp" data-sp="hygiene: Generelle Hygienemaßnahmen">Schwerpunkt</span><b>Basishygiene</b> (Lösung S. 33): Händedesinfektion, Flächendesinfektion, Schutzkleidung, Isolation.</li>
 </ul>
 
 <h3>6. Verbandwechsel – Voraussetzungen und Ziele <span class="seite">S. 15–17</span></h3>
 <ul>
   <li>Immer schriftliche ärztliche Anordnung (Häufigkeit, Vorgehen, Medikamente, Wundauflage) und Einverständnis des aufgeklärten Betroffenen.</li>
-  <li>Entspricht die Verordnung nicht dem Wissensstand oder gefährdet sie Patient:innen → Pflicht zum <b>Remonstrationsrecht</b> (Recht und Pflicht, eine gefahrengeneigte Versorgung schriftlich und nachweislich anzuzeigen); Austausch dokumentieren.</li>
+  <li><span class="sp" data-sp="recht: Rechtsicheres Handeln – Remonstrationsrecht/-pflicht">Schwerpunkt</span>Entspricht die Verordnung nicht dem Wissensstand oder gefährdet sie Patient:innen → Pflicht zum <b>Remonstrationsrecht</b> (Recht und Pflicht, eine gefahrengeneigte Versorgung schriftlich und nachweislich anzuzeigen); Austausch dokumentieren.</li>
   <li>Bei Schmerzen Analgetika auf ärztliche Anordnung rechtzeitig vorher geben (Wirkeintritt beachten). <span class="hand-inline">Handschriftlich: 30–60 min vorher.</span> Dokumentation von Wundverhältnissen, Vorkommnissen, Maßnahmen, Medikamenten.</li>
   <li><b>Ziele:</b> Wundkontrolle, Wundbeurteilung und ggf. Therapieanpassung, Vorbeugung der Keimeinschleppung, Bekämpfung bestehender Infektion, Schmerzvermeidung, Unterstützung der Heilung.</li>
-  <li><b>Grundmaßnahmen:</b> Uhren und Schmuck ablegen, Haare zurückbinden/Haube, Schutzkleidung, keine ungeeignete langärmlige Kleidung. Obligatorisch: Einmalhandschuhe und Einmalschürze/-kittel, nach jedem Patientenkontakt wechseln; bei großflächigen, infektionsgefährdeten oder MRE-Wunden zusätzlich Mund-Nasen-Schutz. (Studie Wiener-Well 2011: an 63 % der Kleidungsstücke pathogene Bakterien.)</li>
+  <li><span class="sp" data-sp="hygiene: Generelle Hygienemaßnahmen">Schwerpunkt</span><b>Grundmaßnahmen:</b> Uhren und Schmuck ablegen, Haare zurückbinden/Haube, Schutzkleidung, keine ungeeignete langärmlige Kleidung. Obligatorisch: Einmalhandschuhe und Einmalschürze/-kittel, nach jedem Patientenkontakt wechseln; bei großflächigen, infektionsgefährdeten oder MRE-Wunden zusätzlich Mund-Nasen-Schutz. (Studie Wiener-Well 2011: an 63 % der Kleidungsstücke pathogene Bakterien.)</li>
 </ul>
 <p class="merke"><b>Checkliste vor dem Verbandwechsel (S. 17–18):</b> ärztliche Anordnung · Einverständnis · Wunddokumentation · alles mit Wundkontakt steril (Instrumente, Spüllösungen, Handschuhe, Material) · richtige Reihenfolge (kolonisierte/infizierte Wunden zuletzt) · aufwändige Verbandwechsel zu zweit · Kontakt mit Exsudat vermeiden (Handschuhe, Kittel, MNS) · sterile, gut sitzende, bakteriendichte Wundauflage · Non-Touch-Technik (RKI) · sterile Spüllösung, Haltbarkeit beachten · festklebende Kompressen mit steriler Pinzette lösen · Händedesinfektion vor und nach · Arbeitsfläche desinfizieren · keine künstlichen Nägel, Nagellack, Schmuck.</p>
 <p class="hand">Spüllösung nicht kalt, Raumtemperatur (Zellteilung erst ab 28 °C).</p>
@@ -329,15 +329,15 @@ Lernapp.thema({
 
 <h3>9. Non-Touch-Technik und Wundabstrich <span class="seite">S. 26–27</span></h3>
 <ul>
-  <li><b>Non-Touch-Technik</b> („nicht berühren“): nur steriles Material berührt die Wunde. Arbeiten mit unsterilen Handschuhen und sterilen Instrumenten; Wunde nie mit den Händen berühren. Alternativ sterile Handschuhe (zweite Person oder gute Vorbereitung) oder Aufteilung in sterile und unsterile Hand. Unsaubere Materialien gehen nie zur sauberen Wunde zurück; aufwändige Verbandwechsel zu zweit.</li>
+  <li><span class="sp" data-sp="hygiene: Def. Non-Touch-Technik">Schwerpunkt</span><b>Non-Touch-Technik</b> („nicht berühren“): nur steriles Material berührt die Wunde. Arbeiten mit unsterilen Handschuhen und sterilen Instrumenten; Wunde nie mit den Händen berühren. Alternativ sterile Handschuhe (zweite Person oder gute Vorbereitung) oder Aufteilung in sterile und unsterile Hand. Unsaubere Materialien gehen nie zur sauberen Wunde zurück; aufwändige Verbandwechsel zu zweit.</li>
   <li><b>Wundabstrich</b> aus der Wundtiefe (eigentlicher Wundkeim statt Oberflächenkeime). Vorher mechanische Reinigung mit angefeuchteten Kompressen und/oder Spülung mit Kochsalzlösung – keine Antiseptika oder chemischen Zusätze (verfälschen das Ergebnis). Ausnahme: Verdacht auf MRE → ohne vorherige Säuberung abstreichen.</li>
   <li>Deklariertes Abstrichröhrchen, Herstellerangaben; Information, Händedesinfektion, Einmalhandschuhe. Dokumentieren: Entnahmestelle, Wundart, Grunderkrankung, bisherige Antibiotikatherapie; Begleitschein und Etikett vollständig; gewünschte Untersuchung; Lagerung bei Zimmertemperatur; zeitnaher Transport.</li>
 </ul>
 <div class="tabelle"><table>
   <thead><tr><th>Technik</th><th>Durchführung</th><th>Indikation</th></tr></thead>
   <tbody>
-    <tr><td style="white-space:normal">Essener Wundkreisel</td><td>kreisend von außen nach innen über möglichst großes Areal</td><td>gezielte MRE-Suche, z. B. bei Neuaufnahme</td></tr>
-    <tr><td style="white-space:normal">Levine-Technik</td><td>ca. 1 cm² eines klinisch infizierten Areals unter leichtem Druck</td><td>Erregersuche in Unterminierungen/Taschen bei Verdacht auf Wundinfektion</td></tr>
+    <tr><td style="white-space:normal"><span class="sp" data-sp="hygiene: Wundabstrichtechniken – Essener Wundkreisel">Schwerpunkt</span>Essener Wundkreisel</td><td>kreisend von außen nach innen über möglichst großes Areal</td><td>gezielte MRE-Suche, z. B. bei Neuaufnahme</td></tr>
+    <tr><td style="white-space:normal"><span class="sp" data-sp="hygiene: Wundabstrichtechniken – Levine-Technik">Schwerpunkt</span>Levine-Technik</td><td>ca. 1 cm² eines klinisch infizierten Areals unter leichtem Druck</td><td>Erregersuche in Unterminierungen/Taschen bei Verdacht auf Wundinfektion</td></tr>
   </tbody>
 </table></div>
 

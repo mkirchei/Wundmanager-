@@ -18,19 +18,19 @@ Lernapp.thema({
 
   karten: [
     { k: "Wundheilung", f: "Wie definiert das Heft die Wundheilung?",
-      a: "Komplexer Prozess: physiologische Vorgänge zur Regeneration zerstörten Gewebes, die v. a. durch Neubildung von Bindegewebe und Kapillaren den Wundverschluss bewirken (Pfitzmann).", s: "S. 3" },
+      a: "Komplexer Prozess: physiologische Vorgänge zur Regeneration zerstörten Gewebes, die v. a. durch Neubildung von Bindegewebe und Kapillaren den Wundverschluss bewirken (Pfitzmann).", s: "S. 3", sp: ["wunden: Def. Wundheilung"] },
     { k: "Wundheilung", f: "Primäre vs. sekundäre Wundheilung? ★",
-      a: "Primär: aseptische OP-Wunden/frische Verletzungen, Ränder adaptiert und glatt; minimale Narbe, ca. 10 Tage (handschr.: Naht/Klammern, 6–10 d).\nSekundär: Lücke füllt sich mit Granulationsgewebe, starke Narbe; alle chronischen Wunden und Verbrennungen; dauert länger, Infektionsrisiko.", s: "S. 3, 5", h: true },
+      a: "Primär: aseptische OP-Wunden/frische Verletzungen, Ränder adaptiert und glatt; minimale Narbe, ca. 10 Tage (handschr.: Naht/Klammern, 6–10 d).\nSekundär: Lücke füllt sich mit Granulationsgewebe, starke Narbe; alle chronischen Wunden und Verbrennungen; dauert länger, Infektionsrisiko.", s: "S. 3, 5", h: true, sp: ["wunden: Arten der Wundheilung"] },
     { k: "Wundheilung", f: "Wie viele Wundheilungsphasen gibt es? ★",
-      a: "5: Hämostase, Exsudation, Granulation, Epithelisierung, Remodulierung.\n3 (Praxis): Exsudations-, Granulations-, Epithelisierungsphase (Hämostase + Exsudation und Epithelisierung + Remodulierung zusammengefasst).\nHandschr.: beides richtig.", s: "S. 3–4", h: true },
+      a: "5: Hämostase, Exsudation, Granulation, Epithelisierung, Remodulierung.\n3 (Praxis): Exsudations-, Granulations-, Epithelisierungsphase (Hämostase + Exsudation und Epithelisierung + Remodulierung zusammengefasst).\nHandschr.: beides richtig.", s: "S. 3–4", h: true, sp: ["wunden: Phasen der Wundheilung"] },
     { k: "Wundheilung", f: "Was passiert in der Hämostase?",
-      a: "Unmittelbare Reaktion auf die Verletzung: Kapillaren ziehen sich zusammen, Vasokonstriktion, Blutgerinnsel – Thrombozyten und Erythrozyten bilden einen Thrombus als Grundlage der Reparation.", s: "S. 3–4" },
+      a: "Unmittelbare Reaktion auf die Verletzung: Kapillaren ziehen sich zusammen, Vasokonstriktion, Blutgerinnsel – Thrombozyten und Erythrozyten bilden einen Thrombus als Grundlage der Reparation.", s: "S. 3–4", sp: ["wunden: Phasen der Wundheilung"] },
     { k: "Wundheilung", f: "Was kennzeichnet die Exsudationsphase?",
-      a: "Reinigungsphase: starke Exsudation, Entzündungsreaktion, Keimabwehr, Abtransport von Zelltrümmern; Fibroblastenvermehrung leitet Neoangiogenese ein. Bei Immunschwäche abgeschwächte/verzögerte Entzündung.", s: "S. 3–4" },
+      a: "Reinigungsphase: starke Exsudation, Entzündungsreaktion, Keimabwehr, Abtransport von Zelltrümmern; Fibroblastenvermehrung leitet Neoangiogenese ein. Bei Immunschwäche abgeschwächte/verzögerte Entzündung.", s: "S. 3–4", sp: ["wunden: Phasen der Wundheilung"] },
     { k: "Wundheilung", f: "Was kennzeichnet die Granulationsphase?",
-      a: "Akut ab dem 2. Tag, bis zu 14 Tage. Fibroblasten bauen gefäß-, zell- und kollagenreiches Gewebe; Neoangiogenese, Wundkontraktion, nachlassende Exsudation. Gewebe tiefrot, gekörnt, feucht glänzend.", s: "S. 3–4" },
+      a: "Akut ab dem 2. Tag, bis zu 14 Tage. Fibroblasten bauen gefäß-, zell- und kollagenreiches Gewebe; Neoangiogenese, Wundkontraktion, nachlassende Exsudation. Gewebe tiefrot, gekörnt, feucht glänzend.", s: "S. 3–4", sp: ["wunden: Phasen der Wundheilung"] },
     { k: "Wundheilung", f: "Epithelisierung und Remodulierung?",
-      a: "Epithelisierung: Granulationsgewebe trocknet ab, Epithel bildet sich, „Überhäutung“, erstes Narbengewebe (handschr.: feuchtes Milieu wichtig!).\nRemodulierung: über Monate; zell- und gefäßarme Narbe ohne Hautanhangsorgane, max. 80 % der Belastbarkeit.", s: "S. 3–4", h: true },
+      a: "Epithelisierung: Granulationsgewebe trocknet ab, Epithel bildet sich, „Überhäutung“, erstes Narbengewebe (handschr.: feuchtes Milieu wichtig!).\nRemodulierung: über Monate; zell- und gefäßarme Narbe ohne Hautanhangsorgane, max. 80 % der Belastbarkeit.", s: "S. 3–4", h: true, sp: ["wunden: Phasen der Wundheilung"] },
     { k: "Wundheilung", f: "Was ist Hypergranulation? (handschr.)",
       a: "„Wildes Fleisch“: zu feucht, über das Hautniveau hinaus, dunkelrot, körnig, glänzend feucht. Zählt zu den lokalen Einflussfaktoren.", s: "S. 4 handschr., S. 5, 27", h: true },
     { k: "Grundlagen", f: "Was bedeutet Kausaltherapie? Beispiele?",
@@ -42,21 +42,21 @@ Lernapp.thema({
     { k: "Allgemein", f: "Welche Rolle spielt der Allgemeinzustand?",
       a: "Wundheilung hat hohen Energiebedarf. Je schlechter der Allgemeinzustand, desto schlechter die Wundheilung; Erhalt lebenswichtiger Organe hat Vorrang.", s: "S. 6" },
     { k: "Ernährung", f: "Was ist Malnutrition – wen betrifft sie? (Übung I)",
-      a: "Fehl- bzw. Mangelernährung: Ungleichgewicht zwischen Makro-, Mikronährstoffen und Flüssigkeit. Möglich bei Über-, Normal- und Untergewicht.", s: "S. 7, 30" },
+      a: "Fehl- bzw. Mangelernährung: Ungleichgewicht zwischen Makro-, Mikronährstoffen und Flüssigkeit. Möglich bei Über-, Normal- und Untergewicht.", s: "S. 7, 30", sp: ["ernaehrung: Basiswissen zur Ernährung"] },
     { k: "Ernährung", f: "Wie verändert sich der Bedarf im Alter?",
-      a: "Bewegung, Muskelmasse, Stoffwechselleistung und Fettmasse ↓ → Energiebedarf ↓, Vitamin- und Mineralstoffbedarf bleibt gleich → weniger Energiedichte, mehr Vitamine/Mineralstoffe.", s: "S. 7" },
+      a: "Bewegung, Muskelmasse, Stoffwechselleistung und Fettmasse ↓ → Energiebedarf ↓, Vitamin- und Mineralstoffbedarf bleibt gleich → weniger Energiedichte, mehr Vitamine/Mineralstoffe.", s: "S. 7", sp: ["ernaehrung: Basiswissen zur Ernährung"] },
     { k: "Ernährung", f: "Wie erfasst man den Ernährungszustand? ★ (Übung I)",
       a: "Lösung: Screening, vertiefendes Assessment (handschr. Reihenfolge: 1. Screening, 2. vertieftes Assessment). Text: Laboruntersuchungen, Screening. Frühzeitiges Erkennen ist Voraussetzung für Gegenmaßnahmen.", s: "S. 7, 13, 30", h: true },
     { k: "Ernährung", f: "Was sind Makronährstoffe? ★",
-      a: "Kohlenhydrate ca. 50–60 % – wichtigste Energiequelle\nFette ca. 30–35 % – Energiespeicher, Wärme-/Kälteschutz, fettlösliche Vitamine E, D, K, A („EDEKA“)\nProteine ca. 10–15 % – Struktur, Abwehr, Transport.", s: "S. 8, 11", h: true },
+      a: "Kohlenhydrate ca. 50–60 % – wichtigste Energiequelle\nFette ca. 30–35 % – Energiespeicher, Wärme-/Kälteschutz, fettlösliche Vitamine E, D, K, A („EDEKA“)\nProteine ca. 10–15 % – Struktur, Abwehr, Transport.", s: "S. 8, 11", h: true, sp: ["ernaehrung: Basiswissen zur Ernährung"] },
     { k: "Ernährung", f: "Welche Aufgaben haben Proteine und Albumin?",
-      a: "Strukturproteine (Kollagen, Keratin, Elastin), Schutzproteine (Fibrinogen, Thrombin), Transportproteine (Hämoglobin, Transferrin), Enzyme (Kollagenaufbau). Albumin reguliert Flüssigkeit in Gefäßen – Mangel → Eiweißödeme.", s: "S. 8" },
+      a: "Strukturproteine (Kollagen, Keratin, Elastin), Schutzproteine (Fibrinogen, Thrombin), Transportproteine (Hämoglobin, Transferrin), Enzyme (Kollagenaufbau). Albumin reguliert Flüssigkeit in Gefäßen – Mangel → Eiweißödeme.", s: "S. 8", sp: ["ernaehrung: Basiswissen zur Ernährung"] },
     { k: "Ernährung", f: "Welche Nährstoffe sind bei bestehenden Wunden wichtig? ★",
       a: "Zell-/Kollagenaufbau: Proteine, Vitamin A, alle B-Vitamine, Vitamin C, Albumin, Zink, Eisen. Antientzündlich/Radikalfänger: Vitamin E.\nDazu ausreichend Flüssigkeit (Verlust durch Fieber, Wundsekret).", s: "S. 7–8, 10" },
     { k: "Ernährung", f: "Wofür werden Vitamin C, Zink und Eisen benötigt?",
-      a: "Vitamin C: Kollagensynthese, Immunsystem, Eisenresorption, Regeneration Vit E.\nZink: Wundverschluss, Zellwachstum, Immunsystem.\nEisen: Sauerstofftransport (Hämoglobin), Kollagensynthese.", s: "S. 9–10" },
+      a: "Vitamin C: Kollagensynthese, Immunsystem, Eisenresorption, Regeneration Vit E.\nZink: Wundverschluss, Zellwachstum, Immunsystem.\nEisen: Sauerstofftransport (Hämoglobin), Kollagensynthese.", s: "S. 9–10", sp: ["ernaehrung: Basiswissen zur Ernährung"] },
     { k: "Ernährung", f: "Mengen- vs. Spurenelemente?",
-      a: "Mengenelemente (> 50 mg/kg): Natrium, Kalium, Kalzium, Magnesium.\nSpurenelemente (< 50 mg/kg): Eisen, Selen, Jod, Zink, Mangan.\nBeide essentiell, mit der Nahrung aufzunehmen.", s: "S. 10" },
+      a: "Mengenelemente (> 50 mg/kg): Natrium, Kalium, Kalzium, Magnesium.\nSpurenelemente (< 50 mg/kg): Eisen, Selen, Jod, Zink, Mangan.\nBeide essentiell, mit der Nahrung aufzunehmen.", s: "S. 10", sp: ["ernaehrung: Basiswissen zur Ernährung"] },
     { k: "Ernährung", f: "Wie können Nährstoffe zugeführt werden? ★",
       a: "Tägliche Nahrung · Anreicherung (Sahne, Butter, Öl, Nüsse, Proteinpulver, Vitaminpräparate) · angereicherte Trinknahrung · Sonden-/parenterale Ernährung. Individuelle Beratung durch Expert:innen.", s: "S. 11" },
     { k: "Ernährung", f: "Folgen der Malnutrition für die Wundheilung?",
@@ -66,35 +66,35 @@ Lernapp.thema({
     { k: "Bewegung", f: "Warum fördert Bewegung die Wundheilung?",
       a: "Muskelaktivität, Gelenkbeweglichkeit, Durchblutung (O₂, Nährstoffe), Kollateralenbildung, Allgemeinzustand; Positionswechsel vermeidet Druckschäden. Aktiv und passiv wirksam. Handschr.: Muskelpumpe, venöser Rückfluss.", s: "S. 12", h: true },
     { k: "Schmerz", f: "Warum beeinträchtigt Schmerz die Wundheilung?",
-      a: "Stress → Cortison (negativ in jeder Phase) und Adrenalin (Gefäßverengung → Blut-, Nährstoff-, O₂-Zufuhr ↓); Chronifizierung möglich, Lebensqualität ↓.", s: "S. 13" },
+      a: "Stress → Cortison (negativ in jeder Phase) und Adrenalin (Gefäßverengung → Blut-, Nährstoff-, O₂-Zufuhr ↓); Chronifizierung möglich, Lebensqualität ↓.", s: "S. 13", sp: ["schmerz: Schmerz als Einflussfaktor auf die Wundheilung"] },
     { k: "Schmerz", f: "Wie definiert die IASP Schmerz?",
-      a: "Unangenehmes Sinnes- und Gefühlserlebnis, verknüpft mit aktueller oder potenzieller Gewebeschädigung. Warnsignal – Polyneuropathie kann die Warnfunktion beeinträchtigen.", s: "S. 13" },
+      a: "Unangenehmes Sinnes- und Gefühlserlebnis, verknüpft mit aktueller oder potenzieller Gewebeschädigung. Warnsignal – Polyneuropathie kann die Warnfunktion beeinträchtigen.", s: "S. 13", sp: ["schmerz: Def. Schmerz"] },
     { k: "Schmerz", f: "Nenne die vier Schmerzarten.",
       a: "Nozizeptiv: Reiz bei Gewebsschädigung · neuropathisch: Nervenschädigung, einschießend, elektrisierend · noziplastisch: ohne Gewebsschaden, Sensibilisierung · psychogen: negative Erfahrungen, kein organischer Schaden.", s: "S. 13" },
     { k: "Schmerz", f: "Wie lassen sich die Schmerzarten lindern?",
       a: "Nozizeptiv und neuropathisch: nicht-medikamentös und medikamentös. Psychogen: nicht durch Schmerzmittel, sondern vertrauensbasierte Kommunikation, Zuwendung, soziale Unterstützung.", s: "S. 14" },
     { k: "Schmerz", f: "Akuter, prozeduraler, chronischer Schmerz?",
-      a: "Akut: Warnsignal, an Heilungsdauer gekoppelt.\nProzedural: akuter Schmerz bei Versorgungen, z. B. Wundbehandlung.\nChronisch: mind. 3 Monate, keine Warnfunktion mehr.", s: "S. 14" },
+      a: "Akut: Warnsignal, an Heilungsdauer gekoppelt.\nProzedural: akuter Schmerz bei Versorgungen, z. B. Wundbehandlung.\nChronisch: mind. 3 Monate, keine Warnfunktion mehr.", s: "S. 14", sp: ["schmerz: Unterschied akuter / chronischer / prozeduraler Schmerz"] },
     { k: "Schmerz", f: "Wie wird Schmerz erfasst?",
-      a: "Subjektiv, nicht messbar. Vor, während, nach der Behandlung und bei Statusänderung; NRS, VRS, GRS/SAS – immer dieselbe Skala. Bei Demenz Fremdeinschätzung mit BESD oder BISAD.", s: "S. 14–15" },
+      a: "Subjektiv, nicht messbar. Vor, während, nach der Behandlung und bei Statusänderung; NRS, VRS, GRS/SAS – immer dieselbe Skala. Bei Demenz Fremdeinschätzung mit BESD oder BISAD.", s: "S. 14–15", sp: ["schmerz: Möglichkeiten der Schmerzerfassung"] },
     { k: "Schmerz", f: "Welche Faktoren lösen Wundschmerz aus?",
       a: "Infektion (Erysipel), Druck, Ödem, Arthritis, Dermatitis, pAVK, Neuropathie, Wundart, Trauma, Nahtdehiszenz, viel Exsudat, ausgetrocknete Wunde, Wundbehandlung, Entfernen der Auflage, einschnürende Verbände.", s: "S. 15" },
     { k: "Schmerz", f: "Schmerzvermeidung vor dem Verbandwechsel?",
-      a: "Informieren, Schmerz ernst nehmen, Erfahrung einbeziehen, Vorgehen absprechen, Analgetika rechtzeitig (Wirkeintritt), Zugluft vermeiden, stressfreie Umgebung, gute Vorbereitung, ansprechen/Pausen, Stoppsignale vereinbaren.", s: "S. 16–17" },
+      a: "Informieren, Schmerz ernst nehmen, Erfahrung einbeziehen, Vorgehen absprechen, Analgetika rechtzeitig (Wirkeintritt), Zugluft vermeiden, stressfreie Umgebung, gute Vorbereitung, ansprechen/Pausen, Stoppsignale vereinbaren.", s: "S. 16–17", sp: ["schmerz: Maßnahmen der Schmerzreduktion beim Verbandwechsel"] },
     { k: "Schmerz", f: "Schmerzvermeidung während des Verbandwechsels?",
-      a: "Behutsam reinigen (angefeuchtete Kompressen andrücken, nicht kräftig wischen), Reize vermeiden, zügig verbinden, Sekundärverband nicht zu stramm, feuchte Auflagen, Ablösen anfeuchten, angewärmte Spülung mit wenig Druck, Auflagen ohne Kleberand.", s: "S. 17" },
+      a: "Behutsam reinigen (angefeuchtete Kompressen andrücken, nicht kräftig wischen), Reize vermeiden, zügig verbinden, Sekundärverband nicht zu stramm, feuchte Auflagen, Ablösen anfeuchten, angewärmte Spülung mit wenig Druck, Auflagen ohne Kleberand.", s: "S. 17", sp: ["schmerz: Maßnahmen der Schmerzreduktion beim Verbandwechsel"] },
     { k: "Schmerz", f: "Erkläre das WHO-Stufenschema.",
-      a: "I: Nichtopioid (ASS, NSAR, Metamizol)\nII: schwaches Opioid (Tramadol, Tilidin, Codein) + Stufe I\nIII: starkes Opioid (Morphin, Fentanyl, Oxycodon …) + Stufe I\nGgf. Koanalgetika/Adjuvantien; Start nach Schmerzstärke; II + III nicht kombinieren.", s: "S. 17" },
+      a: "I: Nichtopioid (ASS, NSAR, Metamizol)\nII: schwaches Opioid (Tramadol, Tilidin, Codein) + Stufe I\nIII: starkes Opioid (Morphin, Fentanyl, Oxycodon …) + Stufe I\nGgf. Koanalgetika/Adjuvantien; Start nach Schmerzstärke; II + III nicht kombinieren.", s: "S. 17", sp: ["schmerz: Medikamentöse / Nichtmedikamentöse Schmerzbehandlung"] },
     { k: "Schmerz", f: "Weitere schmerzreduzierende Strategien?",
-      a: "Kälte-/Wärmeanwendungen, TENS, Ultraschall, Akupunktur (nur geschultes Personal), Massage/Positionierung (Kinästhetik), Meditation, Atem- und Entspannungsübungen, Musik.", s: "S. 18" },
+      a: "Kälte-/Wärmeanwendungen, TENS, Ultraschall, Akupunktur (nur geschultes Personal), Massage/Positionierung (Kinästhetik), Meditation, Atem- und Entspannungsübungen, Musik.", s: "S. 18", sp: ["schmerz: Medikamentöse / Nichtmedikamentöse Schmerzbehandlung"] },
     { k: "Haut", f: "Hautprobleme bei Diabetes, CVI und pAVK?",
-      a: "Diabetes: trocken, Pilzinfektionen, Rhagaden, Malum perforans.\nCVI: Stauungsekzem, Ödeme, Dermatoliposklerose, Hyperpigmentierung.\npAVK: livide, kühl, dünn, glänzend; Zellregeneration stark verzögert.", s: "S. 19" },
+      a: "Diabetes: trocken, Pilzinfektionen, Rhagaden, Malum perforans.\nCVI: Stauungsekzem, Ödeme, Dermatoliposklerose, Hyperpigmentierung.\npAVK: livide, kühl, dünn, glänzend; Zellregeneration stark verzögert.", s: "S. 19", sp: ["haut: Beispiel für Hauterscheinungen bei Krankheiten innerer Organe und Stoffwechselstörungen"] },
     { k: "Haut", f: "Grundsätze der Hautpflege?",
-      a: "Trocken und sauber; hautneutrale, leicht saure Syndets, keine alkalischen Seifen; trockene Haut mit W/O; keine O/W bei problematischer Haut (Dochteffekt); keine Parfüm-, Konservierungsstoffe, Emulgatoren. Feucht auf feucht, fett auf trocken.", s: "S. 20" },
+      a: "Trocken und sauber; hautneutrale, leicht saure Syndets, keine alkalischen Seifen; trockene Haut mit W/O; keine O/W bei problematischer Haut (Dochteffekt); keine Parfüm-, Konservierungsstoffe, Emulgatoren. Feucht auf feucht, fett auf trocken.", s: "S. 20", sp: ["haut: Was sind empfohlene Hautschutz- und Hautpflegemaßnahmen?"] },
     { k: "Haut", f: "Hautschutz bei bestehenden Wunden?",
-      a: "Wundrand vor Mazeration schützen (Hautschutzfilm, Folie, Hydrokolloid, Hydrofaser); Narbenpflege Dexpanthenol; Analtampons ≥ 2× tgl. wechseln (Ileus!); silikonbeschichtete Auflagen; bei Pergament-/Altershaut keine Kleberänder.", s: "S. 20–21" },
+      a: "Wundrand vor Mazeration schützen (Hautschutzfilm, Folie, Hydrokolloid, Hydrofaser); Narbenpflege Dexpanthenol; Analtampons ≥ 2× tgl. wechseln (Ileus!); silikonbeschichtete Auflagen; bei Pergament-/Altershaut keine Kleberänder.", s: "S. 20–21", sp: ["haut: Was sind empfohlene Hautschutz- und Hautpflegemaßnahmen?"] },
     { k: "Haut", f: "Welche Hautmaßnahmen sind ungeeignet?",
-      a: "Salben/Zinkpaste in offene Wunden reiben, Parfümzusätze, Alkohollösungen (Franzbranntwein), abdichtende Pasten, Fette/Öle (Melkfett, Babyöl), Puder, Massieren gefährdeter Hautstellen.", s: "S. 21" },
+      a: "Salben/Zinkpaste in offene Wunden reiben, Parfümzusätze, Alkohollösungen (Franzbranntwein), abdichtende Pasten, Fette/Öle (Melkfett, Babyöl), Puder, Massieren gefährdeter Hautstellen.", s: "S. 21", sp: ["haut: Welche Hautschutz- und Hautpflegemaßnahmen sind ungeeignet?"] },
     { k: "Nikotin", f: "Wie schadet Rauchen der Wundheilung?",
       a: "Blausäure hemmt O₂-Transport; CO bindet an Hämoglobin; Nikotin → Dopamin/Epinephrin → peripherer Blutfluss ↓, Thrombozytenaggregation ↑ → Mikrookklusionen; Infektionsrisiko ↑. Entwöhnung, Aufklärung (auch Passivrauchen).", s: "S. 21–22" },
     { k: "Adipositas", f: "Warum heilen Wunden bei Adipositas schlechter?",
@@ -132,58 +132,58 @@ Lernapp.thema({
   quiz: [
     { f: "Wie viele Wundheilungsphasen gibt es laut Heft? ★",
       o: ["5 Phasen – in der Praxis oft zu 3 zusammengefasst; beides gilt als richtig", "Genau 2 Phasen", "7 Phasen", "4 Phasen – die Remodulierung zählt nicht dazu"],
-      e: "5 Phasen: Hämostase, Exsudation, Granulation, Epithelisierung, Remodulierung. In der Praxis oft 3 (Exsudations-, Granulations-, Epithelisierungsphase). Handschriftlich: „5 oder 3, beides richtig“.", s: "S. 3–4" },
+      e: "5 Phasen: Hämostase, Exsudation, Granulation, Epithelisierung, Remodulierung. In der Praxis oft 3 (Exsudations-, Granulations-, Epithelisierungsphase). Handschriftlich: „5 oder 3, beides richtig“.", s: "S. 3–4", sp: ["wunden: Phasen der Wundheilung"] },
     { f: "Bei welcher Wunde ist eine primäre Wundheilung zu erwarten? ★",
       o: ["Aseptische OP-Wunde mit adaptierten, glatt durchtrennten Wundrändern", "Dekubitus", "Verbrennungswunde", "Chronisches Ulcus cruris"],
-      e: "Primäre Heilung: aseptische OP-Wunden, frische infektionsfreie Verletzungen mit dicht aneinanderliegenden Wundrändern. Alle chronischen Wunden und Verbrennungswunden heilen sekundär.", s: "S. 3" },
+      e: "Primäre Heilung: aseptische OP-Wunden, frische infektionsfreie Verletzungen mit dicht aneinanderliegenden Wundrändern. Alle chronischen Wunden und Verbrennungswunden heilen sekundär.", s: "S. 3", sp: ["wunden: Arten der Wundheilung"] },
     { f: "Was trifft auf die sekundäre Wundheilung zu? ★",
       o: ["Die Gewebslücke wird mit Granulationsgewebe aufgefüllt", "Alle chronischen Wunden heilen sekundär", "Minimale Vernarbung", "Nach rund 10 Tagen abgeschlossen"],
       r: 2,
-      e: "Sekundär: Lücke füllt sich mit Granulationsgewebe → starke Narbenbildung; alle chronischen Wunden und Verbrennungen. Minimale Narbe und ca. 10 Tage gelten für die primäre Heilung.", s: "S. 3" },
+      e: "Sekundär: Lücke füllt sich mit Granulationsgewebe → starke Narbenbildung; alle chronischen Wunden und Verbrennungen. Minimale Narbe und ca. 10 Tage gelten für die primäre Heilung.", s: "S. 3", sp: ["wunden: Arten der Wundheilung"] },
     { f: "Was geschieht in der Hämostase?",
       o: ["Vasokonstriktion; Thrombozyten und Erythrozyten bilden einen Thrombus", "Fibroblasten bauen gefäß-, zell- und kollagenreiches Gewebe", "Überhäutung durch neues Epithel", "Reorganisation der Kollagenfasern über Monate"],
-      e: "Hämostase: unmittelbare Reaktion, Kapillaren ziehen sich zusammen, Blutgerinnsel – Thrombus als Grundlage der Reparation.", s: "S. 3–4" },
+      e: "Hämostase: unmittelbare Reaktion, Kapillaren ziehen sich zusammen, Blutgerinnsel – Thrombus als Grundlage der Reparation.", s: "S. 3–4", sp: ["wunden: Phasen der Wundheilung"] },
     { f: "Wann findet die Granulationsphase bei akuten Wunden statt?",
       o: ["Ab dem 2. Tag, bis zu 14 Tage", "Ab dem 10. Tag, bis zu 6 Monate", "Nur in den ersten 24 Stunden", "Erst nach Abschluss der Remodulierung"],
-      e: "Granulation: akut ab dem 2. Tag, bis zu 14 Tage; Fibroblasten bauen gefäß-, zell- und kollagenreiches Gewebe, Neoangiogenese, Wundkontraktion.", s: "S. 3–4" },
+      e: "Granulation: akut ab dem 2. Tag, bis zu 14 Tage; Fibroblasten bauen gefäß-, zell- und kollagenreiches Gewebe, Neoangiogenese, Wundkontraktion.", s: "S. 3–4", sp: ["wunden: Phasen der Wundheilung"] },
     { f: "Welche Belastbarkeit erreicht die Narbe nach der Remodulierung höchstens?",
       o: ["Max. 80 % der ursprünglichen", "100 % – wie gesunde Haut", "Max. 30 % der ursprünglichen", "Mehr als die ursprüngliche Haut"],
-      e: "Remodulierung: zell- und gefäßarme Narbe ohne Hautanhangsorgane; Belastbarkeit max. 80 % der ursprünglichen.", s: "S. 3–4" },
+      e: "Remodulierung: zell- und gefäßarme Narbe ohne Hautanhangsorgane; Belastbarkeit max. 80 % der ursprünglichen.", s: "S. 3–4", sp: ["wunden: Phasen der Wundheilung"] },
     { f: "Wie sieht Hypergranulation („wildes Fleisch“) aus?",
       o: ["Zu feucht, über das Hautniveau, dunkelrot, körnig, glänzend feucht", "Trocken, schwarz, unter dem Hautniveau", "Blass, eingesunken, gelblich belegt", "Milchig, schleimig, glänzend wie ein Biofilm"],
       e: "Handschriftlich (S. 4): Hypergranulation – zu feucht, über das Hautniveau, dunkelrot, körnig, glänzend feucht.", s: "S. 4", h: true },
     { f: "Welche Kausaltherapie nennt das Heft beim Ulcus cruris venosum (CVI)?",
       o: ["Sachgerechte Kompression", "Bypass oder Dilatation", "Stoffwechseleinstellung und Druckentlastung", "Ausschließlich Minimierung von Scherkräften"],
-      e: "pAVK → Durchblutung herstellen (Dilatation, Bypass) · CVI → Kompression · Dekubitus → Druck-, Reibe-, Scherkräfte minimieren · DFU → Stoffwechseleinstellung + Druckentlastung.", s: "S. 5" },
+      e: "pAVK → Durchblutung herstellen (Dilatation, Bypass) · CVI → Kompression · Dekubitus → Druck-, Reibe-, Scherkräfte minimieren · DFU → Stoffwechseleinstellung + Druckentlastung.", s: "S. 5", sp: ["dekubitus: Def. Ulcus cruris venosum – Therapie"] },
     { f: "Welche sind lokale Einflussfaktoren (entstehen in der Wunde selbst)?",
       o: ["Fremdkörper", "Hämatome", "Nikotinkonsum", "Lebensalter"],
       r: 2,
       e: "Lokal: Hämatome, Nekrosen, Ödeme, Schorf, Hypergranulation, Fremdkörper, OP-Technik, Infektion, Entzündung, Druck, Scherkräfte u. a. Nikotin und Lebensalter sind allgemeine (systemische) Faktoren.", s: "S. 5, 27" },
     { f: "Bei wem kann eine Malnutrition auftreten?",
       o: ["Bei Normal-, Über- und Untergewicht", "Nur bei Untergewicht", "Nur bei Übergewicht", "Nur bei Menschen über 65 Jahren"],
-      e: "Malnutrition = Fehl- bzw. Mangelernährung: Ungleichgewicht zwischen Makro-, Mikronährstoffen und Flüssigkeit; bei Normal-, Über- und Untergewicht möglich (Übung I).", s: "S. 7, 30" },
+      e: "Malnutrition = Fehl- bzw. Mangelernährung: Ungleichgewicht zwischen Makro-, Mikronährstoffen und Flüssigkeit; bei Normal-, Über- und Untergewicht möglich (Übung I).", s: "S. 7, 30", sp: ["ernaehrung: Basiswissen zur Ernährung"] },
     { f: "In welcher Reihenfolge wird der Ernährungszustand erfasst? ★",
       o: ["1. Screening, 2. vertiefendes Assessment", "1. vertiefendes Assessment, 2. Screening", "Nur über das Körpergewicht – weitere Erfassung ist nicht nötig", "Zuerst Ernährungsberatung, danach Screening"],
       e: "Lösung Übung I: Screening, vertiefendes Assessment; handschriftlich „Prüfung: Reihenfolge (1) Screening (2) vertieftes Assessment“. Frühzeitiges Erkennen ist Voraussetzung für Gegenmaßnahmen.", s: "S. 7, 13, 30" },
     { f: "Welchen Anteil sollen Kohlenhydrate laut Tabelle (S. 8) an der Ernährung haben? ★",
       o: ["ca. 50–60 %", "ca. 10–15 %", "ca. 30–35 %", "ca. 80–90 %"],
-      e: "Tabelle S. 8: Kohlenhydrate ca. 50–60 % (wichtigste Energiequelle), Fette ca. 30–35 %, Proteine ca. 10–15 %.", s: "S. 8" },
+      e: "Tabelle S. 8: Kohlenhydrate ca. 50–60 % (wichtigste Energiequelle), Fette ca. 30–35 %, Proteine ca. 10–15 %.", s: "S. 8", sp: ["ernaehrung: Basiswissen zur Ernährung"] },
     { f: "Welche Vitamine sind fettlöslich (Merkhilfe „EDEKA“)? ★",
       o: ["E, D, K, A", "B6 und B12", "Vitamin C und Folat", "Ausschließlich Vitamin C"],
-      e: "Fette sind Träger der fettlöslichen Vitamine E, D, K, A (handschriftliche Merkhilfe „EDEKA“).", s: "S. 8" },
+      e: "Fette sind Träger der fettlöslichen Vitamine E, D, K, A (handschriftliche Merkhilfe „EDEKA“).", s: "S. 8", sp: ["ernaehrung: Basiswissen zur Ernährung"] },
     { f: "Welche Aufgabe hat Albumin?",
       o: ["Reguliert die Flüssigkeit in den Gefäßen – Mangel führt zu Eiweißödemen", "Wichtigste Energiequelle des Körpers", "Träger der fettlöslichen Vitamine", "Wärme- und Kälteschutz als Energiespeicher"],
-      e: "Albumin reguliert Flüssigkeit in Gefäßen – Mangel → Eiweißödeme. Energiequelle = Kohlenhydrate; fettlösliche Vitamine, Wärme-/Kälteschutz = Fette.", s: "S. 8" },
+      e: "Albumin reguliert Flüssigkeit in Gefäßen – Mangel → Eiweißödeme. Energiequelle = Kohlenhydrate; fettlösliche Vitamine, Wärme-/Kälteschutz = Fette.", s: "S. 8", sp: ["ernaehrung: Basiswissen zur Ernährung"] },
     { f: "Welcher Nährstoff wirkt bei bestehenden Wunden gegen Entzündung und freie Radikale? ★",
       o: ["Vitamin E", "Vitamin K", "Natrium", "Ballaststoffe"],
       e: "Bei bestehenden Wunden: Zell-/Kollagenaufbau → Proteine, Vitamin A, alle B-Vitamine, Vitamin C, Albumin, Zink, Eisen; gegen Entzündung/freie Radikale → Vitamin E.", s: "S. 7–8, 10" },
     { f: "Wofür wird Vitamin C laut Heft benötigt?",
       o: ["Kollagensynthese", "Eisenresorption", "Blutgerinnung", "Als Träger fettlöslicher Vitamine"],
       r: 2,
-      e: "Vitamin C: Kollagensynthese, Immunsystem, Eisenresorption, Regeneration Vit E. Blutgerinnung = Vitamin K.", s: "S. 9" },
+      e: "Vitamin C: Kollagensynthese, Immunsystem, Eisenresorption, Regeneration Vit E. Blutgerinnung = Vitamin K.", s: "S. 9", sp: ["ernaehrung: Basiswissen zur Ernährung"] },
     { f: "Welche gehören zu den Mengenelementen (> 50 mg/kg)?",
       o: ["Natrium, Kalium, Kalzium, Magnesium", "Eisen, Zink, Selen", "Jod und Mangan", "Vitamin A und D"],
-      e: "Mengenelemente: Natrium, Kalium, Kalzium, Magnesium. Spurenelemente (< 50 mg/kg): Eisen, Selen, Jod, Zink, Mangan.", s: "S. 10" },
+      e: "Mengenelemente: Natrium, Kalium, Kalzium, Magnesium. Spurenelemente (< 50 mg/kg): Eisen, Selen, Jod, Zink, Mangan.", s: "S. 10", sp: ["ernaehrung: Basiswissen zur Ernährung"] },
     { f: "Welche Formen der Nährstoffzufuhr nennt das Heft? ★",
       o: ["Angereicherte Trinknahrung", "Sonden- oder parenterale Ernährung", "Verzicht auf Sahne, Butter und Öl", "Fasten zur Entlastung des Stoffwechsels"],
       r: 2,
@@ -197,7 +197,7 @@ Lernapp.thema({
       e: "Antriebsarmut + Immobilität → Dekubitus · Kachexie → Nekrose · Eiweißmangelödeme → Ulcus.", s: "S. 12" },
     { f: "Über welche Stresshormone beeinträchtigt Schmerz laut Heft die Wundheilung?",
       o: ["Cortison und Adrenalin", "Insulin und Glukagon", "Östrogen und Testosteron", "Melatonin und Serotonin"],
-      e: "Schmerz = Stress → Cortison (negativ in jeder Wundheilungsphase) und Adrenalin (Gefäßverengung → Blut-, Nährstoff-, O₂-Zufuhr ↓).", s: "S. 13" },
+      e: "Schmerz = Stress → Cortison (negativ in jeder Wundheilungsphase) und Adrenalin (Gefäßverengung → Blut-, Nährstoff-, O₂-Zufuhr ↓).", s: "S. 13", sp: ["schmerz: Schmerz als Einflussfaktor auf die Wundheilung"] },
     { f: "Wie wird neuropathischer Schmerz beschrieben?",
       o: ["Hell, spitz, einschießend, elektrisierend, attackenartig", "Durch negative Erfahrungen ohne organischen Schaden", "Ohne Gewebsschädigung durch veränderte Wahrnehmung/Sensibilisierung", "Reiz bei Gewebsschädigung mit gesundem schmerzleitendem System"],
       e: "Neuropathisch: Störung/Verletzung des peripheren oder zentralen Nervensystems; hell, spitz, einschießend, elektrisierend, attackenartig. Die übrigen Beschreibungen passen zu psychogen, noziplastisch und nozizeptiv.", s: "S. 13" },
@@ -206,27 +206,27 @@ Lernapp.thema({
       e: "Psychogener Schmerz: nicht durch Schmerzmittel, sondern vertrauensbasierte Kommunikation, Zuwendung, soziale Unterstützung.", s: "S. 14" },
     { f: "Was kennzeichnet chronischen Schmerz?",
       o: ["Dauer mindestens 3 Monate, keine Warnfunktion mehr", "Warnsignal, an die Heilungsdauer gekoppelt", "Tritt nur bei Versorgungen wie der Wundbehandlung auf", "Dauer höchstens eine Woche"],
-      e: "Akut: Warnsignal, an Heilungsdauer gekoppelt · prozedural: bei Versorgungen, z. B. Wundbehandlung · chronisch: ≥ 3 Monate, keine Warnfunktion.", s: "S. 14" },
+      e: "Akut: Warnsignal, an Heilungsdauer gekoppelt · prozedural: bei Versorgungen, z. B. Wundbehandlung · chronisch: ≥ 3 Monate, keine Warnfunktion.", s: "S. 14", sp: ["schmerz: Unterschied akuter / chronischer / prozeduraler Schmerz"] },
     { f: "Wie wird Schmerz bei Menschen mit Demenz erfasst?",
       o: ["Fremdeinschätzung mit BESD oder BISAD, Angehörige einbeziehen", "Schmerz wird objektiv per Laborwert gemessen", "Bei jeder Erfassung eine andere Skala verwenden", "Auf eine Erfassung wird verzichtet"],
-      e: "Schmerz ist subjektiv, nicht messbar; immer dieselbe Skala (NRS, VRS, GRS/SAS); bei Demenz Fremdeinschätzung mit BESD oder BISAD.", s: "S. 14–15" },
+      e: "Schmerz ist subjektiv, nicht messbar; immer dieselbe Skala (NRS, VRS, GRS/SAS); bei Demenz Fremdeinschätzung mit BESD oder BISAD.", s: "S. 14–15", sp: ["schmerz: Möglichkeiten der Schmerzerfassung"] },
     { f: "Was gehört laut Heft zur WHO-Stufe II?",
       o: ["Schwache Opioide (Tramadol, Tilidin, Codein) + Nichtopioid", "Starkes Opioid kombiniert mit schwachem Opioid", "Nur ASS oder Metamizol", "Fentanyl oder Morphin"],
-      e: "Stufe I: Nichtopioid · Stufe II: schwache Opioide + Nichtopioid · Stufe III: starke Opioide (Morphin, Fentanyl …) + Nichtopioid. Stufe II + III nicht kombinieren.", s: "S. 17" },
+      e: "Stufe I: Nichtopioid · Stufe II: schwache Opioide + Nichtopioid · Stufe III: starke Opioide (Morphin, Fentanyl …) + Nichtopioid. Stufe II + III nicht kombinieren.", s: "S. 17", sp: ["schmerz: Medikamentöse / Nichtmedikamentöse Schmerzbehandlung"] },
     { f: "Welche Regeln gelten für das WHO-Stufenschema?",
       o: ["Beginn nach Schmerzstärke, nicht zwangsläufig mit Stufe I", "Stufe II und III nicht kombinieren", "Immer mit Stufe I beginnen", "Stufe II und III sollen kombiniert werden"],
       r: 2,
-      e: "Beginn nicht zwangsläufig mit Stufe I, sondern nach Schmerzstärke; Stufe II + III nicht kombinieren; nach ärztlicher Anordnung, dokumentieren.", s: "S. 17" },
+      e: "Beginn nicht zwangsläufig mit Stufe I, sondern nach Schmerzstärke; Stufe II + III nicht kombinieren; nach ärztlicher Anordnung, dokumentieren.", s: "S. 17", sp: ["schmerz: Medikamentöse / Nichtmedikamentöse Schmerzbehandlung"] },
     { f: "Wie wird die Wunde beim Verbandwechsel schmerzarm gereinigt?",
       o: ["Angefeuchtete Kompressen behutsam andrücken", "Kräftig wischen, damit es schnell geht", "Kalte Spüllösung mit hohem Druck", "Sekundärverband anschließend möglichst stramm anlegen"],
-      e: "Behutsame Reinigung durch Andrücken angefeuchteter Kompressen (kein kräftiges Wischen), angewärmte Spüllösung mit wenig Druck, Sekundärverband nicht zu stramm.", s: "S. 16–17" },
+      e: "Behutsame Reinigung durch Andrücken angefeuchteter Kompressen (kein kräftiges Wischen), angewärmte Spüllösung mit wenig Druck, Sekundärverband nicht zu stramm.", s: "S. 16–17", sp: ["schmerz: Maßnahmen der Schmerzreduktion beim Verbandwechsel"] },
     { f: "Welche Faustregel gilt für die Hautpflege?",
       o: ["Feucht auf feucht, fett auf trocken", "Fett auf feucht, feucht auf trocken", "Bei problematischer Haut bevorzugt O/W-Produkte", "Alkalische Seifen für gründliche Reinigung"],
-      e: "Faustregel: feucht auf feucht, fett auf trocken. Trockene Haut mit W/O; bei problematischer Haut keine O/W-Produkte (Dochteffekt); keine alkalischen Seifen.", s: "S. 20" },
+      e: "Faustregel: feucht auf feucht, fett auf trocken. Trockene Haut mit W/O; bei problematischer Haut keine O/W-Produkte (Dochteffekt); keine alkalischen Seifen.", s: "S. 20", sp: ["haut: Was sind empfohlene Hautschutz- und Hautpflegemaßnahmen?"] },
     { f: "Welche Maßnahmen sind laut Heft ungeeignet?",
       o: ["Zinkpaste in offene Wunden reiben", "Alkohollösungen wie Franzbranntwein", "Hautneutrale, leicht saure Syndets", "Reinigung mit körperwarmem Wasser"],
       r: 2,
-      e: "Ungeeignet: Salben/Cremes/Zinkpaste in offene Wunden reiben, Parfümstoffe, Alkohollösungen (Franzbranntwein), abdichtende Pasten, Fette/Öle, Puder, Massieren gefährdeter Stellen. Syndets und körperwarmes Wasser werden empfohlen.", s: "S. 20–21" },
+      e: "Ungeeignet: Salben/Cremes/Zinkpaste in offene Wunden reiben, Parfümstoffe, Alkohollösungen (Franzbranntwein), abdichtende Pasten, Fette/Öle, Puder, Massieren gefährdeter Stellen. Syndets und körperwarmes Wasser werden empfohlen.", s: "S. 20–21", sp: ["haut: Welche Hautschutz- und Hautpflegemaßnahmen sind ungeeignet?"] },
     { f: "Wie oft sind Analtampons zu wechseln?",
       o: ["Mindestens 2× täglich (Ileusgefahr)", "Einmal pro Woche", "Nur bei sichtbarer Verschmutzung", "Alle 3 Tage"],
       e: "Analtampons ≥ 2× täglich wechseln (Ileusgefahr!).", s: "S. 20–21" },
@@ -259,7 +259,7 @@ Lernapp.thema({
   ],
 
   zusammenfassung: `
-<h3>1. Wundheilung und Wundheilungsphasen <span class="stern" title="im Heft als prüfungsrelevant markiert">★</span> <span class="seite">S. 3–4</span></h3>
+<h3>1. Wundheilung und Wundheilungsphasen <span class="sp" data-sp="wunden: Def. Wundheilung|wunden: Arten der Wundheilung|wunden: Phasen der Wundheilung">Schwerpunkt</span> <span class="stern" title="im Heft als prüfungsrelevant markiert">★</span> <span class="seite">S. 3–4</span></h3>
 <p class="merke"><b>Wundheilung</b> (Pfitzmann): komplexer Prozess – physiologische Vorgänge zur Regeneration zerstörten Gewebes, die v. a. durch Neubildung von Bindegewebe und Kapillaren den Wundverschluss bewirken.</p>
 <div class="tabelle"><table>
   <thead><tr><th></th><th>Primäre Wundheilung <span class="stern" title="im Heft als prüfungsrelevant markiert">★</span></th><th>Sekundäre Wundheilung <span class="stern" title="im Heft als prüfungsrelevant markiert">★</span></th></tr></thead>
@@ -294,14 +294,14 @@ Lernapp.thema({
 <h3>3. Allgemeinzustand und Ernährung <span class="seite">S. 6–12</span></h3>
 <ul>
   <li><b>Allgemeinzustand:</b> Wundheilung hat hohen Energiebedarf. <b>Je schlechter der Allgemeinzustand, desto schlechter die Wundheilung</b>; Funktionserhaltung lebenswichtiger Organe hat Vorrang (S. 6).</li>
-  <li><b>Malnutrition</b> = Fehl- bzw. Mangelernährung: Ungleichgewicht zwischen Makro-, Mikronährstoffen und Flüssigkeit; bei Normal-, Über- <b>und</b> Untergewicht möglich (Übung I, S. 7, 30).</li>
-  <li><b>Im Alter:</b> Bewegung, Muskelmasse, Stoffwechselleistung, Fettmasse ↓ → Energiebedarf ↓, Vitamin- und Mineralstoffbedarf bleibt gleich → Nahrung mit geringerer Energiedichte, mehr Vitamine/Mineralstoffe (S. 7).</li>
+  <li><span class="sp" data-sp="ernaehrung: Basiswissen zur Ernährung">Schwerpunkt</span> <b>Malnutrition</b> = Fehl- bzw. Mangelernährung: Ungleichgewicht zwischen Makro-, Mikronährstoffen und Flüssigkeit; bei Normal-, Über- <b>und</b> Untergewicht möglich (Übung I, S. 7, 30).</li>
+  <li><span class="sp" data-sp="ernaehrung: Basiswissen zur Ernährung">Schwerpunkt</span> <b>Im Alter:</b> Bewegung, Muskelmasse, Stoffwechselleistung, Fettmasse ↓ → Energiebedarf ↓, Vitamin- und Mineralstoffbedarf bleibt gleich → Nahrung mit geringerer Energiedichte, mehr Vitamine/Mineralstoffe (S. 7).</li>
   <li><b>Erfassung</b> <span class="stern" title="im Heft als prüfungsrelevant markiert">★</span>: frühzeitiges Erkennen ist Voraussetzung für Gegenmaßnahmen; Methoden laut Text Laboruntersuchungen, Screening; Lösung Übung I: <b>Screening, vertiefendes Assessment</b>. <span class="hand-inline">Handschriftlich: „Prüfung: Reihenfolge (1) Screening (2) vertieftes Assessment (→ Beratung etc.), Laboruntersuchung“; Beispiele: Bestandsaufnahme, BMI, Anamnese, SIS, Größe, Gewicht, Assessments, Ernährungs-, Trink-, Miktionsprotokoll; „34 BMI = Adipositas Typ II“.</span> Bei Verdacht Optionen mit Betroffenen/Angehörigen abstimmen, ggf. Ärzt:innen informieren (S. 7, 12–13, 30).</li>
 </ul>
 <div class="tabelle"><table>
   <thead><tr><th>Makronährstoff <span class="stern" title="im Heft als prüfungsrelevant markiert">★</span></th><th>Bedeutung</th><th>Anteil (Tabelle S. 8)</th></tr></thead>
   <tbody>
-    <tr><td>Kohlenhydrate</td><td>wichtigste Energiequelle; Einfach-, Zweifach-, Mehrfachzucker (Ballaststoffe → Darmtätigkeit)</td><td>ca. 50–60 %</td></tr>
+    <tr><td><span class="sp" data-sp="ernaehrung: Basiswissen zur Ernährung">Schwerpunkt</span> Kohlenhydrate</td><td>wichtigste Energiequelle; Einfach-, Zweifach-, Mehrfachzucker (Ballaststoffe → Darmtätigkeit)</td><td>ca. 50–60 %</td></tr>
     <tr><td>Fette</td><td>zweitwichtigste Energiequelle, Energiespeicher, Wärme-/Kälteschutz, Zellmembran, Träger fettlöslicher Vitamine E, D, K, A (<span class="hand-inline">handschr. Merkhilfe „EDEKA“</span>), Infektabwehr; Mangel → gestörte Wundheilung</td><td>ca. 30–35 %</td></tr>
     <tr><td>Proteine</td><td>Hormone; Strukturproteine (Kollagen, Keratin, Elastin); Schutzproteine (Fibrinogen, Thrombin); Transportproteine (Hämoglobin, Transferrin); Albumin reguliert Flüssigkeit in Gefäßen – Mangel → Eiweißödeme; Enzyme für Kollagenaufbau</td><td>ca. 10–15 %</td></tr>
   </tbody>
@@ -311,7 +311,7 @@ Lernapp.thema({
 <div class="tabelle"><table>
   <thead><tr><th>Mikronährstoff</th><th>wird benötigt für (Heft)</th><th>Tagesbedarf ab 65 J. (Frau/Mann)</th></tr></thead>
   <tbody>
-    <tr><td>Vitamin A</td><td>Zellentwicklung, Hautaufbau, Immunsystem</td><td>0,8 / 1,0 mg</td></tr>
+    <tr><td><span class="sp" data-sp="ernaehrung: Basiswissen zur Ernährung">Schwerpunkt</span> Vitamin A</td><td>Zellentwicklung, Hautaufbau, Immunsystem</td><td>0,8 / 1,0 mg</td></tr>
     <tr><td>Vitamin B6 / B12</td><td>Immunsystem / Zellentwicklung, Zellteilung</td><td>1,4 / 1,6 mg · 4 µg</td></tr>
     <tr><td>Vitamin C</td><td>Kollagensynthese, Immunsystem, Eisenresorption, Regeneration Vit E</td><td>95 / 110 mg</td></tr>
     <tr><td>Vitamin D / E</td><td>Immunsystem, Epithelzellen / Membranfunktion, Immunsystem</td><td>20 µg · 11 / 12 mg</td></tr>
@@ -333,21 +333,21 @@ Lernapp.thema({
 
 <h3>5. Schmerz <span class="seite">S. 13–18</span></h3>
 <ul>
-  <li>Schmerz = Stress → <b>Cortison</b> (negativ in jeder Wundheilungsphase) und <b>Adrenalin</b> (Gefäßverengung → Blut-, Nährstoff-, O₂-Zufuhr ↓); Chronifizierung möglich, Lebensqualität ↓ (S. 13).</li>
+  <li><span class="sp" data-sp="schmerz: Schmerz als Einflussfaktor auf die Wundheilung">Schwerpunkt</span> Schmerz = Stress → <b>Cortison</b> (negativ in jeder Wundheilungsphase) und <b>Adrenalin</b> (Gefäßverengung → Blut-, Nährstoff-, O₂-Zufuhr ↓); Chronifizierung möglich, Lebensqualität ↓ (S. 13).</li>
 </ul>
-<p class="merke"><b>IASP:</b> unangenehmes Sinnes- und Gefühlserlebnis, verknüpft mit aktueller oder potenzieller Gewebeschädigung; Warnsignal – Polyneuropathie kann die Warnfunktion beeinträchtigen (S. 13).</p>
+<p class="merke"><span class="sp" data-sp="schmerz: Def. Schmerz">Schwerpunkt</span> <b>IASP:</b> unangenehmes Sinnes- und Gefühlserlebnis, verknüpft mit aktueller oder potenzieller Gewebeschädigung; Warnsignal – Polyneuropathie kann die Warnfunktion beeinträchtigen (S. 13).</p>
 <div class="tabelle"><table>
   <thead><tr><th>nozizeptiv</th><th>neuropathisch</th><th>noziplastisch</th><th>psychogen</th></tr></thead>
   <tbody>
     <tr><td>Reize (mechanisch, chemisch, thermisch) bei Gewebsschädigung; organischer Schaden; Warnsignal; gesundes schmerzleitendes System</td><td>erkennbare Störung/Verletzung des peripheren oder zentralen Nervensystems; organischer Schaden; hell, spitz, einschießend, elektrisierend, attackenartig</td><td>durch das schmerzleitende System ohne eindeutige Gewebsschädigung; kein organischer Schaden; veränderte Wahrnehmung, Sensibilisierung</td><td>negative Erfahrungen, Schicksalsschläge, Einsamkeit, Zurückweisung; kein organischer Schaden</td></tr>
   </tbody>
 </table></div>
-<p>Nozizeptiv + neuropathisch: nicht-medikamentös und medikamentös linderbar; psychogen: nicht durch Schmerzmittel, sondern vertrauensbasierte Kommunikation, Zuwendung, soziale Unterstützung (S. 14). <b>Dauer:</b> akut (Warnsignal, an Heilungsdauer gekoppelt) · prozedural (spezielle akute Form bei Versorgungen, z. B. Wundbehandlung) · chronisch (≥ 3 Monate, keine Warnfunktion) (S. 14).</p>
+<p><span class="sp" data-sp="schmerz: Unterschied akuter / chronischer / prozeduraler Schmerz">Schwerpunkt</span> Nozizeptiv + neuropathisch: nicht-medikamentös und medikamentös linderbar; psychogen: nicht durch Schmerzmittel, sondern vertrauensbasierte Kommunikation, Zuwendung, soziale Unterstützung (S. 14). <b>Dauer:</b> akut (Warnsignal, an Heilungsdauer gekoppelt) · prozedural (spezielle akute Form bei Versorgungen, z. B. Wundbehandlung) · chronisch (≥ 3 Monate, keine Warnfunktion) (S. 14).</p>
 <ul>
-  <li><b>Erfassung:</b> subjektiv, nicht messbar; Expertenstandard: vor, während, nach der Behandlung und bei Änderung des Status; NRS, VRS, GRS/SAS – immer dieselbe Skala; bei Demenz Fremdeinschätzung mit BESD oder BISAD, Angehörige einbeziehen (S. 14–15).</li>
+  <li><span class="sp" data-sp="schmerz: Möglichkeiten der Schmerzerfassung">Schwerpunkt</span> <b>Erfassung:</b> subjektiv, nicht messbar; Expertenstandard: vor, während, nach der Behandlung und bei Änderung des Status; NRS, VRS, GRS/SAS – immer dieselbe Skala; bei Demenz Fremdeinschätzung mit BESD oder BISAD, Angehörige einbeziehen (S. 14–15).</li>
   <li><b>Auslöser:</b> Infektion (z. B. Erysipel), Druck, Ödem, Arthritis, Dermatitis, Durchblutungsstörung, Neuropathie, Wundart (Ulcus arteriosum, Pyoderma gangraenosum, exulzerierender Tumor), Trauma, Nahtdehiszenz, hohe Exsudatmengen, ausgetrocknete Wunden, Wundbehandlung, Entfernen der Auflage, einschnürende Verbände; verstärkt durch Bewegung, Nachtruhe, enge Kleidung, Kälte (S. 15).</li>
-  <li><b>Schmerzvermeidung beim Verbandwechsel</b> (S. 16–17): informieren, Schmerz ernst nehmen, Erfahrung einbeziehen, absprechen, Analgetika rechtzeitig (Wirkeintritt!), Zugluft vermeiden, stressfreie Umgebung, gute Vorbereitung, ansprechen/Pausen, Stoppsignale; behutsame Reinigung durch Andrücken angefeuchteter Kompressen (kein kräftiges Wischen), unnötige Reize vermeiden, zügig verbinden, Sekundärverband nicht zu stramm, feucht haltende Auflagen, Anfeuchten beim Ablösen, Débridement geplant mit Analgesie, angewärmte Spüllösung mit wenig Druck, Auflagen ohne Kleberand (Silikon), Rückmeldung erfragen.</li>
-  <li><b>Weitere Strategien</b> (S. 18): Kälte/Wärme, TENS, Ultraschall, Akupunktur (je nur geschultes Personal), Massage/Positionierung (Kinästhetik), Meditation/Atem-/Entspannungsübungen, Musik.</li>
+  <li><span class="sp" data-sp="schmerz: Maßnahmen der Schmerzreduktion beim Verbandwechsel">Schwerpunkt</span> <b>Schmerzvermeidung beim Verbandwechsel</b> (S. 16–17): informieren, Schmerz ernst nehmen, Erfahrung einbeziehen, absprechen, Analgetika rechtzeitig (Wirkeintritt!), Zugluft vermeiden, stressfreie Umgebung, gute Vorbereitung, ansprechen/Pausen, Stoppsignale; behutsame Reinigung durch Andrücken angefeuchteter Kompressen (kein kräftiges Wischen), unnötige Reize vermeiden, zügig verbinden, Sekundärverband nicht zu stramm, feucht haltende Auflagen, Anfeuchten beim Ablösen, Débridement geplant mit Analgesie, angewärmte Spüllösung mit wenig Druck, Auflagen ohne Kleberand (Silikon), Rückmeldung erfragen.</li>
+  <li><span class="sp" data-sp="schmerz: Medikamentöse / Nichtmedikamentöse Schmerzbehandlung">Schwerpunkt</span> <b>Weitere Strategien</b> (S. 18): Kälte/Wärme, TENS, Ultraschall, Akupunktur (je nur geschultes Personal), Massage/Positionierung (Kinästhetik), Meditation/Atem-/Entspannungsübungen, Musik.</li>
 </ul>
 <div class="tabelle"><table>
   <thead><tr><th>WHO-Stufe</th><th>Schmerzstärke</th><th>Wirkstoffe (Heft)</th></tr></thead>
@@ -357,7 +357,7 @@ Lernapp.thema({
     <tr><td>III</td><td>sehr stark</td><td>starke Opioide (Morphin, Hydromorphon, Fentanyl, Oxycodon, Pethidin, Tapentadol) + Nichtopioid</td></tr>
   </tbody>
 </table></div>
-<p>Jeweils ggf. Koanalgetika (z. B. Antidepressiva) und Adjuvantien (z. B. Laxantien). Beginn nicht zwangsläufig mit Stufe I, sondern nach Schmerzstärke; Stufe II + III nicht kombinieren; nach ärztlicher Anordnung, dokumentieren (S. 17).</p>
+<p><span class="sp" data-sp="schmerz: Medikamentöse / Nichtmedikamentöse Schmerzbehandlung">Schwerpunkt</span> Jeweils ggf. Koanalgetika (z. B. Antidepressiva) und Adjuvantien (z. B. Laxantien). Beginn nicht zwangsläufig mit Stufe I, sondern nach Schmerzstärke; Stufe II + III nicht kombinieren; nach ärztlicher Anordnung, dokumentieren (S. 17).</p>
 <p class="hand">Handschriftlich S. 13: „Prüfung: Dekubitus: 10–15 Min“ (ohne weiteren Kontext im Heft); S. 15: „Spätestens nach 4 Wochen müssen alle Wunden evaluiert werden!“</p>
 
 <h3>6. Hautzustand <span class="seite">S. 18–21</span></h3>
@@ -365,7 +365,7 @@ Lernapp.thema({
 <div class="tabelle"><table>
   <thead><tr><th>Ursache</th><th>Befunde (Auswahl)</th><th>Folgen</th></tr></thead>
   <tbody>
-    <tr><td>Diabetes</td><td>trocken, juckend, Ekzema craquelé (Austrocknungsekzem), Pilzinfektionen (ca. 80 %), Malum perforans, Rhagaden</td><td>gestörte Hautschutzbarriere, Infektionsgefahr</td></tr>
+    <tr><td><span class="sp" data-sp="haut: Beispiel für Hauterscheinungen bei Krankheiten innerer Organe und Stoffwechselstörungen">Schwerpunkt</span> Diabetes</td><td>trocken, juckend, Ekzema craquelé (Austrocknungsekzem), Pilzinfektionen (ca. 80 %), Malum perforans, Rhagaden</td><td>gestörte Hautschutzbarriere, Infektionsgefahr</td></tr>
     <tr><td>CVI</td><td>trocken, schuppig, Stauungsekzem, Ödeme, Dermatoliposklerose, Capillaritis alba, Hyperpigmentierung, Mazeration</td><td>Infektionsgefahr; O₂-/Nährstoffversorgung gestört</td></tr>
     <tr><td>pAVK</td><td>livide, kühl, dünn, glänzend; Rarefizierung der Hautanhangsgebilde, Nagelmykose</td><td>stark verzögerte bis versiegte Zellregeneration, Infektion</td></tr>
     <tr><td>DFS/Neuropathie</td><td>ausgeprägte Hyperkeratosen</td><td>stören Epithelisierung am Wundrand</td></tr>
@@ -373,10 +373,10 @@ Lernapp.thema({
   </tbody>
 </table></div>
 <ul>
-  <li><b>Hautpflege</b> (S. 20): trocken und sauber; hautneutrale, leicht saure Syndets; keine alkalischen Seifen (Säureschutzmantel); oft reicht körperwarmes Wasser; trockene Haut mit W/O-Produkten; bei problematischer Haut <b>keine O/W</b>-Produkte (Dochteffekt → Austrocknung); bei chronischen Wunden keine Parfüm-, Konservierungsstoffe, Emulgatoren (Lanolin/Wollwachs). <b>Faustregel: feucht auf feucht, fett auf trocken.</b> Aufklärung/Schulung.</li>
-  <li><b>Bei bestehenden Wunden</b> (S. 20–21): Wundrand vor Mazeration schützen (Hautschutzfilm; Transparentfolie, dünnes Hydrokolloid, Hydrofaser, Stomapaste); Narbenpflege mit Dexpanthenol; Pflasterspray; Analtampons ≥ 2× täglich wechseln (Ileusgefahr!); silikon-/Soft-Gel-beschichtete Auflagen; bei Pergament-, Kortison-, Altershaut keine Auflagen mit Kleberand; Sakralregion mit semipermeabler Folie randfixieren.</li>
+  <li><span class="sp" data-sp="haut: Was sind empfohlene Hautschutz- und Hautpflegemaßnahmen?">Schwerpunkt</span> <b>Hautpflege</b> (S. 20): trocken und sauber; hautneutrale, leicht saure Syndets; keine alkalischen Seifen (Säureschutzmantel); oft reicht körperwarmes Wasser; trockene Haut mit W/O-Produkten; bei problematischer Haut <b>keine O/W</b>-Produkte (Dochteffekt → Austrocknung); bei chronischen Wunden keine Parfüm-, Konservierungsstoffe, Emulgatoren (Lanolin/Wollwachs). <b>Faustregel: feucht auf feucht, fett auf trocken.</b> Aufklärung/Schulung.</li>
+  <li><span class="sp" data-sp="haut: Was sind empfohlene Hautschutz- und Hautpflegemaßnahmen?">Schwerpunkt</span> <b>Bei bestehenden Wunden</b> (S. 20–21): Wundrand vor Mazeration schützen (Hautschutzfilm; Transparentfolie, dünnes Hydrokolloid, Hydrofaser, Stomapaste); Narbenpflege mit Dexpanthenol; Pflasterspray; Analtampons ≥ 2× täglich wechseln (Ileusgefahr!); silikon-/Soft-Gel-beschichtete Auflagen; bei Pergament-, Kortison-, Altershaut keine Auflagen mit Kleberand; Sakralregion mit semipermeabler Folie randfixieren.</li>
 </ul>
-<p class="warnung"><b>Ungeeignet</b> (S. 21): Salben/Cremes/Zinkpaste in offene Wunden reiben; Zusatz-/Parfümstoffe; Alkohollösungen (Franzbranntwein); abdichtende Pasten; Fette/Öle (Melkfett, Babyöl, Lebertranpaste); Puder; Massieren gefährdeter Hautstellen.</p>
+<p class="warnung"><span class="sp" data-sp="haut: Welche Hautschutz- und Hautpflegemaßnahmen sind ungeeignet?">Schwerpunkt</span> <b>Ungeeignet</b> (S. 21): Salben/Cremes/Zinkpaste in offene Wunden reiben; Zusatz-/Parfümstoffe; Alkohollösungen (Franzbranntwein); abdichtende Pasten; Fette/Öle (Melkfett, Babyöl, Lebertranpaste); Puder; Massieren gefährdeter Hautstellen.</p>
 
 <h3>7. Nikotin, Adipositas, Adhärenz, Psyche <span class="seite">S. 21–24</span></h3>
 <ul>

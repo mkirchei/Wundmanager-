@@ -165,6 +165,8 @@ textarea.code { font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace
 .badge.seite { font-variant-numeric: tabular-nums; }
 .badge.hand { background: var(--hand-soft); color: var(--hand); border-color: transparent; }
 .badge.akzent { background: var(--accent-soft); color: var(--accent); border-color: transparent; }
+.badge.sp { background: var(--warn-soft); color: var(--warn); border-color: transparent; white-space: normal; }
+.chip.sp-chip[aria-pressed="true"] { background: var(--warn-soft); color: var(--warn); border-color: var(--warn); }
 
 .meldung { border-radius: 10px; padding: 10px 14px; font-size: .92rem; }
 .meldung.ok { background: var(--ok-soft); color: var(--ok); }
@@ -254,6 +256,14 @@ kbd { font-family: inherit; border: 1px solid var(--line); border-bottom-width: 
 .skript .hand::before { content: "Handschriftlich · "; font-weight: 700; color: var(--hand); }
 .skript .hand-inline { background: var(--hand-soft); border-radius: 4px; padding: 0 4px; }
 .skript .merke { background: var(--accent-soft); border-radius: 10px; padding: 10px 14px; }
+.skript .sp { font-family: var(--f-body); font-size: .75rem; font-weight: 700; color: var(--warn); background: var(--warn-soft); border-radius: 999px; padding: 1px 8px; margin-right: 4px; white-space: nowrap; cursor: help; }
+.sp-liste { margin: 0; padding-left: 1.2em; }
+.sp-liste li { margin: 4px 0; }
+.sp-liste details > summary { cursor: pointer; display: flex; flex-wrap: wrap; gap: 6px; align-items: baseline; }
+.sp-liste .leer-punkt { color: var(--muted); }
+.sp-karten { display: flex; flex-direction: column; gap: 8px; margin: 8px 0 10px; }
+.sp-karten .panel { padding: 12px 14px; gap: 6px; }
+.sp-karten .a { white-space: pre-line; }
 .tabelle { overflow-x: auto; max-width: 100%; margin: 10px 0; border: 1px solid var(--line); border-radius: 10px; }
 .tabelle table { border-collapse: collapse; width: 100%; font-size: .92rem; }
 .tabelle caption { text-align: left; font-weight: 700; padding: 10px 12px 6px; font-family: var(--f-display); }
@@ -314,7 +324,9 @@ pre.vorlage { overflow-x: auto; background: var(--surface-2); border: 1px solid 
 /* Register für Themen. Jede Datei in themen/ ruft Lernapp.thema({...}) auf. */
 window.Lernapp = {
   eingebaut: [],
-  thema: function (t) { t.eingebaut = true; this.eingebaut.push(t); }
+  listen: [],
+  thema: function (t) { t.eingebaut = true; this.eingebaut.push(t); },
+  schwerpunkt: function (l) { this.listen.push(l); }
 };
 </script>
 
@@ -338,6 +350,7 @@ window.Lernapp = {
 <script src="themen/wundreinigung.js"></script>
 <script src="themen/verbandstoffe.js"></script>
 <script src="themen/dekubitusprophylaxe.js"></script>
+<script src="themen/schwerpunkte.js"></script>
 <!-- ============================================================ -->
 
 <script>
@@ -414,11 +427,11 @@ window.Lernapp = {
   function normalisieren(t) {
     const karten = (t.karten || []).map((c) => ({
       id: t.id + ":" + (c.id || hash(c.f)),
-      thema: t.id, k: c.k || "Allgemein", f: c.f, a: c.a, s: c.s || "", h: !!c.h
+      thema: t.id, k: c.k || "Allgemein", f: c.f, a: c.a, s: c.s || "", h: !!c.h, sp: spBekannt(c.sp)
     }));
     const quiz = (t.quiz || []).map((q) => ({
       id: t.id + ":q" + (q.id || hash(q.f)),
-      thema: t.id, f: q.f, o: q.o, r: Math.min(Math.max(1, q.r | 0), q.o.length - 1), e: q.e || "", s: q.s || "", h: !!q.h
+      thema: t.id, f: q.f, o: q.o, r: Math.min(Math.max(1, q.r | 0), q.o.length - 1), e: q.e || "", s: q.s || "", h: !!q.h, sp: spBekannt(q.sp)
     }));
     return {
       id: t.id, titel: t.titel || t.id, kurz: t.kurz || t.titel || t.id, quelle: t.quelle || "", hinweis: t.hinweis || "",
@@ -427,6 +440,40 @@ window.Lernapp = {
     };
   }
   const themaVon = (id) => themen.find((t) => t.id === id);
+
+  /* Prüfungsschwerpunkte: Listen aus themen/schwerpunkte.js. Karten und Quizfragen verweisen
+     mit sp: ["<liste>: <Punkt>"] oder sp: ["<liste>: <Punkt> – <Unterpunkt>"] auf einen Punkt. */
+  const spListen = (Lernapp.listen || []).map((l) => {
+    const punkte = [];
+    (l.punkte || []).forEach((x) => {
+      const t = typeof x === "string" ? x : x.t;
+      const oben = { key: l.id + ": " + t, text: t, label: t, unter: [] };
+      punkte.push(oben);
+      ((x && x.u) || []).forEach((u) => oben.unter.push({ key: l.id + ": " + t + " – " + u, text: u, label: t + " – " + u }));
+    });
+    return { id: l.id, titel: l.titel, seite: l.seite, themen: l.themen || [], punkte };
+  });
+  const spPunkt = new Map();
+  spListen.forEach((l) => l.punkte.forEach((p) => [p].concat(p.unter).forEach((x) => spPunkt.set(x.key, { liste: l, label: x.label }))));
+  function spBekannt(liste) {
+    return (Array.isArray(liste) ? liste : liste ? [liste] : []).filter((key) => {
+      if (spPunkt.has(key)) return true;
+      if (window.console) console.warn("Unbekannter Schwerpunkt:", key);
+      return false;
+    });
+  }
+  // Passt ein Eintrag zum Schwerpunkt-Filter? (false = alles, true = alle Schwerpunkte, sonst Listen-ID)
+  function spPasst(x, filter) {
+    if (!filter) return true;
+    if (filter === true) return x.sp.length > 0;
+    return x.sp.some((key) => spPunkt.get(key).liste.id === filter);
+  }
+  function spBadge(x) {
+    if (!x.sp.length) return "";
+    const labels = x.sp.map((key) => spPunkt.get(key).liste.titel + " → " + spPunkt.get(key).label);
+    const erste = spPunkt.get(x.sp[0]).label;
+    return `<span class="badge sp" title="${esc("Prüfungsschwerpunkt: " + labels.join(" · "))}">Schwerpunkt: ${esc(erste)}${x.sp.length > 1 ? " +" + (x.sp.length - 1) : ""}</span>`;
+  }
 
   /* Fortschritt der Karten: Leitner-System mit 5 Fächern */
   const INTERVALL = [0, 0, 1, 3, 7, 14]; // Tage bis zur nächsten Wiederholung je Fach
@@ -495,6 +542,17 @@ window.Lernapp = {
 
   const render = {};
 
+  /* Kategorie-Filter „Schwerpunkte“ für Karten und Quiz */
+  function spFilterHtml(id, wert, anzahl) {
+    const liste = typeof wert === "string" ? spListen.find((l) => l.id === wert) : null;
+    return `<div class="stapel"><span class="eyebrow">Kategorie</span>
+      <div class="chips" id="${id}">
+        <button class="chip" type="button" data-sp="alle" aria-pressed="${!wert}">Alle Inhalte</button>
+        <button class="chip sp-chip" type="button" data-sp="sp" aria-pressed="${!!wert}">${liste ? "Schwerpunkte: " + esc(liste.titel) : "Nur Schwerpunkte"}<span class="zahl">${anzahl}</span></button>
+      </div>
+      <span class="leise klein">Schwerpunkte = Punkte aus den Schwerpunkt-Listen der Kursleitung; Übersicht unter Skript → Schwerpunkte.${anzahl ? "" : " In den gewählten Themen ist noch nichts als Schwerpunkt markiert."}</span></div>`;
+  }
+
   /* ================= ÜBERSICHT ================= */
   render.start = function () {
     const p = $("#p-start");
@@ -522,6 +580,10 @@ window.Lernapp = {
         <div class="kennzahl"><b>${alle.length ? Math.round((sicher / alle.length) * 100) : 0} %</b><span>sicher (Fach 4–5)</span></div>
         <div class="kennzahl"><b>${qg ? Math.round((qr / qg) * 100) + " %" : "–"}</b><span>Quiz richtig${qg ? " (" + qg + " Fragen)" : ""}</span></div>
       </div>
+      ${spListen.length ? `<article class="panel">
+        <div class="stapel" style="gap:6px"><span class="eyebrow">Kategorie</span><h3>Prüfungsschwerpunkte</h3>
+          <span class="leise klein">${alle.filter((k) => k.sp.length).length} Karten und ${themen.flatMap((t) => t.quiz).filter((q) => q.sp.length).length} Quizfragen aus ${spListen.length} Schwerpunkt-Listen der Kursleitung</span></div>
+        <div class="zeile"><button class="btn" id="sp-uebersicht">Schwerpunkte ansehen</button></div></article>` : ""}
       <div class="stapel">
         <div class="zeile-sb"><h2 style="font-size:1.2rem">Themen</h2>${fehler ? `<span class="badge">${fehler} Quizfragen zum Wiederholen</span>` : ""}</div>
         <div class="themaliste">${themen.map((t) => themaZeile(t, jetzt)).join("")}</div>
@@ -529,6 +591,7 @@ window.Lernapp = {
 
     $("#los-karten").addEventListener("click", () => { kartenOpt.modus = fae ? "faellig" : "alle"; kartenSitzung = null; zeigeTab("karten"); });
     $("#los-quiz").addEventListener("click", () => { quizSitzung = null; zeigeTab("quiz"); });
+    const spU = $("#sp-uebersicht"); if (spU) spU.addEventListener("click", () => { skriptThema = SP_SKRIPT; skriptSuche = ""; zeigeTab("skript"); });
     p.querySelectorAll("[data-lernen]").forEach((b) => b.addEventListener("click", () => {
       setzeAuswahl([b.dataset.lernen]); kartenOpt.kat = []; kartenOpt.modus = "faellig"; kartenSitzung = null; zeigeTab("karten");
     }));
@@ -562,7 +625,7 @@ window.Lernapp = {
   }
 
   /* ================= LERNKARTEN ================= */
-  const kartenOpt = { modus: "faellig", kat: [], mischen: true };
+  const kartenOpt = { modus: "faellig", kat: [], mischen: true, sp: false };
   let kartenSitzung = null; // { stapel:[karte], i, umgedreht, gesamt, ergebnis:{0,1,2} }
 
   function kartenPool() {
@@ -570,6 +633,7 @@ window.Lernapp = {
     const ids = new Set(aktiveThemen());
     let pool = themen.filter((t) => ids.has(t.id)).flatMap((t) => t.karten);
     if (kartenOpt.kat.length) pool = pool.filter((k) => kartenOpt.kat.includes(k.thema + "|" + k.k));
+    pool = pool.filter((k) => spPasst(k, kartenOpt.sp));
     if (kartenOpt.modus === "faellig") pool = pool.filter((k) => faellig(k, jetzt));
     if (kartenOpt.modus === "schwach") pool = pool.filter((k) => { const s = stand(k.id); return s.n > 0 && s.b <= 2; });
     return pool;
@@ -589,11 +653,13 @@ window.Lernapp = {
     });
     kartenOpt.kat = kartenOpt.kat.filter((k) => kats.some((x) => x.key === k));
     const pool = kartenPool();
+    const spAnzahl = themen.filter((t) => ids.has(t.id)).flatMap((t) => t.karten).filter((k) => k.sp.length).length;
 
     p.innerHTML = `
       <div class="held"><span class="eyebrow">Lernkarten</span><h2>Was möchtest du lernen?</h2></div>
       <div class="panel">
         <div class="stapel"><span class="eyebrow">Themen</span><div class="chips" id="k-themen"></div></div>
+        ${spFilterHtml("k-sp", kartenOpt.sp, spAnzahl)}
         <div class="stapel"><span class="eyebrow">Kapitel <span style="text-transform:none;letter-spacing:0;font-weight:400">(keins gewählt = alle)</span></span>
           <div class="chips" id="k-kat">${kats.map((k) => `<button class="chip" type="button" data-k="${esc(k.key)}" aria-pressed="${kartenOpt.kat.includes(k.key)}">${esc(k.label)}<span class="zahl">${k.n}</span></button>`).join("")}</div>
         </div>
@@ -619,6 +685,7 @@ window.Lernapp = {
       render.karten();
     }));
     p.querySelectorAll("#k-modus .chip").forEach((c) => c.addEventListener("click", () => { kartenOpt.modus = c.dataset.m; render.karten(); }));
+    p.querySelectorAll("#k-sp .chip").forEach((c) => c.addEventListener("click", () => { kartenOpt.sp = c.dataset.sp === "alle" ? false : true; render.karten(); }));
     $("#k-mischen").addEventListener("change", (e) => (kartenOpt.mischen = e.target.checked));
     $("#k-start").addEventListener("click", () => {
       const stapel = kartenOpt.mischen ? mischen(pool) : pool.slice();
@@ -647,6 +714,7 @@ window.Lernapp = {
             ${k.s ? `<span class="badge seite">${esc(k.s)}</span>` : ""}
             <span class="badge">${FACHNAMEN[st.b]}</span>
             ${k.h ? `<span class="badge hand" title="Inhalt (teilweise) nur aus handschriftlichen Notizen im Heft">handschriftlich</span>` : ""}
+            ${spBadge(k)}
           </div>
           <div class="frage">${esc(k.f)}</div>
           ${s.umgedreht ? `<div class="antwort">${esc(k.a)}</div>` : `<div class="tipp">Tippen oder <kbd>Leertaste</kbd>, um die Antwort zu sehen</div>`}
@@ -701,7 +769,7 @@ window.Lernapp = {
   // Antwortmodus "einfach": eine Antwort antippen. Modus "pruefung": wie in der Prüfung –
   // eine oder mehrere Antworten richtig (nie alle), ankreuzen und dann prüfen.
   // In den Themen-Dateien gibt "r" an, wie viele der ersten Optionen richtig sind (Standard 1).
-  const quizOpt = { anzahl: 10, nurFehler: false, modus: speicher.lesen("quizModus", "einfach") };
+  const quizOpt = { anzahl: 10, nurFehler: false, modus: speicher.lesen("quizModus", "einfach"), sp: false };
   const SIM = { fragen: 60, minuten: 90 };
   let quizSitzung = null;
   let quizTimer = null;
@@ -710,7 +778,7 @@ window.Lernapp = {
     const ids = new Set(aktiveThemen());
     let pool = themen.filter((t) => ids.has(t.id)).flatMap((t) => t.quiz);
     if (quizOpt.nurFehler) pool = pool.filter((q) => quizFehler[q.id]);
-    return pool;
+    return pool.filter((q) => spPasst(q, quizOpt.sp));
   }
   function frageVorbereiten(q) {
     return { q, opts: mischen(q.o.map((t, i) => ({ t, richtig: i < q.r }))) };
@@ -741,6 +809,7 @@ window.Lernapp = {
         <p>Nach jeder Frage siehst du die Erklärung mit Seitenangabe aus dem Heft.</p></div>
       <div class="panel">
         <div class="stapel"><span class="eyebrow">Themen</span><div class="chips" id="q-themen"></div></div>
+        ${spFilterHtml("q-sp", quizOpt.sp, themen.filter((t) => aktiveThemen().includes(t.id)).flatMap((t) => t.quiz).filter((q) => q.sp.length).length)}
         <div class="stapel"><span class="eyebrow">Antwortmodus</span>
           <div class="chips" id="q-modus">
             <button class="chip" type="button" data-m="einfach" aria-pressed="${quizOpt.modus === "einfach"}">Eine Antwort antippen</button>
@@ -769,6 +838,7 @@ window.Lernapp = {
       </div>`;
     themenChips($("#q-themen"), () => render.quiz(), (t) => t.quiz.length);
     p.querySelectorAll("#q-modus .chip").forEach((c) => c.addEventListener("click", () => { quizOpt.modus = c.dataset.m; speicher.schreiben("quizModus", quizOpt.modus); render.quiz(); }));
+    p.querySelectorAll("#q-sp .chip").forEach((c) => c.addEventListener("click", () => { quizOpt.sp = c.dataset.sp === "alle" ? false : true; render.quiz(); }));
     p.querySelectorAll("#q-anzahl .chip").forEach((c) => c.addEventListener("click", () => { quizOpt.anzahl = +c.dataset.n; render.quiz(); }));
     $("#q-fehler").addEventListener("change", (e) => { quizOpt.nurFehler = e.target.checked; render.quiz(); });
     $("#q-start").addEventListener("click", () => {
@@ -816,7 +886,7 @@ window.Lernapp = {
         </div>
         <div class="fortschritt"><i style="width:${(s.i / s.fragen.length) * 100}%"></i></div>
         <div class="panel">
-          <div class="zeile"><span class="badge akzent">${esc(t ? t.kurz : "")}</span>${q.h ? `<span class="badge hand">handschriftlich</span>` : ""}${hinweis ? `<span class="badge">${hinweis}</span>` : ""}</div>
+          <div class="zeile"><span class="badge akzent">${esc(t ? t.kurz : "")}</span>${q.h ? `<span class="badge hand">handschriftlich</span>` : ""}${spBadge(q)}${hinweis ? `<span class="badge">${hinweis}</span>` : ""}</div>
           <h2 style="font-size:1.25rem;font-weight:600">${esc(q.f)}</h2>
           <div class="optionen">${optionenHtml(f, s.auswahl, mehr, s.geprueft)}</div>
           ${!s.geprueft && mehr ? `<div class="zeile"><button class="btn primaer gross" id="q-pruefen" ${s.auswahl.size ? "" : "disabled"}>Antwort prüfen</button></div>` : ""}
@@ -971,16 +1041,17 @@ window.Lernapp = {
   }
 
   /* ================= ZUSAMMENFASSUNG ================= */
+  const SP_SKRIPT = "__schwerpunkte";
   let skriptThema = null;
   let skriptSuche = "";
   render.skript = function () {
     const p = $("#p-skript");
-    if (!skriptThema || !themaVon(skriptThema)) skriptThema = (themen.find((t) => t.zusammenfassung) || themen[0] || {}).id;
-    const t = themaVon(skriptThema);
+    if (skriptThema !== SP_SKRIPT && (!skriptThema || !themaVon(skriptThema))) skriptThema = (themen.find((t) => t.zusammenfassung) || themen[0] || {}).id;
+    const t = skriptThema === SP_SKRIPT ? null : themaVon(skriptThema);
     p.innerHTML = `
       <div class="held"><span class="eyebrow">Zusammenfassung</span><h2>Nachlesen und suchen</h2></div>
       <div class="panel">
-        <div class="chips" id="s-themen">${themen.map((x) => `<button class="chip" type="button" data-id="${esc(x.id)}" aria-pressed="${x.id === skriptThema}">${esc(x.kurz)}</button>`).join("")}</div>
+        <div class="chips" id="s-themen"><button class="chip sp-chip" type="button" data-id="${SP_SKRIPT}" aria-pressed="${skriptThema === SP_SKRIPT}">Schwerpunkte</button>${themen.map((x) => `<button class="chip" type="button" data-id="${esc(x.id)}" aria-pressed="${x.id === skriptThema}">${esc(x.kurz)}</button>`).join("")}</div>
         <div class="feld"><label for="s-suche">In allen Lernkarten suchen</label>
           <input id="s-suche" type="search" placeholder="z. B. Stemmer, ABI, Erysipel" value="${esc(skriptSuche)}" autocomplete="off"></div>
       </div>
@@ -1003,10 +1074,11 @@ window.Lernapp = {
       const ql = q.toLowerCase();
       const treffer = themen.flatMap((x) => x.karten).filter((k) => (k.f + " " + k.a + " " + k.k).toLowerCase().includes(ql));
       ziel.innerHTML = `<div class="treffer"><span class="leise">${treffer.length} Karten gefunden</span>
-        ${treffer.map((k) => `<div class="panel"><div class="zeile"><span class="badge akzent">${esc(themaVon(k.thema).kurz)} · ${esc(k.k)}</span>${k.s ? `<span class="badge seite">${esc(k.s)}</span>` : ""}</div>
+        ${treffer.map((k) => `<div class="panel"><div class="zeile"><span class="badge akzent">${esc(themaVon(k.thema).kurz)} · ${esc(k.k)}</span>${k.s ? `<span class="badge seite">${esc(k.s)}</span>` : ""}${spBadge(k)}</div>
           <b>${markieren(k.f, q)}</b><div class="a">${markieren(k.a, q)}</div></div>`).join("")}</div>`;
       return;
     }
+    if (skriptThema === SP_SKRIPT) return spUebersicht(ziel);
     if (!t || !t.zusammenfassung) {
       ziel.innerHTML = `<div class="panel leer">Für dieses Thema gibt es noch keine Zusammenfassung.</div>`;
       return;
@@ -1025,6 +1097,64 @@ window.Lernapp = {
       a.addEventListener("click", (e) => { e.preventDefault(); h.scrollIntoView({ behavior: "smooth", block: "start" }); });
       nav.appendChild(a);
     });
+    $("#s-text").querySelectorAll(".sp").forEach((el) => {
+      const keys = (el.dataset.sp || "").split("|").filter((key) => spPunkt.has(key));
+      el.title = "Prüfungsschwerpunkt" + (keys.length ? ": " + keys.map((key) => spPunkt.get(key).label).join(" · ") : "");
+    });
+  }
+
+  /* Übersicht der Schwerpunkt-Listen mit den zugeordneten Karten und Quizfragen */
+  function spUebersicht(ziel) {
+    const alleKarten = themen.flatMap((t) => t.karten);
+    const alleFragen = themen.flatMap((t) => t.quiz);
+    const zuPunkt = (key, liste) => liste.filter((x) => x.sp.includes(key));
+    // Skript-Stellen je Punkt: <span class="sp" data-sp="…"> in den Zusammenfassungen
+    const imSkript = new Map();
+    themen.forEach((t) => (t.zusammenfassung.match(/data-sp="[^"]*"/g) || []).forEach((m) => m.slice(9, -1).split("|").forEach((key) => {
+      if (!imSkript.has(key)) imSkript.set(key, new Set());
+      imSkript.get(key).add(t.kurz);
+    })));
+    const anzahl = (n, eins, mehr) => n + " " + (n === 1 ? eins : mehr);
+    const punktHtml = (x) => {
+      const k = zuPunkt(x.key, alleKarten), q = zuPunkt(x.key, alleFragen);
+      const sk = imSkript.get(x.key);
+      const zahl = k.length || q.length ? `<span class="badge">${anzahl(k.length, "Karte", "Karten")} · ${anzahl(q.length, "Frage", "Fragen")}</span>`
+        : sk ? `<span class="badge">nur im Skript: ${esc([...sk].join(", "))}</span>` : `<span class="badge">keine Inhalte in der App</span>`;
+      if (!k.length) return `<span class="${q.length || sk ? "" : "leer-punkt"}">${esc(x.text)}</span> ${zahl}`;
+      return `<details><summary><span>${esc(x.text)}</span>${zahl}</summary><div class="sp-karten">${k.map((c) =>
+        `<div class="panel"><div class="zeile"><span class="badge akzent">${esc(themaVon(c.thema).kurz)} · ${esc(c.k)}</span>${c.s ? `<span class="badge seite">${esc(c.s)}</span>` : ""}${c.h ? `<span class="badge hand">handschriftlich</span>` : ""}</div><b>${esc(c.f)}</b><div class="a">${esc(c.a)}</div></div>`).join("")}</div></details>`;
+    };
+    const gesamtK = alleKarten.filter((k) => k.sp.length).length, gesamtQ = alleFragen.filter((q) => q.sp.length).length;
+    ziel.innerHTML = `<div class="stapel">
+      <article class="panel"><span class="eyebrow">Kategorie</span><h2>Prüfungsschwerpunkte</h2>
+        <p class="leise" style="margin:0">Die Schwerpunkt-Listen der Kursleitung (Padlet). Zu jedem Punkt stehen die passenden Lernkarten und Quizfragen aus der App; antippen klappt die Karten auf. ${gesamtK} Karten und ${gesamtQ} Quizfragen sind als Schwerpunkt markiert.</p>
+        <p class="meldung ok" style="margin:0"><b>Bitte unbedingt die lateinischen Begriffe mit einprägen!</b> (Hinweis auf jeder Liste)</p>
+        <div class="zeile"><button class="btn primaer" data-sp-karten="">Alle Schwerpunkt-Karten lernen</button><button class="btn" data-sp-quiz="">Quiz nur Schwerpunkte</button></div></article>
+      ${spListen.map((l) => {
+        const k = alleKarten.filter((x) => spPasst(x, l.id)), q = alleFragen.filter((x) => spPasst(x, l.id));
+        const thm = l.themen.map(themaVon).filter(Boolean);
+        return `<article class="panel">
+          <div class="stapel" style="gap:4px"><span class="eyebrow">Schwerpunkt-Liste${l.seite ? " · Padlet S. " + l.seite : ""}</span><h3>${esc(l.titel)}</h3></div>
+          ${thm.length ? "" : `<div class="meldung fehler">Zu dieser Liste gibt es noch keine Unterlagen (Heft/Lernkarten) in der App.</div>`}
+          <ul class="sp-liste">${l.punkte.map((x) => `<li>${punktHtml(x)}${x.unter.length ? `<ul class="sp-liste">${x.unter.map((u) => `<li>${punktHtml(u)}</li>`).join("")}</ul>` : ""}</li>`).join("")}</ul>
+          <div class="zeile">
+            <button class="btn ${k.length ? "primaer" : ""}" data-sp-karten="${esc(l.id)}" ${k.length ? "" : "disabled"}>Karten lernen (${k.length})</button>
+            <button class="btn" data-sp-quiz="${esc(l.id)}" ${q.length ? "" : "disabled"}>Quiz (${q.length})</button>
+            ${thm.map((t) => `<button class="btn" data-sp-skript="${esc(t.id)}">Skript: ${esc(t.kurz)}</button>`).join("")}
+          </div></article>`;
+      }).join("")}</div>`;
+    const themenMit = (liste, filter) => [...new Set(liste.filter((x) => spPasst(x, filter)).map((x) => x.thema))];
+    ziel.querySelectorAll("[data-sp-karten]").forEach((b) => b.addEventListener("click", () => {
+      const filter = b.dataset.spKarten || true;
+      setzeAuswahl(themenMit(alleKarten, filter));
+      kartenOpt.sp = filter; kartenOpt.kat = []; kartenOpt.modus = "alle"; kartenSitzung = null; zeigeTab("karten");
+    }));
+    ziel.querySelectorAll("[data-sp-quiz]").forEach((b) => b.addEventListener("click", () => {
+      const filter = b.dataset.spQuiz || true;
+      setzeAuswahl(themenMit(alleFragen, filter));
+      quizOpt.sp = filter; quizOpt.nurFehler = false; quizSitzung = null; zeigeTab("quiz");
+    }));
+    ziel.querySelectorAll("[data-sp-skript]").forEach((b) => b.addEventListener("click", () => { skriptThema = b.dataset.spSkript; render.skript(); }));
   }
 
   /* ================= THEMEN VERWALTEN ================= */

@@ -37,6 +37,19 @@ Inhalte aus den zusätzlich bereitgestellten Foliensätzen stehen in den Lernkar
 im Kapitel „Folien“ und in den Zusammenfassungen im Abschnitt „Abgleich mit dem
 Foliensatz“; Abweichungen zwischen Heft und Folien sind dort mit ⚠ gekennzeichnet.
 
+## Prüfungsschwerpunkte
+
+Die Schwerpunkt-Listen der Kursleitung (Padlet, Seiten 6–17) stehen in `themen/schwerpunkte.js`.
+Karten und Quizfragen, die einen Punkt abdecken, tragen das Feld `sp` (z. B.
+`sp: ["haut: Aufbau der Epidermis"]`, bei Unterpunkten `"dekubitus: Def. Ulcus cruris venosum – Diagnostik"`);
+im Skript markiert `<span class="sp" data-sp="…">Schwerpunkt</span>` die passenden Stellen.
+In der App:
+
+- **Karten** und **Quiz**: Kategorie „Nur Schwerpunkte“; markierte Karten und Fragen zeigen ein Schwerpunkt-Abzeichen.
+- **Skript → Schwerpunkte**: alle Listen mit den zugeordneten Karten und Fragen je Punkt, Lern- und Quiz-Knöpfe je Liste.
+  Punkte ohne Inhalte in der App sind als solche gekennzeichnet (z. B. „Geschichte, Recht und Ethik“ und
+  „Exp. Pflege von Menschen mit chronischen Wunden“, zu denen noch keine Unterlagen in der App sind).
+
 ## Funktionen
 
 - **Karten**: Karteikarten mit Lernfächern (Leitner-System). „Gewusst“ schiebt eine Karte ein Fach höher (Wiederholung nach 1, 3, 7, 14 Tagen), „Nicht gewusst“ holt sie zurück in Fach 1 und zeigt sie in derselben Runde noch einmal. Filter nach Thema und Kapitel.
